@@ -100,7 +100,7 @@
     webVitals.getFCP(sendToGTM);
     webVitals.getTTFB(sendToGTM);
 </script>
-<script nonce="d3GIH8M0btV/gR9zMFfe7A==">
+    <script nonce="d3GIH8M0btV/gR9zMFfe7A==">
 //    window.addEventListener('load', function() {
 //        store_session_data();
 //    });
@@ -394,7 +394,7 @@
                             <div class='border'></div>
                         </div>
                     
-                    <form role="form" id="modal-login-form" method="POST">
+                    <form role="form" id="modal-login-form" method="POST" action="/login">
                         <input type="hidden" name="csrf_test_name" value="9cc9f0e7b8e83a4324c01b07065ab78f" />
                         <div class="form-group">
                             <label for="email" class="control-label">Email</label>
@@ -2574,12 +2574,11 @@
         </div>
         <div class="register-cta-container">
             <a class="google-register-cta" href="/login/get_google?utm_source=is_prefooter_homepage">
-                <img src=images/login/google_logo_24.svg" alt="google_logo" />
-                Continue with Google
+                <img src="images/login/google_logo_24.svg" alt="google_logo" />
+                Sign in with Google
             </a>
             <a class="register-cta" href="/registration/student?utm_source=is_prefooter_homepage">
-                <i class="ic-24-mail"></i>
-                Continue with Email
+                <span> Continue with Email</span>
             </a>
             <div class="tnc">By continuing, you agree to our <a href="https://internshala.com/terms" target="_blank">T&C.</a></div>
         </div>
@@ -3262,6 +3261,7 @@
 In your html page, add the snippet and call
 goog_report_conversion when someone clicks on the
 chosen link or button. -->
+
 <script nonce="d3GIH8M0btV/gR9zMFfe7A==">
   /* <![CDATA[ */
   goog_snippet_vars = function() {

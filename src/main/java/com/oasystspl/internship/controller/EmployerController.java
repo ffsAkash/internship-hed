@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/employer")
 public class EmployerController {
 
-    @GetMapping("/register")
+    @GetMapping("/registration")
     public String register() {
         return "emp-registration";
     }
@@ -27,6 +27,11 @@ public class EmployerController {
 
     @PostMapping("/registration/verify_email")
     public String verifyEmailSubmit() {
+        return "redirect:/employer/registration/profile";
+    }
+
+    @GetMapping("/registration/profile")
+    public String profile() {
         return "emp-profile";
     }
 }

@@ -24,3 +24,81 @@
     margin-top: 0px;
     margin-bottom: 0px;
 }
+
+
+/*.ic-16-filled-checked-circle */
+.tick-circle-custom {
+    width: 12px;
+    height: 12px;
+	background-image: url("../icons/check-circle-fill.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-left: 4px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+	filter: invert(52%) sepia(88%) saturate(2400%) hue-rotate(10deg) brightness(85%) contrast(110%);
+
+	 	 
+}
+
+/* ic-16-filled-star */
+.star-icon-custom {
+    width: 12px;
+    height: 12px;
+    background-image: url("../icons/star-fill.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-left: 4px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+	filter: invert(52%) sepia(88%) saturate(2400%) hue-rotate(10deg) brightness(85%) contrast(110%);
+}
+ 
+/* ic-24-chevron-left */
+.ic-chevron-left-custom {
+    width: 16px;
+    height: 16px;
+    background-image: url("../icons/chevron-left.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+	}
+
+	/*ic-16-clock */
+    	.ic-clock-custom {
+    	    width: 16px;
+    	    height: 16px;
+    	    background-image: url("../icons/clock.svg");
+    	    background-size: contain;
+    	    background-repeat: no-repeat;
+    	    display: inline-block;
+    	    margin-left: 0px;
+    	    margin-right: 0px;
+    	    margin-top: 0px;
+    	    margin-bottom: 0px;
+    		}
+
+
+    		/*ic-24-s15-trend */
+    			.ic-down-icon-custom {
+    			    width: 16px;
+    			    height: 16px;
+    			    background-image: url("../icons/trending-up.svg");
+    			    background-size: contain;
+    			    background-repeat: no-repeat;
+    			    display: inline-block;
+    			    margin-left: 0px;
+    			    margin-right: 0px;
+    			    margin-top: 0px;
+    			    margin-bottom: 0px;
+    				}
+
+

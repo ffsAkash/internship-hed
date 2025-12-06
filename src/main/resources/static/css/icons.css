@@ -1,0 +1,26 @@
+.ic-chevron-right-custom {
+    width: 16px;
+    height: 16px;
+    background-image: url("../icons/chevron-right.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* original class name */
+.header-dropdown-arrow-custom {
+    width: 12px;
+    height: 12px;
+    background-image: url("../icons/arrow-down-filled-triangle-svgrepo-com.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-left: 4px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}

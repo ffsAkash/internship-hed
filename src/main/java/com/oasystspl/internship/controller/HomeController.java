@@ -12,10 +12,8 @@ public class HomeController {
 		return "index";
 	}
 	
-	@PostMapping("/home")
-	public String submitLogin() {
-		System.out.println("============================= LOGIN WORKS!!! =======================");
-		return "student-dashboard";
-	}
-	
+	@GetMapping("/error")
+    public String error() {
+        return "error";
+    }
 }

@@ -1897,13 +1897,7 @@ body[data-sidebar-size=sm] {
 
 .nav-link{
     font-family: "Inter", sans-serif;
-    border: 1px solid #E6EAF1;
     background-color: #F9FAFC;
-    border-radius: 50px !important;
-    -webkit-border-radius: 50px !important;
-    -moz-border-radius: 50px !important;
-    -ms-border-radius: 50px !important;
-    -o-border-radius: 50px !important;
 }
 
 .nav-link.active{

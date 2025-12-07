@@ -53,4 +53,19 @@ public class StudentController {
         return "redirect:/error";
     }
 
+    @GetMapping("/my-application")
+    public String myApplication() {
+        return "my-application";
+    }
+
+    @GetMapping("/my-attendance")
+    public String myAttendance() {
+        return "my-attendance";
+    }
+
+    @GetMapping("/my-evaluation")
+    public String myEvaluation() {
+        return "my-evaluation";
+    }
+
 }

@@ -25,8 +25,6 @@ public class StudentController {
             return "internship-in-hyderabad";
         } else if ("bangalore".equals(location)) {
             return "internship-in-bangalore";
-        } else if ("delhi".equals(location)) {
-            return "internship-in-delhi";
         }
 
         return "redirect:/error";
@@ -38,8 +36,6 @@ public class StudentController {
             return "engineering-internships";
         } else if ("mba".equals(category)) {
             return "mba-internships";
-        } else if ("humanities".equals(category)) {
-            return "humanities-internships";
         }
 
         return "redirect:/error";
@@ -52,8 +48,6 @@ public class StudentController {
             return "cs-internships";
         } else if ("marketing".equals(profile)) {
             return "marketing-internships";
-        } else if ("finance".equals(profile)) {
-            return "finance-internships";
         }
 
         return "redirect:/error";

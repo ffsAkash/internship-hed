@@ -68,4 +68,9 @@ public class StudentController {
         return "my-evaluation";
     }
 
+    @GetMapping("/internship-example")
+    public String intExample() {
+        return "internship-example";
+    }
+
 }

@@ -194,9 +194,9 @@
 
 /*ic-16-calendar */
 .ic-calender-icon-custom {
-	width: 12px;
-	height: 12px;
-	background-image: url("../icons/Calender16.svg");
+	width: 16px;
+	height: 16px;
+	background-image: url("../icons/cal.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
 	display: inline-block;
@@ -205,6 +205,126 @@
 	margin-top: 0px;
 	margin-bottom: 0px;
 
+}
+
+/*ic-16-map-pin */
+.ic-location-custom {
+	width: 16px;
+	height: 16px;
+	background-image: url("../icons/location.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+/*ic-16-assignment icon*/
+.ic-assignment-custom {
+	width: 16px;
+	height: 16px;
+	background-image: url("../icons/ass.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+/*ic-24-filter-applied*/
+.ic-filter-custom {
+	width: 16px;
+	height: 16px;
+	background-image: url("../icons/filter.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+/*------------subha 08/12/25------------- */
+ 
+/*ic-16-hourglass */
+.ic-hourglass-icon-custom {
+	width: 12px;
+	height: 12px;
+	background-image: url("../icons/hourglass.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin-left: 0px;
+	margin-right: 6px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+ 
+}
+ 
+/*ic-16-play-circle */
+.ic-play-circle-icon-custom {
+	width: 12px;
+	height: 12px;
+	background-image: url("../icons/play-circle.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin-left: 0px;
+	margin-right: 6px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+ 
+}
+ 
+/*ic-16-reschedule */
+.ic-reschedule-icon-custom {
+	width: 12px;
+	height: 12px;
+	background-image: url("../icons/reschedule.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin-left: 0px;
+	margin-right: 6px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+ 
+}
+ 
+/*ic-24-share */
+.ic-share-icon-custom {
+	width: 18px;
+	height: 18px;
+	background-image: url("../icons/ic-share-icon.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin-left: 0px;
+	margin-right: 6px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	filter: invert(32%) sepia(96%) saturate(2400%) hue-rotate(205deg) brightness(85%) contrast(110%);
+ 
+}
+ 
+/*ic-24-profiles */
+.ic-profile-round-custom {
+	width: 12px;
+	height: 12px;
+	background-image: url("../icons/profile-round.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin-left: 0px;
+	margin-right: 6px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+ 
 }
 
 /*ic-24-cross*/
@@ -219,10 +339,21 @@
 	margin-right: 6px;
 	margin-top: 0px;
 	margin-bottom: 0px;
-
+ 
 }
 
-
-
-
+/*ic-24-mail */
+.ic-mail-icon-black-custom {
+	width: 20px;
+	height: 20px;
+	background-image: url("../icons/ic24-email.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+    filter: brightness(0); 
+}
 

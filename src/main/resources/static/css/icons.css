@@ -207,6 +207,21 @@
 
 }
 
+/*ic-24-edit-v2 */
+.edit-v2-custom{
+	width: 12px;
+	height: 12px;
+	background-image: url("../icons/edit-v2.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin-left: 0px;
+	margin-right: 6px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+
+}
+
 
 
 

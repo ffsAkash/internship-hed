@@ -21,6 +21,8 @@
     <meta name="msapplication-navbutton-color" content="#ffffff"/>
     <meta name="format-detection" content="telephone=no"/>
 
+    <link rel="stylesheet" href="/css/icons.css" />
+
     <link as="font" href="/other/fonts/Inter.woff2?v=3.11" type="font/woff2" crossorigin/>
     <link as="font" href="https://internshala.com/static/fonts/internshala-icons.woff2?vw3rgh" type="font/woff2" crossorigin/>
     <script src="/other/js/web_vitals/web-vitals.umd.js"></script>
@@ -214,8 +216,8 @@
                         <div class="subheading">
                             <div class="line-1">One Time Password(OTP) has been sent on</div>
                             <div class="line-2">
-                                <span>prasantpandam82b@gmail.com</span>
-                                <i class="ic-edit-v2-custom"></i>
+                                <span>studentemail@gmail.com</span>
+                                <i class="edit-v2-custom"></i>
                             </div>
                         </div>
                     </div>
@@ -250,7 +252,7 @@
                         <div class="heading">Edit your email</div>
                     </div>
                     <div class="form-container">
-                        <form role="form" id="edit-email-form" method="POST">
+                        <form id="edit-email-form" method="POST" action="/registration/verify_email">
                             <input type="hidden" name="csrf_test_name" value="c38c7ea5267de46269e467e87356be6d"/>
                             <div class="form-group">
                                 <input type="email" class="form-control" id="email" name="email" placeholder="john@example.com" required/>

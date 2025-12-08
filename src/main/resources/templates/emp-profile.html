@@ -145,6 +145,16 @@
             .phone-group { flex-direction: column; }
             .verify-btn { width: 100%; }
         }
+        .step {
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.step:hover .step-icon {
+    background: #00a5a5;
+    color: #fff;
+    transform: scale(1.05);
+}
     </style>
 </head>
 <body>
@@ -158,18 +168,22 @@
 
 <!-- Step Indicator -->
 <div class="step-indicator">
-    <div class="step active">
+
+    <a href="/employer/registration/profile" class="step" style="text-decoration:none;">
         <div class="step-icon"><i class="ic-24-profiles"></i></div>
         <div class="step-text">Personal Details</div>
-    </div>
-    <div class="step">
+    </a>
+
+    <a href="/employer/registration/organization" class="step" style="text-decoration:none;">
         <div class="step-icon"><i class="ic-24-experience"></i></div>
         <div class="step-text">Organization Details</div>
-    </div>
-    <div class="step">
+    </a>
+
+    <a href="/employer/registration/internship" class="step" style="text-decoration:none;">
         <div class="step-icon"><i class="ic-24-file-text"></i></div>
         <div class="step-text">Post Internship/Job</div>
-    </div>
+    </a>
+
 </div>
 
 <!-- Main Form -->
@@ -178,7 +192,7 @@
         <h1 class="form-title">Tell us about yourself</h1>
         <p class="form-subtitle">Your email is verified. Please complete your profile to post internships/jobs.</p>
 
-        <form id="personal_details" novalidate>
+        <form id="personal_details" action="/employer/registration/organization" method="get" novalidate>
             <!-- Name Fields -->
             <div class="row">
                 <div class="col-12 col-md-6">

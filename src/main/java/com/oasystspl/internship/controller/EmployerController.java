@@ -34,4 +34,14 @@ public class EmployerController {
     public String profile() {
         return "emp-profile";
     }
+
+    @GetMapping("/registration/organization")
+    public String organization() {
+        return "emp-organization-details";
+    }
+
+    @GetMapping("/registration/internship")
+    public String internship() {
+        return "emp-post-internship";
+    }
 }

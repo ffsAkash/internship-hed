@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/employer")
 public class EmployerController {
 
+    @PostMapping("/login")
+    public String login() {
+        return "redirect:/employer/dashboard";
+    }
+
     @GetMapping("/registration")
     public String register() {
         return "emp-registration";
@@ -43,5 +48,10 @@ public class EmployerController {
     @GetMapping("/registration/internship")
     public String internship() {
         return "emp-post-internship";
+    }
+
+    @GetMapping("/post-internship")
+    public String postInternship() {
+        return "post-internship";
     }
 }

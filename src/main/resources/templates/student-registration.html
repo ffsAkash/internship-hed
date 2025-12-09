@@ -1,617 +1,667 @@
 <!DOCTYPE html>
-    <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"
-        lang="en-US">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"
+	lang="en-US">
 
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=9" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0" />
-    <meta property="fb:app_id" content="702141670710132" />
-    <meta property="og:type" content="website" />
-            <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <link rel="preload" href="https://internshala.com//static/images/home/sprites/img-assets.png" as="image"/>
-    <meta name="twitter:site" content="@Internshala" />
-            <meta name="twitter:card" content="summary_large_image" />
-    
-    <meta name="twitter:creator" content="@internshala" />
-            <meta name="twitter:image:src" content="https://internshala.com//static/images/internshala_og_image.jpg" />
-            <meta name="theme-color" content="#ffffff" />
-    <meta name="msapplication-navbutton-color" content="#ffffff" />
-    <meta name="format-detection" content="telephone=no" />
-    <link rel="stylesheet" href="/css/icons.css" />
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0" />
+	<meta property="fb:app_id" content="702141670710132" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<link rel="preload" href="https://internshala.com//static/images/home/sprites/img-assets.png" as="image" />
+	<meta name="twitter:site" content="@Internshala" />
+	<meta name="twitter:card" content="summary_large_image" />
 
-    <link as="font" href="/other/fonts/Inter.woff2?v=3.11" type="font/woff2" crossorigin />
-            <link as="font" href="/other/fonts/internshala-icons.woff2?vw3rgh" type="font/woff2"  crossorigin />    <script src="/other/js/web_vitals/web-vitals.umd.js"></script>
-            <script src="/other/js/includes/common/libraries.2583691470.js" defer></script>
-                <link rel="stylesheet" href="https://internshala.com//static/cdn/4.4.1/css/bootstrap.min.css" />
-        
-    <link rel="icon" href="https://internshala.com//favicon.ico?v=5" />
-    <script nonce="bfBO467qtGdtRQ2R8sLxQA==">
-        var os_type = "";
-        var browser_name = 'wget';
-        var is_android = 0;
-        var is_mobile = 1;
-        var l_cookie = "";
-        var view = "registration/student/registration";
-        var user_id_ga = 0;
-        var mainRole = "guest";
-        var to_show_account_activated_message = false;
-        var to_show_subscription_activated_message = false;
-        var location_autocomplete_min_length = 3;
-        var fresherJobsMinCtc = 2;
-        var show_maintenance_ribbon = false;
-        var maintenance_ribbon_message = "";
-        var base_url = 'https://internshala.com/';
-        var bulk_request_url_with_trailing_slash = 'https://internshala.com/';
-        var is_g_recaptcha = "6LdwW1ckAAAAAKcsi3VSrXg49B7GXfisCJDmI9kf";
-        var error_ribbon_support_email = "support@internshala.com";
-</script>
-            <title >Internships | Jobs | Trainings &amp; Placement Courses | Post a Job</title>
-        <meta name="description" content="Internshala is India&#039;s no.1 career platform trusted by 400K+ companies. We offer 120K+ paid internships, jobs, online trainings, &amp; placement courses." />
-        <meta property="og:title" content="Find the best internships of your choice | Internshala" />
-        <meta property="og:description" content="Choose from 80,000+ brands all across India and land your dream internship completely for free! Register now. )" />
-        <meta property="og:image" content="https://internshala.com//static/images/registration/student/facebook.jpg" />
-        <meta name="twitter:title" content="Find the best internships of your choice | Internshala" />
-        <meta name="twitter:description" content="Apply to internships at HCL, OLX, Cisco, Eros Labs, Greenpeace and more - it&#039;s free :)" />
-        <meta name="twitter:image:src" content="https://internshala.com//static/images/registration/student/facebook.jpg" />
-        <link href="/other/css/registration/student/registration.1764655992.css" rel="stylesheet" type="text/css" />
-        <script src="/other/js/combined/common_form.1764565072.js" defer="" type="text/javascript" ></script>
-        <script src="/other/js/combined/student-registration.1747374694.js" defer="" type="text/javascript" ></script>
-        <script src="/other/js/student/app_download.1732685003.js" defer="" type="text/javascript" ></script>
-        <script src="/other/js/footer.1760584489.js" defer="" type="text/javascript" ></script>
-        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdwW1ckAAAAAKcsi3VSrXg49B7GXfisCJDmI9kf" defer="" type="text/javascript" ></script>
-        <script nonce="bfBO467qtGdtRQ2R8sLxQA==">
-    function sendToGTM(name, delta, id) {
-        if (typeof dataLayer == 'undefined') {
-            return;
-        }
-        // Assumes the global `dataLayer` array exists, see:
-        // https://developers.google.com/tag-manager/devguide
-        dataLayer.push({
-            event: 'web-vitals',
-            event_category: 'Web Vitals',
-            event_action: name.name,
-            // Google Analytics metrics must be integers, so the value is rounded.
-            // For CLS the value is first multiplied by 1000 for greater precision
-            // (note: increase the multiplier for greater precision if needed).
-            event_value: Math.round(name.name === 'CLS' ? name.delta * 1000 : name.delta),
-            // The 'id' value will be unique to the current page load. When sending
-            // multiple values from the same page (e.g. for CLS), Google Analytics can
-            // compute a total by grouping on this ID (note: requires `eventLabel` to
-            // be a dimension in your report).
-            event_label: name.id,
-        });
-    }
-    webVitals.getCLS(sendToGTM);
-    webVitals.getFID(sendToGTM);
-    webVitals.getLCP(sendToGTM);
-    webVitals.getFCP(sendToGTM);
-    webVitals.getTTFB(sendToGTM);
-</script>
-<script nonce="bfBO467qtGdtRQ2R8sLxQA==">
-//    window.addEventListener('load', function() {
-//        store_session_data();
-//    });
+	<meta name="twitter:creator" content="@internshala" />
+	<meta name="twitter:image:src" content="https://internshala.com//static/images/internshala_og_image.jpg" />
+	<meta name="theme-color" content="#ffffff" />
+	<meta name="msapplication-navbutton-color" content="#ffffff" />
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="stylesheet" href="/css/icons.css" />
 
-//    window.addEventListener('DOMContentLoaded', function() {
-//        store_session_data();
-//    });
+	<link as="font" href="/other/fonts/Inter.woff2?v=3.11" type="font/woff2" crossorigin />
+	<link as="font" href="/other/fonts/internshala-icons.woff2?vw3rgh" type="font/woff2" crossorigin />
+	<script src="/other/js/web_vitals/web-vitals.umd.js"></script>
+	<script src="/other/js/includes/common/libraries.2583691470.js" defer></script>
+	<link rel="stylesheet" href="https://internshala.com//static/cdn/4.4.1/css/bootstrap.min.css" />
 
-    var pdcVersion = "0";
-    var toMakeInitialRequest = 1;
-    if (toMakeInitialRequest == 1) {
-        store_session_data();
-    }
+	<link rel="icon" href="https://internshala.com//favicon.ico?v=5" />
+	<script nonce="bfBO467qtGdtRQ2R8sLxQA==">
+		var os_type = "";
+		var browser_name = 'wget';
+		var is_android = 0;
+		var is_mobile = 1;
+		var l_cookie = "";
+		var view = "registration/student/registration";
+		var user_id_ga = 0;
+		var mainRole = "guest";
+		var to_show_account_activated_message = false;
+		var to_show_subscription_activated_message = false;
+		var location_autocomplete_min_length = 3;
+		var fresherJobsMinCtc = 2;
+		var show_maintenance_ribbon = false;
+		var maintenance_ribbon_message = "";
+		var base_url = 'https://internshala.com/';
+		var bulk_request_url_with_trailing_slash = 'https://internshala.com/';
+		var is_g_recaptcha = "6LdwW1ckAAAAAKcsi3VSrXg49B7GXfisCJDmI9kf";
+		var error_ribbon_support_email = "support@internshala.com";
+	</script>
+	<title>Internships | Jobs | Trainings &amp; Placement Courses | Post a Job</title>
+	<meta name="description"
+		content="Internshala is India&#039;s no.1 career platform trusted by 400K+ companies. We offer 120K+ paid internships, jobs, online trainings, &amp; placement courses." />
+	<meta property="og:title" content="Find the best internships of your choice | Internshala" />
+	<meta property="og:description"
+		content="Choose from 80,000+ brands all across India and land your dream internship completely for free! Register now. )" />
+	<meta property="og:image" content="https://internshala.com//static/images/registration/student/facebook.jpg" />
+	<meta name="twitter:title" content="Find the best internships of your choice | Internshala" />
+	<meta name="twitter:description"
+		content="Apply to internships at HCL, OLX, Cisco, Eros Labs, Greenpeace and more - it&#039;s free :)" />
+	<meta name="twitter:image:src" content="https://internshala.com//static/images/registration/student/facebook.jpg" />
+	<link href="/other/css/registration/student/registration.1764655992.css" rel="stylesheet" type="text/css" />
+	<script src="/other/js/combined/common_form.1764565072.js" defer="" type="text/javascript"></script>
+	<script src="/other/js/combined/student-registration.1747374694.js" defer="" type="text/javascript"></script>
+	<script src="/other/js/student/app_download.1732685003.js" defer="" type="text/javascript"></script>
+	<script src="/other/js/footer.1760584489.js" defer="" type="text/javascript"></script>
+	<script src="https://www.google.com/recaptcha/enterprise.js?render=6LdwW1ckAAAAAKcsi3VSrXg49B7GXfisCJDmI9kf"
+		defer="" type="text/javascript"></script>
+	<script nonce="bfBO467qtGdtRQ2R8sLxQA==">
+		function sendToGTM(name, delta, id) {
+			if (typeof dataLayer == 'undefined') {
+				return;
+			}
+			// Assumes the global `dataLayer` array exists, see:
+			// https://developers.google.com/tag-manager/devguide
+			dataLayer.push({
+				event: 'web-vitals',
+				event_category: 'Web Vitals',
+				event_action: name.name,
+				// Google Analytics metrics must be integers, so the value is rounded.
+				// For CLS the value is first multiplied by 1000 for greater precision
+				// (note: increase the multiplier for greater precision if needed).
+				event_value: Math.round(name.name === 'CLS' ? name.delta * 1000 : name.delta),
+				// The 'id' value will be unique to the current page load. When sending
+				// multiple values from the same page (e.g. for CLS), Google Analytics can
+				// compute a total by grouping on this ID (note: requires `eventLabel` to
+				// be a dimension in your report).
+				event_label: name.id,
+			});
+		}
+		webVitals.getCLS(sendToGTM);
+		webVitals.getFID(sendToGTM);
+		webVitals.getLCP(sendToGTM);
+		webVitals.getFCP(sendToGTM);
+		webVitals.getTTFB(sendToGTM);
+	</script>
+	<script nonce="bfBO467qtGdtRQ2R8sLxQA==">
+		//    window.addEventListener('load', function() {
+		//        store_session_data();
+		//    });
 
-    function store_session_data() {
-        var message = "device=" + getDeviceType();
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState === 4 && this.status === 200) {
-                //Success
-                var responseText = this.responseText;
-                try {
-                    data = JSON.parse(responseText);
-                    if (data.success) {
-                        if(data.toMakeUpdateRequest) {
-                            update_session_data();
-                        }
-                    } else {
-                        //TODO
-                    }
-                } catch (e) {
-                    throw_error(e);
-                }
-            }
-        };
+		//    window.addEventListener('DOMContentLoaded', function() {
+		//        store_session_data();
+		//    });
 
-        xhttp.open("POST", "/info/storeData", true);
-        xhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send(message);
-    }
+		var pdcVersion = "0";
+		var toMakeInitialRequest = 1;
+		if (toMakeInitialRequest == 1) {
+			store_session_data();
+		}
 
-    function update_session_data() {
-        var message = "";
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState === 4 && this.status === 200) {
-                //Success
-            }
-        };
+		function store_session_data() {
+			var message = "device=" + getDeviceType();
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function () {
+				if (this.readyState === 4 && this.status === 200) {
+					//Success
+					var responseText = this.responseText;
+					try {
+						data = JSON.parse(responseText);
+						if (data.success) {
+							if (data.toMakeUpdateRequest) {
+								update_session_data();
+							}
+						} else {
+							//TODO
+						}
+					} catch (e) {
+						throw_error(e);
+					}
+				}
+			};
 
-        xhttp.open("POST", "/info/updateDeviceCookieVersion", true);
-        xhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send(message);
-    }
+			xhttp.open("POST", "/info/storeData", true);
+			xhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send(message);
+		}
 
-    function getDeviceType() {
-        var device;
-        if (typeof isMobile !== 'undefined') {
-            if (isMobile === '1') {
-                device = "mobile";
-            } else {
-                device = "desktop";
-            }
-        } else {
-            device = "NA";
-        }
+		function update_session_data() {
+			var message = "";
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function () {
+				if (this.readyState === 4 && this.status === 200) {
+					//Success
+				}
+			};
 
-        return device;
-    }
+			xhttp.open("POST", "/info/updateDeviceCookieVersion", true);
+			xhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send(message);
+		}
 
-</script>
-    <script nonce="bfBO467qtGdtRQ2R8sLxQA==">
-        if (typeof Moengage !== 'undefined') {
-            const page_type_for_moengage_view = 'registration_page';
-            if (page_type_for_moengage_view) {
-                Moengage.track_event(`${page_type_for_moengage_view}_visits`);
-            }
-        }
-    </script>
-        <script nonce="bfBO467qtGdtRQ2R8sLxQA==">
-        var junk_domain_data = {};
+		function getDeviceType() {
+			var device;
+			if (typeof isMobile !== 'undefined') {
+				if (isMobile === '1') {
+					device = "mobile";
+				} else {
+					device = "desktop";
+				}
+			} else {
+				device = "NA";
+			}
 
-            </script>
-        </head>
+			return device;
+		}
+
+	</script>
+	<script nonce="bfBO467qtGdtRQ2R8sLxQA==">
+		if (typeof Moengage !== 'undefined') {
+			const page_type_for_moengage_view = 'registration_page';
+			if (page_type_for_moengage_view) {
+				Moengage.track_event(`${page_type_for_moengage_view}_visits`);
+			}
+		}
+	</script>
+	<script nonce="bfBO467qtGdtRQ2R8sLxQA==">
+		var junk_domain_data = {};
+
+	</script>
+</head>
 
 <body>
-            <div id="wrapper">
-        <!-- ribbon -->
-<div id='error' class="notification">
-</div>
-<div id="custom_notification_parent">
-    <div id='custom_notification' class="notification notification_general" style="display: none">
-    </div>
-</div>
+	<div id="wrapper">
+		<!-- ribbon -->
+		<div id='error' class="notification">
+		</div>
+		<div id="custom_notification_parent">
+			<div id='custom_notification' class="notification notification_general" style="display: none">
+			</div>
+		</div>
 
-<!-- modal - error message -->
-
-
-<!-- modal - success message -->
-<div id="success_modal" class="modal fade in internshala-modal" style="display: none">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="image_container success_image">
-                    <div class="image"></div>
-                </div>
-                <div class="message_container">
-                    <div class="text-heading heading_4_5 small-device-text-center"></div>
-                    <div class="text-message body-main small-device-text-center"></div>
-                    <div class="button_container">
-                        <button class="btn btn-secondary modal_secondary_btn close_action" data-dismiss= "modal">Cancel</button>
-                        <a class="btn btn-primary modal_primary_btn close_action" data-dismiss= "modal">Close</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- modal - success message -->
-<div id="success_modal_dual_button" class="modal fade in internshala-modal" style="display: none">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="image_container success_image">
-                    <div class="image"></div>
-                </div>
-                <div class="message_container">
-                    <div class="text-heading heading_4_5 small-device-text-center"></div>
-                    <div class="text-message body-main small-device-text-center"></div>
-                    <div class="button_container">
-                        <a class="btn btn-secondary modal_secondary_btn close_action" data-dismiss= "modal">Close</a>
-                        <a class="btn btn-primary modal_primary_btn close_action" data-dismiss= "modal">Close</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- modal - alert message -->
-<div id="alert_modal" class="modal fade in internshala-modal" style="display: none">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="image_container alert_image">
-                    <div class="image"></div>
-                </div>
-                <div class="message_container">
-                    <div class="text-heading heading_4_5 small-device-text-center"></div>
-                    <div class="text-message body-main small-device-text-center"></div>
-                    <div class="button_container">
-                        <a class="btn btn-primary modal_primary_btn close_action" data-dismiss= "modal">Close</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--- confirmation modal-->
-<div id="confirmation_modal" class="modal fade in internshala-modal confirmation_modal" style="display: none">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="message_container">
-                    <div class="text-heading heading_4_5"></div>
-                    <div class="text-message body-main"></div>
-                    <div class="button_container">
-                        <button class="btn btn-secondary modal_secondary_btn close_action" data-dismiss= "modal">Cancel</button>
-                        <a class="btn btn-primary modal_primary_btn yes-button close_action" data-dismiss= "modal">Yes</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="loading_image">
-</div>
-
-<div class="nav_dropdown_backdrop">
-</div>
-
-    <noscript>
-    <div class="notification notification_js_disabled" style="display: block;">
-        Oops, your browser does not support Javascript. Please use Internshala in another browser.
-    </div>
-    </noscript>
-    
-<div class="toast internshala-toast loading_toast" id="loading_toast" style="display: none;">
-    <div class="toast-body-container">
-        <div class="toast-body heading_6_6">
-            Loading, please wait...
-        </div>
-    </div>
-</div>
-
-<div class="toast internshala-toast general_toast" style="display: none;">
-    <div class="toast-body-container">
-        <div class="toast-body heading_6_6">
-        </div>
-    </div>
-</div>
-
-<div class="toast internshala-toast success_toast" style="display: none;">
-    <div class="toast-body-container">
-        <div class="toast-body heading_6_6">
-        </div>
-    </div>
-</div>
-
-<div class="toast internshala-toast error_toast" style="display: none;">
-    <div class="toast-body-container">
-        <div class="toast-body heading_6_6">
-        </div>
-    </div>
-</div>
-
-<div class="toast internshala-toast black_bottom_toast" style="display: none;">
-    <div class="toast-body-container">
-        <div class="toast-body body-main">
-        </div>
-    </div>
-</div>
-
-<div class="popover_overlay">
-</div>
+		<!-- modal - error message -->
 
 
-<div class="chat_notification_loading_image" style="display: none;">
-</div>
-    <div class="modal " id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">
-                        <i class="ic-24-cross" aria-hidden="true"></i>
-                    </button>
-                </div>
-                <div class="modal-body ">
-                            <div id="user-menu-container">
-                            <div id="user-menu">
-                                <div class="row">
-                                    <div class="col-xs-6 col-6 user-menu-item active login_student" id="modal_student">
-                                        Student
-                                    </div>
-                                    <div class="col-xs-6 col-6 user-menu-item login_employer" id="modal_employer">
-                                        Employer / T&P
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                                                    <a class="google_login" id="user_google_login" href="/login/get_google/student" >
+		<!-- modal - success message -->
+		<div id="success_modal" class="modal fade in internshala-modal" style="display: none">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="image_container success_image">
+							<div class="image"></div>
+						</div>
+						<div class="message_container">
+							<div class="text-heading heading_4_5 small-device-text-center"></div>
+							<div class="text-message body-main small-device-text-center"></div>
+							<div class="button_container">
+								<button class="btn btn-secondary modal_secondary_btn close_action"
+									data-dismiss="modal">Cancel</button>
+								<a class="btn btn-primary modal_primary_btn close_action" data-dismiss="modal">Close</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- modal - success message -->
+		<div id="success_modal_dual_button" class="modal fade in internshala-modal" style="display: none">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="image_container success_image">
+							<div class="image"></div>
+						</div>
+						<div class="message_container">
+							<div class="text-heading heading_4_5 small-device-text-center"></div>
+							<div class="text-message body-main small-device-text-center"></div>
+							<div class="button_container">
+								<a class="btn btn-secondary modal_secondary_btn close_action"
+									data-dismiss="modal">Close</a>
+								<a class="btn btn-primary modal_primary_btn close_action" data-dismiss="modal">Close</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-                                <div id="google-button-container" data-source="google_login_modal">
-                                    <div class="google_image_container">
-                                        <div class='google_logo'></div>
-                                    </div>
-                                    <div class="google_content">
-                                        Login with Google
-                                    </div>
-                                </div>
-                            </a>
-                        <div class="helper">
-                            <div class="text2">
-                                <p>OR</p>
-                            </div>
-                            <div class='border'></div>
-                        </div>
-                    
-                    <form id="modal-login-form" method="GET" action="/student/dashboard">
-                        <input type="hidden" name="csrf_test_name" value="9cc9f0e7b8e83a4324c01b07065ab78f" />
-                        <div class="form-group">
-                            <label for="email" class="control-label">Email</label>
-                            <input type="email" class="form-control" id="modal_email" tabindex="1" name="email" placeholder="john@example.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="control-label">Password</label>
-                            <input type="password" class="form-control" id="modal_password" tabindex="2" name="password" placeholder="Must be atleast 6 characters">
-                        </div>
-                        <div class="forgot_password">
-                            <a href="/login/forgot_password" id="forgot-password">Forgot password?</a>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary" id="modal_login_submit" tabindex="3">Login</button>
-                        </div>
-                                <div class="form-group new_to_internshala">
-                                <label>
-                                    New to Internshala? Register (<a href='/registration/student'>Student</a> / <a href="/hire-talent">Company</a>)
-                                </label>
-                            </div>
-                                            </form>
-                </div>
-            </div>
-        </div>
-    </div>
+		<!-- modal - alert message -->
+		<div id="alert_modal" class="modal fade in internshala-modal" style="display: none">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="image_container alert_image">
+							<div class="image"></div>
+						</div>
+						<div class="message_container">
+							<div class="text-heading heading_4_5 small-device-text-center"></div>
+							<div class="text-message body-main small-device-text-center"></div>
+							<div class="button_container">
+								<a class="btn btn-primary modal_primary_btn close_action" data-dismiss="modal">Close</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-<!-- Login modal - error message for employers blocked -->
-<div id="employer_blocked_error_modal" class="modal fade" role="dialog" aria-hidden="true" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="heading">
-                Your account is put on hold.<i style="cursor: pointer;float:right" id="close_modal" data-dismiss="modal" aria-hidden="true" class="ic-24-cross"></i>
-            </div>
-            <div class="heading1">
-                Your account is put on hold.<i style="cursor: pointer;float:right" id="close_modal1" data-dismiss="modal" aria-hidden="true" class="ic-24-cross"></i>
-            </div>
-            <div class="main_content">
+		<!--- confirmation modal-->
+		<div id="confirmation_modal" class="modal fade in internshala-modal confirmation_modal" style="display: none">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="message_container">
+							<div class="text-heading heading_4_5"></div>
+							<div class="text-message body-main"></div>
+							<div class="button_container">
+								<button class="btn btn-secondary modal_secondary_btn close_action"
+									data-dismiss="modal">Cancel</button>
+								<a class="btn btn-primary modal_primary_btn yes-button close_action"
+									data-dismiss="modal">Yes</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-                <div class="line1"></div>
-                <div class="sub_heading">
-                    What happened?
-                </div>
-                <div>
-                    We have determined that this account is violation of Internshala's <span class="primary_color"><a href="https://internshala.com/terms">rules</a></span>.
-                </div>
-                <div class="content_specially_for">
-                    Specifically for,
-                </div>
-                <div class="error_heading" id="heading_content1"></div>
-                <div class="error_content_1" id="error_content1"></div>
-                <div class="error_heading" id="heading_content2"></div>
-                <div class="error_content_1" id="error_content2"></div>
-                <div class="error_content_2">
-                    If you wish to appeal this, or seek further clarification, please contact our team at <span class="primary_color"><a href='mailto:complaints@internshala.com'>complaints@internshala.com</a></span>
-                </div>
-                <div class="line2"></div>
-                <div class="icon_container">
-                    <i class="ic-24-alert-circle"></i>
-                    <div class="icon_content">
-                        If this has happened by mistake, it will automatically be reverted within 24 hours.
-                    </div>
-                </div>
+		<div class="loading_image">
+		</div>
 
-            </div>
-        </div>
-    </div>
-</div>
-<div id="header" class="container-fluid">
-    <div class="max-width-container">
-        <nav class="navbar navbar-expand-md">
-            <div class="brand_container">
-                <a class="navbar-brand" href="/">
-                    <div class="internshala-logo"></div>
-                </a>
-            </div>
-        </nav>
-    </div>
-</div>
+		<div class="nav_dropdown_backdrop">
+		</div>
 
-<div class="container-fluid" id="content">
-    <div id="content-inner">
-        <div class="max-width-container">
-            <div id="registration-container">
-                <div id="registration-container-left">
-                    <div class="registration-content">
-                        <div class="heading">
-                                                            <div>Sign-up and apply for free</div>
-                                <div class='underline'>
-                                    <img class='mobile' src='/static/images/registration/student_new/underline_m.svg'>
-                                </div>
-                                                        </div>
-                                                    <div class="subheading">
-                                3,00,000+ companies hiring on Internshala
-                            </div>
-                                                </div>
-                </div>
-                <div id="registration-container-right" >
+		<noscript>
+			<div class="notification notification_js_disabled" style="display: block;">
+				Oops, your browser does not support Javascript. Please use Internshala in another browser.
+			</div>
+		</noscript>
 
-    
-            <a class="google_login" href="/login/get_google/?utm_source=&utm_medium=&utm_campaign=" >
-            <div id="google-button-container"  data-source="google_registration_page">
-                <div class="google_image_container">
-                    <div class='ic-google-icon-custom'></div>
-                </div>
-                <div class="google_content">
-                    Sign up with Google
-                </div>
-            </div>
-        </a>
-        <div class="email_login">
-            <div id="email-button-container" class="signup_btn_container" >
-                <i class="ic-mail-icon-black-custom"></i>
-                <div class="google_content">
-                    Sign up with Email
-                </div>
-            </div>
-        </div>
-        <div id="form-container">
-        <div class="toggle-registration-container">
-                    <div class="helper">
-                <div class="text2">
-                    <p>OR</p>
-                </div>
-                <div class='border'></div>
-            </div>
-        
-        <form action="/student/verify_email" method="GET">
-                        <input type="hidden" name="csrf_test_name" value="9cc9f0e7b8e83a4324c01b07065ab78f" />
+		<div class="toast internshala-toast loading_toast" id="loading_toast" style="display: none;">
+			<div class="toast-body-container">
+				<div class="toast-body heading_6_6">
+					Loading, please wait...
+				</div>
+			</div>
+		</div>
 
-            <input type="hidden" value="" name="utm_source">
-            <input type="hidden" value="" name="utm_medium">
-            <input type="hidden" value="" name="utm_campaign">
-            <input type="hidden" value="" name="student_referral">
+		<div class="toast internshala-toast general_toast" style="display: none;">
+			<div class="toast-body-container">
+				<div class="toast-body heading_6_6">
+				</div>
+			</div>
+		</div>
 
-            
-            <div class="form-group">
-                <label for="email" class="control-label">Email</label>
-                <input type="email" class="form-control email-field-student-registration" id="email" name="email" value=''  placeholder="john@example.com">
-            </div>
-            <div class="form-group ">
-                <label for="password" class="control-label">Password</label>
-                <input type="password" class="form-control" id="password" name="password" value=""  placeholder="Must be atleast 6 characters">
-            </div>
-            <div class="row">
-                <div class="col-6" id="first_name_container">
-                    <div class="form-group">
-                        <label for="first_name" class="control-label">First Name</label>
-                        <input type="text" class="form-control" id="first_name" name="first_name" value="" placeholder="John">
-                    </div>
-                </div>
-                <div class="col-6" id="last_name_container">
-                    <div class="form-group">
-                        <label for="last_name" class="control-label">Last Name</label>
-                        <input type="text" class="form-control" id="last_name" name="last_name" value="" placeholder="Doe">
-                    </div>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary" id="registration_submit">Sign up</button>
-        </form>
-        </div>
-        <div id="label_toc">
-            By continuing as a candidate, you agree to our <a href="/terms#student" style="text-decoration: underline;" target="_blank">T&C</a>.
-        </div>
-        <div id="login-link-container">Already registered?
-                            <span data-toggle="modal" data-target="#login-modal">Login</span>
-                    </div>
-            </div>
-</div>
-<script nonce="bfBO467qtGdtRQ2R8sLxQA==">
-    var to_show_recaptcha = 0;
-</script>
-                <div id="register_as_employer">
-                    Looking to hire? <a href="/hire-talent?utm_source=stu_reg">Register as an employer</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+		<div class="toast internshala-toast success_toast" style="display: none;">
+			<div class="toast-body-container">
+				<div class="toast-body heading_6_6">
+				</div>
+			</div>
+		</div>
 
-<!-- Google Code for Adwords Conversion Page
+		<div class="toast internshala-toast error_toast" style="display: none;">
+			<div class="toast-body-container">
+				<div class="toast-body heading_6_6">
+				</div>
+			</div>
+		</div>
+
+		<div class="toast internshala-toast black_bottom_toast" style="display: none;">
+			<div class="toast-body-container">
+				<div class="toast-body body-main">
+				</div>
+			</div>
+		</div>
+
+		<div class="popover_overlay">
+		</div>
+
+
+		<div class="chat_notification_loading_image" style="display: none;">
+		</div>
+		<div class="modal" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<i class="cross-icon-custom" aria-hidden="true"></i>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div id="user-menu-container">
+							<div id="user-menu">
+								<div class="row no-gutters">
+									<div class="col-4 user-menu-item active login_student text-center py-2"
+										id="modal_student">
+										Student
+									</div>
+									<div class="col-4 user-menu-item login_employer text-center py-2 border-left border-right"
+										id="modal_college">
+										College
+									</div>
+									<div class="col-4 user-menu-item login_employer text-center py-2" id="modal_mentor">
+										Mentor
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="helper">
+							<div class="text2">
+								<p>OR</p>
+							</div>
+							<div class='border'></div>
+						</div>
+
+						<!-- MAIN LOGIN FORM -->
+						<form role="form" id="modal-login-form" method="POST" action="/login">
+							<!-- This hidden field tells Spring which tab was selected -->
+							<input type="hidden" name="userType" id="userType" value="student" />
+
+							<div class="form-group">
+								<label for="email" class="control-label">Email</label>
+								<input type="email" class="form-control" id="modal_email" tabindex="1" name="email"
+									placeholder="john@example.com" required>
+							</div>
+							<div class="form-group">
+								<label for="password" class="control-label">Password</label>
+								<input type="password" class="form-control" id="modal_password" tabindex="2"
+									name="password" placeholder="Must be at least 6 characters" required>
+							</div>
+							<div class="forgot_password">
+								<a href="/login/forgot_password" id="forgot-password">Forgot password?</a>
+							</div>
+							<div class="form-group">
+								<button type="submit" class="btn btn-primary" id="modal_login_submit" tabindex="3">
+									Login
+								</button>
+							</div>
+							<div class="form-group new_to_internshala">
+								<label>
+									New to Internshala? Register (
+									<a href='/student/registration'>Student</a> /
+									<a href="/employer/registration">Company</a>)
+								</label>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Login modal - error message for employers blocked -->
+		<div id="employer_blocked_error_modal" class="modal fade" role="dialog" aria-hidden="true" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="heading">
+						Your account is put on hold.<i style="cursor: pointer;float:right" id="close_modal"
+							data-dismiss="modal" aria-hidden="true" class="cross-icon-custom"></i>
+					</div>
+					<div class="heading1">
+						Your account is put on hold.<i style="cursor: pointer;float:right" id="close_modal1"
+							data-dismiss="modal" aria-hidden="true" class="cross-icon-custom"></i>
+					</div>
+					<div class="main_content">
+
+						<div class="line1"></div>
+						<div class="sub_heading">
+							What happened?
+						</div>
+						<div>
+							We have determined that this account is violation of Internshala's <span
+								class="primary_color"><a href="https://internshala.com/terms">rules</a></span>.
+						</div>
+						<div class="content_specially_for">
+							Specifically for,
+						</div>
+						<div class="error_heading" id="heading_content1"></div>
+						<div class="error_content_1" id="error_content1"></div>
+						<div class="error_heading" id="heading_content2"></div>
+						<div class="error_content_1" id="error_content2"></div>
+						<div class="error_content_2">
+							If you wish to appeal this, or seek further clarification, please contact our team at <span
+								class="primary_color"><a
+									href='mailto:complaints@internshala.com'>complaints@internshala.com</a></span>
+						</div>
+						<div class="line2"></div>
+						<div class="icon_container">
+							<i class="ic-24-alert-circle"></i>
+							<div class="icon_content">
+								If this has happened by mistake, it will automatically be reverted within 24 hours.
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="header" class="container-fluid">
+			<div class="max-width-container">
+				<nav class="navbar navbar-expand-md">
+					<div class="brand_container">
+						<a class="navbar-brand" href="/">
+							<div class="internshala-logo"></div>
+						</a>
+					</div>
+				</nav>
+			</div>
+		</div>
+
+		<div class="container-fluid" id="content">
+			<div id="content-inner">
+				<div class="max-width-container">
+					<div id="registration-container">
+						<div id="registration-container-left">
+							<div class="registration-content">
+								<div class="heading">
+									<div>Sign-up and apply for free</div>
+									<div class='underline'>
+										<img class='mobile'
+											src='/static/images/registration/student_new/underline_m.svg'>
+									</div>
+								</div>
+								<div class="subheading">
+									3,00,000+ companies hiring on IAPS
+								</div>
+							</div>
+						</div>
+						<div id="registration-container-right">
+
+
+
+							<div class="email_login">
+								<div id="email-button-container" class="signup_btn_container">
+									<i class="ic-mail-icon-black-custom"></i>
+									<div class="google_content">
+										Sign up with Email
+									</div>
+								</div>
+							</div>
+							<div id="form-container">
+								<div class="toggle-registration-container">
+									<div class="helper">
+										<div class="text2">
+											<p>OR</p>
+										</div>
+										<div class='border'></div>
+									</div>
+
+									<form action="/student/verify_email" method="GET">
+										<input type="hidden" name="csrf_test_name"
+											value="9cc9f0e7b8e83a4324c01b07065ab78f" />
+
+										<input type="hidden" value="" name="utm_source">
+										<input type="hidden" value="" name="utm_medium">
+										<input type="hidden" value="" name="utm_campaign">
+										<input type="hidden" value="" name="student_referral">
+
+
+										<div class="form-group">
+											<label for="email" class="control-label">Email</label>
+											<input type="email" class="form-control email-field-student-registration"
+												id="email" name="email" value='' placeholder="john@example.com">
+										</div>
+										<div class="form-group ">
+											<label for="password" class="control-label">Password</label>
+											<input type="password" class="form-control" id="password" name="password"
+												value="" placeholder="Must be atleast 6 characters">
+										</div>
+										<div class="row">
+											<div class="col-6" id="first_name_container">
+												<div class="form-group">
+													<label for="first_name" class="control-label">First Name</label>
+													<input type="text" class="form-control" id="first_name"
+														name="first_name" value="" placeholder="John">
+												</div>
+											</div>
+											<div class="col-6" id="last_name_container">
+												<div class="form-group">
+													<label for="last_name" class="control-label">Last Name</label>
+													<input type="text" class="form-control" id="last_name"
+														name="last_name" value="" placeholder="Doe">
+												</div>
+											</div>
+										</div>
+										<button type="submit" class="btn btn-primary" id="registration_submit">Sign
+											up</button>
+									</form>
+								</div>
+								<div id="label_toc">
+									By continuing as a candidate, you agree to our <a href="/terms#student"
+										style="text-decoration: underline;" target="_blank">T&C</a>.
+								</div>
+								<div id="login-link-container">Already registered?
+									<span data-toggle="modal" data-target="#login-modal">Login</span>
+								</div>
+							</div>
+						</div>
+						<script nonce="bfBO467qtGdtRQ2R8sLxQA==">
+							var to_show_recaptcha = 0;
+						</script>
+						<div id="register_as_employer">
+							Looking to hire? <a href="/employer/registration">Register as an employer</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Google Code for Adwords Conversion Page
 In your html page, add the snippet and call
 goog_report_conversion when someone clicks on the
 chosen link or button. -->
-<script nonce="bfBO467qtGdtRQ2R8sLxQA==">
-  /* <![CDATA[ */
-  goog_snippet_vars = function() {
-    var w = window;
-    w.google_conversion_id = 971396886;
-    w.google_conversion_label = "2vuUCPXQomcQlq6ZzwM";
-    w.google_remarketing_only = false;
-    w.google_conversion_value = 0;
-  }
-  // DO NOT CHANGE THE CODE BELOW.
-  goog_report_conversion = function(url) {
-    goog_snippet_vars();
-    window.google_conversion_format = "3";
-    var opt = new Object();
-    opt.onload_callback = function() {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  }
-  var conv_handler = window['google_trackConversion'];
-  if (typeof(conv_handler) == 'function') {
-    conv_handler(opt);
-  }
-}
-/* ]]> */
-</script>
-<script type="text/javascript"
-  src="https://www.googleadservices.com/pagead/conversion_async.js">
-</script>
+		<script nonce="bfBO467qtGdtRQ2R8sLxQA==">
+			/* <![CDATA[ */
+			goog_snippet_vars = function () {
+				var w = window;
+				w.google_conversion_id = 971396886;
+				w.google_conversion_label = "2vuUCPXQomcQlq6ZzwM";
+				w.google_remarketing_only = false;
+				w.google_conversion_value = 0;
+			}
+			// DO NOT CHANGE THE CODE BELOW.
+			goog_report_conversion = function (url) {
+				goog_snippet_vars();
+				window.google_conversion_format = "3";
+				var opt = new Object();
+				opt.onload_callback = function () {
+					if (typeof (url) != 'undefined') {
+						window.location = url;
+					}
+				}
+				var conv_handler = window['google_trackConversion'];
+				if (typeof (conv_handler) == 'function') {
+					conv_handler(opt);
+				}
+			}
+			/* ]]> */
+		</script>
+		<script type="text/javascript" src="https://www.googleadservices.com/pagead/conversion_async.js">
+		</script>
 
-<script nonce="bfBO467qtGdtRQ2R8sLxQA==">
-    var is_from_apply_now_flow = 0;
-</script>        </div>
-        <script nonce="bfBO467qtGdtRQ2R8sLxQA==">
-    /* <![CDATA[ */
-    var google_conversion_id = 981478532;
-    var google_custom_params = window.google_tag_params;
-    var google_remarketing_only = true;
-    /* ]]> */
-</script>
+		<script nonce="bfBO467qtGdtRQ2R8sLxQA==">
+			var is_from_apply_now_flow = 0;
+		</script>
+	</div>
+	<script nonce="bfBO467qtGdtRQ2R8sLxQA==">
+		/* <![CDATA[ */
+		var google_conversion_id = 981478532;
+		var google_custom_params = window.google_tag_params;
+		var google_remarketing_only = true;
+		/* ]]> */
+	</script>
 
-<script type="text/javascript" src="https://www.googleadservices.com/pagead/conversion.js">
-</script>
+	<script type="text/javascript" src="https://www.googleadservices.com/pagead/conversion.js">
+	</script>
 
-<noscript>
-    <div style="display:inline;">
-        <img height="1" width="1" style="border-style:none;" alt="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/981478532/?value=0&amp;guid=ON&amp;script=0"/>
-    </div>
-</noscript>
+	<noscript>
+		<div style="display:inline;">
+			<img height="1" width="1" style="border-style:none;" alt=""
+				src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/981478532/?value=0&amp;guid=ON&amp;script=0" />
+		</div>
+	</noscript>
 
-    <script nonce="bfBO467qtGdtRQ2R8sLxQA==">
-        var is_embedded_app = 'no';
-        var is_android_user = 'no';
-        var is_guest = 1;
-        var isInfiniteScroll = 'no' == 'yes';
-        var is_company_page = 0;
-        var to_show_pgc_campaign_ribbon = false;
-        var ai_pgc_ribbon_message = "";
-        var stt_pgc_ribbon_content = "<a href=\"https:\/\/trainings.internshala.com\/?utm_source=IS_ribbon\" style=\"color: #fff; display: block; line-height: 22px;\">Upskill and land your dream career - Limited period offer! <span style=\"text-decoration: underline\">Know More<\/span><\/a>";
-        setTimeout(function() {
-            var loading_toast = document.getElementById("loading_toast");
-            if (typeof loading_toast !== 'undefined' && loading_toast) {
-                loading_toast.style.display = "block";
-            }
-        }, 2000);
-                    junk_domain_data = {"gmail.com":["gmai.com","gamil.com","gmail.con","gmil.com","gnail.com","gmail.cim","gmail.co","gamail.com","gmial.com","gmaill.com","gmal.com","g.mail.com","gmaiil.com","gmail.coom","gmail.xom","gmali.com","gmaip.com","g-mail.com","gmail.comm","gmaul.com","gmqil.com","gma.com","g.mail","googlemail.com","gimal.com","gmail.vom","gimail.com","gmaio.com","gmaik.com","gmaol.com","gmailm.com","gemail.com","gmail.in","gmail.coml","gail.com","gmail.cm","gmsil.com","gmail.clm","gmill.com","gami.com","gmail.ocm","gmain.com","gmiail.com","gmail.comn","gmaail.com","gmail.ckm","gmail.comcom","gamil.co","gmail.com.com","gmai8l.com","gamil.comm","gmail.ckn","g-mail.come","gimeil.com","g.mali.com","gmail.comb","ggmail.com","gmail.combus","gmail.comch","gma2il.com","gimel.com","gmai.lcom","gmail.come","gmalil.com","gmail.comk","gmeil.com","gmail.cin","gmail.comlll","gml.com","gmail.comlo","ghmail.com","gmail.commaniraj","gimal.co","gamile.com","gmaaail.com","gmail.comopp","gemil.com","gmail.comp","gmajl.com","gmail.compin","gmaigmai.com","gmail.comrith","gmamil.com","gmail.comt","gmail.comw","gmail.cam","gmail.comy","gmial.come","gani.com","gmile.com","gmail.cpm","gmit.com","gmail.gom","gmmail.com","gmail.lcom","gmail.clom","g.mail.co","gmail.om","gmail.co.com","gmail.v.com","gamil.come","gmail.coma","gmail.coman","gmail.comar"],"yahoo.com":["yaho.com"]}                </script>
-    </body>
+	<script>
+	    document.addEventListener('DOMContentLoaded', function () {
+	        const tabs = document.querySelectorAll('#user-menu .user-menu-item');
+	        const hiddenInput = document.getElementById('userType');
+	        const googleBtn = document.getElementById('user_google_login');
 
-    </html>
+	        tabs.forEach(tab => {
+	            tab.addEventListener('click', function () {
+	                // Update active tab visually
+	                tabs.forEach(t => t.classList.remove('active'));
+	                this.classList.add('active');
+
+	                // Map tab ID to userType value
+	                const userType = this.id.replace('modal_', ''); // modal_student → student
+	                hiddenInput.value = userType;
+
+	                // Update Google login URL automatically
+	                googleBtn.href = `/login/get_google/${userType}`;
+	            });
+	        });
+
+	        // Set correct value on page load (in case default active tab changes)
+	        const activeTab = document.querySelector('#user-menu .user-menu-item.active');
+	        if (activeTab) {
+	            const userType = activeTab.id.replace('modal_', '');
+	            hiddenInput.value = userType;
+	            googleBtn.href = `/login/get_google/${userType}`;
+	        }
+	    });
+	</script>
+	<script nonce="bfBO467qtGdtRQ2R8sLxQA==">
+		var is_embedded_app = 'no';
+		var is_android_user = 'no';
+		var is_guest = 1;
+		var isInfiniteScroll = 'no' == 'yes';
+		var is_company_page = 0;
+		var to_show_pgc_campaign_ribbon = false;
+		var ai_pgc_ribbon_message = "";
+		var stt_pgc_ribbon_content = "<a href=\"https:\/\/trainings.internshala.com\/?utm_source=IS_ribbon\" style=\"color: #fff; display: block; line-height: 22px;\">Upskill and land your dream career - Limited period offer! <span style=\"text-decoration: underline\">Know More<\/span><\/a>";
+		setTimeout(function () {
+			var loading_toast = document.getElementById("loading_toast");
+			if (typeof loading_toast !== 'undefined' && loading_toast) {
+				loading_toast.style.display = "block";
+			}
+		}, 2000);
+		junk_domain_data = {"gmail.com": ["gmai.com", "gamil.com", "gmail.con", "gmil.com", "gnail.com", "gmail.cim", "gmail.co", "gamail.com", "gmial.com", "gmaill.com", "gmal.com", "g.mail.com", "gmaiil.com", "gmail.coom", "gmail.xom", "gmali.com", "gmaip.com", "g-mail.com", "gmail.comm", "gmaul.com", "gmqil.com", "gma.com", "g.mail", "googlemail.com", "gimal.com", "gmail.vom", "gimail.com", "gmaio.com", "gmaik.com", "gmaol.com", "gmailm.com", "gemail.com", "gmail.in", "gmail.coml", "gail.com", "gmail.cm", "gmsil.com", "gmail.clm", "gmill.com", "gami.com", "gmail.ocm", "gmain.com", "gmiail.com", "gmail.comn", "gmaail.com", "gmail.ckm", "gmail.comcom", "gamil.co", "gmail.com.com", "gmai8l.com", "gamil.comm", "gmail.ckn", "g-mail.come", "gimeil.com", "g.mali.com", "gmail.comb", "ggmail.com", "gmail.combus", "gmail.comch", "gma2il.com", "gimel.com", "gmai.lcom", "gmail.come", "gmalil.com", "gmail.comk", "gmeil.com", "gmail.cin", "gmail.comlll", "gml.com", "gmail.comlo", "ghmail.com", "gmail.commaniraj", "gimal.co", "gamile.com", "gmaaail.com", "gmail.comopp", "gemil.com", "gmail.comp", "gmajl.com", "gmail.compin", "gmaigmai.com", "gmail.comrith", "gmamil.com", "gmail.comt", "gmail.comw", "gmail.cam", "gmail.comy", "gmial.come", "gani.com", "gmile.com", "gmail.cpm", "gmit.com", "gmail.gom", "gmmail.com", "gmail.lcom", "gmail.clom", "g.mail.co", "gmail.om", "gmail.co.com", "gmail.v.com", "gamil.come", "gmail.coma", "gmail.coman", "gmail.comar"], "yahoo.com": ["yaho.com"]}                </script>
+</body>
+
+
+</html>

@@ -16,4 +16,9 @@ public class HomeController {
     public String error() {
         return "error";
     }
+
+    @GetMapping("/internships")
+    public String internshipAll() {
+        return "all-internships";
+    }
 }

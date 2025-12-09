@@ -1,10 +1,7 @@
 package com.oasystspl.internship.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/student")
@@ -79,4 +76,13 @@ public class StudentController {
         return "internship-example";
     }
 
+    @GetMapping("/verify_email")
+    public String verifyEmail() {
+        return "student-verify-email";
+    }
+
+    @PostMapping("/verify_email")
+    public String verifyEmailSubmit() {
+        return "redirect:/student/dashboard";
+    }
 }

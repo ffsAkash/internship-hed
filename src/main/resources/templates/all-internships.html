@@ -29,6 +29,7 @@
                 <link rel="stylesheet" href="https://internshala.com//static/cdn/4.4.1/css/bootstrap.min.css" />
 
     <link rel="icon" href="https://internshala.com//favicon.ico?v=5" />
+	<link rel="stylesheet" href="/css/icons.css" />
     <script nonce="QGUoZS5KA7E5z+JMiuU16A==">
         var os_type = "";
         var browser_name = 'wget';
@@ -187,11 +188,7 @@
 <body>
             <div id="wrapper">
         <!-- ribbon -->
-<div id='error' class="notification">
-</div>
 
-<div id='general_notification' class="notification notification_general" style="display: none">
-</div>
 
 <div id="custom_notification_parent">
     <div id='custom_notification' class="notification notification_general" style="display: none">
@@ -537,7 +534,7 @@
         <ul class="navbar-nav nav_menu_container">
             <li class="nav-item internship_container_hover dropdown dropdown-hover dropdown_backdrop">
     <a class="nav-link dropdown-toggle internship_link" href="/internships/?utm_source=is_header" id="internships_new_superscript">Internships
-        <i class="is_icon_header ic-24-filled-down-arrow"></i>
+		<i class="header-dropdown-arrow-custom"></i>
     </a>
     <div class="dropdown-menu dropdown-menu-center menu_dropdown guest_dropdown " id="internships-dropdown">
         <div class="dropdown-inner">
@@ -655,7 +652,7 @@
     <a class="nav-link dropdown-toggle trainings_link menu-link" href="https://trainings.internshala.com/?utm_source=is_web_internshala-menu-dropdown1" id="trainings_dropdown_link" rel="noopener" target="_blank">
         Courses                    <div class="contest" id="course_superscript">
             OFFER            </div>
-                <i class="is_icon_header ic-24-filled-down-arrow"></i>
+			<i class="header-dropdown-arrow-custom"></i>
     </a>
     <div class="training-dropdown-content ">
                 <div class="training-box  student">
@@ -757,9 +754,7 @@
     var isNewHeader = 1;
 </script>
 <li class="nav-item job_container_hover dropdown dropdown-hover dropdown_backdrop">
-    <a class="nav-link dropdown-toggle job_link" href="/jobs/?utm_source=is_header" id="jobs_new_superscript">Jobs
-        <i class="is_icon_header ic-24-filled-down-arrow"></i>
-    </a>
+   
     <div class="dropdown-menu dropdown-menu-center menu_dropdown guest_dropdown" id="jobs-dropdown">
         <div class="dropdown-inner">
             <div class="job-menu">
@@ -889,7 +884,8 @@
 </li>
 
             <li class="nav-item dropdown dropdown-hover">
-                <a class="nav-link dropdown-toggle">Login / Register <i class="is_icon_header ic-24-filled-down-arrow"></i></a>
+                <a class="nav-link dropdown-toggle">Login / Register 				<i class="header-dropdown-arrow-custom"></i>
+</a>
 
 
                 <div class="dropdown-menu dropdown-menu-center menu_dropdown" id="login_register-dropdown">
@@ -925,63 +921,6 @@
     </div>
 </div>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
-    <div class="modal subscription_alert new" tabindex="-1" role="dialog">
-        <div class="content">
-            <!-- heading removed -->
-            <div class="top-section">
-                <div class="ribbon ribbon-top-left"><span>One time offer</span></div>
-                <div class="img-box">
-                <picture>
-                    <source media="(max-width: 575px)" srcset="https://internshala.com//static/images/internship/subscription-popup/r575.png">
-                    <img class="modal-img " src="https://internshala.com/static/images/internship/subscription-popup/r1920.png">
-                </picture>
-                </div>
-
-                <i id="close_popup" class="ic-24-cross" data-dismiss="modal"></i>
-            </div>
-            <div class="body">
-                <div class="body-heading">Sign up now to unlock</div>
-                <div class="points-container">
-                    <div class="point-container">
-                        <i class="ic-22-check-circle"></i>
-                        <div class="point-text"><div class="bold-text">FREE</div> AI Career Guide worth ₹599</div>
-                    </div>
-                    <div class="point-container">
-                        <i class="ic-22-check-circle"></i>
-                        <div class="point-text">Custom job alerts delivered to your inbox</div>
-                    </div>
-                </div>
-                <div class="timer-container">
-                    Valid only for <div class="timer" id="timer">05m : 00s</div>
-                </div>
-                <div class="cta-container">
-                    <div id="label_toc">
-                        By signing up, you agree to our <a href="/terms#student" target="_blank">Terms and Conditions</a>.
-                    </div>
-                    <a class="google_login" href="/login/get_google/?utm_source=modal_signup_search" >
-                        <div id="google-button-container">
-                            <div class="google_image_container">
-                                <img src="/images/login/google_logo.png">
-                            </div>
-                            <div class="google_content">
-                                Sign up with Google
-                            </div>
-                        </div>
-                    </a>
-                    <div class="helper">
-                        <div class="text2"><p>OR</p></div>
-                        <div class='border-new'></div>
-                    </div>
-                    <div class="sign-up-cta">
-                        <a href="/registration/student/?utm_source=modal_signup_search">Sign up with Email</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 
 <script nonce="QGUoZS5KA7E5z+JMiuU16A==">
         var distance = 5 * 60 * 1000;
@@ -1176,7 +1115,7 @@
                 <input type="text" class="form-control pop-mobile" id="keywords_mobile"  value="" name="keywords" placeholder = "e.g. Design, Mumbai, Infosys"  autocomplete="off">
                 <span class="input-group-btn cross_btn_container"><button class="cross_btn" type="button"><i class="ic-16-cross"></i> </button></span>
                 <button type="submit"  id="search_mobile" class="btn btn-primary showGeneralToastOnMobileFalse" >
-                    <i class="ic-16-search"></i>
+                    <i class="ic-search-icon-custom"></i>
                 </button>
             </div>
         </div>
@@ -1225,14 +1164,7 @@
         <div class="max-width-container">
             <div id="search_page_breadcrumbs">
 
-<div class="breadcrumb nav">
-        <span class="breadcrumb-item">
-        <a class="breadcrumb-link "  href="https://internshala.com/">Home</a>
-    </span>
-        <span class="breadcrumb-item">
-        <a class="breadcrumb-link active"  data-toggle="tab"  href="https://internshala.com/internships/">Internships</a>
-    </span>
-    </div>
+
             </div>
             <div id="sticky_mobile_filter" class="">
                 <div id="search_criteria_mobile_container" class="table-cell">
@@ -1322,7 +1254,7 @@
 
                                             <a id="save_as_alert_cta" class="save-as-alert-cta" href="/registration/student">
                             <div class="save-as-alert-mobile" id="save_as_alert_mobile">
-                                <div class="bell_icon"><i class="ic-24-bell"></i>
+                                <div class="bell_icon"><i class="ic-bell-icon-custom"></i>
                                     <div class="dot"></div>
                                 </div>
                                 <div class="save-as-alert-heading">Save this search as alert</div>
@@ -1352,14 +1284,14 @@
     <div id="filters" >
                     <a id="save_as_alert_cta" class="save-as-alert-cta" href="/registration/student">
                 <div class="save-as-alert" id="save_as_alert">
-                    <div class="bell_icon"><i class="ic-24-bell"></i><div class="dot"></div></div>
+                    <div class="bell_icon"><i class="ic-bell-icon-custom"></i><div class="dot"></div></div>
                     <div class="save-as-alert-heading">Save this search as alert</div>
                 </div>
             </a>
 
         <div class="form-container">
             <div class="filterUi">
-                <i id="filter_ui_icon_desktop" class="ic-16-filter"></i>
+                <i id="filter_ui_icon_desktop_custom" class="ic-filter-custom"></i>
                 <span id="filter_ui_heading_desktop" class="heading_5">Filters</span>
             </div>
 
@@ -1563,7 +1495,7 @@
 
                 <span class="input-group-btn search_btn_container">
                     <button id="search" class="btn btn-input btn-primary" type="submit">
-                        <i class="ic-16-search"></i>
+                        <i class="ic-search-icon-custom"></i>
                     </button>
                 </span>
             </div>
@@ -1625,7 +1557,7 @@
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Delhi</a>                                                        </span>
 
@@ -1634,13 +1566,13 @@
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 6,000 - 13,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -1650,7 +1582,7 @@
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 Selected intern's day-to-day responsibilites include:
 
@@ -1675,7 +1607,7 @@
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-info"><i class="ic-16-reschedule"></i><span>3 days ago</span></div>
+                                            <div class="status-info"><i class="ic-reschedule-icon-custom "></i><span>3 days ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -1683,8 +1615,7 @@
                                         </div>
                                                         <div class="gray-labels">
                                                     <div class="ppo_status">
-                                <i class="ic-24-experience"></i>
-                                <span>Job offer upto <span style="font-weight: 500;">₹ 2.4LPA</span> post internship</span>
+                             
                             </div>
                                         </div>
                             </div>
@@ -1720,7 +1651,7 @@
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Thane, Navi Mumbai, Mumbai</a>                                                                (Hybrid)
                                         <span style="vertical-align: middle">
@@ -1733,13 +1664,13 @@
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 10,000 - 15,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>2 Months</span>
                     </div>
                     <!-- /duration -->
@@ -1749,7 +1680,7 @@
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Conceptualizing and creating engaging narrative content for clients (reels, carousels, graphics) at a pace of 3–4 posts per month.
 2. Collaborating with a lead producer to shape new client briefs and develop content strategies.
@@ -1761,7 +1692,7 @@
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>2 days ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>2 days ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -1806,7 +1737,7 @@
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Delhi</a>                                                        </span>
 
@@ -1815,13 +1746,13 @@
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 12,000 - 15,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>3 Months</span>
                     </div>
                     <!-- /duration -->
@@ -1831,7 +1762,7 @@
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 We’re on the hunt for a talented, creative, and self-driven Video Editor to join the Arata team ASAP! If you’ve got at least 6 months to 2 years of experience creating killer videos for performance ads and social media—especially with motion graphics—we want to hear from you!
 
@@ -1856,7 +1787,7 @@
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-inactive"><i class="ic-16-reschedule"></i><span>1 week ago</span></div>
+                                            <div class="status-inactive"><i class="ic-reschedule-icon-custom "></i><span>1 week ago</span></div>
                                         </div>
                                                     </div>
 
@@ -1891,7 +1822,7 @@
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Delhi, Ghaziabad, Greater Noida, Noida</a>                                                                (Hybrid)
                                         <span style="vertical-align: middle">
@@ -1904,13 +1835,13 @@
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 8,000 - 15,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>4 Months</span>
                     </div>
                     <!-- /duration -->
@@ -1920,7 +1851,7 @@
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Develop and oversee overall performance marketing strategy
 2. Create and manage Google Ad campaigns. (SEM)
@@ -1935,7 +1866,7 @@
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>1 day ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>1 day ago</span></div>
                                         </div>
                                                     </div>
 
@@ -1970,7 +1901,7 @@
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Gurgaon</a>                                                        </span>
 
@@ -1979,13 +1910,13 @@
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 5,000 - 12,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>3 Months</span>
                     </div>
                     <!-- /duration -->
@@ -1995,7 +1926,7 @@
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 Selected intern’s day-to-day responsibilities include:
 
@@ -2012,7 +1943,7 @@
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-info"><i class="ic-16-reschedule"></i><span>3 days ago</span></div>
+                                            <div class="status-info"><i class="ic-reschedule-icon-custom "></i><span>3 days ago</span></div>
                                         </div>
                                                     </div>
 
@@ -2051,7 +1982,7 @@
                 Continue with Google
             </a>
             <a class="email_cta cta" href="/registration/student?utm_source=register_nudge_search&referral=register_nudge_search">
-                <i class="ic-24-mail"></i>
+                <i class="ic-mail-icon-black-custom"></i>
                 Continue with Email
             </a>
         </div>
@@ -2087,7 +2018,7 @@
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Gurgaon</a>                                                        </span>
 
@@ -2096,13 +2027,13 @@
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 8,000 - 12,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>3 Months</span>
                     </div>
                     <!-- /duration -->
@@ -2112,7 +2043,7 @@
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Assist in lead registration and digital data capture.
 2. Engage with visitors and promote our brand.
@@ -2126,7 +2057,7 @@
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>2 days ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>2 days ago</span></div>
                                         </div>
                                                     </div>
 
@@ -2161,7 +2092,7 @@
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Delhi</a>                                                        </span>
 
@@ -2170,13 +2101,13 @@
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 5,000 - 8,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -2186,7 +2117,7 @@
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Document and organize all key discussions, decisions, and action points across meetings, calls, and internal discussions.
 2. Manage and update the founder’s calendar, ensuring smooth scheduling, timely reminders, and conflict-free planning.
@@ -2203,7 +2134,7 @@
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-info"><i class="ic-16-reschedule"></i><span>4 days ago</span></div>
+                                            <div class="status-info"><i class="ic-reschedule-icon-custom "></i><span>4 days ago</span></div>
                                         </div>
                                                     </div>
 
@@ -2238,7 +2169,7 @@
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Faridabad</a>                                                        </span>
 
@@ -2247,13 +2178,13 @@
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 8,000 - 15,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>3 Months</span>
                     </div>
                     <!-- /duration -->
@@ -2263,7 +2194,7 @@
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Create social media creatives for us and our clients
 2. Create creatives for ads
@@ -2275,7 +2206,7 @@
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-info"><i class="ic-16-reschedule"></i><span>5 days ago</span></div>
+                                            <div class="status-info"><i class="ic-reschedule-icon-custom "></i><span>5 days ago</span></div>
                                         </div>
                                                         <div class="gray-labels">
                                                     <div class="ppo_status">
@@ -2316,7 +2247,7 @@
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Pune</a>                                                        </span>
 
@@ -2325,13 +2256,13 @@
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 5,000 - 8,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -2341,7 +2272,7 @@
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Assist in loan documentation and application processing.
 2. Coordinate with banks/NBFCs for loan status.
@@ -2357,7 +2288,7 @@
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-info"><i class="ic-16-reschedule"></i><span>5 days ago</span></div>
+                                            <div class="status-info"><i class="ic-reschedule-icon-custom "></i><span>5 days ago</span></div>
                                         </div>
                                                     </div>
 
@@ -2392,7 +2323,7 @@
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Faridabad, Delhi, Ghaziabad, Greater Noida, Noida</a>                                                        </span>
 
@@ -2401,13 +2332,13 @@
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 6,000 - 7,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>3 Months</span>
                     </div>
                     <!-- /duration -->
@@ -2417,7 +2348,7 @@
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Manage CRM entries and keep customer data updated.
 2. Assist the sales team with follow-ups and lead coordination.
@@ -2434,7 +2365,7 @@
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-inactive"><i class="ic-16-reschedule"></i><span>3 weeks ago</span></div>
+                                            <div class="status-inactive"><i class="ic-reschedule-icon-custom "></i><span>3 weeks ago</span></div>
                                         </div>
                                                         <div class="gray-labels">
                                                     <div class="ppo_status">
@@ -2524,7 +2455,7 @@
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Lucknow</a>                                                        </span>
 
@@ -2533,13 +2464,13 @@
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 15,000 - 30,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -2549,7 +2480,7 @@
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Assisting talent acquisition operation, which includes coordinating with the candidate and team leaders, scheduling interviews, and creating offer letters
 2. Managing the candidate interview process
@@ -2566,7 +2497,7 @@
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>Just now</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>Just now</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -2605,7 +2536,7 @@
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Tamil Nadu</a>                                                        </span>
 
@@ -2614,13 +2545,13 @@
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 10,000 - 12,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>4 Months</span>
                     </div>
                     <!-- /duration -->
@@ -2630,7 +2561,7 @@
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Assist in developing and executing a comprehensive field strategy aligned with Government campaign goals.
 2. Support in identifying and onboarding key stakeholders, influencers, Government-Interested Individuals, community leaders, partners, and local organizations.
@@ -2647,7 +2578,7 @@
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>Today</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>Today</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -2686,7 +2617,7 @@
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Chennai</a>                                                        </span>
 
@@ -2695,13 +2626,13 @@
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 7,000 - 10,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>2 Months</span>
                     </div>
                     <!-- /duration -->
@@ -2711,7 +2642,7 @@
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 Are you passionate about creating visually stunning videos and editing them to perfection? Hinisys Software is looking for a talented Video Editing/Making intern to join our team. If you have a strong grasp of Adobe Photoshop, Adobe Premiere Pro, Adobe Illustrator, and video making skills, then we want to hear from you!
 
@@ -2732,7 +2663,7 @@ If you are a creative individual with a passion for video production, this inter
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>Few hours ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>Few hours ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -2771,7 +2702,7 @@ If you are a creative individual with a passion for video production, this inter
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Chennai</a>                                                        </span>
 
@@ -2780,13 +2711,13 @@ If you are a creative individual with a passion for video production, this inter
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 2,000 - 3,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>3 Months</span>
                     </div>
                     <!-- /duration -->
@@ -2796,7 +2727,7 @@ If you are a creative individual with a passion for video production, this inter
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Managing and evaluating data to determine the effectiveness of a service.
 2. Approaching different clients for our services and taking them towards closure
@@ -2809,7 +2740,7 @@ If you are a creative individual with a passion for video production, this inter
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>Few hours ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>Few hours ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -2848,7 +2779,7 @@ If you are a creative individual with a passion for video production, this inter
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Ghaziabad, Noida</a>                                                        </span>
 
@@ -2857,13 +2788,13 @@ If you are a creative individual with a passion for video production, this inter
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 5,000 - 15,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>2 Months</span>
                     </div>
                     <!-- /duration -->
@@ -2873,7 +2804,7 @@ If you are a creative individual with a passion for video production, this inter
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Finding Agro tradeshows
 2. Registering for these trade shows
@@ -2885,7 +2816,7 @@ If you are a creative individual with a passion for video production, this inter
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>Few hours ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>Few hours ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -2930,7 +2861,7 @@ If you are a creative individual with a passion for video production, this inter
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Navi Mumbai</a>                                                        </span>
 
@@ -2939,13 +2870,13 @@ If you are a creative individual with a passion for video production, this inter
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 10,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>3 Months</span>
                     </div>
                     <!-- /duration -->
@@ -2955,7 +2886,7 @@ If you are a creative individual with a passion for video production, this inter
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Video Editing: Perform basic to intermediate video editing including trimming, adding transitions, overlays, and applying color corrections using Adobe Premiere Pro, Filmora, or similar software.
 2. Content Optimization: Ensure that all edited videos meet platform-specific requirements (e.g., YouTube, Instagram, LinkedIn) regarding format, size, and length.
@@ -2968,7 +2899,7 @@ If you are a creative individual with a passion for video production, this inter
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>1 day ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>1 day ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -3013,7 +2944,7 @@ If you are a creative individual with a passion for video production, this inter
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Ghaziabad, Noida</a>                                                        </span>
 
@@ -3022,13 +2953,13 @@ If you are a creative individual with a passion for video production, this inter
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 3,000 - 10,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>2 Months</span>
                     </div>
                     <!-- /duration -->
@@ -3038,7 +2969,7 @@ If you are a creative individual with a passion for video production, this inter
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Development for website and feature
 2. Improving performance of the code
@@ -3050,7 +2981,7 @@ If you are a creative individual with a passion for video production, this inter
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>Few hours ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>Few hours ago</span></div>
                                         </div>
                                                     </div>
 
@@ -3085,7 +3016,7 @@ If you are a creative individual with a passion for video production, this inter
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Mumbai</a>                                                        </span>
 
@@ -3094,13 +3025,13 @@ If you are a creative individual with a passion for video production, this inter
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 5,000 - 7,500 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -3110,7 +3041,7 @@ If you are a creative individual with a passion for video production, this inter
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 We are looking for an intern to support smooth delivery of our programs. The intern will assist in managing virtual classrooms, coordinating with trainers and students, and handling basic administrative tasks.
 
@@ -3130,7 +3061,7 @@ Selected intern's day-to-day responsibilites include:
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>Few hours ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>Few hours ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -3169,7 +3100,7 @@ Selected intern's day-to-day responsibilites include:
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Bangalore</a>                                                        </span>
 
@@ -3178,13 +3109,13 @@ Selected intern's day-to-day responsibilites include:
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 17,000 - 25,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -3194,7 +3125,7 @@ Selected intern's day-to-day responsibilites include:
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 *Job Title:* Operations Intern
 
@@ -3238,7 +3169,7 @@ If you're interested in an Operations Intern role.                </div>
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>Few hours ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>Few hours ago</span></div>
                                         </div>
                                                     </div>
 
@@ -3273,7 +3204,7 @@ If you're interested in an Operations Intern role.                </div>
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Secunderabad, Hyderabad</a>                                                                (Hybrid)
                                         <span style="vertical-align: middle">
@@ -3286,13 +3217,13 @@ If you're interested in an Operations Intern role.                </div>
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 40,000 - 50,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>1 Month</span>
                     </div>
                     <!-- /duration -->
@@ -3302,7 +3233,7 @@ If you're interested in an Operations Intern role.                </div>
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Prepare accurate and timely MIS reports and dashboards as per stakeholder requirements. Collaborate with management, internal teams, and clients to understand business information needs.
 2. Ensure all reports and dashboards are created and delivered at the required frequency (weekly, monthly, quarterly).
@@ -3315,7 +3246,7 @@ If you're interested in an Operations Intern role.                </div>
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>Few hours ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>Few hours ago</span></div>
                                         </div>
                                                         <div class="gray-labels">
                                             <div class="status-li ">
@@ -3356,7 +3287,7 @@ If you're interested in an Operations Intern role.                </div>
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Secunderabad, Hyderabad</a>                                                                (Hybrid)
                                         <span style="vertical-align: middle">
@@ -3369,13 +3300,13 @@ If you're interested in an Operations Intern role.                </div>
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 20,000 - 30,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>2 Months</span>
                     </div>
                     <!-- /duration -->
@@ -3385,7 +3316,7 @@ If you're interested in an Operations Intern role.                </div>
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 Selected intern's day-to-day responsibilites include:
 
@@ -3406,7 +3337,7 @@ If you're interested in an Operations Intern role.                </div>
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>Few hours ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>Few hours ago</span></div>
                                         </div>
                                                         <div class="gray-labels">
                                                     <div class="ppo_status">
@@ -3451,7 +3382,7 @@ If you're interested in an Operations Intern role.                </div>
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Panjim, South Goa, North Goa</a>                                                        </span>
 
@@ -3460,13 +3391,13 @@ If you're interested in an Operations Intern role.                </div>
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 8,000 - 10,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -3476,7 +3407,7 @@ If you're interested in an Operations Intern role.                </div>
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Leading groups on walking tours or other types of tours depending on the specific needs.
 2. Being aware of the area's history, landmarks, and different points of interest and communicating this information effectively to your tour groups.
@@ -3492,7 +3423,7 @@ If you're interested in an Operations Intern role.                </div>
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>1 day ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>1 day ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -3537,7 +3468,7 @@ If you're interested in an Operations Intern role.                </div>
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Navi Mumbai, Mumbai</a>                                                        </span>
 
@@ -3546,13 +3477,13 @@ If you're interested in an Operations Intern role.                </div>
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 12,000 - 18,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -3562,7 +3493,7 @@ If you're interested in an Operations Intern role.                </div>
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Onboard recruitment consultants for resource (talent) hiring
 2. Coordinate with them to ensure maximum footfall during the interview period
@@ -3582,7 +3513,7 @@ If you're interested in an Operations Intern role.                </div>
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>Today</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>Today</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -3621,7 +3552,7 @@ If you're interested in an Operations Intern role.                </div>
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Bandra</a>                                                        </span>
 
@@ -3630,13 +3561,13 @@ If you're interested in an Operations Intern role.                </div>
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 10,000 - 15,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -3646,7 +3577,7 @@ If you're interested in an Operations Intern role.                </div>
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 Selected intern’s day-to-day responsibilities include:
 
@@ -3665,7 +3596,7 @@ If you're interested in an Operations Intern role.                </div>
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>Few hours ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>Few hours ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -3704,7 +3635,7 @@ If you're interested in an Operations Intern role.                </div>
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Thane, Navi Mumbai, Mumbai</a>                                                        </span>
 
@@ -3713,13 +3644,13 @@ If you're interested in an Operations Intern role.                </div>
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 5,000 - 10,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>4 Months</span>
                     </div>
                     <!-- /duration -->
@@ -3729,7 +3660,7 @@ If you're interested in an Operations Intern role.                </div>
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 THD Design Studio is seeking an Architecture Intern who is proficient in AutoCAD, Adobe Photoshop, Google SketchUp, Autodesk 3ds Max, and MS-Office to join our team. As an intern, you will have the opportunity to work on a variety of projects and grow your skills in a collaborative and creative environment.
 
@@ -3749,7 +3680,7 @@ If you are a motivated and talented individual with a passion for architecture a
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>1 day ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>1 day ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -3788,7 +3719,7 @@ If you are a motivated and talented individual with a passion for architecture a
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Ahmedabad</a>                                                        </span>
 
@@ -3797,13 +3728,13 @@ If you are a motivated and talented individual with a passion for architecture a
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 5,000 - 10,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -3813,7 +3744,7 @@ If you are a motivated and talented individual with a passion for architecture a
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Stay up to date with industry trends to maintain a competitive edge.
 2. Produce consistently high-quality visual work across various media.
@@ -3828,7 +3759,7 @@ If you are a motivated and talented individual with a passion for architecture a
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>1 day ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>1 day ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -3873,7 +3804,7 @@ If you are a motivated and talented individual with a passion for architecture a
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Gurgaon</a>                                                        </span>
 
@@ -3882,13 +3813,13 @@ If you are a motivated and talented individual with a passion for architecture a
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 6,000 - 10,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -3898,7 +3829,7 @@ If you are a motivated and talented individual with a passion for architecture a
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 Sadbhav Futuretech Limited is seeking a dynamic and enthusiastic 'Tender Intern' to join our Solar Rooftop Department. As an intern, you will work closely with our experienced team and gain hands-on experience in tendering, bidding, and client coordination.
 
@@ -3921,7 +3852,7 @@ Selected intern's day-to-day responsibilites include:
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>Today</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>Today</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -3960,7 +3891,7 @@ Selected intern's day-to-day responsibilites include:
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Sonipat</a>                                                        </span>
 
@@ -3969,13 +3900,13 @@ Selected intern's day-to-day responsibilites include:
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 20,000 - 25,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -3985,7 +3916,7 @@ Selected intern's day-to-day responsibilites include:
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Creating development plans and forecasting sales targets and growth projections
 2. Identifying market opportunities through meetings, networking and other channels
@@ -4004,7 +3935,7 @@ Selected intern's day-to-day responsibilites include:
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>Today</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>Today</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -4043,7 +3974,7 @@ Selected intern's day-to-day responsibilites include:
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Kolkata</a>                                                        </span>
 
@@ -4052,13 +3983,13 @@ Selected intern's day-to-day responsibilites include:
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 7,000 - 10,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -4068,7 +3999,7 @@ Selected intern's day-to-day responsibilites include:
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Handle day-to-day office coordination including calls, scheduling, and documentation.
 2. Support consultants with CV formatting, job posting, follow-ups, and basic research.
@@ -4083,7 +4014,7 @@ Selected intern's day-to-day responsibilites include:
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>1 day ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>1 day ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -4122,7 +4053,7 @@ Selected intern's day-to-day responsibilites include:
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Mumbai</a>                                                        </span>
 
@@ -4131,13 +4062,13 @@ Selected intern's day-to-day responsibilites include:
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 10,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -4147,7 +4078,7 @@ Selected intern's day-to-day responsibilites include:
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 As a Telecalling intern at Firststore.io, you will have the exciting opportunity to interact with customers and assist them with their inquiries. Your knowledge of MS-Excel, Hindi proficiency (spoken), and English proficiency (written) will be crucial in delivering excellent service.
 
@@ -4167,7 +4098,7 @@ Join us at Firststore.io and gain valuable experience in the world of telecallin
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>1 day ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>1 day ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -4206,7 +4137,7 @@ Join us at Firststore.io and gain valuable experience in the world of telecallin
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Chandigarh, Punjab, Himachal Pradesh, Haryana</a>                                                        </span>
 
@@ -4215,13 +4146,13 @@ Join us at Firststore.io and gain valuable experience in the world of telecallin
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 10,000 - 15,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -4231,7 +4162,7 @@ Join us at Firststore.io and gain valuable experience in the world of telecallin
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 You’ll assist in the full recruitment cycle for artists, designers, and studio staff - sourcing talent, coordinating interviews, managing documents, and helping maintain an inspiring workplace culture. If you’re organised, people-centric, and excited to work in a creative environment, you’ll fit right in.
 
@@ -4250,7 +4181,7 @@ Selected intern's day-to-day responsibilites include:
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>2 days ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>2 days ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -4289,7 +4220,7 @@ Selected intern's day-to-day responsibilites include:
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Chandigarh, Mohali, Zirakpur, Panchkula</a>                                                        </span>
 
@@ -4298,13 +4229,13 @@ Selected intern's day-to-day responsibilites include:
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 10,000 - 15,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>3 Months</span>
                     </div>
                     <!-- /duration -->
@@ -4314,7 +4245,7 @@ Selected intern's day-to-day responsibilites include:
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 Selected intern's day-to-day responsibilites include:
 
@@ -4335,7 +4266,7 @@ Selected intern's day-to-day responsibilites include:
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>2 days ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>2 days ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -4380,7 +4311,7 @@ Selected intern's day-to-day responsibilites include:
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Nagpur</a>                                                        </span>
 
@@ -4389,13 +4320,13 @@ Selected intern's day-to-day responsibilites include:
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 5,000 - 15,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -4405,7 +4336,7 @@ Selected intern's day-to-day responsibilites include:
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Identify and research potential partners, clients, and collaborators (colleges, coaching institutes, NGOs, career platforms, etc.).
 2. Assist in lead generation, outreach, and follow-ups through calls, emails, and LinkedIn.
@@ -4420,7 +4351,7 @@ Selected intern's day-to-day responsibilites include:
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>2 days ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>2 days ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -4459,7 +4390,7 @@ Selected intern's day-to-day responsibilites include:
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Mumbai</a>                                                        </span>
 
@@ -4468,13 +4399,13 @@ Selected intern's day-to-day responsibilites include:
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 10,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -4484,7 +4415,7 @@ Selected intern's day-to-day responsibilites include:
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 Join our dynamic team at Firststore.io as a Marketing intern! Are you fluent in Hindi and proficient in English, with a knack for MS-Excel? This is the perfect opportunity for you to gain hands-on experience in the fast-paced world of e-commerce marketing.
 
@@ -4504,7 +4435,7 @@ If you are a creative and driven individual looking to kickstart your career in 
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>1 day ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>1 day ago</span></div>
                                         </div>
                                                     </div>
 
@@ -4539,7 +4470,7 @@ If you are a creative and driven individual looking to kickstart your career in 
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Bangalore</a>                                                        </span>
 
@@ -4548,13 +4479,13 @@ If you are a creative and driven individual looking to kickstart your career in 
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 3,000 - 4,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>3 Months</span>
                     </div>
                     <!-- /duration -->
@@ -4564,7 +4495,7 @@ If you are a creative and driven individual looking to kickstart your career in 
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Create engaging content for social media platforms (Instagram & Facebook)
 2. Assist in planning and executing digital marketing campaigns
@@ -4577,7 +4508,7 @@ If you are a creative and driven individual looking to kickstart your career in 
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>1 day ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>1 day ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -4616,7 +4547,7 @@ If you are a creative and driven individual looking to kickstart your career in 
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Bangalore</a>                                                        </span>
 
@@ -4625,13 +4556,13 @@ If you are a creative and driven individual looking to kickstart your career in 
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 10,000 - 12,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -4641,7 +4572,7 @@ If you are a creative and driven individual looking to kickstart your career in 
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 Are you passionate about web development, e-commerce, and cycling? Join our team at Cycling Boutique Incorporation as a 'Web Development (E-Commerce Inventory and Retail domain) intern!' We seek a talented individual with a strong knowledge of HTML, CSS, and Advanced Excel to help us enhance our online presence and streamline our inventory management and order processing.
 
@@ -4662,7 +4593,7 @@ If you are a self-motivated individual passionate about web development, we want
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>Today</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>Today</span></div>
                                         </div>
                                                     </div>
 
@@ -4697,7 +4628,7 @@ If you are a self-motivated individual passionate about web development, we want
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Aligarh</a>                                                        </span>
 
@@ -4706,13 +4637,13 @@ If you are a self-motivated individual passionate about web development, we want
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 15,000 - 25,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>2 Months</span>
                     </div>
                     <!-- /duration -->
@@ -4722,7 +4653,7 @@ If you are a self-motivated individual passionate about web development, we want
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Identify bottlenecks in operations
 2. Create flowcharts for workflow automation
@@ -4734,7 +4665,7 @@ If you are a self-motivated individual passionate about web development, we want
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>2 days ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>2 days ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -4779,7 +4710,7 @@ If you are a self-motivated individual passionate about web development, we want
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Chandigarh, Punjab, Himachal Pradesh, Haryana</a>                                                        </span>
 
@@ -4788,13 +4719,13 @@ If you are a self-motivated individual passionate about web development, we want
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 10,000 - 15,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -4804,7 +4735,7 @@ If you are a self-motivated individual passionate about web development, we want
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 We are looking for a detail-oriented 'Accountant Intern' to assist with financial tracking, daily bookkeeping, and studio expense management. If you enjoy working with numbers, maintain neat records, and want hands-on experience in finance within a creative workspace, this role is for you.
 
@@ -4822,7 +4753,7 @@ Selected intern's day-to-day responsibilites include:
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>2 days ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>2 days ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -4861,7 +4792,7 @@ Selected intern's day-to-day responsibilites include:
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Sonipat</a>                                                        </span>
 
@@ -4870,13 +4801,13 @@ Selected intern's day-to-day responsibilites include:
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 15,000 - 20,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -4886,7 +4817,7 @@ Selected intern's day-to-day responsibilites include:
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 As an HR intern at Organic Smokes, you will have the opportunity to gain valuable hands-on experience in a dynamic and growing industry. This role requires proficiency in MS-Office, MS-Word, and MS-Excel, as well as strong English proficiency both spoken and written, and knowledge of HR analytics.
 
@@ -4907,7 +4838,7 @@ If you are a motivated and enthusiastic individual looking to kickstart your car
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>1 day ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>1 day ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -4946,7 +4877,7 @@ If you are a motivated and enthusiastic individual looking to kickstart your car
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Bangalore</a>                                                        </span>
 
@@ -4955,13 +4886,13 @@ If you are a motivated and enthusiastic individual looking to kickstart your car
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 23,000 - 24,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>3 Months</span>
                     </div>
                     <!-- /duration -->
@@ -4971,7 +4902,7 @@ If you are a motivated and enthusiastic individual looking to kickstart your car
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 As a sales intern at Nestaway Technologies Private Limited, you will have the opportunity to gain hands-on experience in the fast-paced world of tech-driven real estate. Your knowledge of MS Excel and effective communication skills will be instrumental in supporting our sales team and driving business growth.
 
@@ -4993,7 +4924,7 @@ If you are a proactive and enthusiastic individual looking to kickstart your car
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>1 day ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>1 day ago</span></div>
                                         </div>
                                                     </div>
 
@@ -5028,7 +4959,7 @@ If you are a proactive and enthusiastic individual looking to kickstart your car
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Hyderabad</a>                                                        </span>
 
@@ -5037,13 +4968,13 @@ If you are a proactive and enthusiastic individual looking to kickstart your car
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>Unpaid</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>1 Month</span>
                     </div>
                     <!-- /duration -->
@@ -5053,7 +4984,7 @@ If you are a proactive and enthusiastic individual looking to kickstart your car
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Support community outreach efforts by managing inquiries and coordination.
 2. Assist in operational tasks to drive sustainable projects forward.
@@ -5065,7 +4996,7 @@ If you are a proactive and enthusiastic individual looking to kickstart your car
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>Few hours ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>Few hours ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -5110,7 +5041,7 @@ If you are a proactive and enthusiastic individual looking to kickstart your car
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Dewas</a>                                                        </span>
 
@@ -5119,13 +5050,13 @@ If you are a proactive and enthusiastic individual looking to kickstart your car
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 5,000 - 6,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>3 Months</span>
                     </div>
                     <!-- /duration -->
@@ -5135,7 +5066,7 @@ If you are a proactive and enthusiastic individual looking to kickstart your car
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Performing data entry.
 2. Making telecalls.
@@ -5149,7 +5080,7 @@ If you are a proactive and enthusiastic individual looking to kickstart your car
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-info"><i class="ic-16-reschedule"></i><span>4 days ago</span></div>
+                                            <div class="status-info"><i class="ic-reschedule-icon-custom "></i><span>4 days ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -5188,7 +5119,7 @@ If you are a proactive and enthusiastic individual looking to kickstart your car
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Pune</a>                                                        </span>
 
@@ -5197,13 +5128,13 @@ If you are a proactive and enthusiastic individual looking to kickstart your car
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 5,000 - 8,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -5213,7 +5144,7 @@ If you are a proactive and enthusiastic individual looking to kickstart your car
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 As a UX/UI Design intern at 'My Abhyasa' (Agnitimba Private Limited), you will have the opportunity to work on exciting projects and gain hands-on experience in the field. We are looking for someone who is proficient in Figma, Wireframing, Prototyping, and UX Research to join our dynamic team.
 
@@ -5235,7 +5166,7 @@ If you are a driven and creative individual looking to kickstart your career in 
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>1 day ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>1 day ago</span></div>
                                         </div>
                                                     </div>
 
@@ -5270,7 +5201,7 @@ If you are a driven and creative individual looking to kickstart your career in 
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Pune, Pimpri-Chinchwad</a>                                                        </span>
 
@@ -5279,13 +5210,13 @@ If you are a driven and creative individual looking to kickstart your career in 
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 7,500 - 8,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -5295,7 +5226,7 @@ If you are a driven and creative individual looking to kickstart your career in 
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 Selected intern's day-to-day responsibilites include:
 
@@ -5314,7 +5245,7 @@ If you are a driven and creative individual looking to kickstart your career in 
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>1 day ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>1 day ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -5353,7 +5284,7 @@ If you are a driven and creative individual looking to kickstart your career in 
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Patna</a>                                                        </span>
 
@@ -5362,13 +5293,13 @@ If you are a driven and creative individual looking to kickstart your career in 
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 7,000 - 10,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>4 Months</span>
                     </div>
                     <!-- /duration -->
@@ -5378,7 +5309,7 @@ If you are a driven and creative individual looking to kickstart your career in 
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Working on conceptual development
 2. Working on drawing                </div>
@@ -5389,7 +5320,7 @@ If you are a driven and creative individual looking to kickstart your career in 
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-info"><i class="ic-16-reschedule"></i><span>4 days ago</span></div>
+                                            <div class="status-info"><i class="ic-reschedule-icon-custom "></i><span>4 days ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -5428,7 +5359,7 @@ If you are a driven and creative individual looking to kickstart your career in 
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Navi Mumbai</a>                                                        </span>
 
@@ -5437,13 +5368,13 @@ If you are a driven and creative individual looking to kickstart your career in 
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 7,000 - 10,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -5453,7 +5384,7 @@ If you are a driven and creative individual looking to kickstart your career in 
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 As an 'International Business Development' intern at Finulent Solutions LLP, you will have the opportunity to work in a dynamic and fast-paced environment, gaining valuable experience in the field of global business expansion. Your role will involve collaborating with our team to identify new business opportunities, develop strategic partnerships, and expand our international presence.
 
@@ -5475,7 +5406,7 @@ If you are a proactive and motivated individual with a passion for international
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>1 day ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>1 day ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -5520,7 +5451,7 @@ If you are a proactive and motivated individual with a passion for international
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Hyderabad</a>                                                        </span>
 
@@ -5529,13 +5460,13 @@ If you are a proactive and motivated individual with a passion for international
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 18,000 - 22,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -5545,7 +5476,7 @@ If you are a proactive and motivated individual with a passion for international
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 We are looking for proactive Marketing Interns who have a strong interest in digital marketing and website optimization. This role is ideal for candidates pursuing or holding a graduate or postgraduate degree in Marketing and eager to gain hands-on experience across SEO, CRO, website updates, and overall marketing operations.
 You will work closely with the marketing team on day-to-day tasks, ongoing projects, and strategic initiatives aimed at improving online presence and lead generation.
@@ -5558,7 +5489,7 @@ PS: This is a strong stakeholder management role where the candidate will be res
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>1 day ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>1 day ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -5597,7 +5528,7 @@ PS: This is a strong stakeholder management role where the candidate will be res
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Jaipur</a>                                                        </span>
 
@@ -5606,13 +5537,13 @@ PS: This is a strong stakeholder management role where the candidate will be res
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 10,000 - 14,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>6 Months</span>
                     </div>
                     <!-- /duration -->
@@ -5622,7 +5553,7 @@ PS: This is a strong stakeholder management role where the candidate will be res
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 1. Working on live project
 2. Working on microcontroller programming
@@ -5635,7 +5566,7 @@ PS: This is a strong stakeholder management role where the candidate will be res
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>1 day ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>1 day ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -5674,7 +5605,7 @@ PS: This is a strong stakeholder management role where the candidate will be res
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Chandigarh</a>                                                        </span>
 
@@ -5683,13 +5614,13 @@ PS: This is a strong stakeholder management role where the candidate will be res
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 5,000 - 10,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>3 Months</span>
                     </div>
                     <!-- /duration -->
@@ -5699,7 +5630,7 @@ PS: This is a strong stakeholder management role where the candidate will be res
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                 𝑨𝒔 𝒂 trainee**, 𝒚𝒐𝒖 𝒘𝒊𝒍𝒍:
 
@@ -5730,7 +5661,7 @@ PS: This is a strong stakeholder management role where the candidate will be res
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-info"><i class="ic-16-reschedule"></i><span>4 days ago</span></div>
+                                            <div class="status-info"><i class="ic-reschedule-icon-custom "></i><span>4 days ago</span></div>
                                                     <div class='early_applicant_wrapper'>
                                 <img src="/images/icons/bolt_icon_color.svg" alt="early applicant icon">
                                 <span>Be an early applicant</span>
@@ -5769,7 +5700,7 @@ PS: This is a strong stakeholder management role where the candidate will be res
 
                                    <!-- location -->
                         <div class="row-1-item locations">
-                                                    <i class="ic-16-map-pin"></i>
+                                                    <i class="ic-location-map-icon-custom"></i>
                                 <span>
                         <a>Navi Mumbai, Mumbai</a>                                                        </span>
 
@@ -5778,13 +5709,13 @@ PS: This is a strong stakeholder management role where the candidate will be res
 
                         <!-- STIPEND -->
                         <div class="row-1-item">
-                            <i class="ic-16-money"></i>
+                            <i class="ic-money-icon-custom"></i>
                     <span class='stipend'>₹ 10,000 - 20,000 /month</span>                        </div>
                         <!-- /stipend -->
 
                                         <!-- duration -->
                     <div class="row-1-item">
-                        <i class="ic-16-calendar"></i>
+                        <i class="ic-calender-icon-custom "></i>
                         <span>4 Months</span>
                     </div>
                     <!-- /duration -->
@@ -5794,7 +5725,7 @@ PS: This is a strong stakeholder management role where the candidate will be res
 
 
                         <div class="about_job">
-                <div class="ic-16-assignment icon"></div>
+                <div class="ic-assignment-custom"></div>
                 <div class="text">
                  
 1.  Research and identify relevant influencers across social media platforms.
@@ -5813,7 +5744,7 @@ PS: This is a strong stakeholder management role where the candidate will be res
 
             <div class="detail-row-2">
                 <div class="color-labels">
-                                            <div class="status-success"><i class="ic-16-reschedule"></i><span>1 day ago</span></div>
+                                            <div class="status-success"><i class="ic-reschedule-icon-custom "></i><span>1 day ago</span></div>
                                         </div>
                                                     </div>
 
@@ -6387,14 +6318,7 @@ PS: This is a strong stakeholder management role where the candidate will be res
             <div id="footer_reference"></div>
             <div id="search_page_breadcrumbs_mobile">
 
-<div class="breadcrumb nav">
-        <span class="breadcrumb-item">
-        <a class="breadcrumb-link "  href="https://internshala.com/">Home</a>
-    </span>
-        <span class="breadcrumb-item">
-        <a class="breadcrumb-link active"  data-toggle="tab"  href="https://internshala.com/internships/">Internships</a>
-    </span>
-    </div>
+
             </div>
             <div id="search_page_faqs">
                 <div class="faqs_section_container section">

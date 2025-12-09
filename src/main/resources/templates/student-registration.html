@@ -19,8 +19,9 @@
             <meta name="theme-color" content="#ffffff" />
     <meta name="msapplication-navbutton-color" content="#ffffff" />
     <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="/css/icons.css" />
 
-            <link as="font" href="/other/fonts/Inter.woff2?v=3.11" type="font/woff2" crossorigin />
+    <link as="font" href="/other/fonts/Inter.woff2?v=3.11" type="font/woff2" crossorigin />
             <link as="font" href="/other/fonts/internshala-icons.woff2?vw3rgh" type="font/woff2"  crossorigin />    <script src="/other/js/web_vitals/web-vitals.umd.js"></script>
             <script src="/other/js/includes/common/libraries.2583691470.js" defer></script>
                 <link rel="stylesheet" href="https://internshala.com//static/cdn/4.4.1/css/bootstrap.min.css" />
@@ -361,7 +362,7 @@
                             <div class='border'></div>
                         </div>
                     
-                    <form id="modal-login-form" method="POST" action="/student/registration">
+                    <form id="modal-login-form" method="GET" action="/student/dashboard">
                         <input type="hidden" name="csrf_test_name" value="9cc9f0e7b8e83a4324c01b07065ab78f" />
                         <div class="form-group">
                             <label for="email" class="control-label">Email</label>
@@ -464,7 +465,7 @@
             <a class="google_login" href="/login/get_google/?utm_source=&utm_medium=&utm_campaign=" >
             <div id="google-button-container"  data-source="google_registration_page">
                 <div class="google_image_container">
-                    <div class='google_logo'></div>
+                    <div class='ic-google-icon-custom'></div>
                 </div>
                 <div class="google_content">
                     Sign up with Google
@@ -473,7 +474,7 @@
         </a>
         <div class="email_login">
             <div id="email-button-container" class="signup_btn_container" >
-                <i class="ic-24-mail"></i>
+                <i class="ic-mail-icon-black-custom"></i>
                 <div class="google_content">
                     Sign up with Email
                 </div>
@@ -488,7 +489,7 @@
                 <div class='border'></div>
             </div>
         
-        <form role="form" id="registration-form" method="POST">
+        <form action="/student/verify_email" method="GET">
                         <input type="hidden" name="csrf_test_name" value="9cc9f0e7b8e83a4324c01b07065ab78f" />
 
             <input type="hidden" value="" name="utm_source">

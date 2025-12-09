@@ -225,7 +225,7 @@
 .ic-assignment-custom {
 	width: 16px;
 	height: 16px;
-	background-image: url("../icons/ass.svg");
+	background-image: url("../icons/ic_fluent_assignments_24.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
 	display: inline-block;
@@ -355,5 +355,19 @@
 	margin-top: 0px;
 	margin-bottom: 0px;
     filter: brightness(0); 
+}
+
+/*ic-24-bell */
+.ic-bell-icon-custom {
+	width: 20px;
+	height: 20px;
+	background-image: url("../icons/bell.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 

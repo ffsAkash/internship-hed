@@ -2,6 +2,7 @@ package com.oasystspl.internship.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -48,13 +49,15 @@ public class LoginController {
     }
 
     //For Student
-    @GetMapping("/registration/verify_email")
-    public String verifyEmail() {
-        return "student-verify-email";
+    @PostMapping("/student/registration")
+    public String reg() {
+        return "redirect:/student/verify_email";
     }
 
     @PostMapping("/registration/verify_email")
     public String verifyEmailSubmit() {
         return "redirect:/student/dashboard";
     }
+
+
 }

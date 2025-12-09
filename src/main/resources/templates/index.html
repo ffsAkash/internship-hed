@@ -203,14 +203,6 @@
 <body>
 	<div id="wrapper">
 		<!-- ribbon -->
-		<div id='error' class="notification">
-		</div>
-
-		<div id="custom_notification_parent">
-			<div id='custom_notification' class="notification notification_general" style="display: none">
-			</div>
-		</div>
-
 		<!-- modal - error message -->
 		<div id="error_modal" class="modal fade in internshala-modal" style="display: none">
 			<div class="modal-dialog">
@@ -368,76 +360,71 @@
 
 		<div class="chat_notification_loading_image" style="display: none;">
 		</div>
-		<div class="modal " id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-			aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal">
-							<i class="cross-icon-custom" aria-hidden="true"></i>
-						</button>
-					</div>
-					<div class="modal-body ">
-						<div id="user-menu-container">
-							<div id="user-menu">
-								<div class="row">
-									<div class="col-xs-6 col-6 user-menu-item active login_student" id="modal_student">
-										Student
-									</div>
-									<div class="col-xs-6 col-6 user-menu-item login_employer" id="modal_employer">
-										Employer / T&P
-									</div>
-								</div>
-							</div>
-						</div>
-						<a class="google_login" id="user_google_login" href="/login/get_google/student">
+        <div class="modal" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <i class="cross-icon-custom" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="user-menu-container">
+                            <div id="user-menu">
+                                <div class="row no-gutters">
+                                    <div class="col-4 user-menu-item active login_student text-center py-2" id="modal_student">
+                                        Student
+                                    </div>
+                                    <div class="col-4 user-menu-item login_employer text-center py-2 border-left border-right" id="modal_college">
+                                        College
+                                    </div>
+                                    <div class="col-4 user-menu-item login_employer text-center py-2" id="modal_mentor">
+                                        Mentor
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-							<div id="google-button-container" data-source="google_login_modal">
-								<div class="ic-google-icon-custom">
-									<div class='google_logo'></div>
-								</div>
-								<div class="google_content">
-									Login with Google
-								</div>
-							</div>
-						</a>
-						<div class="helper">
-							<div class="text2">
-								<p>OR</p>
-							</div>
-							<div class='border'></div>
-						</div>
+                        <div class="helper">
+                            <div class="text2"><p>OR</p></div>
+                            <div class='border'></div>
+                        </div>
 
-						<form role="form" id="modal-login-form" method="POST" action="/login">
-							<input type="hidden" name="csrf_test_name" value="9cc9f0e7b8e83a4324c01b07065ab78f" />
-							<div class="form-group">
-								<label for="email" class="control-label">Email</label>
-								<input type="email" class="form-control" id="modal_email" tabindex="1" name="email"
-									placeholder="john@example.com">
-							</div>
-							<div class="form-group">
-								<label for="password" class="control-label">Password</label>
-								<input type="password" class="form-control" id="modal_password" tabindex="2"
-									name="password" placeholder="Must be atleast 6 characters">
-							</div>
-							<div class="forgot_password">
-								<a href="/login/forgot_password" id="forgot-password">Forgot password?</a>
-							</div>
-							<div class="form-group">
-								<button type="submit" class="btn btn-primary" id="modal_login_submit"
-									tabindex="3">Login</button>
-							</div>
-							<div class="form-group new_to_internshala">
-								<label>
-									New to Internshala? Register (<a href='/registration/student'>Student</a> / <a
-										href="/hire-talent">Company</a>)
-								</label>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
+                        <!-- MAIN LOGIN FORM -->
+                        <form role="form" id="modal-login-form" method="POST" action="/login">
+                            <!-- This hidden field tells Spring which tab was selected -->
+                            <input type="hidden" name="userType" id="userType" value="student" />
+
+                            <div class="form-group">
+                                <label for="email" class="control-label">Email</label>
+                                <input type="email" class="form-control" id="modal_email" tabindex="1" name="email"
+                                       placeholder="john@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="control-label">Password</label>
+                                <input type="password" class="form-control" id="modal_password" tabindex="2"
+                                       name="password" placeholder="Must be at least 6 characters" required>
+                            </div>
+                            <div class="forgot_password">
+                                <a href="/login/forgot_password" id="forgot-password">Forgot password?</a>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary" id="modal_login_submit" tabindex="3">
+                                    Login
+                                </button>
+                            </div>
+                            <div class="form-group new_to_internshala">
+                                <label>
+                                    New to Internshala? Register (
+                                    <a href='/student/registration'>Student</a> /
+                                    <a href="/employer/registration">Company</a>)
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 		<!-- Login modal - error message for employers blocked -->
 		<div id="employer_blocked_error_modal" class="modal fade" role="dialog" aria-hidden="true" tabindex="-1">
@@ -609,42 +596,14 @@
 											<div
 												class="sub-menu-link-content-1 active-container sub-menu-content-container">
 												<div class="job-sub-scroll ">
-													<a class="item_link internship_item_location"
-														href="/student/internship-by-location?location=bangalore"
-														style="">Jobs in Bangalore</a>
-													<a class="item_link internship_item_location"
-														href="/student/internship-by-location?location=bangalore"
-														style="">Jobs in Hyderabad</a>
-													<a class="item_link internship_item_location"
-														href="https://internshala.com/jobs/jobs-in-gurgaon/?utm_source=is_menu_dropdown"
-														style="">Jobs in Gurgaon</a>
-													<a class="item_link internship_item_location"
-														href="https://internshala.com/jobs/jobs-in-kolkata/?utm_source=is_menu_dropdown"
-														style="">Jobs in Kolkata</a>
-													<a class="item_link internship_item_location"
-														href="https://internshala.com/jobs/jobs-in-mumbai/?utm_source=is_menu_dropdown"
-														style="">Jobs in Mumbai</a>
-													<a class="item_link internship_item_location"
-														href="https://internshala.com/jobs/jobs-in-pune/?utm_source=is_menu_dropdown"
-														style="">Jobs in Pune</a>
-													<a class="item_link internship_item_location"
-														href="https://internshala.com/jobs/jobs-in-chennai/?utm_source=is_menu_dropdown"
-														style="">Jobs in Chennai</a>
-													<a class="item_link internship_item_location"
-														href="https://internshala.com/jobs/jobs-in-noida/?utm_source=is_menu_dropdown"
-														style="">Jobs in Noida</a>
-													<a class="item_link internship_item_location"
-														href="https://internshala.com/jobs/jobs-in-jaipur/?utm_source=is_menu_dropdown"
-														style="">Jobs in Jaipur</a>
-													<a class="item_link internship_item_location"
-														href="https://internshala.com/jobs/jobs-in-coimbatore/?utm_source=is_menu_dropdown"
-														style="">Jobs in Coimbatore</a>
-													<a class="item_link internship_item_location"
-														href="https://internshala.com/jobs/jobs-in-lucknow/?utm_source=is_menu_dropdown"
-														style="">Jobs in Lucknow</a>
-													<a class="item_link view_all "
-														href="https://internshala.com/jobs/?utm_source=is_menu_dropdown">View
-														all jobs</a>
+                                                    <a class="item_link internship_item_location" href="/student/internship-by-location?location=bhubaneswar" style=""  >Internship in Bhubaneswar</a>
+                                                    <a class="item_link internship_item_location" href="https://internshala.com/internships/internship-in-bangalore/?utm_source=is_menu_dropdown" style=""  >Internship in Cuttack</a>
+                                                    <a class="item_link internship_item_location" href="https://internshala.com/internships/internship-in-delhi/?utm_source=is_menu_dropdown" style=""  >Internship in Angul</a>
+                                                    <a class="item_link internship_item_location" href="https://internshala.com/internships/internship-in-mumbai/?utm_source=is_menu_dropdown" style=""  >Internship in Kendrapada</a>
+                                                    <a class="item_link internship_item_location" href="https://internshala.com/internships/internship-in-chennai/?utm_source=is_menu_dropdown" style=""  >Internship in Keonjhar</a>
+                                                    <a class="item_link internship_item_location" href="https://internshala.com/internships/internship-in-pune/?utm_source=is_menu_dropdown" style=""  >Internship in Chilika</a>
+                                                    <a class="item_link internship_item_location" href="https://internshala.com/internships/internship-in-kolkata/?utm_source=is_menu_dropdown" style=""  >Internship in Jatni</a>
+                                                    <a class="item_link internship_item_location" href="https://internshala.com/internships/internship-in-jaipur/?utm_source=is_menu_dropdown" style=""  >Internship in Khordha</a>
 												</div>
 											</div>
 											<div class="sub-menu-link-content-2  sub-menu-content-container">
@@ -706,7 +665,7 @@
 														style="">Fresher Jobs in Bangalore</a>
 													<a class="item_link internship_item_location"
 														href="https://internshala.com/fresher-jobs/jobs-in-delhi/?utm_source=is_menu_dropdown"
-														style="">Fresher Jobs in Delhi</a>
+														style="">Fresher Jobs in </a>
 													<a class="item_link internship_item_location"
 														href="https://internshala.com/fresher-jobs/jobs-in-hyderabad/?utm_source=is_menu_dropdown"
 														style="">Fresher Jobs in Hyderabad</a>
@@ -846,8 +805,8 @@
 												class="sub-menu-link-content-1 active-container sub-menu-content-container">
 												<div class="internship-sub-scroll ">
 													<a class="item_link internship_item_location"
-														href="/student/internship-by-location?location=bangalore"
-														style="">Internship in Bangalore</a>
+														href="/student/internship-by-location?location=bhubaneswar"
+														style="">Internship in Bhubaneswar</a>
 													<a class="item_link internship_item_location"
 														href="/student/internship-by-location?location=hyderabad"
 														style="">Internship in Hyderabad</a>
@@ -999,13 +958,6 @@
 
 							<li
 								class="nav-item training_container_hover dropdown dropdown-hover dropdown_backdrop nav-links">
-								<a class="nav-link dropdown-toggle trainings_link menu-link"
-									href="https://trainings.internshala.com/?utm_source=is_web_internshala-menu-dropdown1"
-									id="trainings_dropdown_link" rel="noopener" target="_blank">
-									Courses <div class="contest" id="course_superscript">
-										OFFER </div>
-									<i class="header-dropdown-arrow-custom"></i>
-								</a>
 								<div class="training-dropdown-content ">
 									<div class="training-box  student">
 										<div class="courses-container">
@@ -1218,7 +1170,7 @@
 							<div class="banner_register">
 								<div class="signup_buttons">
 									<a class="signup_btn email_signup"
-										href="/registration/student?utm_source=firstfold_hp">
+										href="/student/registration">
 										<div id="google-button-container">
 											<i class="ic-mail-icon-custom"></i>
 											<div class="google_content">Continue with Email</div>
@@ -1259,7 +1211,7 @@
 									</div>
 								</a>
 								<a class="signup_btn email_signup"
-									href="/registration/student?utm_source=firstfold_homepage_mobile">
+									href="/student/registration">
 									<div id="google-button-container">
 										<i class="ic-mail-icon-custom"></i>
 										<div class="google_content">Continue with Email</div>
@@ -1445,38 +1397,25 @@
 										<li>
 											<a class="active" data-employment-type="internship"
 												data-filter="bigbrand-true">
-												Big brands </a>
+												All Internships </a>
 										</li>
 										<li>
 											<a class="" data-employment-type="internship"
 												data-filter="work_from_home-true">
-												Work from home </a>
+												Civil Engg. </a>
 										</li>
 										<li>
 											<a class="" data-employment-type="internship" data-filter="part_time-true">
-												Part-time </a>
+												Mechanical Engg.</a>
 										</li>
 										<li>
 											<a class="" data-employment-type="internship" data-filter="category-mba">
-												MBA </a>
+												Electrical Engg. </a>
 										</li>
 										<li>
 											<a class="" data-employment-type="internship"
 												data-filter="category-engineering">
-												Engineering </a>
-										</li>
-										<li>
-											<a class="" data-employment-type="internship" data-filter="category-media">
-												Media </a>
-										</li>
-										<li>
-											<a class="" data-employment-type="internship" data-filter="category-design">
-												Design </a>
-										</li>
-										<li>
-											<a class="" data-employment-type="internship"
-												data-filter="category-data-science">
-												Data Science </a>
+												Electronics Engg.</a>
 										</li>
 									</ul>
 								</div>
@@ -1498,8 +1437,7 @@
 												</div>
 											</div>
 											<ul>
-												<li><i class="ic-location-map-icon-custom "></i>Delhi, Ghaziabad, Noida </li>
-												<li><i class="ic-money-icon-custom "></i>₹ 8,000 - 12,000 /month</li>
+												<li><i class="ic-location-map-icon-custom "></i>Bhubaneswar, Odisha </li>
 												<li><i class="ic-calender-icon-custom "></i>3 Months</li>
 											</ul>
 											<div class="footer">
@@ -1524,8 +1462,7 @@
 												</div>
 											</div>
 											<ul>
-												<li><i class="ic-location-map-icon-custom "></i>Delhi, Ghaziabad, Noida </li>
-												<li><i class="ic-money-icon-custom "></i>₹ 8,000 - 12,000 /month</li>
+												<li><i class="ic-location-map-icon-custom "></i> Bhubaneswar, Odisha </li>
 												<li><i class="ic-calender-icon-custom "></i>3 Months</li>
 											</ul>
 											<div class="footer">
@@ -1550,8 +1487,7 @@
 												</div>
 											</div>
 											<ul>
-												<li><i class="ic-location-map-icon-custom "></i>Delhi, Ghaziabad, Noida </li>
-												<li><i class="ic-money-icon-custom "></i>₹ 8,000 - 12,000 /month</li>
+												<li><i class="ic-location-map-icon-custom "></i>Bhubaneswar, Odisha </li>
 												<li><i class="ic-calender-icon-custom "></i>3 Months</li>
 											</ul>
 											<div class="footer">
@@ -1577,8 +1513,7 @@
 												</div>
 											</div>
 											<ul>
-												<li><i class="ic-location-map-icon-custom "></i>Delhi, Ghaziabad, Noida </li>
-												<li><i class="ic-money-icon-custom "></i>₹ 8,000 - 12,000 /month</li>
+												<li><i class="ic-location-map-icon-custom "></i>Bhubaneswar, Odisha </li>
 												<li><i class="ic-calender-icon-custom "></i>3 Months</li>
 											</ul>
 											<div class="footer">
@@ -1604,8 +1539,7 @@
 												</div>
 											</div>
 											<ul>
-												<li><i class="ic-location-map-icon-custom "></i>Delhi, Ghaziabad, Noida </li>
-												<li><i class="ic-money-icon-custom "></i>₹ 8,000 - 12,000 /month</li>
+												<li><i class="ic-location-map-icon-custom "></i>Rourkela, Odisha</li>
 												<li><i class="ic-calender-icon-custom "></i>3 Months</li>
 											</ul>
 											<div class="footer">
@@ -1630,8 +1564,7 @@
 												</div>
 											</div>
 											<ul>
-												<li><i class="ic-location-map-icon-custom "></i>Mumbai </li>
-												<li><i class="ic-money-icon-custom "></i>₹ 9,000 - 10,000 /month</li>
+												<li><i class="ic-location-map-icon-custom "></i>Cuttack</li>
 												<li><i class="ic-calender-icon-custom "></i>6 Months</li>
 											</ul>
 											<div class="footer">
@@ -1656,8 +1589,7 @@
 												</div>
 											</div>
 											<ul>
-												<li><i class="ic-location-map-icon-custom "></i>Bangalore </li>
-												<li><i class="ic-money-icon-custom "></i>₹ 20,000 - 25,000 /month</li>
+												<li><i class="ic-location-map-icon-custom "></i>Cuttack</li>
 												<li><i class="ic-calender-icon-custom "></i>3 Months</li>
 											</ul>
 											<div class="footer">
@@ -1682,8 +1614,7 @@
 												</div>
 											</div>
 											<ul>
-												<li><i class="ic-location-map-icon-custom "></i>Noida </li>
-												<li><i class="ic-money-icon-custom "></i>₹ 10,000 - 12,000 /month</li>
+												<li><i class="ic-location-map-icon-custom "></i>Khordha</li>
 												<li><i class="ic-calender-icon-custom "></i>3 Months</li>
 											</ul>
 											<div class="footer">
@@ -1699,7 +1630,7 @@
 											style="background-image: url('https://internshala.com/static/images/homepage/view_all_internship.png');"
 											href="/internships/bigbrand-true?utm_source=HP_all_internships">
 											<p class="internship-title">Unlock your true potential</p>
-											<p class="internship-subtitle">Explore more than 15,000+ internships</p>
+											<p class="internship-subtitle">Explore more than 1500+ internships</p>
 											<div class="footer">
 												<span>View internships</span>
 												<i class="ic-16-filled-link"></i>
@@ -2483,42 +2414,11 @@
 						</div>
 					</div>
 				</div>-->
-				<div class="employer_section">
-					<a href="https://internshala.com/hire-talent?utm_source=is_homepage" class="employer_wrapper">
-						<div class="employer_content">
-							<div class="img_section">
-								<picture>
-									<source media="(max-width: 575px)"
-										srcset="images/homepage/employer_section/r575.webp">
-									<source media="(max-width: 767px)"
-										srcset="images/homepage/employer_section/r767.webp">
-									<source media="(max-width: 991px)"
-										srcset="images/homepage/employer_section/r991.webp">
-									<source media="(max-width: 1255px)"
-										srcset="images/homepage/employer_section/r1255.webp">
-									<img class="background_banner_img" alt="employer"
-										src="images/homepage/employer_section/r1920.webp" loading="lazy">
-								</picture>
-							</div>
-							<div class="content_section">
-								<div class="tag">Internshala for employers</div>
-								<h3 class="title">Looking to hire freshers and interns?</h3>
-								<p class="description body-large-medium">Access Odisha's largest talent pool of 3.2
-									crore+ candidates with <span>AI-powered tools</span> and smart filters to hire
-									faster.</p>
-							</div>
-						</div>
-						<button class="btn btn_large post_now_btn">
-							Post now for free
-							<i class="ic-chevron-right-blue-custom"></i>
-						</button>
-					</a>
-				</div>
 				<div class="review_section_container">
 					<div class="review_section_wrapper">
 						<div class="student_reviews">
 							<h2 class="heading">
-								28,48,723 + placements - read their stories </h2>
+								2823 + placements - read their stories </h2>
 							<div class="scroll-container">
 								<div class="scroll">
 									<div class="card">
@@ -2759,12 +2659,7 @@
 										target="_blank">T&C.</a></div>
 							</div>
 							<div class="register-cta-container">
-								<a class="google-register-cta"
-									href="/login/get_google?utm_source=is_prefooter_homepage">
-									<img src="images/login/google_logo_24.svg" alt="google_logo" />
-									Sign in with Google
-								</a>
-								<a class="register-cta" href="/registration/student?utm_source=is_prefooter_homepage">
+								<a class="register-cta" href="/student/registration">
 									<i class="ic-mail-icon-custom"></i>
 									<span> Continue with Email</span>
 								</a>
@@ -2827,7 +2722,7 @@
 				</div>
 
 				<script nonce="d3GIH8M0btV/gR9zMFfe7A==">
-					var searchModalData = {"internship": {"title": "Internships", "popular": [{"title": "POPULAR CITIES", "chips": [{"label": "Delhi\/NCR", "link": "\/internships\/internship-in-delhi?utm_campaign=HP_search_DelhiNCR"}, {"label": "Bangalore", "link": "\/internships\/internship-in-bangalore?utm_campaign=HP_search_Bangalore"}, {"label": "Mumbai", "link": "\/internships\/internship-in-mumbai?utm_campaign=HP_search_Mumbai"}, {"label": "Hyderabad", "link": "\/internships\/internship-in-hyderabad?utm_campaign=HP_search_Hyderabad"}, {"label": "Chennai", "link": "\/internships\/internship-in-chennai?utm_campaign=HP_search_Chennai"}, {"label": "Kolkata", "link": "\/internships\/internship-in-kolkata?utm_campaign=HP_search_Kolkata"}]}, {"title": "POPULAR CATEGORIES", "chips": [{"label": "Big brands", "link": "\/internships\/bigbrand-true\/?utm_source=homepage_modal_search"}, {"label": "Work from home", "link": "\/internships\/work_from_home-true\/?utm_source=homepage_modal_search"}, {"label": "Part-time", "link": "\/internships\/part_time-true\/?utm_source=homepage_modal_search"}, {"label": "MBA", "link": "\/internships\/category-mba\/?utm_source=homepage_modal_search"}, {"label": "Engineering", "link": "\/internships\/category-engineering\/?utm_source=homepage_modal_search"}, {"label": "Media", "link": "\/internships\/category-media\/?utm_source=homepage_modal_search"}, {"label": "Design", "link": "\/internships\/category-design\/?utm_source=homepage_modal_search"}, {"label": "Data Science", "link": "\/internships\/category-data-science\/?utm_source=homepage_modal_search"}]}], "dropdown": [{"label": "Engineering", "link": "\/internships\/engineering-internship?utm_source=homepage_modal_internship_search"}, {"label": "Science", "link": "\/internships\/science-internship?utm_source=homepage_modal_internship_search"}, {"label": "Business\/MBA", "link": "\/internships\/mba-internship?utm_source=homepage_modal_internship_search"}, {"label": "Media", "link": "\/internships\/media-internship?utm_source=homepage_modal_internship_search"}, {"label": "Law", "link": "\/internships\/law-internship?utm_source=homepage_modal_internship_search"}, {"label": "Humanities", "link": "\/internships\/humanities-internship?utm_source=homepage_modal_internship_search"}, {"label": "Design", "link": "\/internships\/design-internship?utm_source=homepage_modal_internship_search"}, {"label": "Architecture", "link": "\/internships\/architecture-internship?utm_source=homepage_modal_internship_search"}, {"label": "Electronics Engineering", "link": "\/internships\/electronics-internship?utm_source=homepage_modal_internship_search"}, {"label": "Computer Science", "link": "\/internships\/computer-science-internship?utm_source=homepage_modal_internship_search"}, {"label": "Sales", "link": "\/internships\/sales-internship?utm_source=homepage_modal_internship_search"}, {"label": "Mechanical Engineering", "link": "\/internships\/mechanical-internship?utm_source=homepage_modal_internship_search"}, {"label": "Civil Engineering", "link": "\/internships\/civil-internship?utm_source=homepage_modal_internship_search"}, {"label": "Chemical Engineering", "link": "\/internships\/chemical-internship?utm_source=homepage_modal_internship_search"}, {"label": "PHP Development", "link": "\/internships\/php-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "ASP.NET Development", "link": "\/internships\/asp.net-internship?utm_source=homepage_modal_internship_search"}, {"label": "Ruby on Rails", "link": "\/internships\/ruby-on-rails-internship?utm_source=homepage_modal_internship_search"}, {"label": "Python\/Django Development", "link": "\/internships\/python%2Fdjango-internship?utm_source=homepage_modal_internship_search"}, {"label": "Java Development", "link": "\/internships\/java-internship?utm_source=homepage_modal_internship_search"}, {"label": "Android App Development", "link": "\/internships\/android-internship?utm_source=homepage_modal_internship_search"}, {"label": "iOS App Development", "link": "\/internships\/ios-internship?utm_source=homepage_modal_internship_search"}, {"label": "Biotechnology Engineering", "link": "\/internships\/biotech-internship?utm_source=homepage_modal_internship_search"}, {"label": "Metallurgical Engineering", "link": "\/internships\/metallurgy-internship?utm_source=homepage_modal_internship_search"}, {"label": "Naval Architecture and Ocean Engineeering", "link": "\/internships\/naval-and-ocean-internship?utm_source=homepage_modal_internship_search"}, {"label": "Aerospace Engineering", "link": "\/internships\/aerospace-internship?utm_source=homepage_modal_internship_search"}, {"label": "NGO", "link": "\/internships\/ngo-internship?utm_source=homepage_modal_internship_search"}, {"label": "Political\/Economics\/Policy Research", "link": "\/internships\/political%2Feconomics%2Fpolicy-research-internship?utm_source=homepage_modal_internship_search"}, {"label": "Physics", "link": "\/internships\/physics-internship?utm_source=homepage_modal_internship_search"}, {"label": "Chemistry", "link": "\/internships\/chemistry-internship?utm_source=homepage_modal_internship_search"}, {"label": "Mathematics", "link": "\/internships\/mathematics-internship?utm_source=homepage_modal_internship_search"}, {"label": "Biology", "link": "\/internships\/biology-internship?utm_source=homepage_modal_internship_search"}, {"label": "Psychology", "link": "\/internships\/psychology-internship?utm_source=homepage_modal_internship_search"}, {"label": "Graphic Design", "link": "\/internships\/graphic-design-internship?utm_source=homepage_modal_internship_search"}, {"label": "Animation", "link": "\/internships\/animation-internship?utm_source=homepage_modal_internship_search"}, {"label": "UI\/UX Design", "link": "\/internships\/ui%2Fux-internship?utm_source=homepage_modal_internship_search"}, {"label": "Fashion Design", "link": "\/internships\/fashion-design-internship?utm_source=homepage_modal_internship_search"}, {"label": "Creative Writing", "link": "\/internships\/creative-writing-internship?utm_source=homepage_modal_internship_search"}, {"label": "Content Writing", "link": "\/internships\/content-writing-internship?utm_source=homepage_modal_internship_search"}, {"label": "Video Making\/Editing", "link": "\/internships\/video-making%2Fediting-internship?utm_source=homepage_modal_internship_search"}, {"label": "Photography", "link": "\/internships\/photography-internship?utm_source=homepage_modal_internship_search"}, {"label": "Film Making", "link": "\/internships\/film-making-internship?utm_source=homepage_modal_internship_search"}, {"label": "Public Relations (PR)", "link": "\/internships\/pr-internship?utm_source=homepage_modal_internship_search"}, {"label": "Database Building", "link": "\/internships\/database-building-internship?utm_source=homepage_modal_internship_search"}, {"label": "Customer Service", "link": "\/internships\/customer-service-internship?utm_source=homepage_modal_internship_search"}, {"label": "General Management", "link": "\/internships\/general-management-internship?utm_source=homepage_modal_internship_search"}, {"label": "Operations", "link": "\/internships\/operations-internship?utm_source=homepage_modal_internship_search"}, {"label": "Market\/Business Research", "link": "\/internships\/market%2Fbusiness-research-internship?utm_source=homepage_modal_internship_search"}, {"label": "Digital Marketing", "link": "\/internships\/digital-marketing-internship?utm_source=homepage_modal_internship_search"}, {"label": "Analytics", "link": "\/internships\/analytics-internship?utm_source=homepage_modal_internship_search"}, {"label": "Human Resources (HR)", "link": "\/internships\/hr-internship?utm_source=homepage_modal_internship_search"}, {"label": "Finance", "link": "\/internships\/finance-internship?utm_source=homepage_modal_internship_search"}, {"label": "Medicine", "link": "\/internships\/medicine-internship?utm_source=homepage_modal_internship_search"}, {"label": "Web Development", "link": "\/internships\/web-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Mobile App Development", "link": "\/internships\/mobile-app-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Government", "link": "\/internships\/government-internship?utm_source=homepage_modal_internship_search"}, {"label": "Commerce", "link": "\/internships\/commerce-internship?utm_source=homepage_modal_internship_search"}, {"label": "Image Processing", "link": "\/internships\/image-processing-internship?utm_source=homepage_modal_internship_search"}, {"label": "Computer Vision", "link": "\/internships\/computer-vision-internship?utm_source=homepage_modal_internship_search"}, {"label": "Social Media Marketing", "link": "\/internships\/social-media-marketing-internship?utm_source=homepage_modal_internship_search"}, {"label": "Marketing", "link": "\/internships\/marketing-internship?utm_source=homepage_modal_internship_search"}, {"label": ".NET Development", "link": "\/internships\/.net-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "3D Printing", "link": "\/internships\/3d-printing-internship?utm_source=homepage_modal_internship_search"}, {"label": "Accounts", "link": "\/internships\/accounts-internship?utm_source=homepage_modal_internship_search"}, {"label": "Acting", "link": "\/internships\/acting-internship?utm_source=homepage_modal_internship_search"}, {"label": "Agriculture & Food Engineering", "link": "\/internships\/agriculture-and-food-engineering-internship?utm_source=homepage_modal_internship_search"}, {"label": "Angular.js Development", "link": "\/internships\/angular.js-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Artificial Intelligence (AI)", "link": "\/internships\/artificial-intelligence-%28ai%29-internship?utm_source=homepage_modal_internship_search"}, {"label": "Automobile Engineering", "link": "\/internships\/automobile-engineering-internship?utm_source=homepage_modal_internship_search"}, {"label": "Backend Development", "link": "\/internships\/backend-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Bioinformatics", "link": "\/internships\/bioinformatics-internship?utm_source=homepage_modal_internship_search"}, {"label": "Blogging", "link": "\/internships\/blogging-internship?utm_source=homepage_modal_internship_search"}, {"label": "Brand Management", "link": "\/internships\/brand-management-internship?utm_source=homepage_modal_internship_search"}, {"label": "CAD Design", "link": "\/internships\/cad-design-internship?utm_source=homepage_modal_internship_search"}, {"label": "Chartered Accountancy (CA)", "link": "\/internships\/chartered-accountancy-%28ca%29-internship?utm_source=homepage_modal_internship_search"}, {"label": "Cinematography", "link": "\/internships\/cinematography-internship?utm_source=homepage_modal_internship_search"}, {"label": "Client Servicing", "link": "\/internships\/client-servicing-internship?utm_source=homepage_modal_internship_search"}, {"label": "Company Secretary (CS)", "link": "\/internships\/company-secretary-%28cs%29-internship?utm_source=homepage_modal_internship_search"}, {"label": "Copywriting", "link": "\/internships\/copywriting-internship?utm_source=homepage_modal_internship_search"}, {"label": "Creative Design", "link": "\/internships\/creative-design-internship?utm_source=homepage_modal_internship_search"}, {"label": "Data Entry", "link": "\/internships\/data-entry-internship?utm_source=homepage_modal_internship_search"}, {"label": "Data Science", "link": "\/internships\/data-science-internship?utm_source=homepage_modal_internship_search"}, {"label": "Editorial", "link": "\/internships\/editorial-internship?utm_source=homepage_modal_internship_search"}, {"label": "Embedded Systems", "link": "\/internships\/embedded-systems-internship?utm_source=homepage_modal_internship_search"}, {"label": "Energy Science & Engineering", "link": "\/internships\/energy-science-and-engineering-internship?utm_source=homepage_modal_internship_search"}, {"label": "Engineering Design", "link": "\/internships\/engineering-design-internship?utm_source=homepage_modal_internship_search"}, {"label": "Environmental Sciences", "link": "\/internships\/environmental-sciences-internship?utm_source=homepage_modal_internship_search"}, {"label": "Event Management", "link": "\/internships\/event-management-internship?utm_source=homepage_modal_internship_search"}, {"label": "Front End Development", "link": "\/internships\/front-end-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Full Stack Development", "link": "\/internships\/full-stack-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Fundraising", "link": "\/internships\/fundraising-internship?utm_source=homepage_modal_internship_search"}, {"label": "Game Development", "link": "\/internships\/game-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Hotel Management", "link": "\/internships\/hotel-management-internship?utm_source=homepage_modal_internship_search"}, {"label": "Industrial & Production Engineering", "link": "\/internships\/industrial-and-production-engineering-internship?utm_source=homepage_modal_internship_search"}, {"label": "Information Technology", "link": "\/internships\/information-technology-internship?utm_source=homepage_modal_internship_search"}, {"label": "Instrumentation & Control Engineering", "link": "\/internships\/instrumentation-and-control-engineering-internship?utm_source=homepage_modal_internship_search"}, {"label": "Interior Design", "link": "\/internships\/interior-design-internship?utm_source=homepage_modal_internship_search"}, {"label": "Internet of Things (IoT)", "link": "\/internships\/internet-of-things-%28iot%29-internship?utm_source=homepage_modal_internship_search"}, {"label": "Javascript Development", "link": "\/internships\/javascript-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Journalism", "link": "\/internships\/journalism-internship?utm_source=homepage_modal_internship_search"}, {"label": "Legal Research", "link": "\/internships\/legal-research-internship?utm_source=homepage_modal_internship_search"}, {"label": "Machine Learning", "link": "\/internships\/machine-learning-internship?utm_source=homepage_modal_internship_search"}, {"label": "Magento Development", "link": "\/internships\/magento-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Merchandise Design", "link": "\/internships\/merchandise-design-internship?utm_source=homepage_modal_internship_search"}, {"label": "Node.js Development", "link": "\/internships\/node.js-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Pharmaceutical", "link": "\/internships\/pharmaceutical-internship?utm_source=homepage_modal_internship_search"}, {"label": "Programming", "link": "\/internships\/programming-internship?utm_source=homepage_modal_internship_search"}, {"label": "Recruitment", "link": "\/internships\/recruitment-internship?utm_source=homepage_modal_internship_search"}, {"label": "Search Engine Optimization (SEO)", "link": "\/internships\/search-engine-optimization-%28seo%29-internship?utm_source=homepage_modal_internship_search"}, {"label": "Social Work", "link": "\/internships\/social-work-internship?utm_source=homepage_modal_internship_search"}, {"label": "Software Development", "link": "\/internships\/software-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Software Testing", "link": "\/internships\/software-testing-internship?utm_source=homepage_modal_internship_search"}, {"label": "Strategy", "link": "\/internships\/strategy-internship?utm_source=homepage_modal_internship_search"}, {"label": "Supply Chain Management (SCM)", "link": "\/internships\/supply-chain-management-%28scm%29-internship?utm_source=homepage_modal_internship_search"}, {"label": "Talent Acquisition", "link": "\/internships\/talent-acquisition-internship?utm_source=homepage_modal_internship_search"}, {"label": "Telecalling", "link": "\/internships\/telecalling-internship?utm_source=homepage_modal_internship_search"}, {"label": "Travel & Tourism", "link": "\/internships\/travel-and-tourism-internship?utm_source=homepage_modal_internship_search"}, {"label": "Videography", "link": "\/internships\/videography-internship?utm_source=homepage_modal_internship_search"}, {"label": "Volunteering", "link": "\/internships\/volunteering-internship?utm_source=homepage_modal_internship_search"}, {"label": "Wordpress Development", "link": "\/internships\/wordpress-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Subject Matter Expert (SME)", "link": "\/internships\/subject-matter-expert-%28sme%29-internship?utm_source=homepage_modal_internship_search"}, {"label": "Translation", "link": "\/internships\/translation-internship?utm_source=homepage_modal_internship_search"}, {"label": "Transcription", "link": "\/internships\/transcription-internship?utm_source=homepage_modal_internship_search"}, {"label": "Music", "link": "\/internships\/music-internship?utm_source=homepage_modal_internship_search"}, {"label": "Proofreading", "link": "\/internships\/proofreading-internship?utm_source=homepage_modal_internship_search"}, {"label": "Dietetics\/Nutrition", "link": "\/internships\/dietetics%2Fnutrition-internship?utm_source=homepage_modal_internship_search"}, {"label": "Culinary Arts", "link": "\/internships\/culinary-arts-internship?utm_source=homepage_modal_internship_search"}, {"label": "Flutter Development", "link": "\/internships\/flutter-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Audio Making\/Editing", "link": "\/internships\/audio-making%2Fediting-internship?utm_source=homepage_modal_internship_search"}, {"label": "Anchoring", "link": "\/internships\/anchoring-internship?utm_source=homepage_modal_internship_search"}, {"label": "Delhi\/NCR", "link": "\/internships\/internship-in-delhi?utm_campaign=HP_search_DelhiNCR"}, {"label": "Bangalore", "link": "\/internships\/internship-in-bangalore?utm_campaign=HP_search_Bangalore"}, {"label": "Mumbai", "link": "\/internships\/internship-in-mumbai?utm_campaign=HP_search_Mumbai"}, {"label": "Hyderabad", "link": "\/internships\/internship-in-hyderabad?utm_campaign=HP_search_Hyderabad"}, {"label": "Chennai", "link": "\/internships\/internship-in-chennai?utm_campaign=HP_search_Chennai"}, {"label": "Kolkata", "link": "\/internships\/internship-in-kolkata?utm_campaign=HP_search_Kolkata"}]}, "job": {"title": "Jobs", "popular": [{"title": "POPULAR CITIES", "chips": [{"label": "Bangalore", "link": "\/jobs\/jobs-in-bangalore?utm_source=homepage_modal_job_search"}, {"label": "Chennai", "link": "\/jobs\/jobs-in-chennai?utm_source=homepage_modal_job_search"}, {"label": "Delhi", "link": "\/jobs\/jobs-in-delhi?utm_source=homepage_modal_job_search"}, {"label": "Hyderabad", "link": "\/jobs\/jobs-in-hyderabad?utm_source=homepage_modal_job_search"}, {"label": "Mumbai", "link": "\/jobs\/jobs-in-mumbai?utm_source=homepage_modal_job_search"}, {"label": "Patna", "link": "\/jobs\/jobs-in-patna?utm_source=homepage_modal_job_search"}, {"label": "Pune", "link": "\/jobs\/jobs-in-pune?utm_source=homepage_modal_job_search"}, {"label": "Ranchi", "link": "\/jobs\/jobs-in-ranchi?utm_source=homepage_modal_job_search"}]}, {"title": "POPULAR CATEGORIES", "chips": [{"label": "Big brands", "link": "\/jobs\/bigbrand-true\/?utm_source=homepage_modal_search"}, {"label": "Work from home", "link": "\/jobs\/remote_job-true\/?utm_source=homepage_modal_search"}, {"label": "Part-time", "link": "\/jobs\/part_time-true\/?utm_source=homepage_modal_search"}, {"label": "MBA", "link": "\/jobs\/category-mba\/?utm_source=homepage_modal_search"}, {"label": "Engineering", "link": "\/jobs\/category-engineering\/?utm_source=homepage_modal_search"}, {"label": "Media", "link": "\/jobs\/category-media\/?utm_source=homepage_modal_search"}, {"label": "Design", "link": "\/jobs\/category-design\/?utm_source=homepage_modal_search"}, {"label": "Data Science", "link": "\/jobs\/category-data-science\/?utm_source=homepage_modal_search"}]}], "dropdown": [{"label": "Engineering", "link": "\/jobs\/engineering-jobs?utm_source=homepage_modal_job_search"}, {"label": "Science", "link": "\/jobs\/science-jobs?utm_source=homepage_modal_job_search"}, {"label": "Business\/MBA", "link": "\/jobs\/mba-jobs?utm_source=homepage_modal_job_search"}, {"label": "Media", "link": "\/jobs\/media-jobs?utm_source=homepage_modal_job_search"}, {"label": "Law", "link": "\/jobs\/law-jobs?utm_source=homepage_modal_job_search"}, {"label": "Humanities", "link": "\/jobs\/humanities-jobs?utm_source=homepage_modal_job_search"}, {"label": "Design", "link": "\/jobs\/design-jobs?utm_source=homepage_modal_job_search"}, {"label": "Architecture", "link": "\/jobs\/architecture-jobs?utm_source=homepage_modal_job_search"}, {"label": "Electronics Engineering", "link": "\/jobs\/electronics-jobs?utm_source=homepage_modal_job_search"}, {"label": "Computer Science", "link": "\/jobs\/computer-science-jobs?utm_source=homepage_modal_job_search"}, {"label": "Sales", "link": "\/jobs\/sales-jobs?utm_source=homepage_modal_job_search"}, {"label": "Mechanical Engineering", "link": "\/jobs\/mechanical-jobs?utm_source=homepage_modal_job_search"}, {"label": "Civil Engineering", "link": "\/jobs\/civil-jobs?utm_source=homepage_modal_job_search"}, {"label": "Chemical Engineering", "link": "\/jobs\/chemical-jobs?utm_source=homepage_modal_job_search"}, {"label": "PHP Development", "link": "\/jobs\/php-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "ASP.NET Development", "link": "\/jobs\/asp.net-jobs?utm_source=homepage_modal_job_search"}, {"label": "Ruby on Rails", "link": "\/jobs\/ruby-on-rails-jobs?utm_source=homepage_modal_job_search"}, {"label": "Python\/Django Development", "link": "\/jobs\/python%2Fdjango-jobs?utm_source=homepage_modal_job_search"}, {"label": "Java Development", "link": "\/jobs\/java-jobs?utm_source=homepage_modal_job_search"}, {"label": "Android App Development", "link": "\/jobs\/android-jobs?utm_source=homepage_modal_job_search"}, {"label": "iOS App Development", "link": "\/jobs\/ios-jobs?utm_source=homepage_modal_job_search"}, {"label": "Biotechnology Engineering", "link": "\/jobs\/biotech-jobs?utm_source=homepage_modal_job_search"}, {"label": "Metallurgical Engineering", "link": "\/jobs\/metallurgy-jobs?utm_source=homepage_modal_job_search"}, {"label": "Naval Architecture and Ocean Engineeering", "link": "\/jobs\/naval-and-ocean-jobs?utm_source=homepage_modal_job_search"}, {"label": "Aerospace Engineering", "link": "\/jobs\/aerospace-jobs?utm_source=homepage_modal_job_search"}, {"label": "NGO", "link": "\/jobs\/ngo-jobs?utm_source=homepage_modal_job_search"}, {"label": "Political\/Economics\/Policy Research", "link": "\/jobs\/political%2Feconomics%2Fpolicy-research-jobs?utm_source=homepage_modal_job_search"}, {"label": "Physics", "link": "\/jobs\/physics-jobs?utm_source=homepage_modal_job_search"}, {"label": "Chemistry", "link": "\/jobs\/chemistry-jobs?utm_source=homepage_modal_job_search"}, {"label": "Mathematics", "link": "\/jobs\/mathematics-jobs?utm_source=homepage_modal_job_search"}, {"label": "Biology", "link": "\/jobs\/biology-jobs?utm_source=homepage_modal_job_search"}, {"label": "Psychology", "link": "\/jobs\/psychology-jobs?utm_source=homepage_modal_job_search"}, {"label": "Graphic Design", "link": "\/jobs\/graphic-design-jobs?utm_source=homepage_modal_job_search"}, {"label": "Animation", "link": "\/jobs\/animation-jobs?utm_source=homepage_modal_job_search"}, {"label": "UI\/UX Design", "link": "\/jobs\/ui%2Fux-jobs?utm_source=homepage_modal_job_search"}, {"label": "Fashion Design", "link": "\/jobs\/fashion-design-jobs?utm_source=homepage_modal_job_search"}, {"label": "Creative Writing", "link": "\/jobs\/creative-writing-jobs?utm_source=homepage_modal_job_search"}, {"label": "Content Writing", "link": "\/jobs\/content-writing-jobs?utm_source=homepage_modal_job_search"}, {"label": "Video Making\/Editing", "link": "\/jobs\/video-making%2Fediting-jobs?utm_source=homepage_modal_job_search"}, {"label": "Photography", "link": "\/jobs\/photography-jobs?utm_source=homepage_modal_job_search"}, {"label": "Film Making", "link": "\/jobs\/film-making-jobs?utm_source=homepage_modal_job_search"}, {"label": "Public Relations (PR)", "link": "\/jobs\/pr-jobs?utm_source=homepage_modal_job_search"}, {"label": "Database Building", "link": "\/jobs\/database-building-jobs?utm_source=homepage_modal_job_search"}, {"label": "Customer Service", "link": "\/jobs\/customer-service-jobs?utm_source=homepage_modal_job_search"}, {"label": "General Management", "link": "\/jobs\/general-management-jobs?utm_source=homepage_modal_job_search"}, {"label": "Operations", "link": "\/jobs\/operations-jobs?utm_source=homepage_modal_job_search"}, {"label": "Market\/Business Research", "link": "\/jobs\/market%2Fbusiness-research-jobs?utm_source=homepage_modal_job_search"}, {"label": "Digital Marketing", "link": "\/jobs\/digital-marketing-jobs?utm_source=homepage_modal_job_search"}, {"label": "Analytics", "link": "\/jobs\/analytics-jobs?utm_source=homepage_modal_job_search"}, {"label": "Human Resources (HR)", "link": "\/jobs\/hr-jobs?utm_source=homepage_modal_job_search"}, {"label": "Finance", "link": "\/jobs\/finance-jobs?utm_source=homepage_modal_job_search"}, {"label": "Medicine", "link": "\/jobs\/medicine-jobs?utm_source=homepage_modal_job_search"}, {"label": "Web Development", "link": "\/jobs\/web-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Mobile App Development", "link": "\/jobs\/mobile-app-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Government", "link": "\/jobs\/government-jobs?utm_source=homepage_modal_job_search"}, {"label": "Commerce", "link": "\/jobs\/commerce-jobs?utm_source=homepage_modal_job_search"}, {"label": "Image Processing", "link": "\/jobs\/image-processing-jobs?utm_source=homepage_modal_job_search"}, {"label": "Computer Vision", "link": "\/jobs\/computer-vision-jobs?utm_source=homepage_modal_job_search"}, {"label": "Social Media Marketing", "link": "\/jobs\/social-media-marketing-jobs?utm_source=homepage_modal_job_search"}, {"label": "Marketing", "link": "\/jobs\/marketing-jobs?utm_source=homepage_modal_job_search"}, {"label": ".NET Development", "link": "\/jobs\/.net-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "3D Printing", "link": "\/jobs\/3d-printing-jobs?utm_source=homepage_modal_job_search"}, {"label": "Accounts", "link": "\/jobs\/accounts-jobs?utm_source=homepage_modal_job_search"}, {"label": "Acting", "link": "\/jobs\/acting-jobs?utm_source=homepage_modal_job_search"}, {"label": "Agriculture & Food Engineering", "link": "\/jobs\/agriculture-and-food-engineering-jobs?utm_source=homepage_modal_job_search"}, {"label": "Angular.js Development", "link": "\/jobs\/angular.js-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Artificial Intelligence (AI)", "link": "\/jobs\/artificial-intelligence-%28ai%29-jobs?utm_source=homepage_modal_job_search"}, {"label": "Automobile Engineering", "link": "\/jobs\/automobile-engineering-jobs?utm_source=homepage_modal_job_search"}, {"label": "Backend Development", "link": "\/jobs\/backend-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Bioinformatics", "link": "\/jobs\/bioinformatics-jobs?utm_source=homepage_modal_job_search"}, {"label": "Blogging", "link": "\/jobs\/blogging-jobs?utm_source=homepage_modal_job_search"}, {"label": "Brand Management", "link": "\/jobs\/brand-management-jobs?utm_source=homepage_modal_job_search"}, {"label": "CAD Design", "link": "\/jobs\/cad-design-jobs?utm_source=homepage_modal_job_search"}, {"label": "Chartered Accountancy (CA)", "link": "\/jobs\/chartered-accountancy-%28ca%29-jobs?utm_source=homepage_modal_job_search"}, {"label": "Cinematography", "link": "\/jobs\/cinematography-jobs?utm_source=homepage_modal_job_search"}, {"label": "Client Servicing", "link": "\/jobs\/client-servicing-jobs?utm_source=homepage_modal_job_search"}, {"label": "Company Secretary (CS)", "link": "\/jobs\/company-secretary-%28cs%29-jobs?utm_source=homepage_modal_job_search"}, {"label": "Copywriting", "link": "\/jobs\/copywriting-jobs?utm_source=homepage_modal_job_search"}, {"label": "Creative Design", "link": "\/jobs\/creative-design-jobs?utm_source=homepage_modal_job_search"}, {"label": "Data Entry", "link": "\/jobs\/data-entry-jobs?utm_source=homepage_modal_job_search"}, {"label": "Data Science", "link": "\/jobs\/data-science-jobs?utm_source=homepage_modal_job_search"}, {"label": "Editorial", "link": "\/jobs\/editorial-jobs?utm_source=homepage_modal_job_search"}, {"label": "Embedded Systems", "link": "\/jobs\/embedded-systems-jobs?utm_source=homepage_modal_job_search"}, {"label": "Energy Science & Engineering", "link": "\/jobs\/energy-science-and-engineering-jobs?utm_source=homepage_modal_job_search"}, {"label": "Engineering Design", "link": "\/jobs\/engineering-design-jobs?utm_source=homepage_modal_job_search"}, {"label": "Environmental Sciences", "link": "\/jobs\/environmental-sciences-jobs?utm_source=homepage_modal_job_search"}, {"label": "Event Management", "link": "\/jobs\/event-management-jobs?utm_source=homepage_modal_job_search"}, {"label": "Front End Development", "link": "\/jobs\/front-end-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Full Stack Development", "link": "\/jobs\/full-stack-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Fundraising", "link": "\/jobs\/fundraising-jobs?utm_source=homepage_modal_job_search"}, {"label": "Game Development", "link": "\/jobs\/game-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Hotel Management", "link": "\/jobs\/hotel-management-jobs?utm_source=homepage_modal_job_search"}, {"label": "Industrial & Production Engineering", "link": "\/jobs\/industrial-and-production-engineering-jobs?utm_source=homepage_modal_job_search"}, {"label": "Information Technology", "link": "\/jobs\/information-technology-jobs?utm_source=homepage_modal_job_search"}, {"label": "Instrumentation & Control Engineering", "link": "\/jobs\/instrumentation-and-control-engineering-jobs?utm_source=homepage_modal_job_search"}, {"label": "Interior Design", "link": "\/jobs\/interior-design-jobs?utm_source=homepage_modal_job_search"}, {"label": "Internet of Things (IoT)", "link": "\/jobs\/internet-of-things-%28iot%29-jobs?utm_source=homepage_modal_job_search"}, {"label": "Javascript Development", "link": "\/jobs\/javascript-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Journalism", "link": "\/jobs\/journalism-jobs?utm_source=homepage_modal_job_search"}, {"label": "Legal Research", "link": "\/jobs\/legal-research-jobs?utm_source=homepage_modal_job_search"}, {"label": "Machine Learning", "link": "\/jobs\/machine-learning-jobs?utm_source=homepage_modal_job_search"}, {"label": "Magento Development", "link": "\/jobs\/magento-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Merchandise Design", "link": "\/jobs\/merchandise-design-jobs?utm_source=homepage_modal_job_search"}, {"label": "Node.js Development", "link": "\/jobs\/node.js-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Pharmaceutical", "link": "\/jobs\/pharmaceutical-jobs?utm_source=homepage_modal_job_search"}, {"label": "Programming", "link": "\/jobs\/programming-jobs?utm_source=homepage_modal_job_search"}, {"label": "Recruitment", "link": "\/jobs\/recruitment-jobs?utm_source=homepage_modal_job_search"}, {"label": "Search Engine Optimization (SEO)", "link": "\/jobs\/search-engine-optimization-%28seo%29-jobs?utm_source=homepage_modal_job_search"}, {"label": "Social Work", "link": "\/jobs\/social-work-jobs?utm_source=homepage_modal_job_search"}, {"label": "Software Development", "link": "\/jobs\/software-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Software Testing", "link": "\/jobs\/software-testing-jobs?utm_source=homepage_modal_job_search"}, {"label": "Strategy", "link": "\/jobs\/strategy-jobs?utm_source=homepage_modal_job_search"}, {"label": "Supply Chain Management (SCM)", "link": "\/jobs\/supply-chain-management-%28scm%29-jobs?utm_source=homepage_modal_job_search"}, {"label": "Talent Acquisition", "link": "\/jobs\/talent-acquisition-jobs?utm_source=homepage_modal_job_search"}, {"label": "Telecalling", "link": "\/jobs\/telecalling-jobs?utm_source=homepage_modal_job_search"}, {"label": "Travel & Tourism", "link": "\/jobs\/travel-and-tourism-jobs?utm_source=homepage_modal_job_search"}, {"label": "Videography", "link": "\/jobs\/videography-jobs?utm_source=homepage_modal_job_search"}, {"label": "Volunteering", "link": "\/jobs\/volunteering-jobs?utm_source=homepage_modal_job_search"}, {"label": "Wordpress Development", "link": "\/jobs\/wordpress-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Subject Matter Expert (SME)", "link": "\/jobs\/subject-matter-expert-%28sme%29-jobs?utm_source=homepage_modal_job_search"}, {"label": "Translation", "link": "\/jobs\/translation-jobs?utm_source=homepage_modal_job_search"}, {"label": "Transcription", "link": "\/jobs\/transcription-jobs?utm_source=homepage_modal_job_search"}, {"label": "Music", "link": "\/jobs\/music-jobs?utm_source=homepage_modal_job_search"}, {"label": "Proofreading", "link": "\/jobs\/proofreading-jobs?utm_source=homepage_modal_job_search"}, {"label": "Dietetics\/Nutrition", "link": "\/jobs\/dietetics%2Fnutrition-jobs?utm_source=homepage_modal_job_search"}, {"label": "Culinary Arts", "link": "\/jobs\/culinary-arts-jobs?utm_source=homepage_modal_job_search"}, {"label": "Flutter Development", "link": "\/jobs\/flutter-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Audio Making\/Editing", "link": "\/jobs\/audio-making%2Fediting-jobs?utm_source=homepage_modal_job_search"}, {"label": "Anchoring", "link": "\/jobs\/anchoring-jobs?utm_source=homepage_modal_job_search"}, {"label": "Bangalore", "link": "\/jobs\/jobs-in-bangalore?utm_source=homepage_modal_job_search"}, {"label": "Chennai", "link": "\/jobs\/jobs-in-chennai?utm_source=homepage_modal_job_search"}, {"label": "Delhi", "link": "\/jobs\/jobs-in-delhi?utm_source=homepage_modal_job_search"}, {"label": "Hyderabad", "link": "\/jobs\/jobs-in-hyderabad?utm_source=homepage_modal_job_search"}, {"label": "Mumbai", "link": "\/jobs\/jobs-in-mumbai?utm_source=homepage_modal_job_search"}, {"label": "Patna", "link": "\/jobs\/jobs-in-patna?utm_source=homepage_modal_job_search"}, {"label": "Pune", "link": "\/jobs\/jobs-in-pune?utm_source=homepage_modal_job_search"}, {"label": "Ranchi", "link": "\/jobs\/jobs-in-ranchi?utm_source=homepage_modal_job_search"}]}, "stc": {"title": "Short term courses", "popular": [{"title": "SHORT TERM COURSES", "chips": [{"label": "Artificial Intelligence and Machine Learning", "link": "https:\/\/trainings.internshala.com\/artificial-intelligence-and-machine-learning-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "Web Development with AI", "link": "https:\/\/trainings.internshala.com\/web-development-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "Programming with Python with AI", "link": "https:\/\/trainings.internshala.com\/python-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "Digital Marketing with AI", "link": "https:\/\/trainings.internshala.com\/digital-marketing-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "Machine Learning with AI", "link": "https:\/\/trainings.internshala.com\/machine-learning-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "Advanced Excel with AI", "link": "https:\/\/trainings.internshala.com\/excel-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "AutoCAD", "link": "https:\/\/trainings.internshala.com\/autocad-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "Data Science with AI", "link": "https:\/\/trainings.internshala.com\/data-science-beginner-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "Programming with C and C++ with AI", "link": "https:\/\/trainings.internshala.com\/c-plus-plus-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "Financial Modeling and Valuation with AI", "link": "https:\/\/trainings.internshala.com\/financial-modeling-valuation-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "Android App Development with AI", "link": "https:\/\/trainings.internshala.com\/android-course\/?utm_source=is_web_HP_popular_training_search"}]}], "dropdown": [{"label": "Artificial Intelligence and Machine Learning", "link": "https:\/\/trainings.internshala.com\/artificial-intelligence-and-machine-learning-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Web Development with AI", "link": "https:\/\/trainings.internshala.com\/web-development-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Programming with Python with AI", "link": "https:\/\/trainings.internshala.com\/python-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Digital Marketing with AI", "link": "https:\/\/trainings.internshala.com\/digital-marketing-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Machine Learning with AI", "link": "https:\/\/trainings.internshala.com\/machine-learning-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Advanced Excel with AI", "link": "https:\/\/trainings.internshala.com\/excel-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "AutoCAD", "link": "https:\/\/trainings.internshala.com\/autocad-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Data Science with AI", "link": "https:\/\/trainings.internshala.com\/data-science-beginner-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Programming with C and C++ with AI", "link": "https:\/\/trainings.internshala.com\/c-plus-plus-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Financial Modeling and Valuation with AI", "link": "https:\/\/trainings.internshala.com\/financial-modeling-valuation-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Android App Development with AI", "link": "https:\/\/trainings.internshala.com\/android-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Full Stack Development Course", "link": "https:\/\/trainings.internshala.com\/full-stack-web-development-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Data Science Course", "link": "https:\/\/trainings.internshala.com\/data-science-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Human Resource Management Course", "link": "https:\/\/trainings.internshala.com\/human-resource-management-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Digital Marketing Course", "link": "https:\/\/trainings.internshala.com\/digital-marketing-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "UI\/UX Design Course", "link": "https:\/\/trainings.internshala.com\/ui-ux-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Product Management Course", "link": "https:\/\/trainings.internshala.com\/product-management-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Financial Modelling Course", "link": "https:\/\/trainings.internshala.com\/financial-modelling-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Supply Chain Logistics Course", "link": "https:\/\/trainings.internshala.com\/supply-chain-logistics-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Software Testing Course", "link": "https:\/\/trainings.internshala.com\/software-testing-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search"}]}, "pgc": {"title": "Placement courses", "popular": [{"title": "PLACEMENT COURSES", "chips": [{"label": "Full Stack Development", "link": "https:\/\/trainings.internshala.com\/full-stack-web-development-placement-guarantee-course\/?utm_source=is_web_HP_popular_training_search1"}, {"label": "Data Science", "link": "https:\/\/trainings.internshala.com\/data-science-placement-guarantee-course\/?utm_source=is_web_HP_popular_training_search2"}, {"label": "Human Resource Management", "link": "https:\/\/trainings.internshala.com\/human-resource-management-placement-guarantee-course\/?utm_source=is_web_HP_popular_training_search3"}, {"label": "Digital Marketing", "link": "https:\/\/trainings.internshala.com\/digital-marketing-placement-guarantee-course\/?utm_source=is_web_HP_popular_training_search4"}, {"label": "UI\/UX Design", "link": "https:\/\/trainings.internshala.com\/ui-ux-placement-guarantee-course\/?utm_source=is_web_HP_popular_training_search6"}, {"label": "Product Management", "link": "https:\/\/trainings.internshala.com\/product-management-placement-guarantee-course\/?utm_source=is_web_HP_popular_training_search7"}, {"label": "Financial Modelling", "link": "https:\/\/trainings.internshala.com\/financial-modelling-placement-guarantee-course\/?utm_source=is_web_HP_popular_training_search8"}, {"label": "Supply Chain Logistics", "link": "https:\/\/trainings.internshala.com\/supply-chain-logistics-placement-guarantee-course\/?utm_source=is_web_HP_popular_training_search9"}, {"label": "Software Testing", "link": "https:\/\/trainings.internshala.com\/software-testing-placement-guarantee-course\/?utm_source=is_web_HP_popular_training_search11"}]}], "dropdown": [{"label": "Full Stack Development", "link": "https:\/\/trainings.internshala.com\/full-stack-web-development-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search1"}, {"label": "Data Science", "link": "https:\/\/trainings.internshala.com\/data-science-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search2"}, {"label": "Human Resource Management", "link": "https:\/\/trainings.internshala.com\/human-resource-management-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search3"}, {"label": "Digital Marketing", "link": "https:\/\/trainings.internshala.com\/digital-marketing-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search4"}, {"label": "UI\/UX Design", "link": "https:\/\/trainings.internshala.com\/ui-ux-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search6"}, {"label": "Product Management", "link": "https:\/\/trainings.internshala.com\/product-management-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search7"}, {"label": "Financial Modelling", "link": "https:\/\/trainings.internshala.com\/financial-modelling-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search8"}, {"label": "Supply Chain Logistics", "link": "https:\/\/trainings.internshala.com\/supply-chain-logistics-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search9"}, {"label": "Software Testing", "link": "https:\/\/trainings.internshala.com\/software-testing-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search11"}]}};
+					var searchModalData = {"internship": {"title": "Internships", "popular": [{"title": "POPULAR CITIES", "chips": [{"label": "\/NCR", "link": "\/internships\/internship-in-delhi?utm_campaign=HP_search_DelhiNCR"}, {"label": "Bangalore", "link": "\/internships\/internship-in-bangalore?utm_campaign=HP_search_Bangalore"}, {"label": "Mumbai", "link": "\/internships\/internship-in-mumbai?utm_campaign=HP_search_Mumbai"}, {"label": "Hyderabad", "link": "\/internships\/internship-in-hyderabad?utm_campaign=HP_search_Hyderabad"}, {"label": "Chennai", "link": "\/internships\/internship-in-chennai?utm_campaign=HP_search_Chennai"}, {"label": "Kolkata", "link": "\/internships\/internship-in-kolkata?utm_campaign=HP_search_Kolkata"}]}, {"title": "POPULAR CATEGORIES", "chips": [{"label": "Big brands", "link": "\/internships\/bigbrand-true\/?utm_source=homepage_modal_search"}, {"label": "Work from home", "link": "\/internships\/work_from_home-true\/?utm_source=homepage_modal_search"}, {"label": "Part-time", "link": "\/internships\/part_time-true\/?utm_source=homepage_modal_search"}, {"label": "MBA", "link": "\/internships\/category-mba\/?utm_source=homepage_modal_search"}, {"label": "Engineering", "link": "\/internships\/category-engineering\/?utm_source=homepage_modal_search"}, {"label": "Media", "link": "\/internships\/category-media\/?utm_source=homepage_modal_search"}, {"label": "Design", "link": "\/internships\/category-design\/?utm_source=homepage_modal_search"}, {"label": "Data Science", "link": "\/internships\/category-data-science\/?utm_source=homepage_modal_search"}]}], "dropdown": [{"label": "Engineering", "link": "\/internships\/engineering-internship?utm_source=homepage_modal_internship_search"}, {"label": "Science", "link": "\/internships\/science-internship?utm_source=homepage_modal_internship_search"}, {"label": "Business\/MBA", "link": "\/internships\/mba-internship?utm_source=homepage_modal_internship_search"}, {"label": "Media", "link": "\/internships\/media-internship?utm_source=homepage_modal_internship_search"}, {"label": "Law", "link": "\/internships\/law-internship?utm_source=homepage_modal_internship_search"}, {"label": "Humanities", "link": "\/internships\/humanities-internship?utm_source=homepage_modal_internship_search"}, {"label": "Design", "link": "\/internships\/design-internship?utm_source=homepage_modal_internship_search"}, {"label": "Architecture", "link": "\/internships\/architecture-internship?utm_source=homepage_modal_internship_search"}, {"label": "Electronics Engineering", "link": "\/internships\/electronics-internship?utm_source=homepage_modal_internship_search"}, {"label": "Computer Science", "link": "\/internships\/computer-science-internship?utm_source=homepage_modal_internship_search"}, {"label": "Sales", "link": "\/internships\/sales-internship?utm_source=homepage_modal_internship_search"}, {"label": "Mechanical Engineering", "link": "\/internships\/mechanical-internship?utm_source=homepage_modal_internship_search"}, {"label": "Civil Engineering", "link": "\/internships\/civil-internship?utm_source=homepage_modal_internship_search"}, {"label": "Chemical Engineering", "link": "\/internships\/chemical-internship?utm_source=homepage_modal_internship_search"}, {"label": "PHP Development", "link": "\/internships\/php-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "ASP.NET Development", "link": "\/internships\/asp.net-internship?utm_source=homepage_modal_internship_search"}, {"label": "Ruby on Rails", "link": "\/internships\/ruby-on-rails-internship?utm_source=homepage_modal_internship_search"}, {"label": "Python\/Django Development", "link": "\/internships\/python%2Fdjango-internship?utm_source=homepage_modal_internship_search"}, {"label": "Java Development", "link": "\/internships\/java-internship?utm_source=homepage_modal_internship_search"}, {"label": "Android App Development", "link": "\/internships\/android-internship?utm_source=homepage_modal_internship_search"}, {"label": "iOS App Development", "link": "\/internships\/ios-internship?utm_source=homepage_modal_internship_search"}, {"label": "Biotechnology Engineering", "link": "\/internships\/biotech-internship?utm_source=homepage_modal_internship_search"}, {"label": "Metallurgical Engineering", "link": "\/internships\/metallurgy-internship?utm_source=homepage_modal_internship_search"}, {"label": "Naval Architecture and Ocean Engineeering", "link": "\/internships\/naval-and-ocean-internship?utm_source=homepage_modal_internship_search"}, {"label": "Aerospace Engineering", "link": "\/internships\/aerospace-internship?utm_source=homepage_modal_internship_search"}, {"label": "NGO", "link": "\/internships\/ngo-internship?utm_source=homepage_modal_internship_search"}, {"label": "Political\/Economics\/Policy Research", "link": "\/internships\/political%2Feconomics%2Fpolicy-research-internship?utm_source=homepage_modal_internship_search"}, {"label": "Physics", "link": "\/internships\/physics-internship?utm_source=homepage_modal_internship_search"}, {"label": "Chemistry", "link": "\/internships\/chemistry-internship?utm_source=homepage_modal_internship_search"}, {"label": "Mathematics", "link": "\/internships\/mathematics-internship?utm_source=homepage_modal_internship_search"}, {"label": "Biology", "link": "\/internships\/biology-internship?utm_source=homepage_modal_internship_search"}, {"label": "Psychology", "link": "\/internships\/psychology-internship?utm_source=homepage_modal_internship_search"}, {"label": "Graphic Design", "link": "\/internships\/graphic-design-internship?utm_source=homepage_modal_internship_search"}, {"label": "Animation", "link": "\/internships\/animation-internship?utm_source=homepage_modal_internship_search"}, {"label": "UI\/UX Design", "link": "\/internships\/ui%2Fux-internship?utm_source=homepage_modal_internship_search"}, {"label": "Fashion Design", "link": "\/internships\/fashion-design-internship?utm_source=homepage_modal_internship_search"}, {"label": "Creative Writing", "link": "\/internships\/creative-writing-internship?utm_source=homepage_modal_internship_search"}, {"label": "Content Writing", "link": "\/internships\/content-writing-internship?utm_source=homepage_modal_internship_search"}, {"label": "Video Making\/Editing", "link": "\/internships\/video-making%2Fediting-internship?utm_source=homepage_modal_internship_search"}, {"label": "Photography", "link": "\/internships\/photography-internship?utm_source=homepage_modal_internship_search"}, {"label": "Film Making", "link": "\/internships\/film-making-internship?utm_source=homepage_modal_internship_search"}, {"label": "Public Relations (PR)", "link": "\/internships\/pr-internship?utm_source=homepage_modal_internship_search"}, {"label": "Database Building", "link": "\/internships\/database-building-internship?utm_source=homepage_modal_internship_search"}, {"label": "Customer Service", "link": "\/internships\/customer-service-internship?utm_source=homepage_modal_internship_search"}, {"label": "General Management", "link": "\/internships\/general-management-internship?utm_source=homepage_modal_internship_search"}, {"label": "Operations", "link": "\/internships\/operations-internship?utm_source=homepage_modal_internship_search"}, {"label": "Market\/Business Research", "link": "\/internships\/market%2Fbusiness-research-internship?utm_source=homepage_modal_internship_search"}, {"label": "Digital Marketing", "link": "\/internships\/digital-marketing-internship?utm_source=homepage_modal_internship_search"}, {"label": "Analytics", "link": "\/internships\/analytics-internship?utm_source=homepage_modal_internship_search"}, {"label": "Human Resources (HR)", "link": "\/internships\/hr-internship?utm_source=homepage_modal_internship_search"}, {"label": "Finance", "link": "\/internships\/finance-internship?utm_source=homepage_modal_internship_search"}, {"label": "Medicine", "link": "\/internships\/medicine-internship?utm_source=homepage_modal_internship_search"}, {"label": "Web Development", "link": "\/internships\/web-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Mobile App Development", "link": "\/internships\/mobile-app-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Government", "link": "\/internships\/government-internship?utm_source=homepage_modal_internship_search"}, {"label": "Commerce", "link": "\/internships\/commerce-internship?utm_source=homepage_modal_internship_search"}, {"label": "Image Processing", "link": "\/internships\/image-processing-internship?utm_source=homepage_modal_internship_search"}, {"label": "Computer Vision", "link": "\/internships\/computer-vision-internship?utm_source=homepage_modal_internship_search"}, {"label": "Social Media Marketing", "link": "\/internships\/social-media-marketing-internship?utm_source=homepage_modal_internship_search"}, {"label": "Marketing", "link": "\/internships\/marketing-internship?utm_source=homepage_modal_internship_search"}, {"label": ".NET Development", "link": "\/internships\/.net-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "3D Printing", "link": "\/internships\/3d-printing-internship?utm_source=homepage_modal_internship_search"}, {"label": "Accounts", "link": "\/internships\/accounts-internship?utm_source=homepage_modal_internship_search"}, {"label": "Acting", "link": "\/internships\/acting-internship?utm_source=homepage_modal_internship_search"}, {"label": "Agriculture & Food Engineering", "link": "\/internships\/agriculture-and-food-engineering-internship?utm_source=homepage_modal_internship_search"}, {"label": "Angular.js Development", "link": "\/internships\/angular.js-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Artificial Intelligence (AI)", "link": "\/internships\/artificial-intelligence-%28ai%29-internship?utm_source=homepage_modal_internship_search"}, {"label": "Automobile Engineering", "link": "\/internships\/automobile-engineering-internship?utm_source=homepage_modal_internship_search"}, {"label": "Backend Development", "link": "\/internships\/backend-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Bioinformatics", "link": "\/internships\/bioinformatics-internship?utm_source=homepage_modal_internship_search"}, {"label": "Blogging", "link": "\/internships\/blogging-internship?utm_source=homepage_modal_internship_search"}, {"label": "Brand Management", "link": "\/internships\/brand-management-internship?utm_source=homepage_modal_internship_search"}, {"label": "CAD Design", "link": "\/internships\/cad-design-internship?utm_source=homepage_modal_internship_search"}, {"label": "Chartered Accountancy (CA)", "link": "\/internships\/chartered-accountancy-%28ca%29-internship?utm_source=homepage_modal_internship_search"}, {"label": "Cinematography", "link": "\/internships\/cinematography-internship?utm_source=homepage_modal_internship_search"}, {"label": "Client Servicing", "link": "\/internships\/client-servicing-internship?utm_source=homepage_modal_internship_search"}, {"label": "Company Secretary (CS)", "link": "\/internships\/company-secretary-%28cs%29-internship?utm_source=homepage_modal_internship_search"}, {"label": "Copywriting", "link": "\/internships\/copywriting-internship?utm_source=homepage_modal_internship_search"}, {"label": "Creative Design", "link": "\/internships\/creative-design-internship?utm_source=homepage_modal_internship_search"}, {"label": "Data Entry", "link": "\/internships\/data-entry-internship?utm_source=homepage_modal_internship_search"}, {"label": "Data Science", "link": "\/internships\/data-science-internship?utm_source=homepage_modal_internship_search"}, {"label": "Editorial", "link": "\/internships\/editorial-internship?utm_source=homepage_modal_internship_search"}, {"label": "Embedded Systems", "link": "\/internships\/embedded-systems-internship?utm_source=homepage_modal_internship_search"}, {"label": "Energy Science & Engineering", "link": "\/internships\/energy-science-and-engineering-internship?utm_source=homepage_modal_internship_search"}, {"label": "Engineering Design", "link": "\/internships\/engineering-design-internship?utm_source=homepage_modal_internship_search"}, {"label": "Environmental Sciences", "link": "\/internships\/environmental-sciences-internship?utm_source=homepage_modal_internship_search"}, {"label": "Event Management", "link": "\/internships\/event-management-internship?utm_source=homepage_modal_internship_search"}, {"label": "Front End Development", "link": "\/internships\/front-end-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Full Stack Development", "link": "\/internships\/full-stack-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Fundraising", "link": "\/internships\/fundraising-internship?utm_source=homepage_modal_internship_search"}, {"label": "Game Development", "link": "\/internships\/game-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Hotel Management", "link": "\/internships\/hotel-management-internship?utm_source=homepage_modal_internship_search"}, {"label": "Industrial & Production Engineering", "link": "\/internships\/industrial-and-production-engineering-internship?utm_source=homepage_modal_internship_search"}, {"label": "Information Technology", "link": "\/internships\/information-technology-internship?utm_source=homepage_modal_internship_search"}, {"label": "Instrumentation & Control Engineering", "link": "\/internships\/instrumentation-and-control-engineering-internship?utm_source=homepage_modal_internship_search"}, {"label": "Interior Design", "link": "\/internships\/interior-design-internship?utm_source=homepage_modal_internship_search"}, {"label": "Internet of Things (IoT)", "link": "\/internships\/internet-of-things-%28iot%29-internship?utm_source=homepage_modal_internship_search"}, {"label": "Javascript Development", "link": "\/internships\/javascript-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Journalism", "link": "\/internships\/journalism-internship?utm_source=homepage_modal_internship_search"}, {"label": "Legal Research", "link": "\/internships\/legal-research-internship?utm_source=homepage_modal_internship_search"}, {"label": "Machine Learning", "link": "\/internships\/machine-learning-internship?utm_source=homepage_modal_internship_search"}, {"label": "Magento Development", "link": "\/internships\/magento-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Merchandise Design", "link": "\/internships\/merchandise-design-internship?utm_source=homepage_modal_internship_search"}, {"label": "Node.js Development", "link": "\/internships\/node.js-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Pharmaceutical", "link": "\/internships\/pharmaceutical-internship?utm_source=homepage_modal_internship_search"}, {"label": "Programming", "link": "\/internships\/programming-internship?utm_source=homepage_modal_internship_search"}, {"label": "Recruitment", "link": "\/internships\/recruitment-internship?utm_source=homepage_modal_internship_search"}, {"label": "Search Engine Optimization (SEO)", "link": "\/internships\/search-engine-optimization-%28seo%29-internship?utm_source=homepage_modal_internship_search"}, {"label": "Social Work", "link": "\/internships\/social-work-internship?utm_source=homepage_modal_internship_search"}, {"label": "Software Development", "link": "\/internships\/software-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Software Testing", "link": "\/internships\/software-testing-internship?utm_source=homepage_modal_internship_search"}, {"label": "Strategy", "link": "\/internships\/strategy-internship?utm_source=homepage_modal_internship_search"}, {"label": "Supply Chain Management (SCM)", "link": "\/internships\/supply-chain-management-%28scm%29-internship?utm_source=homepage_modal_internship_search"}, {"label": "Talent Acquisition", "link": "\/internships\/talent-acquisition-internship?utm_source=homepage_modal_internship_search"}, {"label": "Telecalling", "link": "\/internships\/telecalling-internship?utm_source=homepage_modal_internship_search"}, {"label": "Travel & Tourism", "link": "\/internships\/travel-and-tourism-internship?utm_source=homepage_modal_internship_search"}, {"label": "Videography", "link": "\/internships\/videography-internship?utm_source=homepage_modal_internship_search"}, {"label": "Volunteering", "link": "\/internships\/volunteering-internship?utm_source=homepage_modal_internship_search"}, {"label": "Wordpress Development", "link": "\/internships\/wordpress-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Subject Matter Expert (SME)", "link": "\/internships\/subject-matter-expert-%28sme%29-internship?utm_source=homepage_modal_internship_search"}, {"label": "Translation", "link": "\/internships\/translation-internship?utm_source=homepage_modal_internship_search"}, {"label": "Transcription", "link": "\/internships\/transcription-internship?utm_source=homepage_modal_internship_search"}, {"label": "Music", "link": "\/internships\/music-internship?utm_source=homepage_modal_internship_search"}, {"label": "Proofreading", "link": "\/internships\/proofreading-internship?utm_source=homepage_modal_internship_search"}, {"label": "Dietetics\/Nutrition", "link": "\/internships\/dietetics%2Fnutrition-internship?utm_source=homepage_modal_internship_search"}, {"label": "Culinary Arts", "link": "\/internships\/culinary-arts-internship?utm_source=homepage_modal_internship_search"}, {"label": "Flutter Development", "link": "\/internships\/flutter-development-internship?utm_source=homepage_modal_internship_search"}, {"label": "Audio Making\/Editing", "link": "\/internships\/audio-making%2Fediting-internship?utm_source=homepage_modal_internship_search"}, {"label": "Anchoring", "link": "\/internships\/anchoring-internship?utm_source=homepage_modal_internship_search"}, {"label": "Delhi\/NCR", "link": "\/internships\/internship-in-delhi?utm_campaign=HP_search_DelhiNCR"}, {"label": "Bangalore", "link": "\/internships\/internship-in-bangalore?utm_campaign=HP_search_Bangalore"}, {"label": "Mumbai", "link": "\/internships\/internship-in-mumbai?utm_campaign=HP_search_Mumbai"}, {"label": "Hyderabad", "link": "\/internships\/internship-in-hyderabad?utm_campaign=HP_search_Hyderabad"}, {"label": "Chennai", "link": "\/internships\/internship-in-chennai?utm_campaign=HP_search_Chennai"}, {"label": "Kolkata", "link": "\/internships\/internship-in-kolkata?utm_campaign=HP_search_Kolkata"}]}, "job": {"title": "Jobs", "popular": [{"title": "POPULAR CITIES", "chips": [{"label": "Bangalore", "link": "\/jobs\/jobs-in-bangalore?utm_source=homepage_modal_job_search"}, {"label": "Chennai", "link": "\/jobs\/jobs-in-chennai?utm_source=homepage_modal_job_search"}, {"label": "Delhi", "link": "\/jobs\/jobs-in-delhi?utm_source=homepage_modal_job_search"}, {"label": "Hyderabad", "link": "\/jobs\/jobs-in-hyderabad?utm_source=homepage_modal_job_search"}, {"label": "Mumbai", "link": "\/jobs\/jobs-in-mumbai?utm_source=homepage_modal_job_search"}, {"label": "Patna", "link": "\/jobs\/jobs-in-patna?utm_source=homepage_modal_job_search"}, {"label": "Pune", "link": "\/jobs\/jobs-in-pune?utm_source=homepage_modal_job_search"}, {"label": "Ranchi", "link": "\/jobs\/jobs-in-ranchi?utm_source=homepage_modal_job_search"}]}, {"title": "POPULAR CATEGORIES", "chips": [{"label": "Big brands", "link": "\/jobs\/bigbrand-true\/?utm_source=homepage_modal_search"}, {"label": "Work from home", "link": "\/jobs\/remote_job-true\/?utm_source=homepage_modal_search"}, {"label": "Part-time", "link": "\/jobs\/part_time-true\/?utm_source=homepage_modal_search"}, {"label": "MBA", "link": "\/jobs\/category-mba\/?utm_source=homepage_modal_search"}, {"label": "Engineering", "link": "\/jobs\/category-engineering\/?utm_source=homepage_modal_search"}, {"label": "Media", "link": "\/jobs\/category-media\/?utm_source=homepage_modal_search"}, {"label": "Design", "link": "\/jobs\/category-design\/?utm_source=homepage_modal_search"}, {"label": "Data Science", "link": "\/jobs\/category-data-science\/?utm_source=homepage_modal_search"}]}], "dropdown": [{"label": "Engineering", "link": "\/jobs\/engineering-jobs?utm_source=homepage_modal_job_search"}, {"label": "Science", "link": "\/jobs\/science-jobs?utm_source=homepage_modal_job_search"}, {"label": "Business\/MBA", "link": "\/jobs\/mba-jobs?utm_source=homepage_modal_job_search"}, {"label": "Media", "link": "\/jobs\/media-jobs?utm_source=homepage_modal_job_search"}, {"label": "Law", "link": "\/jobs\/law-jobs?utm_source=homepage_modal_job_search"}, {"label": "Humanities", "link": "\/jobs\/humanities-jobs?utm_source=homepage_modal_job_search"}, {"label": "Design", "link": "\/jobs\/design-jobs?utm_source=homepage_modal_job_search"}, {"label": "Architecture", "link": "\/jobs\/architecture-jobs?utm_source=homepage_modal_job_search"}, {"label": "Electronics Engineering", "link": "\/jobs\/electronics-jobs?utm_source=homepage_modal_job_search"}, {"label": "Computer Science", "link": "\/jobs\/computer-science-jobs?utm_source=homepage_modal_job_search"}, {"label": "Sales", "link": "\/jobs\/sales-jobs?utm_source=homepage_modal_job_search"}, {"label": "Mechanical Engineering", "link": "\/jobs\/mechanical-jobs?utm_source=homepage_modal_job_search"}, {"label": "Civil Engineering", "link": "\/jobs\/civil-jobs?utm_source=homepage_modal_job_search"}, {"label": "Chemical Engineering", "link": "\/jobs\/chemical-jobs?utm_source=homepage_modal_job_search"}, {"label": "PHP Development", "link": "\/jobs\/php-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "ASP.NET Development", "link": "\/jobs\/asp.net-jobs?utm_source=homepage_modal_job_search"}, {"label": "Ruby on Rails", "link": "\/jobs\/ruby-on-rails-jobs?utm_source=homepage_modal_job_search"}, {"label": "Python\/Django Development", "link": "\/jobs\/python%2Fdjango-jobs?utm_source=homepage_modal_job_search"}, {"label": "Java Development", "link": "\/jobs\/java-jobs?utm_source=homepage_modal_job_search"}, {"label": "Android App Development", "link": "\/jobs\/android-jobs?utm_source=homepage_modal_job_search"}, {"label": "iOS App Development", "link": "\/jobs\/ios-jobs?utm_source=homepage_modal_job_search"}, {"label": "Biotechnology Engineering", "link": "\/jobs\/biotech-jobs?utm_source=homepage_modal_job_search"}, {"label": "Metallurgical Engineering", "link": "\/jobs\/metallurgy-jobs?utm_source=homepage_modal_job_search"}, {"label": "Naval Architecture and Ocean Engineeering", "link": "\/jobs\/naval-and-ocean-jobs?utm_source=homepage_modal_job_search"}, {"label": "Aerospace Engineering", "link": "\/jobs\/aerospace-jobs?utm_source=homepage_modal_job_search"}, {"label": "NGO", "link": "\/jobs\/ngo-jobs?utm_source=homepage_modal_job_search"}, {"label": "Political\/Economics\/Policy Research", "link": "\/jobs\/political%2Feconomics%2Fpolicy-research-jobs?utm_source=homepage_modal_job_search"}, {"label": "Physics", "link": "\/jobs\/physics-jobs?utm_source=homepage_modal_job_search"}, {"label": "Chemistry", "link": "\/jobs\/chemistry-jobs?utm_source=homepage_modal_job_search"}, {"label": "Mathematics", "link": "\/jobs\/mathematics-jobs?utm_source=homepage_modal_job_search"}, {"label": "Biology", "link": "\/jobs\/biology-jobs?utm_source=homepage_modal_job_search"}, {"label": "Psychology", "link": "\/jobs\/psychology-jobs?utm_source=homepage_modal_job_search"}, {"label": "Graphic Design", "link": "\/jobs\/graphic-design-jobs?utm_source=homepage_modal_job_search"}, {"label": "Animation", "link": "\/jobs\/animation-jobs?utm_source=homepage_modal_job_search"}, {"label": "UI\/UX Design", "link": "\/jobs\/ui%2Fux-jobs?utm_source=homepage_modal_job_search"}, {"label": "Fashion Design", "link": "\/jobs\/fashion-design-jobs?utm_source=homepage_modal_job_search"}, {"label": "Creative Writing", "link": "\/jobs\/creative-writing-jobs?utm_source=homepage_modal_job_search"}, {"label": "Content Writing", "link": "\/jobs\/content-writing-jobs?utm_source=homepage_modal_job_search"}, {"label": "Video Making\/Editing", "link": "\/jobs\/video-making%2Fediting-jobs?utm_source=homepage_modal_job_search"}, {"label": "Photography", "link": "\/jobs\/photography-jobs?utm_source=homepage_modal_job_search"}, {"label": "Film Making", "link": "\/jobs\/film-making-jobs?utm_source=homepage_modal_job_search"}, {"label": "Public Relations (PR)", "link": "\/jobs\/pr-jobs?utm_source=homepage_modal_job_search"}, {"label": "Database Building", "link": "\/jobs\/database-building-jobs?utm_source=homepage_modal_job_search"}, {"label": "Customer Service", "link": "\/jobs\/customer-service-jobs?utm_source=homepage_modal_job_search"}, {"label": "General Management", "link": "\/jobs\/general-management-jobs?utm_source=homepage_modal_job_search"}, {"label": "Operations", "link": "\/jobs\/operations-jobs?utm_source=homepage_modal_job_search"}, {"label": "Market\/Business Research", "link": "\/jobs\/market%2Fbusiness-research-jobs?utm_source=homepage_modal_job_search"}, {"label": "Digital Marketing", "link": "\/jobs\/digital-marketing-jobs?utm_source=homepage_modal_job_search"}, {"label": "Analytics", "link": "\/jobs\/analytics-jobs?utm_source=homepage_modal_job_search"}, {"label": "Human Resources (HR)", "link": "\/jobs\/hr-jobs?utm_source=homepage_modal_job_search"}, {"label": "Finance", "link": "\/jobs\/finance-jobs?utm_source=homepage_modal_job_search"}, {"label": "Medicine", "link": "\/jobs\/medicine-jobs?utm_source=homepage_modal_job_search"}, {"label": "Web Development", "link": "\/jobs\/web-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Mobile App Development", "link": "\/jobs\/mobile-app-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Government", "link": "\/jobs\/government-jobs?utm_source=homepage_modal_job_search"}, {"label": "Commerce", "link": "\/jobs\/commerce-jobs?utm_source=homepage_modal_job_search"}, {"label": "Image Processing", "link": "\/jobs\/image-processing-jobs?utm_source=homepage_modal_job_search"}, {"label": "Computer Vision", "link": "\/jobs\/computer-vision-jobs?utm_source=homepage_modal_job_search"}, {"label": "Social Media Marketing", "link": "\/jobs\/social-media-marketing-jobs?utm_source=homepage_modal_job_search"}, {"label": "Marketing", "link": "\/jobs\/marketing-jobs?utm_source=homepage_modal_job_search"}, {"label": ".NET Development", "link": "\/jobs\/.net-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "3D Printing", "link": "\/jobs\/3d-printing-jobs?utm_source=homepage_modal_job_search"}, {"label": "Accounts", "link": "\/jobs\/accounts-jobs?utm_source=homepage_modal_job_search"}, {"label": "Acting", "link": "\/jobs\/acting-jobs?utm_source=homepage_modal_job_search"}, {"label": "Agriculture & Food Engineering", "link": "\/jobs\/agriculture-and-food-engineering-jobs?utm_source=homepage_modal_job_search"}, {"label": "Angular.js Development", "link": "\/jobs\/angular.js-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Artificial Intelligence (AI)", "link": "\/jobs\/artificial-intelligence-%28ai%29-jobs?utm_source=homepage_modal_job_search"}, {"label": "Automobile Engineering", "link": "\/jobs\/automobile-engineering-jobs?utm_source=homepage_modal_job_search"}, {"label": "Backend Development", "link": "\/jobs\/backend-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Bioinformatics", "link": "\/jobs\/bioinformatics-jobs?utm_source=homepage_modal_job_search"}, {"label": "Blogging", "link": "\/jobs\/blogging-jobs?utm_source=homepage_modal_job_search"}, {"label": "Brand Management", "link": "\/jobs\/brand-management-jobs?utm_source=homepage_modal_job_search"}, {"label": "CAD Design", "link": "\/jobs\/cad-design-jobs?utm_source=homepage_modal_job_search"}, {"label": "Chartered Accountancy (CA)", "link": "\/jobs\/chartered-accountancy-%28ca%29-jobs?utm_source=homepage_modal_job_search"}, {"label": "Cinematography", "link": "\/jobs\/cinematography-jobs?utm_source=homepage_modal_job_search"}, {"label": "Client Servicing", "link": "\/jobs\/client-servicing-jobs?utm_source=homepage_modal_job_search"}, {"label": "Company Secretary (CS)", "link": "\/jobs\/company-secretary-%28cs%29-jobs?utm_source=homepage_modal_job_search"}, {"label": "Copywriting", "link": "\/jobs\/copywriting-jobs?utm_source=homepage_modal_job_search"}, {"label": "Creative Design", "link": "\/jobs\/creative-design-jobs?utm_source=homepage_modal_job_search"}, {"label": "Data Entry", "link": "\/jobs\/data-entry-jobs?utm_source=homepage_modal_job_search"}, {"label": "Data Science", "link": "\/jobs\/data-science-jobs?utm_source=homepage_modal_job_search"}, {"label": "Editorial", "link": "\/jobs\/editorial-jobs?utm_source=homepage_modal_job_search"}, {"label": "Embedded Systems", "link": "\/jobs\/embedded-systems-jobs?utm_source=homepage_modal_job_search"}, {"label": "Energy Science & Engineering", "link": "\/jobs\/energy-science-and-engineering-jobs?utm_source=homepage_modal_job_search"}, {"label": "Engineering Design", "link": "\/jobs\/engineering-design-jobs?utm_source=homepage_modal_job_search"}, {"label": "Environmental Sciences", "link": "\/jobs\/environmental-sciences-jobs?utm_source=homepage_modal_job_search"}, {"label": "Event Management", "link": "\/jobs\/event-management-jobs?utm_source=homepage_modal_job_search"}, {"label": "Front End Development", "link": "\/jobs\/front-end-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Full Stack Development", "link": "\/jobs\/full-stack-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Fundraising", "link": "\/jobs\/fundraising-jobs?utm_source=homepage_modal_job_search"}, {"label": "Game Development", "link": "\/jobs\/game-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Hotel Management", "link": "\/jobs\/hotel-management-jobs?utm_source=homepage_modal_job_search"}, {"label": "Industrial & Production Engineering", "link": "\/jobs\/industrial-and-production-engineering-jobs?utm_source=homepage_modal_job_search"}, {"label": "Information Technology", "link": "\/jobs\/information-technology-jobs?utm_source=homepage_modal_job_search"}, {"label": "Instrumentation & Control Engineering", "link": "\/jobs\/instrumentation-and-control-engineering-jobs?utm_source=homepage_modal_job_search"}, {"label": "Interior Design", "link": "\/jobs\/interior-design-jobs?utm_source=homepage_modal_job_search"}, {"label": "Internet of Things (IoT)", "link": "\/jobs\/internet-of-things-%28iot%29-jobs?utm_source=homepage_modal_job_search"}, {"label": "Javascript Development", "link": "\/jobs\/javascript-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Journalism", "link": "\/jobs\/journalism-jobs?utm_source=homepage_modal_job_search"}, {"label": "Legal Research", "link": "\/jobs\/legal-research-jobs?utm_source=homepage_modal_job_search"}, {"label": "Machine Learning", "link": "\/jobs\/machine-learning-jobs?utm_source=homepage_modal_job_search"}, {"label": "Magento Development", "link": "\/jobs\/magento-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Merchandise Design", "link": "\/jobs\/merchandise-design-jobs?utm_source=homepage_modal_job_search"}, {"label": "Node.js Development", "link": "\/jobs\/node.js-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Pharmaceutical", "link": "\/jobs\/pharmaceutical-jobs?utm_source=homepage_modal_job_search"}, {"label": "Programming", "link": "\/jobs\/programming-jobs?utm_source=homepage_modal_job_search"}, {"label": "Recruitment", "link": "\/jobs\/recruitment-jobs?utm_source=homepage_modal_job_search"}, {"label": "Search Engine Optimization (SEO)", "link": "\/jobs\/search-engine-optimization-%28seo%29-jobs?utm_source=homepage_modal_job_search"}, {"label": "Social Work", "link": "\/jobs\/social-work-jobs?utm_source=homepage_modal_job_search"}, {"label": "Software Development", "link": "\/jobs\/software-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Software Testing", "link": "\/jobs\/software-testing-jobs?utm_source=homepage_modal_job_search"}, {"label": "Strategy", "link": "\/jobs\/strategy-jobs?utm_source=homepage_modal_job_search"}, {"label": "Supply Chain Management (SCM)", "link": "\/jobs\/supply-chain-management-%28scm%29-jobs?utm_source=homepage_modal_job_search"}, {"label": "Talent Acquisition", "link": "\/jobs\/talent-acquisition-jobs?utm_source=homepage_modal_job_search"}, {"label": "Telecalling", "link": "\/jobs\/telecalling-jobs?utm_source=homepage_modal_job_search"}, {"label": "Travel & Tourism", "link": "\/jobs\/travel-and-tourism-jobs?utm_source=homepage_modal_job_search"}, {"label": "Videography", "link": "\/jobs\/videography-jobs?utm_source=homepage_modal_job_search"}, {"label": "Volunteering", "link": "\/jobs\/volunteering-jobs?utm_source=homepage_modal_job_search"}, {"label": "Wordpress Development", "link": "\/jobs\/wordpress-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Subject Matter Expert (SME)", "link": "\/jobs\/subject-matter-expert-%28sme%29-jobs?utm_source=homepage_modal_job_search"}, {"label": "Translation", "link": "\/jobs\/translation-jobs?utm_source=homepage_modal_job_search"}, {"label": "Transcription", "link": "\/jobs\/transcription-jobs?utm_source=homepage_modal_job_search"}, {"label": "Music", "link": "\/jobs\/music-jobs?utm_source=homepage_modal_job_search"}, {"label": "Proofreading", "link": "\/jobs\/proofreading-jobs?utm_source=homepage_modal_job_search"}, {"label": "Dietetics\/Nutrition", "link": "\/jobs\/dietetics%2Fnutrition-jobs?utm_source=homepage_modal_job_search"}, {"label": "Culinary Arts", "link": "\/jobs\/culinary-arts-jobs?utm_source=homepage_modal_job_search"}, {"label": "Flutter Development", "link": "\/jobs\/flutter-development-jobs?utm_source=homepage_modal_job_search"}, {"label": "Audio Making\/Editing", "link": "\/jobs\/audio-making%2Fediting-jobs?utm_source=homepage_modal_job_search"}, {"label": "Anchoring", "link": "\/jobs\/anchoring-jobs?utm_source=homepage_modal_job_search"}, {"label": "Bangalore", "link": "\/jobs\/jobs-in-bangalore?utm_source=homepage_modal_job_search"}, {"label": "Chennai", "link": "\/jobs\/jobs-in-chennai?utm_source=homepage_modal_job_search"}, {"label": "Delhi", "link": "\/jobs\/jobs-in-delhi?utm_source=homepage_modal_job_search"}, {"label": "Hyderabad", "link": "\/jobs\/jobs-in-hyderabad?utm_source=homepage_modal_job_search"}, {"label": "Mumbai", "link": "\/jobs\/jobs-in-mumbai?utm_source=homepage_modal_job_search"}, {"label": "Patna", "link": "\/jobs\/jobs-in-patna?utm_source=homepage_modal_job_search"}, {"label": "Pune", "link": "\/jobs\/jobs-in-pune?utm_source=homepage_modal_job_search"}, {"label": "Ranchi", "link": "\/jobs\/jobs-in-ranchi?utm_source=homepage_modal_job_search"}]}, "stc": {"title": "Short term courses", "popular": [{"title": "SHORT TERM COURSES", "chips": [{"label": "Artificial Intelligence and Machine Learning", "link": "https:\/\/trainings.internshala.com\/artificial-intelligence-and-machine-learning-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "Web Development with AI", "link": "https:\/\/trainings.internshala.com\/web-development-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "Programming with Python with AI", "link": "https:\/\/trainings.internshala.com\/python-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "Digital Marketing with AI", "link": "https:\/\/trainings.internshala.com\/digital-marketing-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "Machine Learning with AI", "link": "https:\/\/trainings.internshala.com\/machine-learning-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "Advanced Excel with AI", "link": "https:\/\/trainings.internshala.com\/excel-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "AutoCAD", "link": "https:\/\/trainings.internshala.com\/autocad-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "Data Science with AI", "link": "https:\/\/trainings.internshala.com\/data-science-beginner-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "Programming with C and C++ with AI", "link": "https:\/\/trainings.internshala.com\/c-plus-plus-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "Financial Modeling and Valuation with AI", "link": "https:\/\/trainings.internshala.com\/financial-modeling-valuation-course\/?utm_source=is_web_HP_popular_training_search"}, {"label": "Android App Development with AI", "link": "https:\/\/trainings.internshala.com\/android-course\/?utm_source=is_web_HP_popular_training_search"}]}], "dropdown": [{"label": "Artificial Intelligence and Machine Learning", "link": "https:\/\/trainings.internshala.com\/artificial-intelligence-and-machine-learning-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Web Development with AI", "link": "https:\/\/trainings.internshala.com\/web-development-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Programming with Python with AI", "link": "https:\/\/trainings.internshala.com\/python-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Digital Marketing with AI", "link": "https:\/\/trainings.internshala.com\/digital-marketing-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Machine Learning with AI", "link": "https:\/\/trainings.internshala.com\/machine-learning-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Advanced Excel with AI", "link": "https:\/\/trainings.internshala.com\/excel-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "AutoCAD", "link": "https:\/\/trainings.internshala.com\/autocad-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Data Science with AI", "link": "https:\/\/trainings.internshala.com\/data-science-beginner-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Programming with C and C++ with AI", "link": "https:\/\/trainings.internshala.com\/c-plus-plus-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Financial Modeling and Valuation with AI", "link": "https:\/\/trainings.internshala.com\/financial-modeling-valuation-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Android App Development with AI", "link": "https:\/\/trainings.internshala.com\/android-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Full Stack Development Course", "link": "https:\/\/trainings.internshala.com\/full-stack-web-development-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Data Science Course", "link": "https:\/\/trainings.internshala.com\/data-science-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Human Resource Management Course", "link": "https:\/\/trainings.internshala.com\/human-resource-management-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Digital Marketing Course", "link": "https:\/\/trainings.internshala.com\/digital-marketing-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "UI\/UX Design Course", "link": "https:\/\/trainings.internshala.com\/ui-ux-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Product Management Course", "link": "https:\/\/trainings.internshala.com\/product-management-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Financial Modelling Course", "link": "https:\/\/trainings.internshala.com\/financial-modelling-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Supply Chain Logistics Course", "link": "https:\/\/trainings.internshala.com\/supply-chain-logistics-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search"}, {"label": "Software Testing Course", "link": "https:\/\/trainings.internshala.com\/software-testing-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search"}]}, "pgc": {"title": "Placement courses", "popular": [{"title": "PLACEMENT COURSES", "chips": [{"label": "Full Stack Development", "link": "https:\/\/trainings.internshala.com\/full-stack-web-development-placement-guarantee-course\/?utm_source=is_web_HP_popular_training_search1"}, {"label": "Data Science", "link": "https:\/\/trainings.internshala.com\/data-science-placement-guarantee-course\/?utm_source=is_web_HP_popular_training_search2"}, {"label": "Human Resource Management", "link": "https:\/\/trainings.internshala.com\/human-resource-management-placement-guarantee-course\/?utm_source=is_web_HP_popular_training_search3"}, {"label": "Digital Marketing", "link": "https:\/\/trainings.internshala.com\/digital-marketing-placement-guarantee-course\/?utm_source=is_web_HP_popular_training_search4"}, {"label": "UI\/UX Design", "link": "https:\/\/trainings.internshala.com\/ui-ux-placement-guarantee-course\/?utm_source=is_web_HP_popular_training_search6"}, {"label": "Product Management", "link": "https:\/\/trainings.internshala.com\/product-management-placement-guarantee-course\/?utm_source=is_web_HP_popular_training_search7"}, {"label": "Financial Modelling", "link": "https:\/\/trainings.internshala.com\/financial-modelling-placement-guarantee-course\/?utm_source=is_web_HP_popular_training_search8"}, {"label": "Supply Chain Logistics", "link": "https:\/\/trainings.internshala.com\/supply-chain-logistics-placement-guarantee-course\/?utm_source=is_web_HP_popular_training_search9"}, {"label": "Software Testing", "link": "https:\/\/trainings.internshala.com\/software-testing-placement-guarantee-course\/?utm_source=is_web_HP_popular_training_search11"}]}], "dropdown": [{"label": "Full Stack Development", "link": "https:\/\/trainings.internshala.com\/full-stack-web-development-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search1"}, {"label": "Data Science", "link": "https:\/\/trainings.internshala.com\/data-science-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search2"}, {"label": "Human Resource Management", "link": "https:\/\/trainings.internshala.com\/human-resource-management-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search3"}, {"label": "Digital Marketing", "link": "https:\/\/trainings.internshala.com\/digital-marketing-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search4"}, {"label": "UI\/UX Design", "link": "https:\/\/trainings.internshala.com\/ui-ux-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search6"}, {"label": "Product Management", "link": "https:\/\/trainings.internshala.com\/product-management-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search7"}, {"label": "Financial Modelling", "link": "https:\/\/trainings.internshala.com\/financial-modelling-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search8"}, {"label": "Supply Chain Logistics", "link": "https:\/\/trainings.internshala.com\/supply-chain-logistics-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search9"}, {"label": "Software Testing", "link": "https:\/\/trainings.internshala.com\/software-testing-placement-guarantee-course\/?utm_source=is_web_HP_dropdown_search11"}]}};
 				</script>
 			</div>
 		</div>
@@ -2877,485 +2772,6 @@
 </script>
 
 		<div id="footer">
-
-			<div id="pre_footer_component">
-				<div class="pre_footer_section">
-					<div class="footer_heading">Internship by Places <i class="ic-24-plus"></i></div>
-					<div class="footer_list_component">
-						<div class="footer_list">
-							<div class="footer_list_item">
-								<a
-									href="https://internshala.com/internships/internship-in-bangalore/?utm_source=is_footer">Internship
-									in Bangalore</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/internships/internship-in-delhi/?utm_source=is_footer">Internship
-									in Delhi</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://internshala.com/internships/internship-in-hyderabad/?utm_source=is_footer">Internships
-									in Hyderabad</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://internshala.com/internships/internship-in-mumbai/?utm_source=is_footer">Internship
-									in Mumbai</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://internshala.com/internships/internship-in-chennai/?utm_source=is_footer">Internship
-									in Chennai</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/internships/internship-in-pune/?utm_source=is_footer">Internship
-									in Pune</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://internshala.com/internships/internship-in-kolkata/?utm_source=is_footer">Internship
-									in Kolkata</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://internshala.com/internships/internship-in-gurgaon/?utm_source=is_footer">Internship
-									in Gurgaon</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://internshala.com/internships/work-from-home-internships/?utm_source=is_footer">Work
-									From Home Internships</a>
-								<div class="bar"></div>
-							</div>
-							<div class="more">
-								<a href="https://internshala.com/internships/?utm_source=is_footer">View all
-									internship</a>
-								<i class="ic-chevron-right-blue-custom"></i>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="pre_footer_section">
-					<div class="footer_heading">Internship by Stream <i class="ic-24-plus"></i></div>
-					<div class="footer_list_component">
-						<div class="footer_list">
-							<div class="footer_list_item">
-								<a
-									href="https://internshala.com/internships/computer-science-internship/?utm_source=is_footer">Computer
-									Science Internship</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://internshala.com/internships/electronics-internship/?utm_source=is_footer">Electronics
-									Internship</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://internshala.com/internships/mechanical-internship/?utm_source=is_footer">Mechanical
-									Internship</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/internships/civil-internship/?utm_source=is_footer">Civil
-									Internship</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://internshala.com/internships/marketing-internship/?utm_source=is_footer">Marketing
-									Internship</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/internships/chemical-internship/?utm_source=is_footer">Chemical
-									Internship</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/internships/finance-internship/?utm_source=is_footer">Finance
-									Internship</a>
-								<div class="bar"></div>
-							</div>
-							<div class="more">
-								<a href="https://internshala.com/internships/?utm_source=is_footer">View all
-									internship</a>
-								<i class="ic-chevron-right-blue-custom"></i>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="pre_footer_section">
-					<div class="footer_heading">Jobs by Places <i class="ic-24-plus"></i></div>
-					<div class="footer_list_component">
-						<div class="footer_list">
-							<div class="footer_list_item">
-								<a href="https://internshala.com/jobs/jobs-in-bangalore/?utm_source=is_footer">Jobs in
-									Bangalore</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/jobs/jobs-in-delhi/?utm_source=is_footer">Jobs in
-									Delhi</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/jobs/jobs-in-hyderabad/?utm_source=is_footer">Jobs in
-									Hyderabad</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/jobs/jobs-in-gurgaon/?utm_source=is_footer">Jobs in
-									Gurgaon</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/jobs/jobs-in-kolkata/?utm_source=is_footer">Jobs in
-									Kolkata</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/jobs/jobs-in-mumbai/?utm_source=is_footer">Jobs in
-									Mumbai</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/jobs/jobs-in-pune/?utm_source=is_footer">Jobs in
-									Pune</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/jobs/jobs-in-chennai/?utm_source=is_footer">Jobs in
-									Chennai</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/jobs/jobs-in-noida/?utm_source=is_footer">Jobs in
-									Noida</a>
-								<div class="bar"></div>
-							</div>
-							<div class="more">
-								<a href="https://internshala.com/jobs/?utm_source=is_footer">View all jobs</a>
-								<i class="ic-chevron-right-blue-custom"></i>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="pre_footer_section">
-					<div class="footer_heading">Jobs by Type <i class="ic-24-plus"></i></div>
-					<div class="footer_list_component">
-						<div class="footer_list">
-							<div class="footer_list_item">
-								<a href="https://internshala.com/jobs/data-entry-jobs/?utm_source=is_footer">Data Entry
-									jobs</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/jobs/content-writing-jobs/?utm_source=is_footer">Content
-									writing jobs</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/jobs/digital-marketing-jobs/?utm_source=is_footer">Digital
-									Marketing jobs</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/jobs/data-science-jobs/?utm_source=is_footer">Data
-									Science jobs</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/jobs/cyber-security-jobs/?utm_source=is_footer">Cyber
-									Security jobs</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/jobs/pharmaceutical-jobs/?utm_source=is_footer">Pharma
-									jobs</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/jobs/teaching-jobs/?utm_source=is_footer">Teaching
-									jobs</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/jobs/hr-jobs/?utm_source=is_footer">HR jobs</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/jobs/mba-jobs/?utm_source=is_footer">MBA jobs</a>
-								<div class="bar"></div>
-							</div>
-							<div class="more">
-								<a href="https://internshala.com/jobs/?utm_source=is_footer">View all jobs</a>
-								<i class="ic-chevron-right-blue-custom"></i>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="pre_footer_section">
-					<div class="footer_heading">Fresher Jobs by Places <i class="ic-24-plus"></i></div>
-					<div class="footer_list_component">
-						<div class="footer_list">
-							<div class="footer_list_item">
-								<a href="https://internshala.com/fresher-jobs/jobs-in-bangalore/?utm_source=is_footer">Fresher
-									Jobs in Bangalore</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/fresher-jobs/jobs-in-delhi/?utm_source=is_footer">Fresher
-									Jobs in Delhi</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/fresher-jobs/jobs-in-hyderabad/?utm_source=is_footer">Fresher
-									Jobs in Hyderabad</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/fresher-jobs/jobs-in-chennai/?utm_source=is_footer">Fresher
-									Jobs in Chennai</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/fresher-jobs/jobs-in-pune/?utm_source=is_footer">Fresher
-									Jobs in Pune</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/fresher-jobs/jobs-in-mumbai/?utm_source=is_footer">Fresher
-									Jobs in Mumbai</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/fresher-jobs/jobs-in-noida/?utm_source=is_footer">Fresher
-									Jobs in Noida</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/fresher-jobs/jobs-in-kolkata/?utm_source=is_footer">Fresher
-									Jobs in Kolkata</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/fresher-jobs/jobs-in-gurgaon/?utm_source=is_footer">Fresher
-									Jobs in Gurgaon</a>
-								<div class="bar"></div>
-							</div>
-							<div class="more">
-								<a href="https://internshala.com/fresher-jobs/?utm_source=is_footer">View all fresher
-									jobs</a>
-								<i class="ic-chevron-right-blue-custom"></i>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="pre_footer_section">
-					<div class="footer_heading">Fresher Jobs by Type <i class="ic-24-plus"></i></div>
-					<div class="footer_list_component">
-						<div class="footer_list">
-							<div class="footer_list_item">
-								<a href="https://internshala.com/fresher-jobs/mba-jobs/?utm_source=is_footer">MBA
-									Fresher Job</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/fresher-jobs/hr-jobs/?utm_source=is_footer">HR Fresher
-									Job</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/fresher-jobs/civil-jobs/?utm_source=is_footer">Civil
-									Fresher Job</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://internshala.com/fresher-jobs/digital-marketing-jobs/?utm_source=is_footer">Digital
-									Marketing Fresher Job</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://internshala.com/fresher-jobs/business-analyst-jobs/?utm_source=is_footer">Business
-									Analyst Fresher Job</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/fresher-jobs/finance-jobs/?utm_source=is_footer">Finance
-									Fresher Job</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/fresher-jobs/accounts-jobs/?utm_source=is_footer">Accounts
-									Fresher Job</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://internshala.com/fresher-jobs/java-jobs/?utm_source=is_footer">JAVA
-									Fresher Job</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://internshala.com/fresher-jobs/software-testing-jobs/?utm_source=is_footer">Software
-									Testing Fresher Job</a>
-								<div class="bar"></div>
-							</div>
-							<div class="more">
-								<a href="https://internshala.com/fresher-jobs/?utm_source=is_footer">View all fresher
-									jobs</a>
-								<i class="ic-chevron-right-blue-custom"></i>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="pre_footer_section">
-					<div class="footer_heading">Placement Courses with AI <i class="ic-24-plus"></i></div>
-					<div class="footer_list_component">
-						<div class="footer_list">
-							<div class="footer_list_item">
-								<a
-									href="https://trainings.internshala.com/full-stack-web-development-placement-guarantee-course/?utm_source=is_web_is-footer/">Full
-									Stack Development</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://trainings.internshala.com/data-science-placement-guarantee-course/?utm_source=is_web_is-footer/">Data
-									Science</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://trainings.internshala.com/human-resource-management-placement-guarantee-course/?utm_source=is_web_is-footer/">Human
-									Resource Management</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://trainings.internshala.com/digital-marketing-placement-guarantee-course/?utm_source=is_web_is-footer/">Digital
-									Marketing</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://trainings.internshala.com/ui-ux-placement-guarantee-course/?utm_source=is_web_is-footer/">UI/UX
-									Design</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://trainings.internshala.com/product-management-placement-guarantee-course/?utm_source=is_web_is-footer/">Product
-									Management</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://trainings.internshala.com/financial-modelling-placement-guarantee-course/?utm_source=is_web_is-footer/">Financial
-									Modelling</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://trainings.internshala.com/supply-chain-logistics-placement-guarantee-course/?utm_source=is_web_is-footer/">Supply
-									Chain Logistics</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://trainings.internshala.com/software-testing-placement-guarantee-course/?utm_source=is_web_is-footer/">Software
-									Testing</a>
-								<div class="bar"></div>
-							</div>
-							<div class="more">
-								<a
-									href="https://trainings.internshala.com/placement-and-job-guarantee-courses/?utm_source=is_web_is-footer/">View
-									all courses</a>
-								<i class="ic-chevron-right-blue-custom"></i>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="pre_footer_section">
-					<div class="footer_heading">Certification Courses <span class="offer">OFFER</span>
-						<i class="ic-24-plus"></i>
-					</div>
-					<div class="footer_list_component">
-						<div class="footer_list">
-							<div class="footer_list_item">
-								<a
-									href="https://trainings.internshala.com/web-development-course/?utm_source=is_web_is-footer/">Web
-									Development with AI</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://trainings.internshala.com/python-course/?utm_source=is_web_is-footer/">Programming
-									with Python with AI</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://trainings.internshala.com/digital-marketing-course/?utm_source=is_web_is-footer/">Digital
-									Marketing with AI</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://trainings.internshala.com/machine-learning-course/?utm_source=is_web_is-footer/">Machine
-									Learning with AI</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a href="https://trainings.internshala.com/excel-course/?utm_source=is_web_is-footer/">Advanced
-									Excel with AI</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://trainings.internshala.com/autocad-course/?utm_source=is_web_is-footer/">AutoCAD
-									with AI</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://trainings.internshala.com/data-science-beginner-course/?utm_source=is_web_is-footer/">Data
-									Science with AI</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://trainings.internshala.com/c-plus-plus-course/?utm_source=is_web_is-footer/">Programming
-									with C and C++ with AI</a>
-								<div class="bar"></div>
-							</div>
-							<div class="footer_list_item">
-								<a
-									href="https://trainings.internshala.com/financial-modeling-valuation-course/?utm_source=is_web_is-footer/">Financial
-									Modeling and Valuation with AI</a>
-								<div class="bar"></div>
-							</div>
-							<div class="more">
-								<a
-									href="https://trainings.internshala.com/short-term-courses/?utm_source=is_web_is-footer/">View
-									all courses</a>
-								<i class="ic-chevron-right-blue-custom"></i>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 			<div class="generic_footer" data-custom-attribute="footer_custom_value">
 				<div class='container-fluid'>
 					<div class="max-width-container">
@@ -3641,6 +3057,37 @@ chosen link or button. -->
 			}
 		}, 2000);
 	</script>
+    <!-- JavaScript to sync active tab → hidden field + Google button URL -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('#user-menu .user-menu-item');
+            const hiddenInput = document.getElementById('userType');
+            const googleBtn = document.getElementById('user_google_login');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    // Update active tab visually
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Map tab ID to userType value
+                    const userType = this.id.replace('modal_', ''); // modal_student → student
+                    hiddenInput.value = userType;
+
+                    // Update Google login URL automatically
+                    googleBtn.href = `/login/get_google/${userType}`;
+                });
+            });
+
+            // Set correct value on page load (in case default active tab changes)
+            const activeTab = document.querySelector('#user-menu .user-menu-item.active');
+            if (activeTab) {
+                const userType = activeTab.id.replace('modal_', '');
+                hiddenInput.value = userType;
+                googleBtn.href = `/login/get_google/${userType}`;
+            }
+        });
+    </script>
 	<div class="modal-backdrop show" style='display:none'></div>
 </body>
 

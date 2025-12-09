@@ -24,8 +24,8 @@ public class StudentController {
 
     @GetMapping("/internship-by-location")
     public String internshipByLocation(@RequestParam String location) {
-        if ("hyderabad".equals(location)) {
-            return "internship-in-hyderabad";
+        if ("bhubaneswar".equals(location)) {
+            return "internship-in-bhubaneswar";
         } else if ("bangalore".equals(location)) {
             return "internship-in-bangalore";
         }

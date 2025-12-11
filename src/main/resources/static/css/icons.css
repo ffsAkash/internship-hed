@@ -371,3 +371,17 @@
 	margin-bottom: 0px;
 }
 
+/* ic-16-external-link */
+.ic-external-link-custom {
+	width: 20px;
+	height: 20px;
+	background-image: url("../icons/external-link.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+

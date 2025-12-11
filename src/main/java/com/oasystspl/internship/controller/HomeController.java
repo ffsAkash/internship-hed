@@ -17,8 +17,18 @@ public class HomeController {
         return "error";
     }
 
+    @GetMapping("/login/forgot_password")
+    public String forgotPassword() {
+        return "forgot-password";
+    }
+
     @GetMapping("/internships")
     public String internshipAll() {
         return "all-internships";
+    }
+
+    @GetMapping("/terms-and-condition")
+    public String termsAndCondition() {
+        return "terms-and-condition";
     }
 }

@@ -230,6 +230,476 @@
 		var online_time_margin_in_seconds = 60;
 		var to_use_websocket_only_on_chat = false;
 	</script>
+	<style>
+		/* Custom Modal Styles */
+		.custom-modal {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			z-index: 9999;
+			overflow-y: auto;
+			animation: fadeIn 0.3s ease;
+		}
+
+		.custom-modal.active {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.custom-modal-content {
+			background-color: white;
+			border-radius: 8px;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+			animation: slideIn 0.3s ease;
+			max-width: 95%;
+			width: 100%;
+		}
+
+		.custom-modal-xl {
+			max-width: 1200px;
+		}
+
+		.custom-modal-header {
+			padding: 20px 30px;
+			border-bottom: 1px solid #dee2e6;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background-color: #f8f9fa;
+			border-radius: 8px 8px 0 0;
+		}
+
+		.custom-modal-title {
+			margin: 0;
+			font-size: 1.5rem;
+			font-weight: 600;
+			color: #333;
+		}
+
+		.custom-modal-close {
+			background: none;
+			border: none;
+			font-size: 28px;
+			cursor: pointer;
+			color: #6c757d;
+			transition: color 0.3s;
+			line-height: 1;
+			padding: 0;
+			width: 30px;
+			height: 30px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.custom-modal-close:hover {
+			color: #333;
+		}
+
+		.custom-modal-body {
+			padding: 30px;
+			max-height: 70vh;
+			overflow-y: auto;
+		}
+
+		.custom-modal-footer {
+			padding: 20px 30px;
+			border-top: 1px solid #dee2e6;
+			display: flex;
+			justify-content: flex-end;
+			gap: 10px;
+			background-color: #f8f9fa;
+			border-radius: 0 0 8px 8px;
+		}
+
+		/* Animations */
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+
+		@keyframes slideIn {
+			from {
+				opacity: 0;
+				transform: translateY(-50px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		/* Responsive adjustments */
+		@media (max-width: 768px) {
+			.custom-modal-content {
+				max-width: 95%;
+				margin: 20px auto;
+			}
+
+			.custom-modal-body {
+				padding: 20px;
+				max-height: 60vh;
+			}
+
+			.custom-modal-header {
+				padding: 15px 20px;
+			}
+
+			.custom-modal-footer {
+				padding: 15px 20px;
+			}
+		}
+	</style>
+	<style>
+		/* Custom Tabs Styles */
+		.custom-tab-nav {
+			display: flex;
+			flex-wrap: wrap;
+			padding-left: 0;
+			margin-bottom: 0;
+			list-style: none;
+			border-bottom: 1px solid #dee2e6;
+			background-color: #f8f9fa;
+			border-radius: 8px 8px 0 0;
+		}
+
+		.custom-tab-item {
+			flex: 1;
+			text-align: center;
+		}
+
+		.custom-tab-link {
+			display: block;
+			padding: 0.75rem 1rem;
+			color: #495057;
+			text-decoration: none;
+			background-color: transparent;
+			border: none;
+			border-bottom: 3px solid transparent;
+			transition: all 0.3s ease;
+			cursor: pointer;
+			font-weight: 500;
+		}
+
+		.custom-tab-link:hover {
+			color: #0d6efd;
+			background-color: rgba(13, 110, 253, 0.05);
+		}
+
+		.custom-tab-item.active .custom-tab-link {
+			color: #0d6efd;
+			border-bottom-color: #0d6efd;
+			background-color: white;
+			font-weight: 600;
+		}
+
+		/* Tab Content Styles */
+		.custom-tab-content {
+			background-color: white;
+			border: 1px solid #dee2e6;
+			border-top: none;
+			border-radius: 0 0 8px 8px;
+			padding: 20px;
+		}
+
+		.custom-tab-pane {
+			display: none;
+			animation: fadeIn 0.5s ease;
+		}
+
+		.custom-tab-pane.active {
+			display: block;
+		}
+
+		/* Custom Modal Styles */
+		.custom-modal {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			z-index: 9999;
+			overflow-y: auto;
+			animation: fadeIn 0.3s ease;
+		}
+
+		.custom-modal.active {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.custom-modal-content {
+			background-color: white;
+			border-radius: 8px;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+			animation: slideIn 0.3s ease;
+			max-width: 95%;
+			width: 100%;
+		}
+
+		.custom-modal-lg {
+			max-width: 600px;
+		}
+
+		.custom-modal-header {
+			padding: 20px 30px;
+			border-bottom: 1px solid #dee2e6;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			background-color: #f8f9fa;
+			border-radius: 8px 8px 0 0;
+		}
+
+		.custom-modal-title {
+			margin: 0;
+			font-size: 1.5rem;
+			font-weight: 600;
+			color: #333;
+		}
+
+		.custom-modal-close {
+			background: none;
+			border: none;
+			font-size: 28px;
+			cursor: pointer;
+			color: #6c757d;
+			transition: color 0.3s;
+			line-height: 1;
+			padding: 0;
+			width: 30px;
+			height: 30px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.custom-modal-close:hover {
+			color: #333;
+		}
+
+		.custom-modal-body {
+			padding: 30px;
+			max-height: 70vh;
+			overflow-y: auto;
+		}
+
+		.custom-modal-footer {
+			padding: 20px 30px;
+			border-top: 1px solid #dee2e6;
+			display: flex;
+			justify-content: flex-end;
+			gap: 10px;
+			background-color: #f8f9fa;
+			border-radius: 0 0 8px 8px;
+		}
+
+		/* Student Form Styles */
+		.student-form {
+			max-height: 60vh;
+			overflow-y: auto;
+			padding-right: 10px;
+		}
+
+		.section-title {
+			color: #2c3e50;
+			font-weight: 600;
+			margin-bottom: 15px;
+			padding-bottom: 8px;
+			border-bottom: 2px solid #eaeaea;
+		}
+
+		.form-label {
+			font-weight: 500;
+			margin-bottom: 5px;
+			color: #34495e;
+		}
+
+		.form-label span.text-danger {
+			color: #e74c3c;
+		}
+
+		.form-control:focus,
+		.form-select:focus {
+			border-color: #3498db;
+			box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+		}
+
+		/* Animations */
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+
+		@keyframes slideIn {
+			from {
+				opacity: 0;
+				transform: translateY(-50px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		/* Responsive */
+		@media (max-width: 768px) {
+			.custom-tab-nav {
+				flex-direction: column;
+			}
+
+			.custom-tab-item {
+				width: 100%;
+			}
+
+			.custom-tab-link {
+				border-bottom: 1px solid #dee2e6;
+				border-right: none;
+			}
+
+			.custom-tab-item.active .custom-tab-link {
+				border-bottom-color: #0d6efd;
+			}
+
+			.custom-modal-lg {
+				max-width: 95%;
+				margin: 20px auto;
+			}
+		}
+		
+		/* Review/View Modal Content Styles */
+		.application-details {
+		    display: flex;
+		    flex-direction: column;
+		    gap: 20px;
+		}
+
+		.application-section {
+		    background-color: #f8f9fa;
+		    border-radius: 8px;
+		    padding: 20px;
+		    border-left: 4px solid #3498db;
+		}
+
+		.application-section h6 {
+		    color: #2c3e50;
+		    margin-bottom: 15px;
+		    font-weight: 600;
+		}
+
+		.detail-row {
+		    display: flex;
+		    margin-bottom: 10px;
+		    padding-bottom: 10px;
+		    border-bottom: 1px solid #eaeaea;
+		}
+
+		.detail-label {
+		    font-weight: 600;
+		    color: #2c3e50;
+		    min-width: 150px;
+		}
+
+		.detail-value {
+		    color: #34495e;
+		    flex: 1;
+		}
+
+		.status-badge {
+		    padding: 6px 12px;
+		    border-radius: 20px;
+		    font-size: 12px;
+		    font-weight: 500;
+		    display: inline-block;
+		}
+
+		.badge-pending {
+		    background-color: #f8f9fa;
+		    color: #6c757d;
+		}
+
+		.badge-approved {
+		    background-color: #d4edda;
+		    color: #155724;
+		}
+
+		.badge-rejected {
+		    background-color: #f8d7da;
+		    color: #721c24;
+		}
+
+		/* Animations */
+		@keyframes fadeIn {
+		    from { opacity: 0; }
+		    to { opacity: 1; }
+		}
+
+		@keyframes slideIn {
+		    from { 
+		        opacity: 0;
+		        transform: translateY(-50px);
+		    }
+		    to { 
+		        opacity: 1;
+		        transform: translateY(0);
+		    }
+		}
+
+		/* Responsive */
+		@media (max-width: 768px) {
+		    .custom-tab-nav {
+		        flex-direction: column;
+		    }
+		    
+		    .custom-tab-item {
+		        width: 100%;
+		    }
+		    
+		    .custom-tab-link {
+		        border-bottom: 1px solid #dee2e6;
+		        border-right: none;
+		    }
+		    
+		    .custom-tab-item.active .custom-tab-link {
+		        border-bottom-color: #0d6efd;
+		    }
+		    
+		    .custom-modal-lg {
+		        max-width: 95%;
+		        margin: 20px auto;
+		    }
+		    
+		    .detail-row {
+		        flex-direction: column;
+		    }
+		    
+		    .detail-label {
+		        min-width: auto;
+		        margin-bottom: 5px;
+		    }
+		}
+	</style>
+	
 </head>
 
 <body>
@@ -544,7 +1014,7 @@
 						<div class="ham_menu_items without_link">
 							<div class="ham_title ham_main_heading ham_title_more">
 								More
-								<i class="ic-24-chevron-down"></i>
+								<i class="header-dropdown-arrow-custom"></i>
 							</div>
 							<div class="ham_submenu_items">
 								<div class="ham_inner_menu_items">
@@ -558,7 +1028,7 @@
 								<div class="ham_inner_menu_items">
 									<div class="ham_inner_title">
 										Manage Account
-										<i class="ic-24-chevron-down"></i>
+										<i class="header-dropdown-arrow-custom"></i>
 									</div>
 									<div class="ham_inner_submenu_items">
 										<a href="https://internshala.com/login/update_password">Change Password</a>
@@ -580,11 +1050,11 @@
 							<i id="hamburger_menu_key" class="ic-24-web-hamburger"></i>
 							<span class="offer_hamburger_dot" id="offer_hamburger_dot"></span>
 						</div>
-                        <a class="navbar-brand" href="/">
-                            <div>
-                                <img src="/images/home/sprites/logo_img.png" alt="logo" width="195" height="65">
-                            </div>
-                        </a>
+						<a class="navbar-brand" href="/">
+							<div>
+								<img src="/images/home/sprites/logo_img.png" alt="logo" width="195" height="65">
+							</div>
+						</a>
 					</div>
 					<div class="navbar_header_for_chat navbar_mobile" id="main-navbar-header">
 						<div class="mobile_header_icon_container">
@@ -1352,13 +1822,13 @@
 														</li>
 														<li>
 															<a class="dropdown-click">
-																More <i class=" ic-24-chevron-down"></i>
+																More <i class=" header-dropdown-arrow-custom"></i>
 															</a>
 															<ul class="dropdown-submenu dropdown-submenu_1">
 																<li class="manage_account">
 																	<a class="dropdown-click">
 																		Manage Account
-																		<i class=" ic-24-chevron-down"></i>
+																		<i class=" header-dropdown-arrow-custom"></i>
 																	</a>
 																	<ul class="dropdown-submenu dropdown-submenu_2">
 																		<li>
@@ -1410,7 +1880,7 @@
 		</div>
 
 		<!-- Paste you code here subha -->
-
+		<br>
 		<div class="container-fluid" style="width: 80%; max-width: 1200px; margin: 0 auto;">
 
 			<div class="row">
@@ -1458,8 +1928,8 @@
 								<p>You have 8 internship applications awaiting review and approval.</p>
 							</div>
 							<div class="d-flex gap-2">
-								<button class="btn-warning-cover mentor">View</button>
-								<button class="btn-warning-outline mentor">Close</button>
+								<button class="btn-warning-cover mentor" id="viewPendingApplications">View</button>
+								<button class="btn-warning-outline mentor" id="closePendingAlert">Close</button>
 							</div>
 						</div>
 					</div>
@@ -1536,630 +2006,962 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-12">
-
-
-
 					<div class="card cutsom_height_card">
 						<div class="card-header">
 							<div class="inner_div">
 								<h4>All Applications</h4>
 								<div class="My_Students_div">
-
 									<div class="btnDiv">
-										<button class=" btn-primary-cover mentor"><i class="bx bx-download"></i>
-											Export</button>
-										<button class="btn-warning-cover mentor"><i class="fa fa-plus"></i> Add
-											Student</button>
+										
+										<button class="btn-warning-cover mentor" id="addStudentBtn"><i
+												class="fa fa-plus"></i> Add Student</button>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="card-body custom_card_body">
-
+							<!-- Search and Filters -->
 							<div class="row align-items-center">
 								<div class="col-md-5 p-0">
 									<form class="app-search p-0">
 										<div class="position-relative">
-											<input type="text" class="form-control" placeholder="Search...">
+											<input type="text" class="form-control" id="searchInput"
+												placeholder="Search...">
 											<span class="uil-search"></span>
 										</div>
 									</form>
 								</div>
-								<div class="col-md-1">
-
-								</div>
+								<div class="col-md-1"></div>
 								<div class="col-md-6">
 									<div class="row">
-
 										<div class="col-md-4">
-											<select name="" id="" class="form-control form-select">
-												<option value="">Select</option>
-												<option value="" selected="">All Department</option>
+											<select id="departmentFilter" class="form-control form-select">
+												<option value="">All Department</option>
+												<option value="Computer Science">Computer Science</option>
+												<option value="Electronics">Electronics</option>
+												<option value="Mechanical">Mechanical</option>
+												<option value="Civil">Civil</option>
+												<option value="Physics">Physics</option>
+												<option value="Chemistry">Chemistry</option>
 											</select>
 										</div>
 										<div class="col-md-4">
-											<select name="" id="" class="form-control form-select">
-												<option value="">Select</option>
-												<option value="" selected="">All Colleges</option>
+											<select id="collegeFilter" class="form-control form-select">
+												<option value="">All Colleges</option>
+												<option value="IIT Delhi">IIT Bhubaneswar</option>
+												<option value="IIT Bombay">IIT Bombay</option>
+												<option value="IIT Madras">IIT Madras</option>
+												<option value="NIT Trichy">NIT Rourkela</option>
 											</select>
 										</div>
-
-
 										<div class="col-md-4">
-											<select name="" id="" class="form-control form-select">
-												<option value="">Select</option>
-												<option value="" selected="">All Types</option>
+											<select id="typeFilter" class="form-control form-select">
+												<option value="">All Types</option>
+												<option value="Full Time">Full Time</option>
+												<option value="Part Time">Part Time</option>
+												<option value="Remote">Remote</option>
+												<option value="Hybrid">Hybrid</option>
 											</select>
 										</div>
 									</div>
 								</div>
 							</div>
+
+							<!-- Custom Tabs -->
 							<div class="row mt-4">
 								<div class="col-md-7 mb-4 p-0">
-									<ul class="nav nav-pills nav-justified bg-body-secondary" role="tablist">
-										<li class="nav-item waves-effect waves-light">
-											<a class="nav-link active" data-bs-toggle="tab" href="#navpills2-home"
-												role="tab">
-												<span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+									<ul class="custom-tab-nav" role="tablist">
+										<li class="custom-tab-item active">
+											<a href="#" class="custom-tab-link" data-tab="all-applications">
 												<span class="d-none d-sm-block">All Applications</span>
 											</a>
 										</li>
-										<li class="nav-item waves-effect waves-light">
-											<a class="nav-link" data-bs-toggle="tab" href="#navpills2-profile"
-												role="tab">
-												<span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+										<li class="custom-tab-item">
+											<a href="#" class="custom-tab-link" data-tab="pending-review">
 												<span class="d-none d-sm-block">Pending Review</span>
 											</a>
 										</li>
-										<li class="nav-item waves-effect waves-light">
-											<a class="nav-link" data-bs-toggle="tab" href="#navpills2-messages"
-												role="tab">
-												<span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
+										<li class="custom-tab-item">
+											<a href="#" class="custom-tab-link" data-tab="approved">
 												<span class="d-none d-sm-block">Approved</span>
 											</a>
 										</li>
-
-										<li class="nav-item waves-effect waves-light">
-											<a class="nav-link" data-bs-toggle="tab" href="#navpills2-Rejected"
-												role="tab">
-												<span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
+										<li class="custom-tab-item">
+											<a href="#" class="custom-tab-link" data-tab="rejected">
 												<span class="d-none d-sm-block">Rejected</span>
 											</a>
 										</li>
-
 									</ul>
-
 								</div>
-
-
-
 							</div>
 
-							<div class="tab-content">
-								<div class="tab-pane active" id="navpills2-home" role="tabpanel">
-
-									<div class="row">
-										<div class="col-md-12">
-											<table id="datatableOne" class="table table-bordered dt-responsive"
-												style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-												<thead>
-													<tr>
-														<th>Students</th>
-														<th>Department</th>
-														<th style="width: 200px !important;">Internship Details
-														</th>
-														<th>Applied Date</th>
-														<th>Status</th>
-														<th>Action</th>
-													</tr>
-												</thead>
-
-
-												<tbody>
-													<tr>
-														<td>
-															<div class="img_section">
-																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
-																		<p class="text-start">STU2025001</p>
-																	</div>
-																	<div>
-																		<button><img src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
-																</div>
+							<!-- Tab Content -->
+							<!-- All Applications Tab -->
+							<div class="custom-tab-pane active" id="all-applications">
+								<div class="row">
+									<div class="col-md-12">
+										<table class="table table-bordered dt-responsive"
+											style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+											<thead>
+												<tr>
+													<th>Students</th>
+													<th>Department</th>
+													<th style="width: 200px !important;">Internship Details</th>
+													<th>Applied Date</th>
+													<th>Status</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
 															</div>
-														</td>
-														<td>Computer Science</td>
-
-														<td>
 															<div class="name_section">
 																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Web
-																		Innovations, Mumbai</h4>
-																	<p class="text-start mt-1">Private</p>
+																	<h4 class="text-dark">Prisha Bansal</h4>
+																	<p class="text-start">STU2025001</p>
 																</div>
-															</div>
-														</td>
-														<td>June 20, 2024</td>
-														<td>
-															<span
-																class="badge bg-secondary-subtle text-secondary  custom_badge">Pending</span>
-														</td>
-														<td>
-															<button type="button" class="btn-primary-outline "
-																data-bs-toggle="modal"
-																data-bs-target=".bs-example-modal-xl"><i
-																	class="bx bx-show"></i>Review</button>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="img_section">
 																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
-																		<p class="text-start">STU2025001</p>
-																	</div>
-																	<div>
-																		<button><img src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
 																</div>
 															</div>
-														</td>
-														<td>Computer Science</td>
-
-														<td>
+														</div>
+													</td>
+													<td>Computer Science</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Web Innovations,
+																	Mumbai</h4>
+																<p class="text-start mt-1">Private</p>
+															</div>
+														</div>
+													</td>
+													<td>June 20, 2024</td>
+													<td>
+														<span
+															class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
+													</td>
+													<td>
+														<button type="button" class="btn-primary-outline review-btn">
+															<i class="bx bx-show"></i>Review
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
+															</div>
 															<div class="name_section">
 																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Web
-																		Innovations, Mumbai</h4>
-																	<p class="text-start mt-1">Private</p>
+																	<h4 class="text-dark">Rajesh Kumar</h4>
+																	<p class="text-start">STU2025002</p>
 																</div>
-															</div>
-														</td>
-														<td>June 20, 2024</td>
-														<td>
-															<span
-																class="badge bg-danger-subtle text-danger font-size-14 p-2 badge_danger">Rejected</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline "><i class="bx bx-show"
-																	data-bs-toggle="modal"
-																	data-bs-target=".bs-example-modal-xl-rejected"></i>view</button>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="img_section">
 																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
-																		<p class="text-start">STU2025001</p>
-																	</div>
-																	<div>
-																		<button><img src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
 																</div>
 															</div>
-														</td>
-														<td>Computer Science</td>
-
-														<td>
+														</div>
+													</td>
+													<td>Electronics</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Tech Solutions,
+																	Delhi</h4>
+																<p class="text-start mt-1">Private</p>
+															</div>
+														</div>
+													</td>
+													<td>June 21, 2024</td>
+													<td>
+														<span
+															class="badge bg-danger-subtle text-danger badge_danger">Rejected</span>
+													</td>
+													<td>
+														<button class="btn-primary-outline view-btn">
+															<i class="bx bx-show"></i>View
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
+															</div>
 															<div class="name_section">
 																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Web
-																		Innovations, Mumbai</h4>
-																	<p class="text-start mt-1">Private</p>
+																	<h4 class="text-dark">Anita Verma</h4>
+																	<p class="text-start">STU2025003</p>
 																</div>
-															</div>
-														</td>
-														<td>June 20, 2024</td>
-														<td>
-															<span
-																class="badge bg-success-subtle text-success font-size-14 p-2 badge_warning">Approved</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline "><i class="bx bx-show"
-																	data-bs-toggle="modal"
-																	data-bs-target=".bs-example-modal-xl-approved"></i>view</button>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="img_section">
 																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
-																		<p class="text-start">STU2025001</p>
-																	</div>
-																	<div>
-																		<button><img src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
 																</div>
 															</div>
-														</td>
-														<td>Computer Science</td>
-
-														<td>
+														</div>
+													</td>
+													<td>Mechanical</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Auto Engineers,
+																	Chennai</h4>
+																<p class="text-start mt-1">Private</p>
+															</div>
+														</div>
+													</td>
+													<td>June 22, 2024</td>
+													<td>
+														<span
+															class="badge bg-success-subtle text-success badge_warning">Approved</span>
+													</td>
+													<td>
+														<button class="btn-primary-outline view-btn">
+															<i class="bx bx-show"></i>View
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
+															</div>
 															<div class="name_section">
 																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Web
-																		Innovations, Mumbai</h4>
-																	<p class="text-start mt-1">Private</p>
+																	<h4 class="text-dark">Akash Kumar</h4>
+																	<p class="text-start">STU2025003</p>
 																</div>
-															</div>
-														</td>
-														<td>June 20, 2024</td>
-														<td>
-															<span
-																class="badge bg-secondary-subtle text-secondary  custom_badge">Pending</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline "><i
-																	class="bx bx-show"></i>Review</button>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="img_section">
 																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
-																		<p class="text-start">STU2025001</p>
-																	</div>
-																	<div>
-																		<button><img src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
 																</div>
 															</div>
-														</td>
-														<td>Computer Science</td>
-
-														<td>
+														</div>
+													</td>
+													<td>Mechanical</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Auto Engineers,
+																	Chennai</h4>
+																<p class="text-start mt-1">Private</p>
+															</div>
+														</div>
+													</td>
+													<td>June 22, 2024</td>
+													<td>
+														<span
+															class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
+													</td>
+													<td>
+														<button class="btn-primary-outline view-btn">
+															<i class="bx bx-show"></i>View
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
+															</div>
 															<div class="name_section">
 																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Web
-																		Innovations, Mumbai</h4>
-																	<p class="text-start mt-1">Private</p>
+																	<h4 class="text-dark">Prasant Panda</h4>
+																	<p class="text-start">STU2025003</p>
 																</div>
-															</div>
-														</td>
-														<td>June 20, 2024</td>
-														<td>
-															<span
-																class="badge bg-secondary-subtle text-secondary  custom_badge">Pending</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline "><i
-																	class="bx bx-show"></i>Review</button>
-														</td>
-													</tr>
-
-												</tbody>
-											</table>
-										</div>
-									</div>
-
-								</div>
-								<div class="tab-pane" id="navpills2-profile" role="tabpanel">
-									<div class="row">
-										<div class="col-md-12">
-											<table id="datatableTwo" class="table table-bordered dt-responsive"
-												style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-												<thead>
-													<tr>
-														<th>Students</th>
-														<th>Department</th>
-														<th style="width: 200px !important;">Internship Details
-														</th>
-														<th>Applied Date</th>
-														<th>Status</th>
-														<th>Action</th>
-													</tr>
-												</thead>
-
-
-												<tbody>
-													<tr>
-														<td>
-															<div class="img_section">
 																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
-																		<p class="text-start">STU2025001</p>
-																	</div>
-																	<div>
-																		<button><img src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
 																</div>
 															</div>
-														</td>
-														<td>Computer Science</td>
-
-														<td>
-															<div class="name_section">
-																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Web
-																		Innovations, Mumbai</h4>
-																	<p class="text-start mt-1">Private</p>
-																</div>
+														</div>
+													</td>
+													<td>Mechanical</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Auto Engineers,
+																	Chennai</h4>
+																<p class="text-start mt-1">Private</p>
 															</div>
-														</td>
-														<td>June 20, 2024</td>
-														<td>
-															<span
-																class="badge bg-secondary-subtle text-secondary  custom_badge">Pending</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline "><i
-																	class="bx bx-show"></i>Review</button>
-														</td>
-													</tr>
-
-													<tr>
-														<td>
-															<div class="img_section">
-																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
-																		<p class="text-start">STU2025001</p>
-																	</div>
-																	<div>
-																		<button><img src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
-																</div>
-															</div>
-														</td>
-														<td>Computer Science</td>
-
-														<td>
-															<div class="name_section">
-																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Web
-																		Innovations, Mumbai</h4>
-																	<p class="text-start mt-1">Private</p>
-																</div>
-															</div>
-														</td>
-														<td>June 20, 2024</td>
-														<td>
-															<span
-																class="badge bg-secondary-subtle text-secondary  custom_badge">Pending</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline "><i
-																	class="bx bx-show"></i>Review</button>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="img_section">
-																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
-																		<p class="text-start">STU2025001</p>
-																	</div>
-																	<div>
-																		<button><img src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
-																</div>
-															</div>
-														</td>
-														<td>Computer Science</td>
-
-														<td>
-															<div class="name_section">
-																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Web
-																		Innovations, Mumbai</h4>
-																	<p class="text-start mt-1">Private</p>
-																</div>
-															</div>
-														</td>
-														<td>June 20, 2024</td>
-														<td>
-															<span
-																class="badge bg-secondary-subtle text-secondary  custom_badge">Pending</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline "><i
-																	class="bx bx-show"></i>Review</button>
-														</td>
-													</tr>
-
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-								<div class="tab-pane" id="navpills2-messages" role="tabpanel">
-									<div class="row">
-										<div class="col-md-12">
-											<table id="datatableThree" class="table table-bordered dt-responsive"
-												style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-												<thead>
-													<tr>
-														<th>Students</th>
-														<th>Department</th>
-														<th style="width: 200px !important;">Internship Details
-														</th>
-														<th>Applied Date</th>
-														<th>Status</th>
-														<th>Action</th>
-													</tr>
-												</thead>
-
-
-												<tbody>
-
-													<tr>
-														<td>
-															<div class="img_section">
-																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
-																		<p class="text-start">STU2025001</p>
-																	</div>
-																	<div>
-																		<button><img src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
-																</div>
-															</div>
-														</td>
-														<td>Computer Science</td>
-
-														<td>
-															<div class="name_section">
-																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Web
-																		Innovations, Mumbai</h4>
-																	<p class="text-start mt-1">Private</p>
-																</div>
-															</div>
-														</td>
-														<td>June 20, 2024</td>
-														<td>
-															<span
-																class="badge bg-success-subtle text-success font-size-14 p-2 badge_warning">Approved</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline "><i
-																	class="bx bx-show"></i>view</button>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-								<div class="tab-pane" id="navpills2-Rejected" role="tabpanel">
-									<div class="row">
-										<div class="col-md-12">
-											<table id="datatableFour" class="table table-bordered dt-responsive"
-												style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-												<thead>
-													<tr>
-														<th>Students</th>
-														<th>Department</th>
-														<th style="width: 200px !important;">Internship Details
-														</th>
-														<th>Applied Date</th>
-														<th>Status</th>
-														<th>Action</th>
-													</tr>
-												</thead>
-
-
-												<tbody>
-
-													<tr>
-														<td>
-															<div class="img_section">
-																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
-																		<p class="text-start">STU2025001</p>
-																	</div>
-																	<div>
-																		<button><img src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
-																</div>
-															</div>
-														</td>
-														<td>Computer Science</td>
-
-														<td>
-															<div class="name_section">
-																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Web
-																		Innovations, Mumbai</h4>
-																	<p class="text-start mt-1">Private</p>
-																</div>
-															</div>
-														</td>
-														<td>June 20, 2024</td>
-														<td>
-															<span
-																class="badge bg-danger-subtle text-danger font-size-14 p-2 badge_danger">Rejected</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline "><i
-																	class="bx bx-show"></i>view</button>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
+														</div>
+													</td>
+													<td>June 22, 2024</td>
+													<td>
+														<span
+															class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
+													</td>
+													<td>
+														<button class="btn-primary-outline view-btn">
+															<i class="bx bx-show"></i>View
+														</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
 									</div>
 								</div>
 							</div>
 
+							<!-- Pending Review Tab -->
+							<div class="custom-tab-pane" id="pending-review">
+								<div class="row">
+									<div class="col-md-12">
+										<table class="table table-bordered dt-responsive"
+											style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+											<thead>
+												<tr>
+													<th>Students</th>
+													<th>Department</th>
+													<th style="width: 200px !important;">Internship Details</th>
+													<th>Applied Date</th>
+													<th>Status</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
+															</div>
+															<div class="name_section">
+																<div class="d-flex flex-column align-items-start">
+																	<h4 class="text-dark">Sanjay Patel</h4>
+																	<p class="text-start">STU2025004</p>
+																</div>
+																<div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
+																</div>
+															</div>
+														</div>
+													</td>
+													<td>Civil</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Construction Corp,
+																	Bangalore</h4>
+																<p class="text-start mt-1">Private</p>
+															</div>
+														</div>
+													</td>
+													<td>June 23, 2024</td>
+													<td>
+														<span
+															class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
+													</td>
+													<td>
+														<button type="button" class="btn-primary-outline review-btn">
+															<i class="bx bx-show"></i>Review
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
+															</div>
+															<div class="name_section">
+																<div class="d-flex flex-column align-items-start">
+																	<h4 class="text-dark">Anita Verma</h4>
+																	<p class="text-start">STU2025003</p>
+																</div>
+																<div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
+																</div>
+															</div>
+														</div>
+													</td>
+													<td>Mechanical</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Auto Engineers,
+																	Chennai</h4>
+																<p class="text-start mt-1">Private</p>
+															</div>
+														</div>
+													</td>
+													<td>June 22, 2024</td>
+													<td>
+														<span
+															class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
+													</td>
+													<td>
+														<button class="btn-primary-outline view-btn">
+															<i class="bx bx-show"></i>View
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
+															</div>
+															<div class="name_section">
+																<div class="d-flex flex-column align-items-start">
+																	<h4 class="text-dark">Anita Verma</h4>
+																	<p class="text-start">STU2025003</p>
+																</div>
+																<div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
+																</div>
+															</div>
+														</div>
+													</td>
+													<td>Mechanical</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Auto Engineers,
+																	Chennai</h4>
+																<p class="text-start mt-1">Private</p>
+															</div>
+														</div>
+													</td>
+													<td>June 22, 2024</td>
+													<td>
+														<span
+															class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
+													</td>
+													<td>
+														<button class="btn-primary-outline view-btn">
+															<i class="bx bx-show"></i>View
+														</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+
+							<!-- Approved Tab -->
+							<div class="custom-tab-pane" id="approved">
+								<div class="row">
+									<div class="col-md-12">
+										<table class="table table-bordered dt-responsive"
+											style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+											<thead>
+												<tr>
+													<th>Students</th>
+													<th>Department</th>
+													<th style="width: 200px !important;">Internship Details</th>
+													<th>Applied Date</th>
+													<th>Status</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
+															</div>
+															<div class="name_section">
+																<div class="d-flex flex-column align-items-start">
+																	<h4 class="text-dark">Alok Sharma</h4>
+																	<p class="text-start">STU2025005</p>
+																</div>
+																<div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
+																</div>
+															</div>
+														</div>
+													</td>
+													<td>Chemistry</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Pharma Corp, Pune
+																</h4>
+																<p class="text-start mt-1">Private</p>
+															</div>
+														</div>
+													</td>
+													<td>June 24, 2024</td>
+													<td>
+														<span
+															class="badge bg-success-subtle text-success badge_warning">Approved</span>
+													</td>
+													<td>
+														<button class="btn-primary-outline view-btn">
+															<i class="bx bx-show"></i>View
+														</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+
+							<!-- Rejected Tab -->
+							<div class="custom-tab-pane" id="rejected">
+								<div class="row">
+									<div class="col-md-12">
+										<table class="table table-bordered dt-responsive"
+											style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+											<thead>
+												<tr>
+													<th>Students</th>
+													<th>Department</th>
+													<th style="width: 200px !important;">Internship Details</th>
+													<th>Applied Date</th>
+													<th>Status</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
+															</div>
+															<div class="name_section">
+																<div class="d-flex flex-column align-items-start">
+																	<h4 class="text-dark">Neha Gupta</h4>
+																	<p class="text-start">STU2025006</p>
+																</div>
+																<div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
+																</div>
+															</div>
+														</div>
+													</td>
+													<td>Mathematics</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Data Analytics,
+																	Kolkata</h4>
+																<p class="text-start mt-1">Private</p>
+															</div>
+														</div>
+													</td>
+													<td>June 25, 2024</td>
+													<td>
+														<span
+															class="badge bg-danger-subtle text-danger badge_danger">Rejected</span>
+													</td>
+													<td>
+														<button class="btn-primary-outline view-btn">
+															<i class="bx bx-show"></i>View
+														</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
 
 						</div>
 					</div>
 				</div>
+			</div>
 
+
+			<!-- Add Student Modal -->
+			<div id="addStudentModal" class="custom-modal">
+				<div class="custom-modal-content custom-modal-lg">
+					<div class="custom-modal-header">
+						<h5 class="custom-modal-title">Add New Student</h5>
+						<button type="button" class="custom-modal-close" id="closeAddStudentModal">&times;</button>
+					</div>
+				
+					<div class="custom-modal-body">
+						<form id="addStudentForm" class="student-form">
+							<div class="row">
+								<div class="col-md-12">
+									<h6 class="section-title">Personal Information</h6>
+								</div>
+
+								<div class="col-md-6 mb-3">
+									<label for="studentName" class="form-label">Full Name <span
+											class="text-danger">*</span></label>
+									<input type="text" class="form-control" id="studentName" required
+										placeholder="Enter student's full name">
+								</div>
+
+								<div class="col-md-6 mb-3">
+									<label for="studentId" class="form-label">Student ID <span
+											class="text-danger">*</span></label>
+									<input type="text" class="form-control" id="studentId" required
+										placeholder="e.g., STU2025001">
+								</div>
+
+								<div class="col-md-6 mb-3">
+									<label for="studentEmail" class="form-label">Email Address <span
+											class="text-danger">*</span></label>
+									<input type="email" class="form-control" id="studentEmail" required
+										placeholder="student@example.com">
+								</div>
+
+								<div class="col-md-6 mb-3">
+									<label for="studentPhone" class="form-label">Phone Number</label>
+									<input type="tel" class="form-control" id="studentPhone"
+										placeholder="+91 9876543210">
+								</div>
+
+								<div class="col-md-6 mb-3">
+									<label for="studentDepartment" class="form-label">Department <span
+											class="text-danger">*</span></label>
+									<select class="form-control form-select" id="studentDepartment" required>
+										<option value="">Select Department</option>
+										<option value="Computer Science">Computer Science</option>
+										<option value="Electronics">Electronics</option>
+										<option value="Mechanical">Mechanical</option>
+										<option value="Civil">Civil</option>
+										<option value="Electrical">Electrical</option>
+										<option value="Physics">Physics</option>
+										<option value="Chemistry">Chemistry</option>
+										<option value="Mathematics">Mathematics</option>
+									</select>
+								</div>
+
+								<div class="col-md-6 mb-3">
+									<label for="studentCollege" class="form-label">College <span
+											class="text-danger">*</span></label>
+									<select class="form-control form-select" id="studentCollege" required>
+										<option value="">Select College</option>
+										<option value="IIT Delhi">IIT Bhubaneswar</option>
+										<option value="IIT Bombay">IIT Bombay</option>
+										<option value="IIT Madras">IIT Madras</option>
+										<option value="NIT Warangal">NIT Rourkela</option>
+										<option value="Other">Other</option>
+									</select>
+								</div>
+
+								<div class="col-md-12">
+									<h6 class="section-title">Internship Details</h6>
+								</div>
+
+								<div class="col-md-6 mb-3">
+									<label for="internshipCompany" class="form-label">Company Name</label>
+									<input type="text" class="form-control" id="internshipCompany"
+										placeholder="Enter company name">
+								</div>
+
+								<div class="col-md-6 mb-3">
+									<label for="internshipType" class="form-label">Internship Type</label>
+									<select class="form-control form-select" id="internshipType">
+										<option value="">Select Type</option>
+										<option value="Full Time">Full Time</option>
+										<option value="Part Time">Part Time</option>
+										<option value="Remote">Remote</option>
+										<option value="Hybrid">Hybrid</option>
+									</select>
+								</div>
+
+								<div class="col-md-12 mb-3">
+									<div class="form-check">
+										<input type="checkbox" class="form-check-input" id="termsAgreement" required>
+										<label class="form-check-label" for="termsAgreement">
+											I confirm that all information provided is accurate and complete.
+										</label>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="custom-modal-footer">
+						<button type="button" class="btn btn-secondary" id="cancelAddStudent">Cancel</button>
+						<button type="button" class="btn btn-primary" id="submitStudentForm">Add Student</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Review Application Modal -->
+			<div id="reviewModal" class="custom-modal">
+			    <div class="custom-modal-content custom-modal-lg">
+			        <div class="custom-modal-header">
+			            <h5 class="custom-modal-title">Review Application</h5>
+			            <button type="button" class="custom-modal-close" id="closeReviewModal">&times;</button>
+			        </div>
+			        <div class="custom-modal-body">
+			            <div id="reviewContent">
+			                <!-- Content will be loaded dynamically -->
+			            </div>
+			        </div>
+			        <div class="custom-modal-footer">
+			            <button type="button" class="btn btn-secondary" id="rejectBtn">Reject</button>
+			            <button type="button" class="btn btn-primary" id="approveBtn">Approve</button>
+			        </div>
+			    </div>
+			</div>
+			<!-- View Application Modal -->
+			<div id="viewModal" class="custom-modal">
+			    <div class="custom-modal-content custom-modal-lg">
+			        <div class="custom-modal-header">
+			            <h5 class="custom-modal-title">View Application Details</h5>
+			            <button type="button" class="custom-modal-close" id="closeViewModal">&times;</button>
+			        </div>
+			        <div class="custom-modal-body">
+			            <div id="viewContent">
+			                <!-- Content will be loaded dynamically -->
+			            </div>
+			        </div>
+			        <div class="custom-modal-footer">
+			            <button type="button" class="btn btn-secondary" id="closeViewModalBtn">Close</button>
+			        </div>
+			    </div>
 			</div>
 
 		</div> <!-- end row -->
 
-
-
-
-
 	</div> <!-- container-fluid -->
 
+	<!-- Custom Modal for Pending Applications -->
+	<div id="customPendingModal" class="custom-modal">
+		<div class="custom-modal-content custom-modal-xl">
+			<div class="custom-modal-header">
+				<h5 class="custom-modal-title">Pending Applications</h5>
+				<button type="button" class="custom-modal-close" id="closeCustomModal">&times;</button>
+			</div>
+			<div class="custom-modal-body">
+				<div class="row">
+					<div class="col-md-12">
+						<table class="table table-bordered dt-responsive"
+							style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+							<thead>
+								<tr>
+									<th>Students</th>
+									<th>Department</th>
+									<th style="width: 200px !important;">Internship Details</th>
+									<th>Applied Date</th>
+									<th>Status</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<div class="img_section">
+											<div>
+												<img src="/assets/images/prof_img.png" class="img-fluid prof_img"
+													alt="">
+											</div>
+											<div class="name_section">
+												<div class="d-flex flex-column align-items-start">
+													<h4 class="text-dark">Prisha Bansal</h4>
+													<p class="text-start">STU2025001</p>
+												</div>
+												<div>
+													<button><img src="/assets/images/edit.png" class="edit_img"
+															alt=""></button>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td>Computer Science</td>
+									<td>
+										<div class="name_section">
+											<div class="d-flex flex-column align-items-start">
+												<h4 class="text-dark new_heading">Web Innovations, Mumbai</h4>
+												<p class="text-start mt-1">Private</p>
+											</div>
+										</div>
+									</td>
+									<td>June 20, 2024</td>
+									<td>
+										<span
+											class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
+									</td>
+
+								</tr>
+								<tr>
+									<td>
+										<div class="img_section">
+											<div>
+												<img src="/assets/images/prof_img.png" class="img-fluid prof_img"
+													alt="">
+											</div>
+											<div class="name_section">
+												<div class="d-flex flex-column align-items-start">
+													<h4 class="text-dark">Prisha Bansal</h4>
+													<p class="text-start">STU2025001</p>
+												</div>
+												<div>
+													<button><img src="/assets/images/edit.png" class="edit_img"
+															alt=""></button>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td>Computer Science</td>
+									<td>
+										<div class="name_section">
+											<div class="d-flex flex-column align-items-start">
+												<h4 class="text-dark new_heading">Web Innovations, Mumbai</h4>
+												<p class="text-start mt-1">Private</p>
+											</div>
+										</div>
+									</td>
+									<td>June 20, 2024</td>
+									<td>
+										<span
+											class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
+									</td>
+
+								</tr>
+								<tr>
+									<td>
+										<div class="img_section">
+											<div>
+												<img src="/assets/images/prof_img.png" class="img-fluid prof_img"
+													alt="">
+											</div>
+											<div class="name_section">
+												<div class="d-flex flex-column align-items-start">
+													<h4 class="text-dark">Prisha Bansal</h4>
+													<p class="text-start">STU2025001</p>
+												</div>
+												<div>
+													<button><img src="/assets/images/edit.png" class="edit_img"
+															alt=""></button>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td>Computer Science</td>
+									<td>
+										<div class="name_section">
+											<div class="d-flex flex-column align-items-start">
+												<h4 class="text-dark new_heading">Web Innovations, Mumbai</h4>
+												<p class="text-start mt-1">Private</p>
+											</div>
+										</div>
+									</td>
+									<td>June 20, 2024</td>
+									<td>
+										<span
+											class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
+									</td>
+
+								</tr>
+								<tr>
+									<td>
+										<div class="img_section">
+											<div>
+												<img src="/assets/images/prof_img.png" class="img-fluid prof_img"
+													alt="">
+											</div>
+											<div class="name_section">
+												<div class="d-flex flex-column align-items-start">
+													<h4 class="text-dark">Prisha Bansal</h4>
+													<p class="text-start">STU2025001</p>
+												</div>
+												<div>
+													<button><img src="/assets/images/edit.png" class="edit_img"
+															alt=""></button>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td>Computer Science</td>
+									<td>
+										<div class="name_section">
+											<div class="d-flex flex-column align-items-start">
+												<h4 class="text-dark new_heading">Web Innovations, Mumbai</h4>
+												<p class="text-start mt-1">Private</p>
+											</div>
+										</div>
+									</td>
+									<td>June 20, 2024</td>
+									<td>
+										<span
+											class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
+									</td>
+
+								</tr>
+								<tr>
+									<td>
+										<div class="img_section">
+											<div>
+												<img src="/assets/images/prof_img.png" class="img-fluid prof_img"
+													alt="">
+											</div>
+											<div class="name_section">
+												<div class="d-flex flex-column align-items-start">
+													<h4 class="text-dark">Prisha Bansal</h4>
+													<p class="text-start">STU2025001</p>
+												</div>
+												<div>
+													<button><img src="/assets/images/edit.png" class="edit_img"
+															alt=""></button>
+												</div>
+											</div>
+										</div>
+									</td>
+									<td>Computer Science</td>
+									<td>
+										<div class="name_section">
+											<div class="d-flex flex-column align-items-start">
+												<h4 class="text-dark new_heading">Web Innovations, Mumbai</h4>
+												<p class="text-start mt-1">Private</p>
+											</div>
+										</div>
+									</td>
+									<td>June 20, 2024</td>
+									<td>
+										<span
+											class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
+									</td>
+
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="custom-modal-footer">
+				<button type="button" class="btn btn-secondary" id="closeCustomModalBtn">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
 
 	<script nonce="IXghZjCSvOg+tO8HQlKuhg==">
 		var name = "Missing an interview after accepting the invite is considered unprofessional and will lead to your Internshala account being blocked. If for any reason, you are not able to attend the interview, you should request a reschedule or a cancellation at least 24 hours before the scheduled time.";
@@ -2232,6 +3034,1067 @@ chosen link or button. -->
 			}
 		}, 2000);
 	</script>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			// Get elements
+			const viewButton = document.getElementById('viewPendingApplications');
+			const closeAlertButton = document.getElementById('closePendingAlert');
+			const customModal = document.getElementById('customPendingModal');
+			const closeModalBtn = document.getElementById('closeCustomModal');
+			const closeModalBtn2 = document.getElementById('closeCustomModalBtn');
+
+			// Function to close modal
+			function closeModal() {
+				customModal.classList.remove('active');
+				document.body.style.overflow = 'auto';
+			}
+
+			// Function to hide the alert card
+			function hideAlertCard() {
+				const alertCard = document.querySelector('.ApplicationCardMentorYellow');
+				if (alertCard) {
+					alertCard.style.display = 'none';
+				}
+			}
+
+			// Open modal when View button is clicked
+			if (viewButton) {
+				viewButton.addEventListener('click', function () {
+					customModal.classList.add('active');
+					document.body.style.overflow = 'hidden';
+				});
+			}
+
+			// Close alert card when Close button is clicked
+			if (closeAlertButton) {
+				closeAlertButton.addEventListener('click', function () {
+					hideAlertCard();
+				});
+			}
+
+			// Close modal when X button is clicked
+			if (closeModalBtn) {
+				closeModalBtn.addEventListener('click', function () {
+					closeModal();
+				});
+			}
+
+			// Close modal when Close button in footer is clicked
+			if (closeModalBtn2) {
+				closeModalBtn2.addEventListener('click', function () {
+					closeModal();
+				});
+			}
+
+			// Close modal when clicking outside the modal content
+			customModal.addEventListener('click', function (event) {
+				if (event.target === customModal) {
+					closeModal();
+				}
+			});
+
+			// Close modal with Escape key
+			document.addEventListener('keydown', function (event) {
+				if (event.key === 'Escape' && customModal.classList.contains('active')) {
+					closeModal();
+				}
+			});
+
+
+		});
+	</script>
+
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			// Tab functionality
+			const tabLinks = document.querySelectorAll('.custom-tab-link');
+			const tabPanes = document.querySelectorAll('.custom-tab-pane');
+
+			// Tab click handler
+			tabLinks.forEach(link => {
+				link.addEventListener('click', function (e) {
+					e.preventDefault();
+
+					const tabId = this.getAttribute('data-tab');
+
+					// Remove active class from all tabs
+					tabLinks.forEach(l => {
+						l.parentElement.classList.remove('active');
+					});
+
+					// Remove active class from all tab panes
+					tabPanes.forEach(pane => {
+						pane.classList.remove('active');
+					});
+
+					// Add active class to clicked tab
+					this.parentElement.classList.add('active');
+
+					// Show corresponding tab pane
+					document.getElementById(tabId).classList.add('active');
+				});
+			});
+
+			// Search functionality
+			const searchInput = document.getElementById('searchInput');
+			if (searchInput) {
+				searchInput.addEventListener('input', function () {
+					const searchTerm = this.value.toLowerCase();
+					const activeTable = document.querySelector('.custom-tab-pane.active table tbody');
+
+					if (activeTable) {
+						const rows = activeTable.querySelectorAll('tr');
+
+						rows.forEach(row => {
+							const text = row.textContent.toLowerCase();
+							row.style.display = text.includes(searchTerm) ? '' : 'none';
+						});
+					}
+				});
+			}
+
+			// Filter functionality
+			const departmentFilter = document.getElementById('departmentFilter');
+			const collegeFilter = document.getElementById('collegeFilter');
+			const typeFilter = document.getElementById('typeFilter');
+
+			function filterTable() {
+				const departmentValue = departmentFilter ? departmentFilter.value : '';
+				const collegeValue = collegeFilter ? collegeFilter.value : '';
+				const typeValue = typeFilter ? typeFilter.value : '';
+
+				const activeTable = document.querySelector('.custom-tab-pane.active table tbody');
+
+				if (activeTable) {
+					const rows = activeTable.querySelectorAll('tr');
+
+					rows.forEach(row => {
+						const department = row.cells[1]?.textContent || '';
+						const internshipText = row.cells[2]?.textContent || '';
+
+						const showRow =
+							(!departmentValue || department === departmentValue) &&
+							(!collegeValue || true) && // Add college logic if needed
+							(!typeValue || internshipText.includes(typeValue));
+
+						row.style.display = showRow ? '' : 'none';
+					});
+				}
+			}
+
+			if (departmentFilter) departmentFilter.addEventListener('change', filterTable);
+			if (collegeFilter) collegeFilter.addEventListener('change', filterTable);
+			if (typeFilter) typeFilter.addEventListener('change', filterTable);
+
+			// Add Student Modal
+			const addStudentBtn = document.getElementById('addStudentBtn');
+			const addStudentModal = document.getElementById('addStudentModal');
+			const closeAddStudentModal = document.getElementById('closeAddStudentModal');
+			const cancelAddStudent = document.getElementById('cancelAddStudent');
+			const submitStudentForm = document.getElementById('submitStudentForm');
+			const addStudentForm = document.getElementById('addStudentForm');
+
+			// Open modal
+			if (addStudentBtn) {
+				addStudentBtn.addEventListener('click', function () {
+					addStudentModal.classList.add('active');
+					document.body.style.overflow = 'hidden';
+					addStudentForm.reset();
+				});
+			}
+
+			// Close modal functions
+			function closeAddStudentModalFunc() {
+				addStudentModal.classList.remove('active');
+				document.body.style.overflow = 'auto';
+			}
+
+			if (closeAddStudentModal) {
+				closeAddStudentModal.addEventListener('click', closeAddStudentModalFunc);
+			}
+
+			if (cancelAddStudent) {
+				cancelAddStudent.addEventListener('click', closeAddStudentModalFunc);
+			}
+
+			addStudentModal.addEventListener('click', function (event) {
+				if (event.target === addStudentModal) {
+					closeAddStudentModalFunc();
+				}
+			});
+
+			document.addEventListener('keydown', function (event) {
+				if (event.key === 'Escape' && addStudentModal.classList.contains('active')) {
+					closeAddStudentModalFunc();
+				}
+			});
+
+			// Form validation
+			function validateForm() {
+				let isValid = true;
+				const requiredFields = addStudentForm.querySelectorAll('[required]');
+
+				// Clear previous validation
+				addStudentForm.querySelectorAll('.is-invalid').forEach(el => {
+					el.classList.remove('is-invalid');
+				});
+
+				addStudentForm.querySelectorAll('.invalid-feedback').forEach(el => {
+					el.style.display = 'none';
+				});
+
+				// Validate required fields
+				requiredFields.forEach(field => {
+					if (!field.value.trim()) {
+						field.classList.add('is-invalid');
+						let errorMsg = field.nextElementSibling;
+						if (!errorMsg || !errorMsg.classList.contains('invalid-feedback')) {
+							errorMsg = document.createElement('div');
+							errorMsg.className = 'invalid-feedback';
+							errorMsg.textContent = 'This field is required';
+							field.parentNode.appendChild(errorMsg);
+						}
+						errorMsg.style.display = 'block';
+						isValid = false;
+					}
+				});
+
+				// Validate email format
+				const emailField = document.getElementById('studentEmail');
+				if (emailField.value && !isValidEmail(emailField.value)) {
+					emailField.classList.add('is-invalid');
+					let errorMsg = emailField.nextElementSibling;
+					if (!errorMsg || !errorMsg.classList.contains('invalid-feedback')) {
+						errorMsg = document.createElement('div');
+						errorMsg.className = 'invalid-feedback';
+						errorMsg.textContent = 'Please enter a valid email address';
+						emailField.parentNode.appendChild(errorMsg);
+					}
+					errorMsg.style.display = 'block';
+					isValid = false;
+				}
+
+				return isValid;
+			}
+
+			function isValidEmail(email) {
+				const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+				return emailPattern.test(email);
+			}
+
+			// Form submission
+			if (submitStudentForm) {
+				submitStudentForm.addEventListener('click', function (e) {
+					e.preventDefault();
+
+					if (validateForm()) {
+						const formData = {
+							name: document.getElementById('studentName').value,
+							studentId: document.getElementById('studentId').value,
+							email: document.getElementById('studentEmail').value,
+							phone: document.getElementById('studentPhone').value,
+							department: document.getElementById('studentDepartment').value,
+							college: document.getElementById('studentCollege').value,
+							company: document.getElementById('internshipCompany').value,
+							type: document.getElementById('internshipType').value
+						};
+
+						// Add to All Applications table
+						addStudentToTable(formData);
+
+						// Show success message
+						showNotification(`Student ${formData.name} added successfully!`);
+
+						// Close modal
+						closeAddStudentModalFunc();
+					}
+				});
+			}
+
+			// Add student to table
+			function addStudentToTable(studentData) {
+				const allAppsTable = document.querySelector('#all-applications table tbody');
+
+				if (allAppsTable) {
+					const newRow = document.createElement('tr');
+
+					// Determine status (default: Pending)
+					const status = 'Pending';
+					const statusClass = status === 'Pending' ? 'bg-secondary-subtle text-secondary' :
+						status === 'Approved' ? 'bg-success-subtle text-success' :
+							'bg-danger-subtle text-danger';
+
+					// Create row HTML
+					newRow.innerHTML = `
+	                <td>
+	                    <div class="img_section">
+	                        <div>
+	                            <img src="/assets/images/prof_img.png" class="img-fluid prof_img" alt="">
+	                        </div>
+	                        <div class="name_section">
+	                            <div class="d-flex flex-column align-items-start">
+	                                <h4 class="text-dark">${studentData.name}</h4>
+	                                <p class="text-start">${studentData.studentId}</p>
+	                            </div>
+	                            <div>
+	                                <button class="edit-student-btn">
+	                                    <img src="/assets/images/edit.png" class="edit_img" alt="Edit">
+	                                </button>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </td>
+	                <td>${studentData.department}</td>
+	                <td>
+	                    <div class="name_section">
+	                        <div class="d-flex flex-column align-items-start">
+	                            <h4 class="text-dark new_heading">${studentData.company || 'Not Assigned'}</h4>
+	                            <p class="text-start mt-1">${studentData.type || 'N/A'}</p>
+	                        </div>
+	                    </div>
+	                </td>
+	                <td>${new Date().toLocaleDateString('en-US', {
+						year: 'numeric',
+						month: 'short',
+						day: 'numeric'
+					})}</td>
+	                <td>
+	                    <span class="badge ${statusClass} custom_badge">${status}</span>
+	                </td>
+	                <td>
+	                    <button type="button" class="btn-primary-outline review-btn">
+	                        <i class="bx bx-show"></i>Review
+	                    </button>
+	                </td>
+	            `;
+
+					// Add to beginning of table
+					allAppsTable.insertBefore(newRow, allAppsTable.firstChild);
+
+					// Add event listeners
+					newRow.querySelector('.review-btn').addEventListener('click', function () {
+						alert(`Reviewing application for:\n${studentData.name} (${studentData.studentId})`);
+					});
+
+					newRow.querySelector('.edit-student-btn').addEventListener('click', function () {
+						alert(`Edit functionality for ${studentData.name}`);
+					});
+				}
+			}
+
+			// Show notification
+			function showNotification(message) {
+				const notification = document.createElement('div');
+				notification.className = 'custom-notification success';
+				notification.textContent = message;
+				notification.style.cssText = `
+	            position: fixed;
+	            top: 20px;
+	            right: 20px;
+	            background-color: #2ecc71;
+	            color: white;
+	            padding: 12px 20px;
+	            border-radius: 6px;
+	            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+	            z-index: 10000;
+	            animation: slideInRight 0.3s ease;
+	        `;
+
+				document.body.appendChild(notification);
+
+				setTimeout(() => {
+					notification.style.animation = 'slideOutRight 0.3s ease';
+					setTimeout(() => {
+						if (notification.parentNode) {
+							notification.parentNode.removeChild(notification);
+						}
+					}, 300);
+				}, 3000);
+			}
+
+			// Add animation keyframes for notification
+			const style = document.createElement('style');
+			style.textContent = `
+	        @keyframes slideInRight {
+	            from { transform: translateX(100%); opacity: 0; }
+	            to { transform: translateX(0); opacity: 1; }
+	        }
+	        @keyframes slideOutRight {
+	            from { transform: translateX(0); opacity: 1; }
+	            to { transform: translateX(100%); opacity: 0; }
+	        }
+	    `;
+			document.head.appendChild(style);
+		});
+		
+		
+		
+	</script>
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+	    // Initialize button handlers
+	    initializeButtonHandlers();
+	    
+	    // Initialize modal handlers
+	    initializeModalHandlers();
+	    
+	    // Function to get student data from table row
+	    function getStudentDataFromRow(row) {
+	        const name = row.querySelector('h4.text-dark')?.textContent || '';
+	        const studentId = row.querySelector('p.text-start')?.textContent || '';
+	        const department = row.cells[1]?.textContent || '';
+	        const company = row.querySelector('.new_heading')?.textContent || '';
+	        const type = row.querySelector('.text-start.mt-1')?.textContent || '';
+	        const appliedDate = row.cells[3]?.textContent || '';
+	        const status = row.cells[4]?.textContent || '';
+	        const statusBadge = row.cells[4]?.querySelector('.badge');
+	        const statusClass = statusBadge ? Array.from(statusBadge.classList).find(cls => cls.includes('bg-')) : '';
+	        
+	        return {
+	            name,
+	            studentId,
+	            department,
+	            company,
+	            type,
+	            appliedDate,
+	            status,
+	            statusClass
+	        };
+	    }
+	    
+	    // Initialize button handlers
+	    function initializeButtonHandlers() {
+	        // Review buttons
+	        const reviewButtons = document.querySelectorAll('.review-btn');
+	        reviewButtons.forEach(button => {
+	            button.addEventListener('click', function() {
+	                const row = this.closest('tr');
+	                const studentData = getStudentDataFromRow(row);
+	                openReviewModal(studentData);
+	            });
+	        });
+	        
+	        // View buttons
+	        const viewButtons = document.querySelectorAll('.view-btn');
+	        viewButtons.forEach(button => {
+	            button.addEventListener('click', function() {
+	                const row = this.closest('tr');
+	                const studentData = getStudentDataFromRow(row);
+	                openViewModal(studentData);
+	            });
+	        });
+	    }
+	    
+	    // Initialize modal handlers
+	    function initializeModalHandlers() {
+	        // Create modals if they don't exist
+	        createReviewModal();
+	        createViewModal();
+	        
+	        // Setup modal close handlers
+	        setupModalCloseHandlers();
+	    }
+	    
+	    // Create Review Modal HTML
+	    function createReviewModal() {
+	        if (document.getElementById('reviewModal')) return;
+	        
+	        const modalHTML = `
+	            <div id="reviewModal" class="custom-modal">
+	                <div class="custom-modal-content custom-modal-lg">
+	                    <div class="custom-modal-header">
+	                        <h5 class="custom-modal-title">Review Application</h5>
+	                        <button type="button" class="custom-modal-close" id="closeReviewModal">&times;</button>
+	                    </div>
+	                    <div class="custom-modal-body">
+	                        <div id="reviewContent">
+	                            <!-- Content will be loaded dynamically -->
+	                        </div>
+	                    </div>
+	                    <div class="custom-modal-footer">
+	                        <button type="button" class="btn btn-secondary" id="rejectBtn">Reject</button>
+	                        <button type="button" class="btn btn-primary" id="approveBtn">Approve</button>
+	                    </div>
+	                </div>
+	            </div>
+	        `;
+	        
+	        document.body.insertAdjacentHTML('beforeend', modalHTML);
+	    }
+	    
+	    // Create View Modal HTML
+	    function createViewModal() {
+	        if (document.getElementById('viewModal')) return;
+	        
+	        const modalHTML = `
+	            <div id="viewModal" class="custom-modal">
+	                <div class="custom-modal-content custom-modal-lg">
+	                    <div class="custom-modal-header">
+	                        <h5 class="custom-modal-title">View Application Details</h5>
+	                        <button type="button" class="custom-modal-close" id="closeViewModal">&times;</button>
+	                    </div>
+	                    <div class="custom-modal-body">
+	                        <div id="viewContent">
+	                            <!-- Content will be loaded dynamically -->
+	                        </div>
+	                    </div>
+	                    <div class="custom-modal-footer">
+	                        <button type="button" class="btn btn-secondary" id="closeViewModalBtn">Close</button>
+	                    </div>
+	                </div>
+	            </div>
+	        `;
+	        
+	        document.body.insertAdjacentHTML('beforeend', modalHTML);
+	    }
+	    
+	    // Setup modal close handlers
+	    function setupModalCloseHandlers() {
+	        // Review modal close handlers
+	        const reviewModal = document.getElementById('reviewModal');
+	        const closeReviewModal = document.getElementById('closeReviewModal');
+	        
+	        if (closeReviewModal) {
+	            closeReviewModal.addEventListener('click', function() {
+	                reviewModal.classList.remove('active');
+	                document.body.style.overflow = 'auto';
+	            });
+	        }
+	        
+	        // View modal close handlers
+	        const viewModal = document.getElementById('viewModal');
+	        const closeViewModal = document.getElementById('closeViewModal');
+	        const closeViewModalBtn = document.getElementById('closeViewModalBtn');
+	        
+	        if (closeViewModal) {
+	            closeViewModal.addEventListener('click', function() {
+	                viewModal.classList.remove('active');
+	                document.body.style.overflow = 'auto';
+	            });
+	        }
+	        
+	        if (closeViewModalBtn) {
+	            closeViewModalBtn.addEventListener('click', function() {
+	                viewModal.classList.remove('active');
+	                document.body.style.overflow = 'auto';
+	            });
+	        }
+	        
+	        // Close modals when clicking outside
+	        if (reviewModal) {
+	            reviewModal.addEventListener('click', function(event) {
+	                if (event.target === reviewModal) {
+	                    reviewModal.classList.remove('active');
+	                    document.body.style.overflow = 'auto';
+	                }
+	            });
+	        }
+	        
+	        if (viewModal) {
+	            viewModal.addEventListener('click', function(event) {
+	                if (event.target === viewModal) {
+	                    viewModal.classList.remove('active');
+	                    document.body.style.overflow = 'auto';
+	                }
+	            });
+	        }
+	        
+	        // Close modals with Escape key
+	        document.addEventListener('keydown', function(event) {
+	            if (event.key === 'Escape') {
+	                if (reviewModal && reviewModal.classList.contains('active')) {
+	                    reviewModal.classList.remove('active');
+	                    document.body.style.overflow = 'auto';
+	                }
+	                if (viewModal && viewModal.classList.contains('active')) {
+	                    viewModal.classList.remove('active');
+	                    document.body.style.overflow = 'auto';
+	                }
+	            }
+	        });
+	    }
+	    
+	    // Open Review Modal
+	    function openReviewModal(studentData) {
+	        const reviewModal = document.getElementById('reviewModal');
+	        const reviewContent = document.getElementById('reviewContent');
+	        
+	        // Create review content HTML
+	        reviewContent.innerHTML = `
+	            <div class="application-details">
+	                <div class="application-section">
+	                    <h6>Student Information</h6>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Name:</span>
+	                        <span class="detail-value">${studentData.name}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Student ID:</span>
+	                        <span class="detail-value">${studentData.studentId}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Department:</span>
+	                        <span class="detail-value">${studentData.department}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Email:</span>
+	                        <span class="detail-value">${studentData.name.toLowerCase().replace(/\s+/g, '.')}@college.edu</span>
+	                    </div>
+	                </div>
+	                
+	                <div class="application-section">
+	                    <h6>Internship Details</h6>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Company:</span>
+	                        <span class="detail-value">${studentData.company}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Type:</span>
+	                        <span class="detail-value">${studentData.type}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Applied Date:</span>
+	                        <span class="detail-value">${studentData.appliedDate}</span>
+	                    </div>
+	                </div>
+	                
+	                <div class="application-section">
+	                    <h6>Current Status</h6>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Status:</span>
+	                        <span class="detail-value">
+	                            <span class="status-badge badge-pending">${studentData.status}</span>
+	                        </span>
+	                    </div>
+	                </div>
+	                
+	                <div class="application-section">
+	                    <h6>Review Notes</h6>
+	                    <div class="mb-3">
+	                        <label for="reviewNotes" class="form-label">Add Comments</label>
+	                        <textarea class="form-control" id="reviewNotes" rows="4" placeholder="Enter your review comments..."></textarea>
+	                    </div>
+	                </div>
+	            </div>
+	        `;
+	        
+	        // Open modal
+	        reviewModal.classList.add('active');
+	        document.body.style.overflow = 'hidden';
+	        
+	        // Setup approve/reject button handlers
+	        setupReviewActionHandlers(studentData);
+	    }
+	    
+	    // Open View Modal
+	    function openViewModal(studentData) {
+	        const viewModal = document.getElementById('viewModal');
+	        const viewContent = document.getElementById('viewContent');
+	        
+	        // Determine status badge class
+	        let statusBadgeClass = 'badge-pending';
+	        if (studentData.statusClass.includes('bg-success')) statusBadgeClass = 'badge-approved';
+	        if (studentData.statusClass.includes('bg-danger')) statusBadgeClass = 'badge-rejected';
+	        
+	        // Create view content HTML
+	        viewContent.innerHTML = `
+	            <div class="application-details">
+	                <div class="application-section">
+	                    <h6>Student Information</h6>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Name:</span>
+	                        <span class="detail-value">${studentData.name}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Student ID:</span>
+	                        <span class="detail-value">${studentData.studentId}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Department:</span>
+	                        <span class="detail-value">${studentData.department}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Email:</span>
+	                        <span class="detail-value">${studentData.name.toLowerCase().replace(/\s+/g, '.')}@college.edu</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Phone:</span>
+	                        <span class="detail-value">+91 98XXXXXX21</span>
+	                    </div>
+	                </div>
+	                
+	                <div class="application-section">
+	                    <h6>Internship Details</h6>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Company:</span>
+	                        <span class="detail-value">${studentData.company}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Type:</span>
+	                        <span class="detail-value">${studentData.type}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Location:</span>
+	                        <span class="detail-value">${getLocationFromCompany(studentData.company)}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Applied Date:</span>
+	                        <span class="detail-value">${studentData.appliedDate}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Duration:</span>
+	                        <span class="detail-value">3 months</span>
+	                    </div>
+	                </div>
+	                
+	                <div class="application-section">
+	                    <h6>Application Status</h6>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Status:</span>
+	                        <span class="detail-value">
+	                            <span class="status-badge ${statusBadgeClass}">${studentData.status}</span>
+	                        </span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Last Updated:</span>
+	                        <span class="detail-value">${studentData.appliedDate}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Reviewer:</span>
+	                        <span class="detail-value">Admin User</span>
+	                    </div>
+	                </div>
+	                
+	                <div class="application-section">
+	                    <h6>Additional Information</h6>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Skills:</span>
+	                        <span class="detail-value">${getSkillsForDepartment(studentData.department)}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">CGPA:</span>
+	                        <span class="detail-value">8.5/10</span>
+	                    </div>
+	                </div>
+	            </div>
+	        `;
+	        
+	        // Open modal
+	        viewModal.classList.add('active');
+	        document.body.style.overflow = 'hidden';
+	    }
+	    
+	    // Setup review action handlers (Approve/Reject)
+	    function setupReviewActionHandlers(studentData) {
+	        const approveBtn = document.getElementById('approveBtn');
+	        const rejectBtn = document.getElementById('rejectBtn');
+	        
+	        if (approveBtn) {
+	            approveBtn.onclick = function() {
+	                updateApplicationStatus(studentData, 'Approved', 'bg-success-subtle text-success');
+	                showNotification(`Application for ${studentData.name} has been approved!`);
+	                document.getElementById('reviewModal').classList.remove('active');
+	                document.body.style.overflow = 'auto';
+	            };
+	        }
+	        
+	        if (rejectBtn) {
+	            rejectBtn.onclick = function() {
+	                updateApplicationStatus(studentData, 'Rejected', 'bg-danger-subtle text-danger');
+	                showNotification(`Application for ${studentData.name} has been rejected.`);
+	                document.getElementById('reviewModal').classList.remove('active');
+	                document.body.style.overflow = 'auto';
+	            };
+	        }
+	    }
+	    
+	    // Helper function to get location from company name
+	    function getLocationFromCompany(company) {
+	        if (company.includes('Mumbai')) return 'Mumbai';
+	        if (company.includes('Delhi')) return 'Delhi';
+	        if (company.includes('Chennai')) return 'Chennai';
+	        if (company.includes('Bangalore')) return 'Bangalore';
+	        if (company.includes('Pune')) return 'Pune';
+	        if (company.includes('Kolkata')) return 'Kolkata';
+	        return 'Multiple Locations';
+	    }
+	    
+	    // Helper function to get skills based on department
+	    function getSkillsForDepartment(department) {
+	        const skillsMap = {
+	            'Computer Science': 'Python, Java, Web Development, Databases',
+	            'Electronics': 'Circuit Design, Embedded Systems, MATLAB',
+	            'Mechanical': 'CAD, SolidWorks, Thermodynamics',
+	            'Civil': 'AutoCAD, Structural Analysis, Construction Management',
+	            'Physics': 'Research Methodology, Data Analysis, Lab Skills',
+	            'Chemistry': 'Analytical Chemistry, Lab Techniques, Research',
+	            'Mathematics': 'Statistics, Data Analysis, Algorithms'
+	        };
+	        return skillsMap[department] || 'Programming, Problem Solving, Teamwork';
+	    }
+	    
+	    // Update application status in table
+	    function updateApplicationStatus(studentData, newStatus, statusClass) {
+	        const allTables = document.querySelectorAll('table tbody');
+	        
+	        allTables.forEach(table => {
+	            const rows = table.querySelectorAll('tr');
+	            rows.forEach(row => {
+	                const studentIdCell = row.querySelector('p.text-start');
+	                if (studentIdCell && studentIdCell.textContent === studentData.studentId) {
+	                    // Update status cell
+	                    const statusCell = row.cells[4];
+	                    if (statusCell) {
+	                        statusCell.innerHTML = `<span class="badge ${statusClass}">${newStatus}</span>`;
+	                    }
+	                    
+	                    // Update action button
+	                    const actionCell = row.cells[5];
+	                    if (actionCell) {
+	                        if (newStatus === 'Pending') {
+	                            actionCell.innerHTML = `<button type="button" class="btn-primary-outline review-btn">
+	                                <i class="bx bx-show"></i>Review
+	                            </button>`;
+	                        } else {
+	                            actionCell.innerHTML = `<button class="btn-primary-outline view-btn">
+	                                <i class="bx bx-show"></i>View
+	                            </button>`;
+	                        }
+	                    }
+	                }
+	            });
+	        });
+	        
+	        // Reinitialize button handlers for updated buttons
+	        initializeButtonHandlers();
+	    }
+	    
+	    // Show notification
+	    function showNotification(message) {
+	        const notification = document.createElement('div');
+	        notification.className = 'custom-notification';
+	        notification.textContent = message;
+	        notification.style.cssText = `
+	            position: fixed;
+	            top: 20px;
+	            right: 20px;
+	            background-color: #2ecc71;
+	            color: white;
+	            padding: 12px 20px;
+	            border-radius: 6px;
+	            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+	            z-index: 10000;
+	            animation: slideInRight 0.3s ease;
+	        `;
+	        
+	        document.body.appendChild(notification);
+	        
+	        setTimeout(() => {
+	            notification.style.animation = 'slideOutRight 0.3s ease';
+	            setTimeout(() => {
+	                if (notification.parentNode) {
+	                    notification.parentNode.removeChild(notification);
+	                }
+	            }, 300);
+	        }, 3000);
+	    }
+	    
+	    // Add CSS styles
+	    const style = document.createElement('style');
+	    style.textContent = `
+	        /* Modal Styles */
+	        .custom-modal {
+	            display: none;
+	            position: fixed;
+	            top: 0;
+	            left: 0;
+	            width: 100%;
+	            height: 100%;
+	            background-color: rgba(0, 0, 0, 0.5);
+	            z-index: 9999;
+	            overflow-y: auto;
+	        }
+	        
+	        .custom-modal.active {
+	            display: flex;
+	            align-items: center;
+	            justify-content: center;
+	        }
+	        
+	        .custom-modal-content {
+	            background-color: white;
+	            border-radius: 8px;
+	            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	            max-width: 95%;
+	            width: 100%;
+	        }
+	        
+	        .custom-modal-lg {
+	            max-width: 700px;
+	        }
+	        
+	        .custom-modal-header {
+	            padding: 20px 30px;
+	            border-bottom: 1px solid #dee2e6;
+	            display: flex;
+	            justify-content: space-between;
+	            align-items: center;
+	            background-color: #f8f9fa;
+	            border-radius: 8px 8px 0 0;
+	        }
+	        
+	        .custom-modal-title {
+	            margin: 0;
+	            font-size: 1.5rem;
+	            font-weight: 600;
+	            color: #333;
+	        }
+	        
+	        .custom-modal-close {
+	            background: none;
+	            border: none;
+	            font-size: 28px;
+	            cursor: pointer;
+	            color: #6c757d;
+	            line-height: 1;
+	            padding: 0;
+	            width: 30px;
+	            height: 30px;
+	            display: flex;
+	            align-items: center;
+	            justify-content: center;
+	        }
+	        
+	        .custom-modal-close:hover {
+	            color: #333;
+	        }
+	        
+	        .custom-modal-body {
+	            padding: 30px;
+	            max-height: 70vh;
+	            overflow-y: auto;
+	        }
+	        
+	        .custom-modal-footer {
+	            padding: 20px 30px;
+	            border-top: 1px solid #dee2e6;
+	            display: flex;
+	            justify-content: flex-end;
+	            gap: 10px;
+	            background-color: #f8f9fa;
+	            border-radius: 0 0 8px 8px;
+	        }
+	        
+	        /* Application Details Styles */
+	        .application-details {
+	            display: flex;
+	            flex-direction: column;
+	            gap: 20px;
+	        }
+	        
+	        .application-section {
+	            background-color: #f8f9fa;
+	            border-radius: 8px;
+	            padding: 20px;
+	        }
+	        
+	        .application-section h6 {
+	            color: #2c3e50;
+	            margin-bottom: 15px;
+	            font-weight: 600;
+	        }
+	        
+	        .detail-row {
+	            display: flex;
+	            margin-bottom: 10px;
+	            padding-bottom: 10px;
+	            border-bottom: 1px solid #eaeaea;
+	        }
+	        
+	        .detail-label {
+	            font-weight: 600;
+	            color: #2c3e50;
+	            min-width: 150px;
+	        }
+	        
+	        .detail-value {
+	            color: #34495e;
+	            flex: 1;
+	        }
+	        
+	        .status-badge {
+	            padding: 6px 12px;
+	            border-radius: 20px;
+	            font-size: 12px;
+	            font-weight: 500;
+	            display: inline-block;
+	        }
+	        
+	        .badge-pending {
+	            background-color: #f8f9fa;
+	            color: #6c757d;
+	        }
+	        
+	        .badge-approved {
+	            background-color: #d4edda;
+	            color: #155724;
+	        }
+	        
+	        .badge-rejected {
+	            background-color: #f8d7da;
+	            color: #721c24;
+	        }
+	        
+	        /* Form Styles */
+	        .form-control {
+	            width: 100%;
+	            padding: 8px 12px;
+	            border: 1px solid #ddd;
+	            border-radius: 4px;
+	            font-size: 14px;
+	        }
+	        
+	        .form-label {
+	            font-weight: 500;
+	            margin-bottom: 5px;
+	            display: block;
+	            color: #34495e;
+	        }
+	        
+	        /* Animations */
+	        @keyframes slideInRight {
+	            from { transform: translateX(100%); opacity: 0; }
+	            to { transform: translateX(0); opacity: 1; }
+	        }
+	        
+	        @keyframes slideOutRight {
+	            from { transform: translateX(0); opacity: 1; }
+	            to { transform: translateX(100%); opacity: 0; }
+	        }
+	        
+	        /* Responsive */
+	        @media (max-width: 768px) {
+	            .custom-modal-lg {
+	                max-width: 95%;
+	                margin: 20px auto;
+	            }
+	            
+	            .detail-row {
+	                flex-direction: column;
+	            }
+	            
+	            .detail-label {
+	                min-width: auto;
+	                margin-bottom: 5px;
+	            }
+	        }
+	    `;
+	    document.head.appendChild(style);
+	});
+	</script>
+	
 </body>
 
 </html>

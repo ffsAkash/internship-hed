@@ -1409,6 +1409,7 @@
 			</div>
 		</div>
 
+		<br>
 		<div class="container-fluid" style="width: 80%; max-width: 1200px; margin: 0 auto;">
 
 			<div class="row">
@@ -1456,13 +1457,32 @@
 								<p>You have 3 mid-term evaluations due in the next 5 days.</p>
 							</div>
 							<div class="d-flex gap-2">
-								<!-- <button class="btn-warning-cover mentor">View</button> -->
+								<button class="btn btn-orange mentor">
+																    View
+																</button>
 								<button class="btn-warning-outline mentor">Close</button>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			
+			<style>
+					    .btn-orange {
+					        background-color: #FD7E14; /* Vibrant orange */
+					        border-color: #FD7E14;
+					        color: white !important; /* Ensures text is white */
+					    }
+					    .btn-orange:hover {
+					        background-color: #e96d00; /* Darker orange on hover */
+					        border-color: #e96d00;
+					        color: white;
+					    }
+					    .btn-orange:focus, .btn-orange:active {
+					        box-shadow: 0 0 0 0.2rem rgba(253, 126, 20, 0.5);
+					    }
+					</style>
+
 
 
 			<div class="row">
@@ -1893,10 +1913,13 @@
 																</div>
 															</td>
 														</tr>
+														
 													</tbody>
 												</table>
+												
 											</div>
 										</div>
+										
 										<div class="tab-pane" id="navpills2-profile" role="tabpanel">
 											<div class="row align-items-center">
 												<div class="col-md-6">
@@ -2391,6 +2414,7 @@ chosen link or button. -->
 			}
 		}, 2000);
 	</script>
+	
 </body>
 
 </html>

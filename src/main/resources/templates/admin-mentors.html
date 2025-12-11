@@ -230,6 +230,154 @@
 		var online_time_margin_in_seconds = 60;
 		var to_use_websocket_only_on_chat = false;
 	</script>
+	
+	<style>
+	/* Tab styling */
+	.nav-pills .nav-link {
+	    color: #495057;
+	    background-color: #f8f9fa;
+	    border-radius: 0.375rem;
+	    margin: 0 2px;
+	    padding: 0.5rem 1rem;
+	}
+
+	.nav-pills .nav-link.active {
+	    background-color: #0d6efd;
+	    color: white;
+	}
+
+	.nav-pills .nav-link:hover:not(.active) {
+	    background-color: #e9ecef;
+	}
+
+	/* Search box styling */
+	.app-search .position-relative {
+	    position: relative;
+	}
+
+	.app-search input {
+	    padding-left: 40px;
+	    padding-right: 20px;
+	    height: 40px;
+	    border: 1px solid #dee2e6;
+	    border-radius: 0.375rem;
+	    width: 100%;
+	}
+
+	.app-search .uil-search {
+	    position: absolute;
+	    left: 12px;
+	    top: 50%;
+	    transform: translateY(-50%);
+	    color: #6c757d;
+	}
+
+	/* Select styling */
+	.form-select {
+	    height: 40px;
+	    border: 1px solid #dee2e6;
+	    border-radius: 0.375rem;
+	}
+
+	/* Badge styling */
+	.custom_badge {
+	    padding: 0.25rem 0.75rem;
+	    border-radius: 50rem;
+	    font-size: 0.875rem;
+	    font-weight: 500;
+	}
+
+	/* Button styling */
+	.btn-primary-outline {
+	    background-color: transparent;
+	    border: 1px solid #0d6efd;
+	    color: #0d6efd;
+	    padding: 0.375rem 0.75rem;
+	    border-radius: 0.375rem;
+	    cursor: pointer;
+	    transition: all 0.2s ease;
+	}
+
+	.btn-primary-outline:hover {
+	    background-color: #0d6efd;
+	    color: white;
+	}
+
+	/* Table styling */
+	.table {
+	    margin-top: 1rem;
+	}
+
+	.table thead th {
+	    background-color: #f8f9fa;
+	    border-bottom: 2px solid #dee2e6;
+	    padding: 0.75rem;
+	    font-weight: 600;
+	}
+
+	.table tbody td {
+	    padding: 0.75rem;
+	    vertical-align: middle;
+	    border-top: 1px solid #dee2e6;
+	}
+
+	.img_section {
+	    display: flex;
+	    align-items: center;
+	    gap: 12px;
+	}
+
+	.prof_img {
+	    width: 40px;
+	    height: 40px;
+	    border-radius: 50%;
+	    object-fit: cover;
+	}
+
+	.name_section {
+	    display: flex;
+	    justify-content: space-between;
+	    align-items: center;
+	    flex: 1;
+	}
+
+	.name_section h4 {
+	    font-size: 1rem;
+	    margin-bottom: 0.25rem;
+	}
+
+	.name_section p {
+	    font-size: 0.875rem;
+	    color: #6c757d;
+	    margin-bottom: 0;
+	}
+
+	.edit_img {
+	    width: 20px;
+	    height: 20px;
+	}
+
+	.new_heading {
+	    font-size: 1rem;
+	    margin-bottom: 0.25rem;
+	}
+
+	/* Responsive adjustments */
+	@media (max-width: 768px) {
+	    .row.align-items-center > div {
+	        margin-bottom: 1rem;
+	    }
+	    
+	    .row.align-items-center > div.col-md-1 {
+	        display: none;
+	    }
+	    
+	    .app-search,
+	    .form-select {
+	        width: 100%;
+	    }
+	}
+	</style>
 </head>
 
 <body>
@@ -812,7 +960,7 @@
 
 							<li
 								class="nav-item training_container_hover dropdown dropdown-hover dropdown_backdrop nav-links">
-								<!--<a class="nav-link dropdown-toggle trainings_link menu-link"
+								<!--	<a class="nav-link dropdown-toggle trainings_link menu-link"
 									href="https://trainings.internshala.com/?utm_source=is_web_internshala-menu-dropdown1"
 									id="trainings_dropdown_link" rel="noopener" target="_blank">
 									Courses <div class="contest" id="course_superscript">
@@ -1279,6 +1427,7 @@
 									id="jobs_new_superscript"> Mentors
 								</a>
 							</li>
+
 							<li class="nav-item chat_icon_container">
 								<a class=" student">
 									<div class="header_chat_notification header_chat_notification_without_link">
@@ -1352,13 +1501,13 @@
 														</li>
 														<li>
 															<a class="dropdown-click">
-																More <i class=" ic-24-chevron-down"></i>
+																More <i class="header-dropdown-arrow-custom"></i>
 															</a>
 															<ul class="dropdown-submenu dropdown-submenu_1">
 																<li class="manage_account">
 																	<a class="dropdown-click">
 																		Manage Account
-																		<i class=" ic-24-chevron-down"></i>
+																		<i class="header-dropdown-arrow-custom"></i>
 																	</a>
 																	<ul class="dropdown-submenu dropdown-submenu_2">
 																		<li>
@@ -1411,6 +1560,7 @@
 
 		<!-- Paste you code here subha -->
 
+		<br>
 		<div class="container-fluid" style="width: 80%; max-width: 1200px; margin: 0 auto;">
 
 			<div class="row">
@@ -1419,7 +1569,7 @@
 					<div class="row">
 						<div class="col-12">
 							<div class="page-title-box d-flex align-items-center justify-content-between">
-								<h4 class="mb-0">Amit Kumar - Internship Application</h4>
+								<h4 class="mb-0">Dr. Rajesh Kumar - Internship Application</h4>
 
 								<div class="page-title-right">
 									<ol class="breadcrumb m-0">
@@ -1452,7 +1602,7 @@
 											<img src="/assets/images/das_one.png" class="img-fluid dash_img" alt="">
 										</div>
 										<div>
-											<p class="m-0 oneP">Total Mentors</p>
+											<p class="m-0 oneP">Total Students</p>
 											<h4 class="m-0 oneH">18</h4>
 										</div>
 									</div>
@@ -1507,609 +1657,225 @@
 					</div>
 				</div>
 
-
-
 			</div>
+			
+			
 			<div class="row">
-				<div class="col-lg-12">
+			    <div class="col-lg-12">
+			        <div class="card cutsom_height_card">
+			            <div class="card-header">
+			                <div class="inner_div">
+			                    <h4>All Applications</h4>
+			                    <div class="My_Students_div">
+			                        <div class="btnDiv">
+			                        
+			                        </div>
+			                    </div>
+			                </div>
+			            </div>
+			            <div class="card-body custom_card_body">
+			                <div class="row align-items-center">
+			                    <div class="col-md-5 p-0">
+			                        <form class="app-search p-0" onsubmit="return false;">
+			                            <div class="position-relative">
+			                                <input type="text" class="form-control" id="searchInput" placeholder="Search...">
+			                                <span class="uil-search"></span>
+			                            </div>
+			                        </form>
+			                    </div>
+			                    <div class="col-md-1"></div>
+			                    <div class="col-md-6">
+			                        <div class="row">
+			                            <div class="col-md-4">
+			                                <select id="departmentFilter" class="form-control form-select">
+			                                    <option value="">All Department</option>
+			                                    <option value="Computer Science">Computer Science</option>
+			                                    <option value="Electronics">Electronics</option>
+			                                    <option value="Mechanical">Mechanical</option>
+			                                    <option value="Civil">Civil</option>
+			                                    <option value="MBA">MBA</option>
+			                                    <option value="Humanities">Humanities</option>
+			                                </select>
+			                            </div>
+			                            <div class="col-md-4">
+			                                <select id="collegeFilter" class="form-control form-select">
+			                                    <option value="">All Colleges</option>
+			                                    <option value="IIT Delhi">IIT Bhubaneswar</option>
+			                                    <option value="IIT Bombay">IIT Bombay</option>
+			                                    <option value="IIT Madras">IIT Madras</option>
+			                                    <option value="NIT Trichy">NIT Trichy</option>
+			                                    <option value="Delhi University">Delhi University</option>
+			                                </select>
+			                            </div>
+			                            <div class="col-md-4">
+			                                <select id="typeFilter" class="form-control form-select">
+			                                    <option value="">All Types</option>
+			                                    <option value="Full-time">Full-time</option>
+			                                    <option value="Part-time">Part-time</option>
+			                                    <option value="Remote">Remote</option>
+			                                    <option value="On-site">On-site</option>
+			                                    <option value="Hybrid">Hybrid</option>
+			                                </select>
+			                            </div>
+			                        </div>
+			                    </div>
+			                </div>
+			                
+			                <div class="row mt-4">
+			                    <div class="col-md-7 mb-4 p-0">
+			                        <ul class="nav nav-pills nav-justified bg-body-secondary" role="tablist" id="applicationTabs">
+			                            <li class="nav-item waves-effect waves-light">
+			                                <a class="nav-link active" data-tab="all" role="tab">
+			                                    <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+			                                    <span class="d-none d-sm-block">All</span>
+			                                </a>
+			                            </li>
+			                            <li class="nav-item waves-effect waves-light">
+			                                <a class="nav-link" data-tab="internship" role="tab">
+			                                    <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+			                                    <span class="d-none d-sm-block">In Internship</span>
+			                                </a>
+			                            </li>
+			                            <li class="nav-item waves-effect waves-light">
+			                                <a class="nav-link" data-tab="inactive" role="tab">
+			                                    <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
+			                                    <span class="d-none d-sm-block">Inactive</span>
+			                                </a>
+			                            </li>
+			                            <li class="nav-item waves-effect waves-light">
+			                                <a class="nav-link" data-tab="completed" role="tab">
+			                                    <span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
+			                                    <span class="d-none d-sm-block">Completed</span>
+			                                </a>
+			                            </li>
+			                        </ul>
+			                    </div>
+			                </div>
 
+			                <!-- All Applications Tab -->
+			                <div class="tab-content" id="allTab" style="display: block;">
+			                    <div class="row">
+			                        <div class="col-md-12">
+			                            <table class="table table-bordered dt-responsive"
+			                                style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+			                                <thead>
+			                                    <tr>
+			                                        <th>Student</th>
+			                                        <th>Department</th>
+			                                        <th style="width: 200px !important;">Internship Details</th>
+			                                        <th>Mentor</th>
+			                                        <th>Status</th>
+			                                        <th>Action</th>
+			                                    </tr>
+			                                </thead>
+			                                <tbody id="allTableBody">
+			                                    <!-- Data will be populated here -->
+			                                </tbody>
+			                            </table>
+			                        </div>
+			                    </div>
+			                </div>
 
+			                <!-- In Internship Tab -->
+			                <div class="tab-content" id="internshipTab" style="display: none;">
+			                    <div class="row">
+			                        <div class="col-md-12">
+			                            <table class="table table-bordered dt-responsive"
+			                                style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+			                                <thead>
+			                                    <tr>
+			                                        <th>Student</th>
+			                                        <th>Department</th>
+			                                        <th style="width: 200px !important;">Internship Details</th>
+			                                        <th>Applied Date</th>
+			                                        <th>Status</th>
+			                                        <th>Action</th>
+			                                    </tr>
+			                                </thead>
+			                                <tbody id="internshipTableBody">
+			                                    <!-- Data will be populated here -->
+			                                </tbody>
+			                            </table>
+			                        </div>
+			                    </div>
+			                </div>
 
-					<div class="card cutsom_height_card">
-						<div class="card-header">
-							<div class="inner_div">
-								<h4>All Applications</h4>
-								<div class="My_Students_div">
+			                <!-- Inactive Tab -->
+			                <div class="tab-content" id="inactiveTab" style="display: none;">
+			                    <div class="row">
+			                        <div class="col-md-12">
+			                            <table class="table table-bordered dt-responsive"
+			                                style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+			                                <thead>
+			                                    <tr>
+			                                        <th>Student</th>
+			                                        <th>Department</th>
+			                                        <th style="width: 200px !important;">Internship Details</th>
+			                                        <th>Applied Date</th>
+			                                        <th>Status</th>
+			                                        <th>Action</th>
+			                                    </tr>
+			                                </thead>
+			                                <tbody id="inactiveTableBody">
+			                                    <!-- Data will be populated here -->
+			                                </tbody>
+			                            </table>
+			                        </div>
+			                    </div>
+			                </div>
 
-									<div class="btnDiv">
-										<button class=" btn-primary-cover mentor"><i class="bx bx-download"></i>
-											Export</button>
-										<button class="btn-warning-cover mentor"><i class="fa fa-plus"></i> Add
-											Mentors</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="card-body custom_card_body">
-
-							<div class="row align-items-center">
-								<div class="col-md-5 p-0">
-									<form class="app-search p-0">
-										<div class="position-relative">
-											<input type="text" class="form-control" placeholder="Search...">
-											<span class="uil-search"></span>
-										</div>
-									</form>
-								</div>
-								<div class="col-md-1">
-
-								</div>
-								<div class="col-md-6">
-									<div class="row">
-
-										<div class="col-md-4">
-											<select name="" id="" class="form-control form-select">
-												<option value="">Select</option>
-												<option value="" selected="">All Department</option>
-											</select>
-										</div>
-										<div class="col-md-4">
-											<select name="" id="" class="form-control form-select">
-												<option value="">Select</option>
-												<option value="" selected="">All Colleges</option>
-											</select>
-										</div>
-
-
-										<div class="col-md-4">
-											<select name="" id="" class="form-control form-select">
-												<option value="">Select</option>
-												<option value="" selected="">All Types</option>
-											</select>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="row mt-4">
-								<div class="col-md-7 mb-4 p-0">
-									<ul class="nav nav-pills nav-justified bg-body-secondary" role="tablist">
-										<li class="nav-item waves-effect waves-light">
-											<a class="nav-link active" data-bs-toggle="tab" href="#navpills2-home"
-												role="tab">
-												<span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-												<span class="d-none d-sm-block">All</span>
-											</a>
-										</li>
-										<li class="nav-item waves-effect waves-light">
-											<a class="nav-link" data-bs-toggle="tab" href="#navpills2-profile"
-												role="tab">
-												<span class="d-block d-sm-none"><i class="far fa-user"></i></span>
-												<span class="d-none d-sm-block">In Internship</span>
-											</a>
-										</li>
-										<li class="nav-item waves-effect waves-light">
-											<a class="nav-link" data-bs-toggle="tab" href="#navpills2-messages"
-												role="tab">
-												<span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
-												<span class="d-none d-sm-block">Inactive</span>
-											</a>
-										</li>
-
-										<li class="nav-item waves-effect waves-light">
-											<a class="nav-link" data-bs-toggle="tab" href="#navpills2-Rejected"
-												role="tab">
-												<span class="d-block d-sm-none"><i class="far fa-envelope"></i></span>
-												<span class="d-none d-sm-block">Completed</span>
-											</a>
-										</li>
-
-									</ul>
-
-								</div>
-
-
-
-							</div>
-
-							<div class="tab-content">
-								<div class="tab-pane active" id="navpills2-home" role="tabpanel">
-
-									<div class="row">
-										<div class="col-md-12">
-											<table id="datatableOne" class="table table-bordered dt-responsive"
-												style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-												<thead>
-													<tr>
-														<th>Students</th>
-														<th>Department</th>
-														<th style="width: 200px !important;">Internship Details
-														</th>
-														<th>Mentor</th>
-														<th>Status</th>
-														<th>Action</th>
-													</tr>
-												</thead>
-
-
-												<tbody>
-													<tr>
-														<td>
-															<div class="img_section">
-																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
-																		<p class="text-start">STU2025001</p>
-																	</div>
-																	<div>
-																		<button><img src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
-																</div>
-															</div>
-														</td>
-														<td>Computer Science</td>
-
-														<td>
-															<div class="name_section">
-																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Web
-																		Innovations, Mumbai</h4>
-																	<p class="text-start mt-1">Private</p>
-																</div>
-															</div>
-														</td>
-														<td>Dr. Sharma</td>
-														<td>
-															<span
-																class="badge bg-primary-subtle text-primary  custom_badge">In
-																Internship</span>
-														</td>
-														<td>
-															<button type="button" class="btn-primary-outline "
-																data-bs-toggle="modal"
-																data-bs-target=".bs-example-modal-xl"><i
-																	class="bx bx-show"></i>Review</button>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="img_section">
-																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
-																		<p class="text-start">STU2025001</p>
-																	</div>
-																	<div>
-																		<button><img src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
-																</div>
-															</div>
-														</td>
-														<td>Computer Science</td>
-
-														<td>
-															<div class="name_section">
-																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Web
-																		Innovations, Mumbai</h4>
-																	<p class="text-start mt-1">Private</p>
-																</div>
-															</div>
-														</td>
-														<td>Dr. Sharma</td>
-														<td>
-															<span
-																class="badge bg-success-subtle text-success font-size-14 p-2 badge_danger">Completed</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline "><i class="bx bx-show"
-																	data-bs-toggle="modal"
-																	data-bs-target=".bs-example-modal-xl-rejected"></i>view</button>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="img_section">
-																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
-																		<p class="text-start">STU2025001</p>
-																	</div>
-																	<div>
-																		<button><img src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
-																</div>
-															</div>
-														</td>
-														<td>Computer Science</td>
-
-														<td>
-															<div class="name_section">
-																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Web
-																		Innovations, Mumbai</h4>
-																	<p class="text-start mt-1">Private</p>
-																</div>
-															</div>
-														</td>
-														<td>Dr. Sharma</td>
-														<td>
-															<span
-																class="badge bg-success-subtle text-success font-size-14 p-2 badge_warning">Completed</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline "><i class="bx bx-show"
-																	data-bs-toggle="modal"
-																	data-bs-target=".bs-example-modal-xl-Completed"></i>view</button>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="img_section">
-																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
-																		<p class="text-start">STU2025001</p>
-																	</div>
-																	<div>
-																		<button><img src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
-																</div>
-															</div>
-														</td>
-														<td>Computer Science</td>
-
-														<td>
-															<div class="name_section">
-																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Web
-																		Innovations, Mumbai</h4>
-																	<p class="text-start mt-1">Private</p>
-																</div>
-															</div>
-														</td>
-														<td>Dr. Sharma</td>
-														<td>
-															<span
-																class="badge bg-secondary-subtle text-secondary  custom_badge">Inactive</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline "><i
-																	class="bx bx-show"></i>Review</button>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="img_section">
-																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
-																		<p class="text-start">STU2025001</p>
-																	</div>
-																	<div>
-																		<button><img src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
-																</div>
-															</div>
-														</td>
-														<td>Computer Science</td>
-
-														<td>
-															<div class="name_section">
-																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Web
-																		Innovations, Mumbai</h4>
-																	<p class="text-start mt-1">Private</p>
-																</div>
-															</div>
-														</td>
-														<td>Dr. Sharma</td>
-														<td>
-															<span
-																class="badge bg-secondary-subtle text-secondary  custom_badge">Inactive</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline "><i
-																	class="bx bx-show"></i>Review</button>
-														</td>
-													</tr>
-
-												</tbody>
-											</table>
-										</div>
-									</div>
-
-								</div>
-								<div class="tab-pane" id="navpills2-profile" role="tabpanel">
-									<div class="row">
-										<div class="col-md-12">
-											<table id="datatableTwo" class="table table-bordered dt-responsive"
-												style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-												<thead>
-													<tr>
-														<th>Students</th>
-														<th>Department</th>
-														<th style="width: 200px !important;">Internship Details
-														</th>
-														<th>Applied Date</th>
-														<th>Status</th>
-														<th>Action</th>
-													</tr>
-												</thead>
-
-
-												<tbody>
-													<tr>
-														<td>
-															<div class="img_section">
-																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
-																		<p class="text-start">STU2025001</p>
-																	</div>
-																	<div>
-																		<button><img src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
-																</div>
-															</div>
-														</td>
-														<td>Computer Science</td>
-
-														<td>
-															<div class="name_section">
-																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Web
-																		Innovations, Mumbai</h4>
-																	<p class="text-start mt-1">Private</p>
-																</div>
-															</div>
-														</td>
-														<td>June 20, 2024</td>
-														<td>
-															<span
-																class="badge bg-primary-subtle text-primary  custom_badge">In
-																Internship</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline "><i
-																	class="bx bx-show"></i>Review</button>
-														</td>
-													</tr>
-
-
-
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-								<div class="tab-pane" id="navpills2-messages" role="tabpanel">
-									<div class="row">
-										<div class="col-md-12">
-											<table id="datatableThree" class="table table-bordered dt-responsive"
-												style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-												<thead>
-													<tr>
-														<th>Students</th>
-														<th>Department</th>
-														<th style="width: 200px !important;">Internship Details
-														</th>
-														<th>Applied Date</th>
-														<th>Status</th>
-														<th>Action</th>
-													</tr>
-												</thead>
-
-
-												<tbody>
-
-													<tr>
-														<td>
-															<div class="img_section">
-																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
-																		<p class="text-start">STU2025001</p>
-																	</div>
-																	<div>
-																		<button><img src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
-																</div>
-															</div>
-														</td>
-														<td>Computer Science</td>
-
-														<td>
-															<div class="name_section">
-																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Web
-																		Innovations, Mumbai</h4>
-																	<p class="text-start mt-1">Private</p>
-																</div>
-															</div>
-														</td>
-														<td>June 20, 2024</td>
-														<td>
-															<span
-																class="badge bg-secondary-subtle text-secondary font-size-14 p-2 badge_warning">Inactive</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline "><i
-																	class="bx bx-show"></i>view</button>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-								<div class="tab-pane" id="navpills2-Rejected" role="tabpanel">
-									<div class="row">
-										<div class="col-md-12">
-											<table id="datatableFour" class="table table-bordered dt-responsive"
-												style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-												<thead>
-													<tr>
-														<th>Students</th>
-														<th>Department</th>
-														<th style="width: 200px !important;">Internship Details
-														</th>
-														<th>Applied Date</th>
-														<th>Status</th>
-														<th>Action</th>
-													</tr>
-												</thead>
-
-
-												<tbody>
-
-													<tr>
-														<td>
-															<div class="img_section">
-																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
-																		<p class="text-start">STU2025001</p>
-																	</div>
-																	<div>
-																		<button><img src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
-																</div>
-															</div>
-														</td>
-														<td>Computer Science</td>
-
-														<td>
-															<div class="name_section">
-																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Web
-																		Innovations, Mumbai</h4>
-																	<p class="text-start mt-1">Private</p>
-																</div>
-															</div>
-														</td>
-														<td>June 20, 2024</td>
-														<td>
-															<span
-																class="badge bg-success-subtle text-success font-size-14 p-2 badge_danger">Completed</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline "><i
-																	class="bx bx-show"></i>view</button>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-							</div>
-
-
-						</div>
-					</div>
-				</div>
-
+			                <!-- Completed Tab -->
+			                <div class="tab-content" id="completedTab" style="display: none;">
+			                    <div class="row">
+			                        <div class="col-md-12">
+			                            <table class="table table-bordered dt-responsive"
+			                                style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+			                                <thead>
+			                                    <tr>
+			                                        <th>Student</th>
+			                                        <th>Department</th>
+			                                        <th style="width: 200px !important;">Internship Details</th>
+			                                        <th>Applied Date</th>
+			                                        <th>Status</th>
+			                                        <th>Action</th>
+			                                    </tr>
+			                                </thead>
+			                                <tbody id="completedTableBody">
+			                                    <!-- Data will be populated here -->
+			                                </tbody>
+			                            </table>
+			                        </div>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
 			</div>
 
-
-			<div class="row">
-				<div class="col-lg-12">
-
-
-
-					<div class="card cutsom_height_card">
-						<div class="card-header">
-							<div class="inner_div">
-								<h4>Student Distribution</h4>
-								<div class="My_Students_div">
-
-									<div class="btnDiv">
-										<button class=" btn-primary-cover mentor"><i class="bx bx-download"></i>
-											Export</button>
-										<button class="btn-warning-cover mentor"><i class="fa fa-plus"></i> Add
-											Student</button>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="card-body custom_card_body">
-							<div class="container-fluid">
-								<h5 class="text-center mb-4">Student Distribution by Department</h5>
-
-								<div class="chart-row" style="flex-direction: column; gap: 20px;">
-									<div class="donut-wrap">
-										<svg class="donut" viewBox="0 0 200 200" role="img" aria-label="Donut chart">
-											<defs>
-												<filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
-													<feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.05" />
-												</filter>
-											</defs>
-											<g transform="translate(0,0)"></g>
-											<circle cx="100" cy="100" r="38" fill="white"></circle>
-										</svg>
-										<div class="hole" aria-hidden="true"></div>
-									</div>
-
-									<!-- Legend moved below chart -->
-									<div class="legend" id="legend"></div>
-								</div>
-							</div>
-
-							<div class="legend" id="legend"></div>
-
-						</div>
-					</div>
-				</div>
-
-			</div>
 
 		</div> <!-- end row -->
 
-
-
-
-
 	</div> <!-- container-fluid -->
+
+	
+
+	<!-- View/Review Student Modal -->
+	<div class="modal fade" id="viewStudentModal" tabindex="-1" aria-hidden="true">
+	    <div class="modal-dialog modal-lg">
+	        <div class="modal-content">
+				<div class="modal-header">
+				    <h5 class="modal-title"> Student Internship Details</h5>
+				</div>
+	            <div class="modal-body" id="viewStudentBody">
+	                <!-- Content will be injected dynamically -->
+	            </div>
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-success" id="approveBtn" style="display:none;">Approve Internship</button>
+	                <button type="button" class="btn btn-warning" id="reviewBtn" style="display:none;">Request Changes</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
 	<script nonce="IXghZjCSvOg+tO8HQlKuhg==">
 		var name = "Missing an interview after accepting the invite is considered unprofessional and will lead to your Internshala account being blocked. If for any reason, you are not able to attend the interview, you should request a reschedule or a cancellation at least 24 hours before the scheduled time.";
 		var to_show_internshala_max_toast = "n";
@@ -2181,6 +1947,288 @@ chosen link or button. -->
 			}
 		}, 2000);
 	</script>
+	
+
+	<script>
+	// Sample data for the tables
+	const sampleData = {
+	    all: [
+	        {
+	            id: 1,
+	            name: "Prisha Bansal",
+	            studentId: "STU2025001",
+	            department: "Computer Science",
+	            internship: "Web Innovations, Mumbai",
+	            type: "Private",
+	            mentor: "Dr. Sharma",
+	            status: "In Internship",
+	            appliedDate: "June 20, 2024",
+	            statusClass: "bg-primary-subtle text-primary"
+	        },
+	        {
+	            id: 2,
+	            name: "Rahul Verma",
+	            studentId: "STU2025002",
+	            department: "Electronics",
+	            internship: "Tech Solutions, Bangalore",
+	            type: "Government",
+	            mentor: "Dr. Gupta",
+	            status: "Completed",
+	            appliedDate: "May 15, 2024",
+	            statusClass: "bg-success-subtle text-success"
+	        },
+	        {
+	            id: 3,
+	            name: "Sneha Patel",
+	            studentId: "STU2025003",
+	            department: "Mechanical",
+	            internship: "Auto Engineers, Chennai",
+	            type: "Private",
+	            mentor: "Dr. Reddy",
+	            status: "Inactive",
+	            appliedDate: "April 10, 2024",
+	            statusClass: "bg-secondary-subtle text-secondary"
+	        },
+	        {
+	            id: 4,
+	            name: "Amit Singh",
+	            studentId: "STU2025004",
+	            department: "Civil",
+	            internship: "BuildRight Constructions, Delhi",
+	            type: "Private",
+	            mentor: "Dr. Joshi",
+	            status: "In Internship",
+	            appliedDate: "July 5, 2024",
+	            statusClass: "bg-primary-subtle text-primary"
+	        },
+	        {
+	            id: 5,
+	            name: "Priya Sharma",
+	            studentId: "STU2025005",
+	            department: "MBA",
+	            internship: "Finance Corp, Gurgaon",
+	            type: "MNC",
+	            mentor: "Dr. Kapoor",
+	            status: "Completed",
+	            appliedDate: "March 22, 2024",
+	            statusClass: "bg-success-subtle text-success"
+	        }
+	    ]
+	};
+
+	// Filter data based on status
+	const filteredData = {
+	    all: sampleData.all,
+	    internship: sampleData.all.filter(item => item.status === "In Internship"),
+	    inactive: sampleData.all.filter(item => item.status === "Inactive"),
+	    completed: sampleData.all.filter(item => item.status === "Completed")
+	};
+
+	// Function to create table row HTML
+	function createTableRow(item, showAppliedDate = false) {
+	    return `
+	        <tr>
+	            <td>
+	                <div class="img_section">
+	                    <div>
+	                        <img src="/assets/images/prof_img.png" class="img-fluid prof_img" alt="">
+	                    </div>
+	                    <div class="name_section">
+	                        <div class="d-flex flex-column align-items-start">
+	                            <h4 class="text-dark">${item.name}</h4>
+	                            <p class="text-start">${item.studentId}</p>
+	                        </div>
+	                        <div>
+	                            <button><img src="/assets/images/edit.png" class="edit_img" alt=""></button>
+	                        </div>
+	                    </div>
+	                </div>
+	            </td>
+	            <td>${item.department}</td>
+	            <td>
+	                <div class="name_section">
+	                    <div class="d-flex flex-column align-items-start">
+	                        <h4 class="text-dark new_heading">${item.internship}</h4>
+	                        <p class="text-start mt-1">${item.type}</p>
+	                    </div>
+	                </div>
+	            </td>
+	            <td>${showAppliedDate ? item.appliedDate : (item.mentor || '')}</td>
+	            <td>
+	                <span class="badge ${item.statusClass} custom_badge">${item.status}</span>
+	            </td>
+	            <td>
+	                <button class="btn-primary-outline">
+	                    <i class="bx bx-show"></i>${item.status === 'Completed' ? 'view' : 'Review'}
+	                </button>
+	            </td>
+	        </tr>
+	    `;
+	}
+
+	// Function to populate table
+	function populateTable(tabId, data) {
+	    const tableBody = document.getElementById(tabId + 'TableBody');
+	    const showAppliedDate = tabId !== 'all';
+	    
+	    tableBody.innerHTML = '';
+	    data.forEach(item => {
+	        tableBody.innerHTML += createTableRow(item, showAppliedDate);
+	    });
+	}
+
+	// Initialize all tables
+	function initializeTables() {
+	    Object.keys(filteredData).forEach(tabId => {
+	        populateTable(tabId, filteredData[tabId]);
+	    });
+	}
+
+	// Tab switching functionality
+	document.addEventListener('DOMContentLoaded', function() {
+	    initializeTables();
+	    
+	    // Tab click event
+	    const tabLinks = document.querySelectorAll('#applicationTabs .nav-link');
+	    tabLinks.forEach(link => {
+	        link.addEventListener('click', function(e) {
+	            e.preventDefault();
+	            
+	            // Remove active class from all tabs
+	            tabLinks.forEach(tab => tab.classList.remove('active'));
+	            
+	            // Add active class to clicked tab
+	            this.classList.add('active');
+	            
+	            // Hide all tab contents
+	            const tabContents = ['all', 'internship', 'inactive', 'completed'];
+	            tabContents.forEach(tab => {
+	                document.getElementById(tab + 'Tab').style.display = 'none';
+	            });
+	            
+	            // Show selected tab content
+	            const selectedTab = this.getAttribute('data-tab');
+	            document.getElementById(selectedTab + 'Tab').style.display = 'block';
+	        });
+	    });
+	    
+	    // Search functionality
+	    const searchInput = document.getElementById('searchInput');
+	    searchInput.addEventListener('input', function() {
+	        const searchTerm = this.value.toLowerCase();
+	        filterTables(searchTerm);
+	    });
+	    
+	    // Department filter
+	    const departmentFilter = document.getElementById('departmentFilter');
+	    departmentFilter.addEventListener('change', function() {
+	        filterTables();
+	    });
+	    
+	    // College filter
+	    const collegeFilter = document.getElementById('collegeFilter');
+	    collegeFilter.addEventListener('change', function() {
+	        filterTables();
+	    });
+	    
+	    // Type filter
+	    const typeFilter = document.getElementById('typeFilter');
+	    typeFilter.addEventListener('change', function() {
+	        filterTables();
+	    });
+	});
+
+	// Function to filter tables based on search and filters
+	function filterTables(searchTerm = '') {
+	    const department = document.getElementById('departmentFilter').value;
+	    const college = document.getElementById('collegeFilter').value;
+	    const type = document.getElementById('typeFilter').value;
+	    
+	    Object.keys(filteredData).forEach(tabId => {
+	        let filtered = filteredData[tabId].filter(item => {
+	            // Search term filter
+	            if (searchTerm) {
+	                const matchesSearch = 
+	                    item.name.toLowerCase().includes(searchTerm) ||
+	                    item.studentId.toLowerCase().includes(searchTerm) ||
+	                    item.department.toLowerCase().includes(searchTerm) ||
+	                    item.internship.toLowerCase().includes(searchTerm) ||
+	                    item.mentor.toLowerCase().includes(searchTerm);
+	                if (!matchesSearch) return false;
+	            }
+	            
+	            // Department filter
+	            if (department && item.department !== department) return false;
+	            
+	            // College filter (simulated - you would have this data in real scenario)
+	            if (college) {
+	                // For demo, we'll simulate college filtering
+	                const studentColleges = {
+	                    "STU2025001": "IIT Delhi",
+	                    "STU2025002": "IIT Bombay",
+	                    "STU2025003": "IIT Madras",
+	                    "STU2025004": "NIT Trichy",
+	                    "STU2025005": "Delhi University"
+	                };
+	                if (studentColleges[item.studentId] !== college) return false;
+	            }
+	            
+	            // Type filter
+	            if (type && item.type !== type) return false;
+	            
+	            return true;
+	        });
+	        
+	        populateTable(tabId, filtered);
+	    });
+	}
+	</script>
+	
+	<script>
+
+	// Make View/Review buttons work
+	document.addEventListener('click', function(e) {
+	    if (e.target.closest('.btn-primary-outline')) {
+	        const button = e.target.closest('.btn-primary-outline');
+	        const row = button.closest('tr');
+	        const name = row.querySelector('.name_section h4').textContent.trim();
+	        const studentId = row.querySelector('.name_section p').textContent.trim();
+	        const dept = row.cells[1].textContent.trim();
+	        const internship = row.cells[2].querySelector('.new_heading').textContent.trim();
+	        const type = row.cells[2].querySelector('p').textContent.trim();
+	        const mentorOrDate = row.cells[3].textContent.trim();
+	        const status = row.cells[4].querySelector('.badge').textContent.trim();
+
+	        const modalBody = document.getElementById('viewStudentBody');
+	        modalBody.innerHTML = `
+	            <div class="row">
+	                <div class="col-md-4 text-center">
+	                    <img src="/assets/images/prof_img.png" class="img-fluid rounded-circle" style="width: 120px; height: 120px;">
+	                    <h5 class="mt-3">${name}</h5>
+	                    <p>${studentId}</p>
+	                </div>
+	                <div class="col-md-8">
+	                    <table class="table table-bordered">
+	                        <tr><th>Department</th><td>${dept}</td></tr>
+	                        <tr><th>Internship</th><td>${internship}</td></tr>
+	                        <tr><th>Type</th><td>${type}</td></tr>
+	                        <tr><th>${status === 'Completed' ? 'Completed On' : 'Mentor / Applied Date'}</th><td>${mentorOrDate}</td></tr>
+	                        <tr><th>Status</th><td><span class="badge ${row.cells[4].querySelector('.badge').className.split(' ').slice(1).join(' ')}">${status}</span></td></tr>
+	                    </</table>
+	                    ${status === 'Completed' ? '<p class="text-success"><strong>Internship Completed Successfully</strong></p>' : ''}
+	                </div>
+	            </div>
+	        `;
+
+	        // Show action buttons only if not completed
+	        document.getElementById('approveBtn').style.display = status === 'In Internship' ? 'inline-block' : 'none';
+	        document.getElementById('reviewBtn').style.display = status === 'In Internship' ? 'inline-block' : 'none';
+
+	        new bootstrap.Modal(document.getElementById('viewStudentModal')).show();
+	    }
+	});
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

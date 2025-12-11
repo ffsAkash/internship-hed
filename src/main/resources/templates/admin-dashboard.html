@@ -230,6 +230,255 @@
 		var online_time_margin_in_seconds = 60;
 		var to_use_websocket_only_on_chat = false;
 	</script>
+	
+	<style>
+	/* Add this to your CSS file */
+	.pending-applications-modal .modal-dialog {
+	    max-width: 1200px;
+	}
+
+	.pending-applications-modal .modal-body {
+	    padding: 0;
+	}
+
+	.pending-applications-modal .table-container {
+	    max-height: 500px;
+	    overflow-y: auto;
+	}
+
+	/* Ensure table headers stay fixed while scrolling */
+	.pending-applications-modal .table thead {
+	    position: sticky;
+	    top: 0;
+	    background: white;
+	    z-index: 10;
+	}
+
+	/* Card hiding animation */
+	.card-hide {
+	    opacity: 0;
+	    transform: translateY(-20px);
+	    max-height: 0;
+	    overflow: hidden;
+	    margin: 0;
+	    padding: 0;
+	    border: none;
+	    transition: all 0.3s ease;
+	}
+	
+	
+	</style>
+	
+	<style>
+	/* Review Modal Specific Styles */
+	.review-application-modal .info-card {
+	    background-color: #f8f9fa;
+	    border-radius: 8px;
+	    padding: 1.25rem;
+	    margin-bottom: 1rem;
+	    border: 1px solid #e9ecef;
+	}
+
+	.review-application-modal .form-control-static {
+	    background-color: white;
+	    border: 1px solid #ced4da;
+	    border-radius: 4px;
+	    padding: 0.75rem;
+	    min-height: 40px;
+	    display: flex;
+	    align-items: center;
+	}
+
+	.review-application-modal .form-label {
+	    font-weight: 500;
+	    color: #495057;
+	    margin-bottom: 0.5rem;
+	}
+
+	/* Status badges */
+	.status-badge {
+	    padding: 0.5rem 1rem;
+	    border-radius: 20px;
+	    font-weight: 500;
+	}
+
+	/* Modal backdrop fix */
+	.modal-backdrop {
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    background-color: rgba(0, 0, 0, 0.5);
+	    z-index: 1040;
+	}
+
+	.modal-backdrop.fade {
+	    opacity: 0;
+	}
+
+	.modal-backdrop.show {
+	    opacity: 1;
+	}
+
+	.modal-open {
+	    overflow: hidden;
+	}
+
+	.modal {
+	    z-index: 1050;
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	    overflow-x: hidden;
+	    overflow-y: auto;
+	    outline: 0;
+	    display: none;
+	}
+
+	.modal.show {
+	    display: block;
+	}
+
+	.modal-dialog {
+	    position: relative;
+	    width: auto;
+	    margin: 0.5rem;
+	    pointer-events: none;
+	}
+
+	.modal.fade .modal-dialog {
+	    transition: transform 0.3s ease-out;
+	    transform: translate(0, -50px);
+	}
+
+	.modal.show .modal-dialog {
+	    transform: none;
+	}
+
+	.modal-content {
+	    position: relative;
+	    display: flex;
+	    flex-direction: column;
+	    width: 100%;
+	    pointer-events: auto;
+	    background-color: #fff;
+	    background-clip: padding-box;
+	    border: 1px solid rgba(0, 0, 0, 0.2);
+	    border-radius: 0.3rem;
+	    outline: 0;
+	    max-height: calc(100vh - 1rem);
+	}
+
+	.modal-header {
+	    display: flex;
+	    flex-shrink: 0;
+	    align-items: center;
+	    justify-content: space-between;
+	    padding: 1rem 1rem;
+	    border-bottom: 1px solid #dee2e6;
+	    border-top-left-radius: calc(0.3rem - 1px);
+	    border-top-right-radius: calc(0.3rem - 1px);
+	}
+
+	.modal-body {
+	    position: relative;
+	    flex: 1 1 auto;
+	    padding: 1rem;
+	    overflow-y: auto;
+	    max-height: calc(90vh - 200px);
+	}
+
+	.modal-footer {
+	    display: flex;
+	    flex-wrap: wrap;
+	    flex-shrink: 0;
+	    align-items: center;
+	    justify-content: flex-end;
+	    padding: 0.75rem;
+	    border-top: 1px solid #dee2e6;
+	    border-bottom-right-radius: calc(0.3rem - 1px);
+	    border-bottom-left-radius: calc(0.3rem - 1px);
+	}
+
+	/* Make modal responsive */
+	@media (min-width: 576px) {
+	    .modal-dialog {
+	        max-width: 500px;
+	        margin: 1.75rem auto;
+	    }
+	    
+	    .modal-dialog.modal-lg {
+	        max-width: 800px;
+	    }
+	    
+	    .modal-dialog.modal-xl {
+	        max-width: 1140px;
+	    }
+	}
+
+	/* Table row data attributes styling */
+	[data-student-id] {
+	    cursor: pointer;
+	}
+	</style>
+	<style>
+	/* Mentor Assignment Modal Styles */
+	.mentor-assignment-modal .mentor-info-section {
+	    background-color: #f8f9fa;
+	    border-radius: 8px;
+	    padding: 1rem;
+	    border: 1px solid #e9ecef;
+	}
+
+	.mentor-assignment-modal .table-container {
+	    max-height: 400px;
+	    overflow-y: auto;
+	}
+
+	.mentor-assignment-modal .student-checkbox {
+	    margin: 0;
+	    cursor: pointer;
+	}
+
+	.mentor-assignment-modal .assign-btn {
+	    min-width: 100px;
+	}
+
+	.mentor-assignment-modal .form-check-input:checked {
+	    background-color: #0d6efd;
+	    border-color: #0d6efd;
+	}
+
+	.mentor-assignment-modal .selected-row {
+	    background-color: rgba(13, 110, 253, 0.1) !important;
+	}
+
+	.mentor-assignment-modal .assigned-badge {
+	    font-size: 0.75rem;
+	    padding: 0.25rem 0.5rem;
+	}
+
+	/* Scrollbar styling */
+	.mentor-assignment-modal .table-container::-webkit-scrollbar {
+	    width: 6px;
+	}
+
+	.mentor-assignment-modal .table-container::-webkit-scrollbar-track {
+	    background: #f1f1f1;
+	}
+
+	.mentor-assignment-modal .table-container::-webkit-scrollbar-thumb {
+	    background: #888;
+	    border-radius: 3px;
+	}
+
+	.mentor-assignment-modal .table-container::-webkit-scrollbar-thumb:hover {
+	    background: #555;
+	}
+	</style>
 </head>
 
 <body>
@@ -1411,7 +1660,7 @@
 		</div>
 
 		<!-- Paste you code here subha -->
-
+		<br>
 		<div class="container-fluid" style="width: 80%; max-width: 1200px; margin: 0 auto;">
 
 			<div class="row">
@@ -1451,18 +1700,20 @@
 
 			<div class="row">
 				<div class="col-lg-12">
-					<div class="card ApplicationCardMentorYellow ">
-						<div class="card-body ApplicationCardBodyMentor">
-							<div class="check_list_div">
-								<h4 class="d-flex align-items-center gap-2"><i class="bx bx-info-circle check_icon"></i>
-									Pending Applications</h4>
-								<p>You have 8 internship applications awaiting review and approval.</p>
-							</div>
-							<div class="d-flex gap-2">
-								<button class="btn-warning-cover mentor">View</button>
-								<button class="btn-warning-outline mentor">Close</button>
-							</div>
-						</div>
+					<div class="card ApplicationCardMentorYellow" id="pendingApplicationsCard">
+					    <div class="card-body ApplicationCardBodyMentor">
+					        <div class="check_list_div">
+					            <h4 class="d-flex align-items-center gap-2">
+					                <i class="bx bx-info-circle check_icon"></i>
+					                Pending Applications
+					            </h4>
+					            <p>You have 8 internship applications awaiting review and approval.</p>
+					        </div>
+					        <div class="d-flex gap-2">
+					            <button class="btn-warning-cover mentor" id="viewPendingApplicationsBtn">View</button>
+					            <button class="btn-warning-outline mentor" id="closePendingApplicationsCardBtn">Close</button>
+					        </div>
+					    </div>
 					</div>
 				</div>
 			</div>
@@ -1536,233 +1787,213 @@
 
 			</div>
 			<div class="row">
-
-				<div class="col-lg-12">
-					<div class="card cutsom_height_card">
-						<div class="card-header">
-							<div class="inner_div">
-								<h4>Pending Student Applications</h4>
-
-							</div>
-						</div>
-						<div class="card-body custom_card_body">
-							<table id="datatableOne" class="table table-bordered dt-responsive"
-								style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-								<thead>
-									<tr>
-										<th>Students</th>
-										<th>Department</th>
-										<th style="width: 200px !important;">Internship Details</th>
-										<th>Applied Date</th>
-										<th>Status</th>
-										<th>Action</th>
-									</tr>
-								</thead>
-
-
-								<tbody>
-									<tr>
-										<td>
-											<div class="img_section">
-												<div>
-													<img src="/assets/images/prof_img.png" class="img-fluid prof_img"
-														alt="">
-												</div>
-												<div class="name_section">
-													<div class="d-flex flex-column align-items-start">
-														<h4 class="text-dark">Prisha Bansal</h4>
-														<p class="text-start">STU2025001</p>
-													</div>
-													<div>
-														<button><img src="/assets/images/edit.png" class="edit_img"
-																alt=""></button>
-													</div>
-												</div>
-											</div>
-										</td>
-										<td>Computer Science</td>
-
-										<td>
-											<div class="name_section">
-												<div class="d-flex flex-column align-items-start">
-													<h4 class="text-dark new_heading">Web Innovations, Mumbai</h4>
-													<p class="text-start mt-1">Private</p>
-												</div>
-											</div>
-										</td>
-										<td>June 20, 2024</td>
-										<td>
-											<span
-												class="badge bg-secondary-subtle text-secondary  custom_badge">Pending</span>
-										</td>
-										<td>
-											<button class="btn-primary-outline "><i
-													class="bx bx-show"></i>Review</button>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<div class="img_section">
-												<div>
-													<img src="/assets/images/prof_img.png" class="img-fluid prof_img"
-														alt="">
-												</div>
-												<div class="name_section">
-													<div class="d-flex flex-column align-items-start">
-														<h4 class="text-dark">Prisha Bansal</h4>
-														<p class="text-start">STU2025001</p>
-													</div>
-													<div>
-														<button><img src="/assets/images/edit.png" class="edit_img"
-																alt=""></button>
-													</div>
-												</div>
-											</div>
-										</td>
-										<td>Computer Science</td>
-
-										<td>
-											<div class="name_section">
-												<div class="d-flex flex-column align-items-start">
-													<h4 class="text-dark new_heading">Web Innovations, Mumbai</h4>
-													<p class="text-start mt-1">Private</p>
-												</div>
-											</div>
-										</td>
-										<td>June 20, 2024</td>
-										<td>
-											<span
-												class="badge bg-secondary-subtle text-secondary  custom_badge">Pending</span>
-										</td>
-										<td>
-											<button class="btn-primary-outline "><i
-													class="bx bx-show"></i>Review</button>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<div class="img_section">
-												<div>
-													<img src="/assets/images/prof_img.png" class="img-fluid prof_img"
-														alt="">
-												</div>
-												<div class="name_section">
-													<div class="d-flex flex-column align-items-start">
-														<h4 class="text-dark">Prisha Bansal</h4>
-														<p class="text-start">STU2025001</p>
-													</div>
-													<div>
-														<button><img src="/assets/images/edit.png" class="edit_img"
-																alt=""></button>
-													</div>
-												</div>
-											</div>
-										</td>
-										<td>Computer Science</td>
-
-										<td>
-											<div class="name_section">
-												<div class="d-flex flex-column align-items-start">
-													<h4 class="text-dark new_heading">Web Innovations, Mumbai</h4>
-													<p class="text-start mt-1">Private</p>
-												</div>
-											</div>
-										</td>
-										<td>June 20, 2024</td>
-										<td>
-											<span
-												class="badge bg-secondary-subtle text-secondary  custom_badge">Pending</span>
-										</td>
-										<td>
-											<button class="btn-primary-outline "><i
-													class="bx bx-show"></i>Review</button>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<div class="img_section">
-												<div>
-													<img src="/assets/images/prof_img.png" class="img-fluid prof_img"
-														alt="">
-												</div>
-												<div class="name_section">
-													<div class="d-flex flex-column align-items-start">
-														<h4 class="text-dark">Prisha Bansal</h4>
-														<p class="text-start">STU2025001</p>
-													</div>
-													<div>
-														<button><img src="/assets/images/edit.png" class="edit_img"
-																alt=""></button>
-													</div>
-												</div>
-											</div>
-										</td>
-										<td>Computer Science</td>
-
-										<td>
-											<div class="name_section">
-												<div class="d-flex flex-column align-items-start">
-													<h4 class="text-dark new_heading">Web Innovations, Mumbai</h4>
-													<p class="text-start mt-1">Private</p>
-												</div>
-											</div>
-										</td>
-										<td>June 20, 2024</td>
-										<td>
-											<span
-												class="badge bg-secondary-subtle text-secondary  custom_badge">Pending</span>
-										</td>
-										<td>
-											<button class="btn-primary-outline "><i
-													class="bx bx-show"></i>Review</button>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<div class="img_section">
-												<div>
-													<img src="/assets/images/prof_img.png" class="img-fluid prof_img"
-														alt="">
-												</div>
-												<div class="name_section">
-													<div class="d-flex flex-column align-items-start">
-														<h4 class="text-dark">Prisha Bansal</h4>
-														<p class="text-start">STU2025001</p>
-													</div>
-													<div>
-														<button><img src="/assets/images/edit.png" class="edit_img"
-																alt=""></button>
-													</div>
-												</div>
-											</div>
-										</td>
-										<td>Computer Science</td>
-
-										<td>
-											<div class="name_section">
-												<div class="d-flex flex-column align-items-start">
-													<h4 class="text-dark new_heading">Web Innovations, Mumbai</h4>
-													<p class="text-start mt-1">Private</p>
-												</div>
-											</div>
-										</td>
-										<td>June 20, 2024</td>
-										<td>
-											<span
-												class="badge bg-secondary-subtle text-secondary  custom_badge">Pending</span>
-										</td>
-										<td>
-											<button class="btn-primary-outline "><i
-													class="bx bx-show"></i>Review</button>
-										</td>
-									</tr>
-
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-
+			    <div class="col-lg-12">
+			        <div class="card cutsom_height_card">
+			            <div class="card-header">
+			                <div class="inner_div">
+			                    <h4>Pending Student Applications</h4>
+			                </div>
+			            </div>
+			            <div class="card-body custom_card_body">
+			                <table id="datatableOne" class="table table-bordered dt-responsive"
+			                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+			                    <thead>
+			                        <tr>
+			                            <th>Students</th>
+			                            <th>Department</th>
+			                            <th style="width: 200px !important;">Internship Details</th>
+			                            <th>Applied Date</th>
+			                            <th>Status</th>
+			                            <th>Action</th>
+			                        </tr>
+			                    </thead>
+			                    <tbody>
+			                        <tr data-student-name="Prisha Bansal" data-student-id="STU2025001" data-department="Computer Science" data-company="Web Innovations, Mumbai" data-internship-type="Private" data-applied-date="June 20, 2024" data-status="Pending">
+			                            <td>
+			                                <div class="img_section">
+			                                    <div>
+			                                        <img src="/assets/images/prof_img.png" class="img-fluid prof_img" alt="">
+			                                    </div>
+			                                    <div class="name_section">
+			                                        <div class="d-flex flex-column align-items-start">
+			                                            <h4 class="text-dark">Prisha Bansal</h4>
+			                                            <p class="text-start">STU2025001</p>
+			                                        </div>
+			                                        <div>
+			                                            <button><img src="/assets/images/edit.png" class="edit_img" alt=""></button>
+			                                        </div>
+			                                    </div>
+			                                </div>
+			                            </td>
+			                            <td>Computer Science</td>
+			                            <td>
+			                                <div class="name_section">
+			                                    <div class="d-flex flex-column align-items-start">
+			                                        <h4 class="text-dark new_heading">Web Innovations, Mumbai</h4>
+			                                        <p class="text-start mt-1">Private</p>
+			                                    </div>
+			                                </div>
+			                            </td>
+			                            <td>June 20, 2024</td>
+			                            <td>
+			                                <span class="badge bg-warning-subtle text-warning custom_badge">Pending</span>
+			                            </td>
+			                            <td>
+			                                <button class="btn-primary-outline review-btn">
+			                                    <i class="bx bx-show"></i>Review
+			                                </button>
+			                            </td>
+			                        </tr>
+			                        <tr data-student-name="Rahul Sharma" data-student-id="STU2025002" data-department="Computer Science" data-company="Tech Solutions, Delhi" data-internship-type="Private" data-applied-date="June 21, 2024" data-status="Pending">
+			                            <td>
+			                                <div class="img_section">
+			                                    <div>
+			                                        <img src="/assets/images/prof_img.png" class="img-fluid prof_img" alt="">
+			                                    </div>
+			                                    <div class="name_section">
+			                                        <div class="d-flex flex-column align-items-start">
+			                                            <h4 class="text-dark">Rahul Sharma</h4>
+			                                            <p class="text-start">STU2025002</p>
+			                                        </div>
+			                                        <div>
+			                                            <button><img src="/assets/images/edit.png" class="edit_img" alt=""></button>
+			                                        </div>
+			                                    </div>
+			                                </div>
+			                            </td>
+			                            <td>Computer Science</td>
+			                            <td>
+			                                <div class="name_section">
+			                                    <div class="d-flex flex-column align-items-start">
+			                                        <h4 class="text-dark new_heading">Tech Solutions, Delhi</h4>
+			                                        <p class="text-start mt-1">Private</p>
+			                                    </div>
+			                                </div>
+			                            </td>
+			                            <td>June 21, 2024</td>
+			                            <td>
+			                                <span class="badge bg-warning-subtle text-warning custom_badge">Pending</span>
+			                            </td>
+			                            <td>
+			                                <button class="btn-primary-outline review-btn">
+			                                    <i class="bx bx-show"></i>Review
+			                                </button>
+			                            </td>
+			                        </tr>
+			                        <tr data-student-name="Priya Patel" data-student-id="STU2025003" data-department="Electronics" data-company="Auto Works, Pune" data-internship-type="Private" data-applied-date="June 22, 2024" data-status="Pending">
+			                            <td>
+			                                <div class="img_section">
+			                                    <div>
+			                                        <img src="/assets/images/prof_img.png" class="img-fluid prof_img" alt="">
+			                                    </div>
+			                                    <div class="name_section">
+			                                        <div class="d-flex flex-column align-items-start">
+			                                            <h4 class="text-dark">Priya Patel</h4>
+			                                            <p class="text-start">STU2025003</p>
+			                                        </div>
+			                                        <div>
+			                                            <button><img src="/assets/images/edit.png" class="edit_img" alt=""></button>
+			                                        </div>
+			                                    </div>
+			                                </div>
+			                            </td>
+			                            <td>Electronics</td>
+			                            <td>
+			                                <div class="name_section">
+			                                    <div class="d-flex flex-column align-items-start">
+			                                        <h4 class="text-dark new_heading">Auto Works, Pune</h4>
+			                                        <p class="text-start mt-1">Private</p>
+			                                    </div>
+			                                </div>
+			                            </td>
+			                            <td>June 22, 2024</td>
+			                            <td>
+			                                <span class="badge bg-warning-subtle text-warning custom_badge">Pending</span>
+			                            </td>
+			                            <td>
+			                                <button class="btn-primary-outline review-btn">
+			                                    <i class="bx bx-show"></i>Review
+			                                </button>
+			                            </td>
+			                        </tr>
+			                        <tr data-student-name="Amit Kumar" data-student-id="STU2025004" data-department="Mechanical" data-company="Data Tech, Bangalore" data-internship-type="Private" data-applied-date="June 19, 2024" data-status="Pending">
+			                            <td>
+			                                <div class="img_section">
+			                                    <div>
+			                                        <img src="/assets/images/prof_img.png" class="img-fluid prof_img" alt="">
+			                                    </div>
+			                                    <div class="name_section">
+			                                        <div class="d-flex flex-column align-items-start">
+			                                            <h4 class="text-dark">Amit Kumar</h4>
+			                                            <p class="text-start">STU2025004</p>
+			                                        </div>
+			                                        <div>
+			                                            <button><img src="/assets/images/edit.png" class="edit_img" alt=""></button>
+			                                        </div>
+			                                    </div>
+			                                </div>
+			                            </td>
+			                            <td>Mechanical</td>
+			                            <td>
+			                                <div class="name_section">
+			                                    <div class="d-flex flex-column align-items-start">
+			                                        <h4 class="text-dark new_heading">Data Tech, Bangalore</h4>
+			                                        <p class="text-start mt-1">Private</p>
+			                                    </div>
+			                                </div>
+			                            </td>
+			                            <td>June 19, 2024</td>
+			                            <td>
+			                                <span class="badge bg-warning-subtle text-warning custom_badge">Pending</span>
+			                            </td>
+			                            <td>
+			                                <button class="btn-primary-outline review-btn">
+			                                    <i class="bx bx-show"></i>Review
+			                                </button>
+			                            </td>
+			                        </tr>
+			                        <tr data-student-name="Neha Singh" data-student-id="STU2025005" data-department="MBA" data-company="Finance Corp, Gurgaon" data-internship-type="Private" data-applied-date="June 23, 2024" data-status="Pending">
+			                            <td>
+			                                <div class="img_section">
+			                                    <div>
+			                                        <img src="/assets/images/prof_img.png" class="img-fluid prof_img" alt="">
+			                                    </div>
+			                                    <div class="name_section">
+			                                        <div class="d-flex flex-column align-items-start">
+			                                            <h4 class="text-dark">Neha Singh</h4>
+			                                            <p class="text-start">STU2025005</p>
+			                                        </div>
+			                                        <div>
+			                                            <button><img src="/assets/images/edit.png" class="edit_img" alt=""></button>
+			                                        </div>
+			                                    </div>
+			                                </div>
+			                            </td>
+			                            <td>MBA</td>
+			                            <td>
+			                                <div class="name_section">
+			                                    <div class="d-flex flex-column align-items-start">
+			                                        <h4 class="text-dark new_heading">Finance Corp, Gurgaon</h4>
+			                                        <p class="text-start mt-1">Private</p>
+			                                    </div>
+			                                </div>
+			                            </td>
+			                            <td>June 23, 2024</td>
+			                            <td>
+			                                <span class="badge bg-warning-subtle text-warning custom_badge">Pending</span>
+			                            </td>
+			                            <td>
+			                                <button class="btn-primary-outline review-btn">
+			                                    <i class="bx bx-show"></i>Review
+			                                </button>
+			                            </td>
+			                        </tr>
+			                    </tbody>
+			                </table>
+			            </div>
+			        </div>
+			    </div>
+			</div>
 
 
 			</div>
@@ -1776,215 +2007,209 @@
 					</div>
 				</div>
 				<div class="col-lg-6">
-					<div class="col-lg-12">
-						<div class="card cutsom_height_card">
-							<div class="card-header">
-								<div class="inner_div">
-									<h4>Mentor Assignment</h4>
-
-								</div>
-							</div>
-							<div class="card-body custom_card_body">
-								<div class="innerDivScroll">
-									<table class="table table-bordered dt-responsive nowrap"
-										style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-
-										<tbody>
-											<tr>
-												<td>
-													<div class="img_section">
-														<div>
-															<img src="/assets/images/prof_img.png"
-																class="img-fluid prof_img" alt="">
-														</div>
-														<div class="name_section">
-															<div class="d-flex flex-column align-items-start">
-																<h4 class="text-dark">Prisha Bansal</h4>
-																<p class="text-start">STU2025001</p>
-															</div>
-															<div>
-																<button><img src="/assets/images/edit.png"
-																		class="edit_img" alt=""></button>
-															</div>
-														</div>
-													</div>
-												</td>
-
-												<td>
-													<span
-														class="badge bg-secondary-subtle text-success font-size-14 p-2 badge_disabled w-100">5
-														Students Assigned</span>
-												</td>
-												<td>
-													<button class="captured-btn mentor"><i
-															class="uil-play"></i>Assign</button>
-												</td>
-											</tr>
-
-											<tr>
-												<td>
-													<div class="img_section">
-														<div>
-															<img src="/assets/images/prof_img.png"
-																class="img-fluid prof_img" alt="">
-														</div>
-														<div class="name_section">
-															<div class="d-flex flex-column align-items-start">
-																<h4 class="text-dark">Prisha Bansal</h4>
-																<p class="text-start">STU2025001</p>
-															</div>
-															<div>
-																<button><img src="/assets/images/edit.png"
-																		class="edit_img" alt=""></button>
-															</div>
-														</div>
-													</div>
-												</td>
-
-												<td>
-													<span
-														class="badge bg-secondary-subtle text-success font-size-14 p-2 badge_disabled w-100">5
-														Students Assigned</span>
-												</td>
-												<td>
-													<button class="captured-btn mentor"><i
-															class="uil-play"></i>Assign</button>
-												</td>
-											</tr>
-
-											<tr>
-												<td>
-													<div class="img_section">
-														<div>
-															<img src="/assets/images/prof_img.png"
-																class="img-fluid prof_img" alt="">
-														</div>
-														<div class="name_section">
-															<div class="d-flex flex-column align-items-start">
-																<h4 class="text-dark">Prisha Bansal</h4>
-																<p class="text-start">STU2025001</p>
-															</div>
-															<div>
-																<button><img src="/assets/images/edit.png"
-																		class="edit_img" alt=""></button>
-															</div>
-														</div>
-													</div>
-												</td>
-
-												<td>
-													<span
-														class="badge bg-secondary-subtle text-success font-size-14 p-2 badge_disabled w-100">5
-														Students Assigned</span>
-												</td>
-												<td>
-													<button class="captured-btn mentor"><i
-															class="uil-play"></i>Assign</button>
-												</td>
-											</tr>
-
-											<tr>
-												<td>
-													<div class="img_section">
-														<div>
-															<img src="/assets/images/prof_img.png"
-																class="img-fluid prof_img" alt="">
-														</div>
-														<div class="name_section">
-															<div class="d-flex flex-column align-items-start">
-																<h4 class="text-dark">Prisha Bansal</h4>
-																<p class="text-start">STU2025001</p>
-															</div>
-															<div>
-																<button><img src="/assets/images/edit.png"
-																		class="edit_img" alt=""></button>
-															</div>
-														</div>
-													</div>
-												</td>
-
-												<td>
-													<span
-														class="badge bg-secondary-subtle text-success font-size-14 p-2 badge_disabled w-100">5
-														Students Assigned</span>
-												</td>
-												<td>
-													<button class="captured-btn mentor"><i
-															class="uil-play"></i>Assign</button>
-												</td>
-											</tr>
-
-											<tr>
-												<td>
-													<div class="img_section">
-														<div>
-															<img src="/assets/images/prof_img.png"
-																class="img-fluid prof_img" alt="">
-														</div>
-														<div class="name_section">
-															<div class="d-flex flex-column align-items-start">
-																<h4 class="text-dark">Prisha Bansal</h4>
-																<p class="text-start">STU2025001</p>
-															</div>
-															<div>
-																<button><img src="/assets/images/edit.png"
-																		class="edit_img" alt=""></button>
-															</div>
-														</div>
-													</div>
-												</td>
-
-												<td>
-													<span
-														class="badge bg-secondary-subtle text-success font-size-14 p-2 badge_disabled w-100">5
-														Students Assigned</span>
-												</td>
-												<td>
-													<button class="captured-btn mentor"><i
-															class="uil-play"></i>Assign</button>
-												</td>
-											</tr>
-
-											<tr>
-												<td>
-													<div class="img_section">
-														<div>
-															<img src="/assets/images/prof_img.png"
-																class="img-fluid prof_img" alt="">
-														</div>
-														<div class="name_section">
-															<div class="d-flex flex-column align-items-start">
-																<h4 class="text-dark">Prisha Bansal</h4>
-																<p class="text-start">STU2025001</p>
-															</div>
-															<div>
-																<button><img src="/assets/images/edit.png"
-																		class="edit_img" alt=""></button>
-															</div>
-														</div>
-													</div>
-												</td>
-
-												<td>
-													<span
-														class="badge bg-secondary-subtle text-success font-size-14 p-2 badge_disabled w-100">5
-														Students Assigned</span>
-												</td>
-												<td>
-													<button class="captured-btn mentor"><i
-															class="uil-play"></i>Assign</button>
-												</td>
-											</tr>
-
-
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
-
-
+				    <div class="col-lg-12">
+				        <div class="card cutsom_height_card">
+				            <div class="card-header">
+				                <div class="inner_div">
+				                    <h4>Mentor Assignment</h4>
+				                </div>
+				            </div>
+				            <div class="card-body custom_card_body">
+				                <div class="innerDivScroll">
+				                    <table class="table table-bordered dt-responsive nowrap"
+				                        style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+				                        <tbody>
+				                            <tr data-mentor-id="MENT2024001" data-mentor-name="Dr. Rajesh Kumar" data-mentor-department="Computer Science" data-assigned-count="5">
+				                                <td>
+				                                    <div class="img_section">
+				                                        <div>
+				                                            <img src="/assets/images/prof_img.png"
+				                                                class="img-fluid prof_img" alt="">
+				                                        </div>
+				                                        <div class="name_section">
+				                                            <div class="d-flex flex-column align-items-start">
+				                                                <h4 class="text-dark">Dr. Rajesh Kumar</h4>
+				                                                <p class="text-start">MENT2024001</p>
+				                                            </div>
+				                                            <div>
+				                                                <button><img src="/assets/images/edit.png"
+				                                                        class="edit_img" alt=""></button>
+				                                            </div>
+				                                        </div>
+				                                    </div>
+				                                </td>
+				                                <td>
+				                                    <span
+				                                        class="badge bg-secondary-subtle text-success font-size-14 p-2 badge_disabled w-100">5
+				                                        Students Assigned</span>
+				                                </td>
+				                                <td>
+				                                    <button class="captured-btn mentor assign-mentor-btn" data-mentor-id="MENT2024001">
+				                                        <i class="uil-play"></i>Assign
+				                                    </button>
+				                                </td>
+				                            </tr>
+				                            
+				                            <tr data-mentor-id="MENT2024002" data-mentor-name="Dr. Anita Verma" data-mentor-department="Electronics" data-assigned-count="3">
+				                                <td>
+				                                    <div class="img_section">
+				                                        <div>
+				                                            <img src="/assets/images/prof_img.png"
+				                                                class="img-fluid prof_img" alt="">
+				                                        </div>
+				                                        <div class="name_section">
+				                                            <div class="d-flex flex-column align-items-start">
+				                                                <h4 class="text-dark">Dr. Anita Verma</h4>
+				                                                <p class="text-start">MENT2024002</p>
+				                                            </div>
+				                                            <div>
+				                                                <button><img src="/assets/images/edit.png"
+				                                                        class="edit_img" alt=""></button>
+				                                            </div>
+				                                        </div>
+				                                    </div>
+				                                </td>
+				                                <td>
+				                                    <span
+				                                        class="badge bg-secondary-subtle text-success font-size-14 p-2 badge_disabled w-100">3
+				                                        Students Assigned</span>
+				                                </td>
+				                                <td>
+				                                    <button class="captured-btn mentor assign-mentor-btn" data-mentor-id="MENT2024002">
+				                                        <i class="uil-play"></i>Assign
+				                                    </button>
+				                                </td>
+				                            </tr>
+				                            
+				                            <tr data-mentor-id="MENT2024003" data-mentor-name="Prof. Sanjay Patel" data-mentor-department="Mechanical" data-assigned-count="7">
+				                                <td>
+				                                    <div class="img_section">
+				                                        <div>
+				                                            <img src="/assets/images/prof_img.png"
+				                                                class="img-fluid prof_img" alt="">
+				                                        </div>
+				                                        <div class="name_section">
+				                                            <div class="d-flex flex-column align-items-start">
+				                                                <h4 class="text-dark">Prof. Sanjay Patel</h4>
+				                                                <p class="text-start">MENT2024003</p>
+				                                            </div>
+				                                            <div>
+				                                                <button><img src="/assets/images/edit.png"
+				                                                        class="edit_img" alt=""></button>
+				                                            </div>
+				                                        </div>
+				                                    </div>
+				                                </td>
+				                                <td>
+				                                    <span
+				                                        class="badge bg-secondary-subtle text-success font-size-14 p-2 badge_disabled w-100">7
+				                                        Students Assigned</span>
+				                                </td>
+				                                <td>
+				                                    <button class="captured-btn mentor assign-mentor-btn" data-mentor-id="MENT2024003">
+				                                        <i class="uil-play"></i>Assign
+				                                    </button>
+				                                </td>
+				                            </tr>
+				                            
+				                            <tr data-mentor-id="MENT2024004" data-mentor-name="Dr. Meera Singh" data-mentor-department="Civil" data-assigned-count="2">
+				                                <td>
+				                                    <div class="img_section">
+				                                        <div>
+				                                            <img src="/assets/images/prof_img.png"
+				                                                class="img-fluid prof_img" alt="">
+				                                        </div>
+				                                        <div class="name_section">
+				                                            <div class="d-flex flex-column align-items-start">
+				                                                <h4 class="text-dark">Dr. Meera Singh</h4>
+				                                                <p class="text-start">MENT2024004</p>
+				                                            </div>
+				                                            <div>
+				                                                <button><img src="/assets/images/edit.png"
+				                                                        class="edit_img" alt=""></button>
+				                                            </div>
+				                                        </div>
+				                                    </div>
+				                                </td>
+				                                <td>
+				                                    <span
+				                                        class="badge bg-secondary-subtle text-success font-size-14 p-2 badge_disabled w-100">2
+				                                        Students Assigned</span>
+				                                </td>
+				                                <td>
+				                                    <button class="captured-btn mentor assign-mentor-btn" data-mentor-id="MENT2024004">
+				                                        <i class="uil-play"></i>Assign
+				                                    </button>
+				                                </td>
+				                            </tr>
+				                            
+				                            <tr data-mentor-id="MENT2024005" data-mentor-name="Dr. Alok Sharma" data-mentor-department="Physics" data-assigned-count="6">
+				                                <td>
+				                                    <div class="img_section">
+				                                        <div>
+				                                            <img src="/assets/images/prof_img.png"
+				                                                class="img-fluid prof_img" alt="">
+				                                        </div>
+				                                        <div class="name_section">
+				                                            <div class="d-flex flex-column align-items-start">
+				                                                <h4 class="text-dark">Dr. Alok Sharma</h4>
+				                                                <p class="text-start">MENT2024005</p>
+				                                            </div>
+				                                            <div>
+				                                                <button><img src="/assets/images/edit.png"
+				                                                        class="edit_img" alt=""></button>
+				                                            </div>
+				                                        </div>
+				                                    </div>
+				                                </td>
+				                                <td>
+				                                    <span
+				                                        class="badge bg-secondary-subtle text-success font-size-14 p-2 badge_disabled w-100">6
+				                                        Students Assigned</span>
+				                                </td>
+				                                <td>
+				                                    <button class="captured-btn mentor assign-mentor-btn" data-mentor-id="MENT2024005">
+				                                        <i class="uil-play"></i>Assign
+				                                    </button>
+				                                </td>
+				                            </tr>
+				                            
+				                            <tr data-mentor-id="MENT2024006" data-mentor-name="Prof. Neha Gupta" data-mentor-department="Chemistry" data-assigned-count="4">
+				                                <td>
+				                                    <div class="img_section">
+				                                        <div>
+				                                            <img src="/assets/images/prof_img.png"
+				                                                class="img-fluid prof_img" alt="">
+				                                        </div>
+				                                        <div class="name_section">
+				                                            <div class="d-flex flex-column align-items-start">
+				                                                <h4 class="text-dark">Prof. Neha Gupta</h4>
+				                                                <p class="text-start">MENT2024006</p>
+				                                            </div>
+				                                            <div>
+				                                                <button><img src="/assets/images/edit.png"
+				                                                        class="edit_img" alt=""></button>
+				                                            </div>
+				                                        </div>
+				                                    </div>
+				                                </td>
+				                                <td>
+				                                    <span
+				                                        class="badge bg-secondary-subtle text-success font-size-14 p-2 badge_disabled w-100">4
+				                                        Students Assigned</span>
+				                                </td>
+				                                <td>
+				                                    <button class="captured-btn mentor assign-mentor-btn" data-mentor-id="MENT2024006">
+				                                        <i class="uil-play"></i>Assign
+				                                    </button>
+				                                </td>
+				                            </tr>
+				                        </tbody>
+				                    </table>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
 				</div>
 			</div>
 
@@ -1999,7 +2224,500 @@
 
 	</div> <!-- container-fluid -->
 
+	<!-- Pending Applications Modal -->
+	<div class="modal fade pending-applications-modal" id="pendingApplicationsModal" tabindex="-1" aria-labelledby="pendingApplicationsModalLabel" aria-hidden="true">
+	    <div class="modal-dialog modal-dialog-centered modal-xl">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <h5 class="modal-title" id="pendingApplicationsModalLabel">
+	                    <i class="bx bx-info-circle me-2"></i>
+	                    Pending Applications 
+	                </h5>
+	                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	            </div>
+	            <div class="modal-body p-0">
+	                <div class="table-container">
+	                    <table class="table table-hover mb-0">
+	                        <thead>
+	                            <tr>
+	                                <th>Students</th>
+	                                <th>Department</th>
+	                                <th style="width: 200px !important;">Internship Details</th>
+	                                <th>Applied Date</th>
+	                                <th>Status</th>
+	                               
+	                            </tr>
+	                        </thead>
+	                        <tbody>
+	                            <!-- Demo Data - You can populate this dynamically -->
+	                            <tr>
+	                                <td>
+	                                    <div class="img_section">
+	                                        <div>
+	                                            <img src="/assets/images/prof_img.png" class="img-fluid prof_img" alt="">
+	                                        </div>
+	                                        <div class="name_section">
+	                                            <div class="d-flex flex-column align-items-start">
+	                                                <h6 class="text-dark mb-1">Prisha Bansal</h6>
+	                                                <small>STU2025001</small>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                </td>
+	                                <td>Computer Science</td>
+	                                <td>
+	                                    <div class="name_section">
+	                                        <div class="d-flex flex-column align-items-start">
+	                                            <h6 class="text-dark new_heading mb-1">Web Innovations, Mumbai</h6>
+	                                            <small>Private</small>
+	                                        </div>
+	                                    </div>
+	                                </td>
+	                                <td>June 20, 2024</td>
+	                                <td>
+	                                    <span class="badge bg-warning-subtle text-warning">Pending</span>
+	                                </td>
+	                              
+	                            </tr>
+	                            <!-- Add more rows as needed -->
+	                            <tr>
+	                                <td>
+	                                    <div class="img_section">
+	                                        <div>
+	                                            <img src="/assets/images/prof_img.png" class="img-fluid prof_img" alt="">
+	                                        </div>
+	                                        <div class="name_section">
+	                                            <div class="d-flex flex-column align-items-start">
+	                                                <h6 class="text-dark mb-1">Rahul Sharma</h6>
+	                                                <small>STU2025002</small>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                </td>
+	                                <td>Electronics</td>
+	                                <td>
+	                                    <div class="name_section">
+	                                        <div class="d-flex flex-column align-items-start">
+	                                            <h6 class="text-dark new_heading mb-1">Tech Solutions, Delhi</h6>
+	                                            <small>Private</small>
+	                                        </div>
+	                                    </div>
+	                                </td>
+	                                <td>June 21, 2024</td>
+	                                <td>
+	                                    <span class="badge bg-warning-subtle text-warning">Pending</span>
+	                                </td>
+	                              
+	                            </tr>
+	                            <tr>
+	                                <td>
+	                                    <div class="img_section">
+	                                        <div>
+	                                            <img src="/assets/images/prof_img.png" class="img-fluid prof_img" alt="">
+	                                        </div>
+	                                        <div class="name_section">
+	                                            <div class="d-flex flex-column align-items-start">
+	                                                <h6 class="text-dark mb-1">Priya Patel</h6>
+	                                                <small>STU2025003</small>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                </td>
+	                                <td>Mechanical</td>
+	                                <td>
+	                                    <div class="name_section">
+	                                        <div class="d-flex flex-column align-items-start">
+	                                            <h6 class="text-dark new_heading mb-1">Auto Works, Pune</h6>
+	                                            <small>Private</small>
+	                                        </div>
+	                                    </div>
+	                                </td>
+	                                <td>June 22, 2024</td>
+	                                <td>
+	                                    <span class="badge bg-warning-subtle text-warning">Pending</span>
+	                                </td>
+	                               
+	                            </tr>
+	                            <!-- Add more rows up to 8 as per your requirement -->
+	                        </tbody>
+	                    </table>
+	                </div>
+	            </div>
+	            
+	        </div>
+	    </div>
+	</div>
+	
+	<!-- Review Application Modal -->
+	<div class="modal fade review-application-modal" id="reviewApplicationModal" tabindex="-1" aria-labelledby="reviewApplicationModalLabel" aria-hidden="true">
+	    <div class="modal-dialog modal-dialog-centered modal-lg">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <h5 class="modal-title" id="reviewApplicationModalLabel">
+	                    <i class="bx bx-file me-2"></i>
+	                    Review Application Details
+	                </h5>
+	                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	            </div>
+	            <div class="modal-body">
+	                <!-- Student Information -->
+	                <div class="row mb-4">
+	                    <div class="col-md-6">
+	                        <div class="info-card mb-3">
+	                            <h6 class="text-muted mb-2">Student Information</h6>
+	                            <div class="d-flex align-items-center gap-3">
+	                                <img src="/assets/images/prof_img.png" class="rounded-circle" width="60" height="60" alt="Student">
+	                                <div>
+	                                    <h5 class="mb-1" id="studentName">Prisha Bansal</h5>
+	                                    <p class="text-muted mb-0" id="studentId">STU2025001</p>
+	                                    <p class="text-muted mb-0" id="studentDept">Computer Science</p>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="col-md-6">
+	                        <div class="info-card mb-3">
+	                            <h6 class="text-muted mb-2">Application Status</h6>
+	                            <div class="d-flex align-items-center justify-content-between">
+	                                <span class="badge bg-warning-subtle text-warning fs-6 p-2" id="applicationStatus">Pending</span>
+	                                <span class="text-muted" id="appliedDate">Applied: June 20, 2024</span>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
 
+	                <!-- Internship Details -->
+	                <div class="info-card mb-4">
+	                    <h6 class="text-muted mb-3">Internship Details</h6>
+	                    <div class="row">
+	                        <div class="col-md-6 mb-3">
+	                            <label class="form-label">Company Name</label>
+	                            <div class="form-control-static" id="companyName">Web Innovations Pvt. Ltd.</div>
+	                        </div>
+	                        <div class="col-md-6 mb-3">
+	                            <label class="form-label">Location</label>
+	                            <div class="form-control-static" id="location">Mumbai, Maharashtra</div>
+	                        </div>
+	                        <div class="col-md-6 mb-3">
+	                            <label class="form-label">Internship Role</label>
+	                            <div class="form-control-static" id="internshipRole">Web Development Intern</div>
+	                        </div>
+	                        <div class="col-md-6 mb-3">
+	                            <label class="form-label">Duration</label>
+	                            <div class="form-control-static" id="duration">3 months (June - August 2024)</div>
+	                        </div>
+	                        <div class="col-md-6 mb-3">
+	                            <label class="form-label">Stipend</label>
+	                            <div class="form-control-static" id="stipend">₹15,000 per month</div>
+	                        </div>
+	                        <div class="col-md-6 mb-3">
+	                            <label class="form-label">Type</label>
+	                            <div class="form-control-static" id="internshipType">Private</div>
+	                        </div>
+	                    </div>
+	                </div>
+
+	                <!-- Student's Application Details -->
+	                <div class="info-card mb-4">
+	                    <h6 class="text-muted mb-3">Student's Application</h6>
+	                    <div class="mb-3">
+	                        <label class="form-label">Cover Letter</label>
+	                        <div class="form-control-static bg-light p-3 rounded" id="coverLetter">
+	                            Dear Hiring Manager,<br><br>
+	                            I am writing to express my interest in the Web Development Intern position at Web Innovations. As a Computer Science student with expertise in HTML, CSS, JavaScript, and React, I am excited about the opportunity to contribute to your team.<br><br>
+	                            I have completed several projects including an e-commerce website and a task management application. I believe my skills align perfectly with your requirements.<br><br>
+	                            Thank you for considering my application.<br><br>
+	                            Sincerely,<br>
+	                            Prisha Bansal
+	                        </div>
+	                    </div>
+	                    
+	                    <div class="row">
+	                        <div class="col-md-6 mb-3">
+	                            <label class="form-label">Resume</label>
+	                            <div class="d-flex align-items-center gap-2">
+	                                <i class="bx bx-file-pdf text-danger fs-4"></i>
+	                                <div>
+	                                    <a href="#" class="text-decoration-none" id="resumeLink">Prisha_Bansal_Resume.pdf</a>
+	                                    <small class="text-muted d-block">(1.2 MB)</small>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="col-md-6 mb-3">
+	                            <label class="form-label">Portfolio/Projects</label>
+	                            <div class="d-flex align-items-center gap-2">
+	                                <i class="bx bx-link-external text-primary fs-4"></i>
+	                                <div>
+	                                    <a href="#" class="text-decoration-none" id="portfolioLink">github.com/prishab/portfolio</a>
+	                                    <small class="text-muted d-block">(View projects)</small>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+
+	                <!-- Academic Details -->
+	                <div class="info-card mb-4">
+	                    <h6 class="text-muted mb-3">Academic Information</h6>
+	                    <div class="row">
+	                        <div class="col-md-4 mb-3">
+	                            <label class="form-label">CGPA</label>
+	                            <div class="form-control-static" id="cgpa">8.7/10</div>
+	                        </div>
+	                        <div class="col-md-4 mb-3">
+	                            <label class="form-label">Year of Study</label>
+	                            <div class="form-control-static" id="studyYear">3rd Year</div>
+	                        </div>
+	                        <div class="col-md-4 mb-3">
+	                            <label class="form-label">Expected Graduation</label>
+	                            <div class="form-control-static" id="graduation">May 2025</div>
+	                        </div>
+	                    </div>
+	                </div>
+
+	                <!-- Review Action Section -->
+	                <div class="info-card">
+	                    <h6 class="text-muted mb-3">Review Action</h6>
+	                    <div class="row">
+	                        <div class="col-md-12 mb-3">
+	                            <label for="reviewComments" class="form-label">Your Comments/Notes</label>
+	                            <textarea class="form-control" id="reviewComments" rows="3" placeholder="Add your comments or notes about this application..."></textarea>
+	                        </div>
+	                    </div>
+	                    
+	                    <div class="d-flex justify-content-between align-items-center">
+	                        <div class="form-check">
+	                            <input class="form-check-input" type="checkbox" id="sendNotification">
+	                            <label class="form-check-label" for="sendNotification">
+	                                Send notification to student
+	                            </label>
+	                        </div>
+	                        
+	                        <div class="d-flex gap-2">
+	                            <button type="button" class="btn btn-outline-danger" onclick="rejectApplication()">
+	                                <i class="bx bx-x"></i> Reject
+	                            </button>
+	                            <button type="button" class="btn btn-outline-warning" onclick="requestMoreInfo()">
+	                                <i class="bx bx-message-detail"></i> Request Info
+	                            </button>
+	                            <button type="button" class="btn btn-success" onclick="approveApplication()">
+	                                <i class="bx bx-check"></i> Approve
+	                            </button>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	
+	<!-- Mentor Assignment Modal -->
+	<div class="modal fade mentor-assignment-modal" id="mentorAssignmentModal" tabindex="-1" aria-labelledby="mentorAssignmentModalLabel" aria-hidden="true">
+	    <div class="modal-dialog modal-dialog-centered modal-xl">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <h5 class="modal-title" id="mentorAssignmentModalLabel">
+	                    <i class="bx bx-user-plus me-2"></i>
+	                    Assign Students to Mentor
+	                </h5>
+	                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	            </div>
+	            <div class="modal-body p-0">
+	                <div class="row">
+	                    <div class="col-md-12 p-3 border-bottom">
+	                        <div class="mentor-info-section">
+	                            <div class="d-flex align-items-center gap-3">
+	                                <img src="/assets/images/prof_img.png" class="rounded-circle" width="60" height="60" alt="Mentor">
+	                                <div>
+	                                    <h5 class="mb-1" id="mentorName">Dr. Rajesh Kumar</h5>
+	                                    <p class="text-muted mb-0" id="mentorId">MENT2024001</p>
+	                                    <p class="text-muted mb-0" id="mentorDepartment">Computer Science Department</p>
+	                                </div>
+	                                <div class="ms-auto">
+	                                    <span class="badge bg-success-subtle text-success fs-6 p-2">
+	                                        <i class="bx bx-user me-1"></i>
+	                                        <span id="assignedCount">5</span> Students Assigned
+	                                    </span>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                
+	                <div class="row m-0">
+	                    <div class="col-md-12 p-0">
+	                        <div class="table-container">
+	                            <table class="table table-hover mb-0">
+	                                <thead>
+	                                    <tr>
+	                                        <th style="width: 40px;">
+	                                            <div class="form-check">
+	                                                <input class="form-check-input" type="checkbox" id="selectAllStudents">
+	                                            </div>
+	                                        </th>
+	                                        <th>Student</th>
+	                                        <th>Student ID</th>
+	                                        <th>Department</th>
+	                                        <th>Current Status</th>
+	                                        <th style="width: 150px;">Assign to this Mentor</th>
+	                                    </tr>
+	                                </thead>
+	                                <tbody id="studentAssignmentTableBody">
+	                                    <!-- Student rows will be populated by JavaScript -->
+	                                    <tr>
+	                                        <td>
+	                                            <div class="form-check">
+	                                                <input class="form-check-input student-checkbox" type="checkbox" value="STU2025001">
+	                                            </div>
+	                                        </td>
+	                                        <td>
+	                                            <div class="d-flex align-items-center gap-2">
+	                                                <img src="/assets/images/prof_img.png" class="rounded-circle" width="40" height="40" alt="Student">
+	                                                <div>
+	                                                    <h6 class="mb-0">Prisha Bansal</h6>
+	                                                    <small class="text-muted">prisha.bansal@example.com</small>
+	                                                </div>
+	                                            </div>
+	                                        </td>
+	                                        <td>STU2025001</td>
+	                                        <td>Computer Science</td>
+	                                        <td>
+	                                            <span class="badge bg-warning-subtle text-warning">Unassigned</span>
+	                                        </td>
+	                                        <td>
+	                                            <button class="btn btn-sm btn-outline-primary assign-btn" data-student-id="STU2025001">
+	                                                <i class="bx bx-user-plus"></i> Assign
+	                                            </button>
+	                                        </td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>
+	                                            <div class="form-check">
+	                                                <input class="form-check-input student-checkbox" type="checkbox" value="STU2025002">
+	                                            </div>
+	                                        </td>
+	                                        <td>
+	                                            <div class="d-flex align-items-center gap-2">
+	                                                <img src="/assets/images/prof_img.png" class="rounded-circle" width="40" height="40" alt="Student">
+	                                                <div>
+	                                                    <h6 class="mb-0">Rahul Sharma</h6>
+	                                                    <small class="text-muted">rahul.sharma@example.com</small>
+	                                                </div>
+	                                            </div>
+	                                        </td>
+	                                        <td>STU2025002</td>
+	                                        <td>Electronics</td>
+	                                        <td>
+	                                            <span class="badge bg-warning-subtle text-warning">Unassigned</span>
+	                                        </td>
+	                                        <td>
+	                                            <button class="btn btn-sm btn-outline-primary assign-btn" data-student-id="STU2025002">
+	                                                <i class="bx bx-user-plus"></i> Assign
+	                                            </button>
+	                                        </td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>
+	                                            <div class="form-check">
+	                                                <input class="form-check-input student-checkbox" type="checkbox" value="STU2025003">
+	                                            </div>
+	                                        </td>
+	                                        <td>
+	                                            <div class="d-flex align-items-center gap-2">
+	                                                <img src="/assets/images/prof_img.png" class="rounded-circle" width="40" height="40" alt="Student">
+	                                                <div>
+	                                                    <h6 class="mb-0">Priya Patel</h6>
+	                                                    <small class="text-muted">priya.patel@example.com</small>
+	                                                </div>
+	                                            </div>
+	                                        </td>
+	                                        <td>STU2025003</td>
+	                                        <td>Mechanical</td>
+	                                        <td>
+	                                            <span class="badge bg-success-subtle text-success">Assigned</span>
+	                                            <small class="d-block text-muted">Dr. Anita Verma</small>
+	                                        </td>
+	                                        <td>
+	                                            <button class="btn btn-sm btn-outline-secondary assign-btn" data-student-id="STU2025003" disabled>
+	                                                <i class="bx bx-user-check"></i> Assigned
+	                                            </button>
+	                                        </td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>
+	                                            <div class="form-check">
+	                                                <input class="form-check-input student-checkbox" type="checkbox" value="STU2025004">
+	                                            </div>
+	                                        </td>
+	                                        <td>
+	                                            <div class="d-flex align-items-center gap-2">
+	                                                <img src="/assets/images/prof_img.png" class="rounded-circle" width="40" height="40" alt="Student">
+	                                                <div>
+	                                                    <h6 class="mb-0">Amit Kumar</h6>
+	                                                    <small class="text-muted">amit.kumar@example.com</small>
+	                                                </div>
+	                                            </div>
+	                                        </td>
+	                                        <td>STU2025004</td>
+	                                        <td>Computer Science</td>
+	                                        <td>
+	                                            <span class="badge bg-warning-subtle text-warning">Unassigned</span>
+	                                        </td>
+	                                        <td>
+	                                            <button class="btn btn-sm btn-outline-primary assign-btn" data-student-id="STU2025004">
+	                                                <i class="bx bx-user-plus"></i> Assign
+	                                            </button>
+	                                        </td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>
+	                                            <div class="form-check">
+	                                                <input class="form-check-input student-checkbox" type="checkbox" value="STU2025005">
+	                                            </div>
+	                                        </td>
+	                                        <td>
+	                                            <div class="d-flex align-items-center gap-2">
+	                                                <img src="/assets/images/prof_img.png" class="rounded-circle" width="40" height="40" alt="Student">
+	                                                <div>
+	                                                    <h6 class="mb-0">Neha Singh</h6>
+	                                                    <small class="text-muted">neha.singh@example.com</small>
+	                                                </div>
+	                                            </div>
+	                                        </td>
+	                                        <td>STU2025005</td>
+	                                        <td>MBA</td>
+	                                        <td>
+	                                            <span class="badge bg-warning-subtle text-warning">Unassigned</span>
+	                                        </td>
+	                                        <td>
+	                                            <button class="btn btn-sm btn-outline-primary assign-btn" data-student-id="STU2025005">
+	                                                <i class="bx bx-user-plus"></i> Assign
+	                                            </button>
+	                                        </td>
+	                                    </tr>
+	                                    <!-- Add more student rows as needed -->
+	                                </tbody>
+	                            </table>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <div class="modal-footer">
+	                <div class="d-flex justify-content-between w-100 align-items-center">
+	                    <div>
+	                        <span id="selectedCount">0</span> students selected
+	                    </div>
+	                    <div class="d-flex gap-2">
+	                        <button type="button" class="btn btn-success" id="assignSelectedBtn">
+	                            <i class="bx bx-user-plus me-1"></i>
+	                            Assign Selected (<span id="selectedCountBadge">0</span>)
+	                        </button>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
 	<script nonce="IXghZjCSvOg+tO8HQlKuhg==">
 		var name = "Missing an interview after accepting the invite is considered unprofessional and will lead to your Internshala account being blocked. If for any reason, you are not able to attend the interview, you should request a reschedule or a cancellation at least 24 hours before the scheduled time.";
 		var to_show_internshala_max_toast = "n";
@@ -2070,6 +2788,711 @@ chosen link or button. -->
 				loading_toast.style.display = "block";
 			}
 		}, 2000);
+	</script>
+	
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+	    // Get elements
+	    const viewBtn = document.getElementById('viewPendingApplicationsBtn');
+	    const closeBtn = document.getElementById('closePendingApplicationsCardBtn');
+	    const applicationsCard = document.getElementById('pendingApplicationsCard');
+	    
+	    // View button click - show modal
+	    if (viewBtn) {
+	        viewBtn.addEventListener('click', function() {
+	            // Show modal using vanilla JavaScript
+	            const modalElement = document.getElementById('pendingApplicationsModal');
+	            if (modalElement) {
+	                // Remove any existing event listeners and add fresh ones
+	                setupModalCloseFunctionality();
+	                
+	                // Show the modal
+	                modalElement.style.display = 'block';
+	                modalElement.classList.add('show');
+	                document.body.classList.add('modal-open');
+	                
+	                // Add backdrop
+	                const backdrop = document.createElement('div');
+	                backdrop.className = 'modal-backdrop fade show';
+	                document.body.appendChild(backdrop);
+	            }
+	        });
+	    }
+	    
+	    // Setup modal close functionality
+	    function setupModalCloseFunctionality() {
+	        const modalElement = document.getElementById('pendingApplicationsModal');
+	        const closeButtons = modalElement.querySelectorAll('[data-bs-dismiss="modal"], .btn-close, .btn-secondary');
+	        
+	        closeButtons.forEach(button => {
+	            // Remove existing event listeners
+	            button.replaceWith(button.cloneNode(true));
+	            
+	            // Get the fresh button
+	            const freshButton = modalElement.querySelector('[data-bs-dismiss="modal"]') || 
+	                               modalElement.querySelector('.btn-close') || 
+	                               modalElement.querySelector('.btn-secondary');
+	            
+	            if (freshButton) {
+	                freshButton.addEventListener('click', function() {
+	                    closeModal();
+	                });
+	            }
+	        });
+	        
+	        // Also close when clicking on backdrop
+	        modalElement.addEventListener('click', function(e) {
+	            if (e.target === modalElement) {
+	                closeModal();
+	            }
+	        });
+	        
+	        // Close on ESC key
+	        document.addEventListener('keydown', function(e) {
+	            if (e.key === 'Escape' && modalElement.classList.contains('show')) {
+	                closeModal();
+	            }
+	        });
+	    }
+	    
+	    // Function to close modal
+	    function closeModal() {
+	        const modalElement = document.getElementById('pendingApplicationsModal');
+	        const backdrop = document.querySelector('.modal-backdrop');
+	        
+	        if (modalElement) {
+	            modalElement.style.display = 'none';
+	            modalElement.classList.remove('show');
+	            document.body.classList.remove('modal-open');
+	        }
+	        
+	        if (backdrop) {
+	            backdrop.remove();
+	        }
+	    }
+	    
+	    // Close card button functionality
+	    if (closeBtn) {
+	        closeBtn.addEventListener('click', function() {
+	            if (applicationsCard) {
+	                applicationsCard.style.opacity = '0';
+	                applicationsCard.style.transform = 'translateY(-20px)';
+	                applicationsCard.style.height = '0';
+	                applicationsCard.style.margin = '0';
+	                applicationsCard.style.padding = '0';
+	                applicationsCard.style.overflow = 'hidden';
+	                applicationsCard.style.transition = 'all 0.3s ease';
+	                
+	                // Remove completely after animation
+	                setTimeout(() => {
+	                    applicationsCard.remove();
+	                }, 300);
+	            }
+	        });
+	    }
+	});
+	</script>
+	
+	<script>
+	// Review Modal Functionality
+	document.addEventListener('DOMContentLoaded', function() {
+	    // Get all review buttons
+	    const reviewButtons = document.querySelectorAll('table tbody tr');
+	    
+	    // Add click event to each table row (or review button)
+	    reviewButtons.forEach(row => {
+	        // Find the review button in the row
+	        const reviewBtn = row.querySelector('.btn-primary-outline');
+	        if (reviewBtn) {
+	            reviewBtn.addEventListener('click', function(e) {
+	                e.preventDefault();
+	                e.stopPropagation();
+	                
+	                // Get data from the row's data attributes
+	                const studentData = {
+	                    name: row.querySelector('h4.text-dark')?.textContent || 'N/A',
+	                    id: row.querySelector('p.text-start')?.textContent || 'N/A',
+	                    department: row.cells[1]?.textContent || 'N/A',
+	                    company: row.querySelector('.new_heading')?.textContent || 'N/A',
+	                    type: row.querySelector('p.mt-1')?.textContent || 'N/A',
+	                    appliedDate: row.cells[3]?.textContent || 'N/A',
+	                    status: row.querySelector('.custom_badge')?.textContent || 'Pending'
+	                };
+	                
+	                // Populate the modal with this data
+	                populateReviewModal(studentData);
+	                
+	                // Store current row reference for status updates
+	                window.currentReviewRow = row;
+	                
+	                // Show the modal
+	                showReviewModal();
+	            });
+	        }
+	    });
+	    
+	    // Function to populate modal with data
+	    function populateReviewModal(data) {
+	        // Update modal title
+	        const modalTitle = document.querySelector('#reviewApplicationModal .modal-title');
+	        if (modalTitle) {
+	            modalTitle.innerHTML = `<i class="bx bx-file me-2"></i>Review Application - ${data.name}`;
+	        }
+	        
+	        // Update student info
+	        document.getElementById('studentName').textContent = data.name;
+	        document.getElementById('studentId').textContent = data.id;
+	        document.getElementById('studentDept').textContent = data.department;
+	        
+	        // Update application status
+	        document.getElementById('applicationStatus').textContent = data.status;
+	        document.getElementById('appliedDate').textContent = `Applied: ${data.appliedDate}`;
+	        
+	        // Update internship details
+	        document.getElementById('companyName').textContent = data.company;
+	        document.getElementById('internshipType').textContent = data.type;
+	        
+	        // Set current student ID for action buttons
+	        window.currentStudentId = data.id;
+	    }
+	    
+	    // Function to show review modal
+	    function showReviewModal() {
+	        const modal = document.getElementById('reviewApplicationModal');
+	        if (modal) {
+	            modal.style.display = 'block';
+	            setTimeout(() => {
+	                modal.classList.add('show');
+	                document.body.classList.add('modal-open');
+	                
+	                // Add backdrop
+	                const backdrop = document.createElement('div');
+	                backdrop.className = 'modal-backdrop fade show';
+	                backdrop.id = 'reviewModalBackdrop';
+	                document.body.appendChild(backdrop);
+	                
+	                // Setup close functionality
+	                setupReviewModalClose();
+	            }, 10);
+	        }
+	    }
+	    
+	    // Function to hide review modal
+	    function hideReviewModal() {
+	        const modal = document.getElementById('reviewApplicationModal');
+	        const backdrop = document.getElementById('reviewModalBackdrop');
+	        
+	        if (modal) {
+	            modal.classList.remove('show');
+	            setTimeout(() => {
+	                modal.style.display = 'none';
+	                document.body.classList.remove('modal-open');
+	            }, 300);
+	        }
+	        
+	        if (backdrop) {
+	            backdrop.remove();
+	        }
+	        
+	        // Clear any pending notifications
+	        window.currentReviewRow = null;
+	        window.currentStudentId = null;
+	        
+	        // Clear form fields
+	        const commentsField = document.getElementById('reviewComments');
+	        if (commentsField) commentsField.value = '';
+	        
+	        const notifyCheckbox = document.getElementById('sendNotification');
+	        if (notifyCheckbox) notifyCheckbox.checked = false;
+	    }
+	    
+	    // Setup modal close functionality
+	    function setupReviewModalClose() {
+	        const modal = document.getElementById('reviewApplicationModal');
+	        const closeBtn = modal.querySelector('.btn-close');
+	        const backdrop = document.getElementById('reviewModalBackdrop');
+	        
+	        // Close button click
+	        if (closeBtn) {
+	            closeBtn.onclick = hideReviewModal;
+	        }
+	        
+	        // Backdrop click
+	        if (backdrop) {
+	            backdrop.onclick = hideReviewModal;
+	        }
+	        
+	        // ESC key
+	        document.addEventListener('keydown', function escHandler(e) {
+	            if (e.key === 'Escape') {
+	                hideReviewModal();
+	                document.removeEventListener('keydown', escHandler);
+	            }
+	        });
+	    }
+	    
+	    // Action Functions
+	    window.approveApplication = function() {
+	        if (!window.currentReviewRow) return;
+	        
+	        const comments = document.getElementById('reviewComments').value;
+	        const sendNotification = document.getElementById('sendNotification').checked;
+	        
+	        // Update row status
+	        updateApplicationStatus('Approved');
+	        
+	        // Show message
+	        alert(`Application ${window.currentStudentId} has been approved successfully!`);
+	        
+	        // Close modal
+	        hideReviewModal();
+	    };
+	    
+	    window.rejectApplication = function() {
+	        if (!window.currentReviewRow) return;
+	        
+	        const comments = document.getElementById('reviewComments').value;
+	        if (!comments.trim()) {
+	            alert('Please provide a reason for rejection.');
+	            document.getElementById('reviewComments').focus();
+	            return;
+	        }
+	        
+	        // Update row status
+	        updateApplicationStatus('Rejected');
+	        
+	        // Show message
+	        alert(`Application ${window.currentStudentId} has been rejected.`);
+	        
+	        // Close modal
+	        hideReviewModal();
+	    };
+	    
+	    window.requestMoreInfo = function() {
+	        if (!window.currentReviewRow) return;
+	        
+	        const comments = document.getElementById('reviewComments').value;
+	        if (!comments.trim()) {
+	            alert('Please specify what additional information you need.');
+	            document.getElementById('reviewComments').focus();
+	            return;
+	        }
+	        
+	        // Update row status
+	        updateApplicationStatus('More Info Requested');
+	        
+	        // Show message
+	        alert(`Information request sent for application ${window.currentStudentId}.`);
+	        
+	        // Close modal
+	        hideReviewModal();
+	    };
+	    
+	    // Function to update application status in table
+	    function updateApplicationStatus(newStatus) {
+	        if (!window.currentReviewRow) return;
+	        
+	        // Update status badge
+	        const statusBadge = window.currentReviewRow.querySelector('.custom_badge');
+	        if (statusBadge) {
+	            statusBadge.textContent = newStatus;
+	            
+	            // Update badge color
+	            statusBadge.className = 'custom_badge ';
+	            if (newStatus === 'Approved') {
+	                statusBadge.classList.add('bg-success-subtle', 'text-success');
+	            } else if (newStatus === 'Rejected') {
+	                statusBadge.classList.add('bg-danger-subtle', 'text-danger');
+	            } else if (newStatus === 'More Info Requested') {
+	                statusBadge.classList.add('bg-info-subtle', 'text-info');
+	            } else {
+	                statusBadge.classList.add('bg-warning-subtle', 'text-warning');
+	            }
+	        }
+	    }
+	    
+	    // Close modal when clicking outside
+	    document.addEventListener('click', function(e) {
+	        const modal = document.getElementById('reviewApplicationModal');
+	        if (modal && modal.classList.contains('show') && e.target === modal) {
+	            hideReviewModal();
+	        }
+	    });
+	});
+
+	// Expose close function globally
+	window.closeReviewModal = function() {
+	    const modal = document.getElementById('reviewApplicationModal');
+	    if (modal) {
+	        modal.style.display = 'none';
+	        document.body.classList.remove('modal-open');
+	        
+	        const backdrop = document.querySelector('.modal-backdrop');
+	        if (backdrop) {
+	            backdrop.remove();
+	        }
+	    }
+	};
+	</script>
+	
+	<script>
+	// Mentor Assignment Modal Functionality
+	document.addEventListener('DOMContentLoaded', function() {
+	    // Get all assign mentor buttons
+	    const assignMentorButtons = document.querySelectorAll('.assign-mentor-btn');
+	    
+	    // Add click event to each assign button
+	    assignMentorButtons.forEach(button => {
+	        button.addEventListener('click', function(e) {
+	            e.preventDefault();
+	            e.stopPropagation();
+	            
+	            // Get the mentor row
+	            const mentorRow = this.closest('tr');
+	            
+	            // Get mentor data from data attributes
+	            const mentorData = {
+	                id: mentorRow.getAttribute('data-mentor-id'),
+	                name: mentorRow.getAttribute('data-mentor-name'),
+	                department: mentorRow.getAttribute('data-mentor-department'),
+	                assignedCount: mentorRow.getAttribute('data-assigned-count') || '0'
+	            };
+	            
+	            // Populate the modal with mentor data
+	            populateMentorAssignmentModal(mentorData);
+	            
+	            // Store current mentor reference
+	            window.currentMentor = mentorData;
+	            window.currentMentorRow = mentorRow;
+	            
+	            // Show the modal
+	            showMentorAssignmentModal();
+	            
+	            // Initialize selection counters
+	            updateSelectionCount();
+	        });
+	    });
+	    
+	    // Function to populate modal with mentor data
+	    function populateMentorAssignmentModal(mentorData) {
+	        // Update modal title
+	        const modalTitle = document.querySelector('#mentorAssignmentModal .modal-title');
+	        if (modalTitle) {
+	            modalTitle.innerHTML = `<i class="bx bx-user-plus me-2"></i>Assign Students to ${mentorData.name}`;
+	        }
+	        
+	        // Update mentor info
+	        document.getElementById('mentorName').textContent = mentorData.name;
+	        document.getElementById('mentorId').textContent = mentorData.id;
+	        document.getElementById('mentorDepartment').textContent = mentorData.department;
+	        document.getElementById('assignedCount').textContent = mentorData.assignedCount;
+	        
+	        // Update modal with current mentor ID
+	        document.getElementById('mentorAssignmentModal').setAttribute('data-current-mentor-id', mentorData.id);
+	    }
+	    
+	    // Function to show mentor assignment modal
+	    function showMentorAssignmentModal() {
+	        const modal = document.getElementById('mentorAssignmentModal');
+	        if (modal) {
+	            modal.style.display = 'block';
+	            setTimeout(() => {
+	                modal.classList.add('show');
+	                document.body.classList.add('modal-open');
+	                
+	                // Add backdrop
+	                const backdrop = document.createElement('div');
+	                backdrop.className = 'modal-backdrop fade show';
+	                backdrop.id = 'mentorModalBackdrop';
+	                document.body.appendChild(backdrop);
+	                
+	                // Setup close functionality
+	                setupMentorModalClose();
+	            }, 10);
+	        }
+	    }
+	    
+	    // Function to hide mentor assignment modal
+	    function hideMentorAssignmentModal() {
+	        const modal = document.getElementById('mentorAssignmentModal');
+	        const backdrop = document.getElementById('mentorModalBackdrop');
+	        
+	        if (modal) {
+	            modal.classList.remove('show');
+	            setTimeout(() => {
+	                modal.style.display = 'none';
+	                document.body.classList.remove('modal-open');
+	            }, 300);
+	        }
+	        
+	        if (backdrop) {
+	            backdrop.remove();
+	        }
+	        
+	        // Clear selections
+	        clearSelections();
+	    }
+	    
+	    // Setup modal close functionality
+	    function setupMentorModalClose() {
+	        const modal = document.getElementById('mentorAssignmentModal');
+	        const closeBtn = modal.querySelector('.btn-close');
+	        const cancelBtn = modal.querySelector('.btn-outline-secondary');
+	        const backdrop = document.getElementById('mentorModalBackdrop');
+	        
+	        // Close button click
+	        if (closeBtn) {
+	            closeBtn.onclick = hideMentorAssignmentModal;
+	        }
+	        
+	        // Cancel button click
+	        if (cancelBtn) {
+	            cancelBtn.onclick = hideMentorAssignmentModal;
+	        }
+	        
+	        // Backdrop click
+	        if (backdrop) {
+	            backdrop.onclick = hideMentorAssignmentModal;
+	        }
+	        
+	        // ESC key
+	        document.addEventListener('keydown', function escHandler(e) {
+	            if (e.key === 'Escape') {
+	                hideMentorAssignmentModal();
+	                document.removeEventListener('keydown', escHandler);
+	            }
+	        });
+	    }
+	    
+	    // Select All checkbox functionality
+	    const selectAllCheckbox = document.getElementById('selectAllStudents');
+	    if (selectAllCheckbox) {
+	        selectAllCheckbox.addEventListener('change', function() {
+	            const studentCheckboxes = document.querySelectorAll('.student-checkbox');
+	            const isChecked = this.checked;
+	            
+	            studentCheckboxes.forEach(checkbox => {
+	                if (!checkbox.disabled) {
+	                    checkbox.checked = isChecked;
+	                    const row = checkbox.closest('tr');
+	                    if (isChecked) {
+	                        row.classList.add('selected-row');
+	                    } else {
+	                        row.classList.remove('selected-row');
+	                    }
+	                }
+	            });
+	            
+	            updateSelectionCount();
+	        });
+	    }
+	    
+	    // Individual checkbox functionality
+	    document.addEventListener('change', function(e) {
+	        if (e.target.classList.contains('student-checkbox')) {
+	            const row = e.target.closest('tr');
+	            if (e.target.checked) {
+	                row.classList.add('selected-row');
+	            } else {
+	                row.classList.remove('selected-row');
+	            }
+	            
+	            // Update select all checkbox state
+	            updateSelectAllState();
+	            updateSelectionCount();
+	        }
+	    });
+	    
+	    // Update select all checkbox state
+	    function updateSelectAllState() {
+	        const studentCheckboxes = document.querySelectorAll('.student-checkbox:not(:disabled)');
+	        const selectAllCheckbox = document.getElementById('selectAllStudents');
+	        
+	        if (studentCheckboxes.length === 0) return;
+	        
+	        const allChecked = Array.from(studentCheckboxes).every(checkbox => checkbox.checked);
+	        const someChecked = Array.from(studentCheckboxes).some(checkbox => checkbox.checked);
+	        
+	        selectAllCheckbox.checked = allChecked;
+	        selectAllCheckbox.indeterminate = someChecked && !allChecked;
+	    }
+	    
+	    // Update selection count
+	    function updateSelectionCount() {
+	        const selectedCheckboxes = document.querySelectorAll('.student-checkbox:checked:not(:disabled)');
+	        const selectedCount = selectedCheckboxes.length;
+	        
+	        document.getElementById('selectedCount').textContent = selectedCount;
+	        document.getElementById('selectedCountBadge').textContent = selectedCount;
+	        
+	        // Enable/disable assign selected button
+	        const assignSelectedBtn = document.getElementById('assignSelectedBtn');
+	        if (assignSelectedBtn) {
+	            assignSelectedBtn.disabled = selectedCount === 0;
+	        }
+	    }
+	    
+	    // Clear all selections
+	    function clearSelections() {
+	        const checkboxes = document.querySelectorAll('.student-checkbox');
+	        checkboxes.forEach(checkbox => {
+	            checkbox.checked = false;
+	        });
+	        
+	        const rows = document.querySelectorAll('.selected-row');
+	        rows.forEach(row => {
+	            row.classList.remove('selected-row');
+	        });
+	        
+	        const selectAllCheckbox = document.getElementById('selectAllStudents');
+	        if (selectAllCheckbox) {
+	            selectAllCheckbox.checked = false;
+	            selectAllCheckbox.indeterminate = false;
+	        }
+	        
+	        updateSelectionCount();
+	    }
+	    
+	    // Individual Assign button functionality
+	    document.addEventListener('click', function(e) {
+	        if (e.target.classList.contains('assign-btn') || e.target.closest('.assign-btn')) {
+	            const assignBtn = e.target.classList.contains('assign-btn') ? e.target : e.target.closest('.assign-btn');
+	            
+	            if (assignBtn.disabled) return;
+	            
+	            const studentId = assignBtn.getAttribute('data-student-id');
+	            const studentRow = assignBtn.closest('tr');
+	            const studentName = studentRow.querySelector('h6').textContent;
+	            
+	            // Show confirmation
+	            if (confirm(`Assign ${studentName} (${studentId}) to ${window.currentMentor?.name}?`)) {
+	                // Update button state
+	                assignBtn.innerHTML = '<i class="bx bx-user-check"></i> Assigned';
+	                assignBtn.classList.remove('btn-outline-primary');
+	                assignBtn.classList.add('btn-outline-secondary');
+	                assignBtn.disabled = true;
+	                
+	                // Update status badge
+	                const statusCell = studentRow.querySelector('td:nth-child(5)');
+	                if (statusCell) {
+	                    statusCell.innerHTML = `
+	                        <span class="badge bg-success-subtle text-success">Assigned</span>
+	                        <small class="d-block text-muted">${window.currentMentor?.name}</small>
+	                    `;
+	                }
+	                
+	                // Update mentor assigned count
+	                updateMentorAssignedCount(1);
+	                
+	                alert(`Successfully assigned ${studentName} to ${window.currentMentor?.name}`);
+	            }
+	        }
+	    });
+	    
+	    // Assign Selected button functionality
+	    const assignSelectedBtn = document.getElementById('assignSelectedBtn');
+	    if (assignSelectedBtn) {
+	        assignSelectedBtn.addEventListener('click', function() {
+	            if (!window.currentMentor) return;
+	            
+	            const selectedCheckboxes = document.querySelectorAll('.student-checkbox:checked:not(:disabled)');
+	            if (selectedCheckboxes.length === 0) return;
+	            
+	            const studentNames = Array.from(selectedCheckboxes).map(checkbox => {
+	                const row = checkbox.closest('tr');
+	                return row.querySelector('h6').textContent;
+	            });
+	            
+	            if (confirm(`Assign ${selectedCheckboxes.length} student(s) to ${window.currentMentor.name}?\n\n${studentNames.join(', ')}`)) {
+	                let assignedCount = 0;
+	                
+	                selectedCheckboxes.forEach(checkbox => {
+	                    const studentId = checkbox.value;
+	                    const studentRow = checkbox.closest('tr');
+	                    const assignBtn = studentRow.querySelector('.assign-btn');
+	                    const studentName = studentRow.querySelector('h6').textContent;
+	                    
+	                    // Update button state
+	                    if (assignBtn && !assignBtn.disabled) {
+	                        assignBtn.innerHTML = '<i class="bx bx-user-check"></i> Assigned';
+	                        assignBtn.classList.remove('btn-outline-primary');
+	                        assignBtn.classList.add('btn-outline-secondary');
+	                        assignBtn.disabled = true;
+	                        
+	                        // Update status badge
+	                        const statusCell = studentRow.querySelector('td:nth-child(5)');
+	                        if (statusCell) {
+	                            statusCell.innerHTML = `
+	                                <span class="badge bg-success-subtle text-success">Assigned</span>
+	                                <small class="d-block text-muted">${window.currentMentor.name}</small>
+	                            `;
+	                        }
+	                        
+	                        assignedCount++;
+	                    }
+	                });
+	                
+	                // Update mentor assigned count
+	                if (assignedCount > 0) {
+	                    updateMentorAssignedCount(assignedCount);
+	                }
+	                
+	                // Clear selections
+	                clearSelections();
+	                
+	                alert(`Successfully assigned ${assignedCount} student(s) to ${window.currentMentor.name}`);
+	            }
+	        });
+	    }
+	    
+	    // Update mentor assigned count in table
+	    function updateMentorAssignedCount(countToAdd) {
+	        if (!window.currentMentorRow) return;
+	        
+	        // Get current count
+	        const currentCount = parseInt(window.currentMentorRow.getAttribute('data-assigned-count') || '0');
+	        const newCount = currentCount + countToAdd;
+	        
+	        // Update data attribute
+	        window.currentMentorRow.setAttribute('data-assigned-count', newCount.toString());
+	        
+	        // Update badge text
+	        const badge = window.currentMentorRow.querySelector('.badge');
+	        if (badge) {
+	            badge.textContent = `${newCount} Students Assigned`;
+	        }
+	        
+	        // Update modal count
+	        document.getElementById('assignedCount').textContent = newCount;
+	        
+	        // Update current mentor data
+	        if (window.currentMentor) {
+	            window.currentMentor.assignedCount = newCount.toString();
+	        }
+	    }
+	    
+	    // Close modal when clicking outside
+	    document.addEventListener('click', function(e) {
+	        const modal = document.getElementById('mentorAssignmentModal');
+	        if (modal && modal.classList.contains('show') && e.target === modal) {
+	            hideMentorAssignmentModal();
+	        }
+	    });
+	});
+
+	// Expose close function globally
+	window.closeMentorAssignmentModal = function() {
+	    const modal = document.getElementById('mentorAssignmentModal');
+	    if (modal) {
+	        modal.style.display = 'none';
+	        document.body.classList.remove('modal-open');
+	        
+	        const backdrop = document.querySelector('.modal-backdrop');
+	        if (backdrop) {
+	            backdrop.remove();
+	        }
+	    }
+	};
 	</script>
 </body>
 

@@ -1459,13 +1459,100 @@
 								<p>2 students have attendance below 75%. Consider following up with them.</p>
 							</div>
 							<div class="d-flex gap-2">
-								<!-- <button class="btn-warning-cover mentor">View</button> -->
+								<button class="btn btn-orange mentor">
+																    View
+																</button>
 								<button class="btn-warning-outline mentor">Close</button>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			
+			<!-- Low Attendance Modal -->
+			<div class="modal fade" id="lowAttendanceModal" tabindex="-1" aria-labelledby="lowAttendanceModalLabel" aria-hidden="true">
+			    <div class="modal-dialog modal-dialog-centered">
+			        <div class="modal-content">
+			            <div class="modal-header border-0 pb-0">
+			                <h5 class="modal-title" id="lowAttendanceModalLabel">
+			                    <i class="bx bx-info-circle text-warning me-2"></i>
+			                    Students with Low Attendance
+			                </h5>
+			                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			            </div>
+			            <div class="modal-body pt-3">
+			                <!-- Student 1 - 34% -->
+			                <div class="d-flex align-items-center mb-4 p-3 bg-light rounded shadow-sm">
+			                    <img src="/assets/images/prof_img.png" class="rounded-circle me-3" width="60" height="60" alt="Student">
+			                    <div class="flex-grow-1">
+			                        <h6 class="mb-1 fw-bold text-dark">Aryan Patel</h6>
+			                        <small class="text-muted">STU2025034</small>
+			                    </div>
+			                    <span class="badge bg-danger fs-5 px-4 py-2">34%</span>
+			                </div>
+
+			                <!-- Student 2 - 70% -->
+			                <div class="d-flex align-items-center p-3 bg-light rounded shadow-sm">
+			                    <img src="/assets/images/prof_img.png" class="rounded-circle me-3" width="60" height="60" alt="Student">
+			                    <div class="flex-grow-1">
+			                        <h6 class="mb-1 fw-bold text-dark">Neha Sharma</h6>
+			                        <small class="text-muted">STU2025071</small>
+			                    </div>
+			                    <span class="badge bg-warning text-dark fs-5 px-4 py-2">70%</span>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+
+			<!-- Orange Button Style (already in your code, just confirming) -->
+			<style>
+			    .btn-orange {
+			        background-color: #FD7E14;
+			        border-color: #FD7E14;
+			        color: white !important;
+			    }
+			    .btn-orange:hover {
+			        background-color: #e96d00;
+			        border-color: #e96d00;
+			        color: white;
+			    }
+			    .btn-orange:focus, .btn-orange:active {
+			        box-shadow: 0 0 0 0.2rem rgba(253, 126, 20, 0.5);
+			    }
+
+			    /* Extra polish for modal */
+			    #lowAttendanceModal .modal-content {
+			        border-radius: 12px;
+			        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+			    }
+			    #lowAttendanceModal .badge {
+			        font-size: 1.1rem;
+			        min-width: 70px;
+			        text-align: center;
+			    }
+			</style>
+			
+			
+			
+			
+			<!--<style>
+						    .btn-orange {
+						        background-color: #FD7E14; /* Vibrant orange */
+						        border-color: #FD7E14;
+						        color: white !important; /* Ensures text is white */
+						    }
+						    .btn-orange:hover {
+						        background-color: #e96d00; /* Darker orange on hover */
+						        border-color: #e96d00;
+						        color: white;
+						    }
+						    .btn-orange:focus, .btn-orange:active {
+						        box-shadow: 0 0 0 0.2rem rgba(253, 126, 20, 0.5);
+						    }
+						</style>-->
+						
+						
 
 
 			<div class="row">
@@ -2822,6 +2909,38 @@ chosen link or button. -->
 				loading_toast.style.display = "block";
 			}
 		}, 2000);
+	</script>
+	<script>
+	document.addEventListener("DOMContentLoaded", function () {
+	    const viewBtn = document.querySelector('.ApplicationCardMentor .btn-orange');
+	    const closeBtn = document.querySelector('.ApplicationCardMentor .btn-warning-outline');
+	    const modalElement = document.getElementById('lowAttendanceModal');
+
+	    if (viewBtn && modalElement) {
+	        const modal = new bootstrap.Modal(modalElement);
+
+	        // Open modal on View click
+	        viewBtn.addEventListener('click', function () {
+	            modal.show();
+	        });
+
+	        // Close alert card when Close button is clicked
+	        closeBtn.addEventListener('click', function () {
+	            document.querySelector('.ApplicationCardMentor').style.display = 'none';
+	        });
+			
+			
+
+	        // Optional: Close modal when clicking outside
+	        modalElement.addEventListener('click', function (e) {
+	            if (e.target === modalElement) {
+	                modal.hide();
+	            }
+				
+				
+	        });
+	    }
+	});
 	</script>
 </body>
 

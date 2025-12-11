@@ -3,6 +3,38 @@
 	lang="en-US">
 
 <head>
+	<style>
+	    .circle-chart {
+	      position: relative;
+	      width: 140px;
+	      height: 140px;
+	    }
+	    .circle-chart svg {
+	      transform: rotate(-90deg);
+	      width: 100%;
+	      height: 100%;
+	    }
+	    .circle-chart .circle-bg {
+	      fill: none;
+	      stroke: #eee;
+	      stroke-width: 12;
+	    }
+	    .circle-chart .circle-progress {
+	      fill: none;
+	      stroke-width: 12;
+	      stroke-linecap: round;
+	      /* color will be set via JS based on percent */
+	    }
+	    .circle-chart .circle-text {
+	      position: absolute;
+	      top: 50%;
+	      left: 50%;
+	      transform: translate(-50%, -50%);
+	      font-size: 24px;
+	      font-family: sans-serif;
+	    }
+	  </style>
+
 	<meta http-equiv="X-UA-Compatible" content="IE=9" />
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0" />
@@ -821,8 +853,8 @@
 								<a class="nav-link dropdown-toggle trainings_link menu-link"
 									href="https://trainings.internshala.com/?utm_source=is_web_internshala-menu-dropdown1"
 									id="trainings_dropdown_link" rel="noopener" target="_blank">
-									Courses <div class="contest" id="course_superscript">
-										OFFER </div>
+									Courses <div  id="course_superscript">
+										 </div>
 									<i class="header-dropdown-arrow-custom"></i>
 								</a>
 								<div class="training-dropdown-content student_dropdown">
@@ -1214,10 +1246,15 @@
 								<div class="card-body custom_card_body">
 
 									<div class="Chart_div">
-										<div class="knob_chart">
-											<input class="knob" data-width="140" data-min="-100" data-fgcolor="#27AE60"
-												data-displayprevious="true" data-readOnly=true value="85%">
-										</div>
+										<div class="circle-chart" data-percent="85">
+										    <svg viewBox="0 0 100 100">
+										      <circle class="circle-bg" cx="50" cy="50" r="45"></circle>
+										      <circle class="circle-progress" cx="50" cy="50" r="45"
+										              stroke-dasharray="283" stroke-dashoffset="0"></circle>
+										    </svg>
+										    <div class="circle-text">85%</div>
+										  </div>
+
 										<div class="chartBottom_div">
 											<h4 class="chartBottom_h">Excellent Performance</h4>
 											<p class="text_latest mt-2">You have demonstrated outstanding performance
@@ -1443,14 +1480,18 @@
 									<div class="">
 										<ul class="Application_History_div">
 											<li>
-												<button
-													class="btn-warning-outline w-100 d-flex justify-content-start"><i
-														class="far fa-file-pdf font-size-16"></i>Download Evaluation
-													Report</button>
+											    <button onclick="downloadEvaluationReport()" class="btn-warning-outline w-100 d-flex justify-content-start">
+											        <i class="far fa-file-pdf font-size-16"></i> Download Evaluation Report
+											    </button>
 											</li>
+
+
 											<li>
-												<button class="btn-warning-cover w-100 d-flex justify-content-start"><i
-														class="bx bx-printer font-size-16"></i>Print Evaluation</button>
+											    <button onclick="printEvaluationReport()" 
+											            class="btn-warning-cover w-100 d-flex justify-content-start">
+											        <i class="bx bx-printer font-size-16"></i>
+											        Print Evaluation
+											    </button>
 											</li>
 
 
@@ -1549,7 +1590,48 @@ chosen link or button. -->
 				loading_toast.style.display = "block";
 			}
 		}, 2000);
+		
+		document.querySelectorAll('.circle-chart').forEach(el => {
+		      const percent = Number(el.getAttribute('data-percent'));
+		      const circle = el.querySelector('.circle-progress');
+		      const radius = circle.getAttribute('r');
+		      const circumference = 2 * Math.PI * radius;
+
+		      // set up stroke-dasharray
+		      circle.style.strokeDasharray = `${circumference}`;
+		      const offset = circumference * (1 - percent / 100);
+		      circle.style.strokeDashoffset = offset;
+
+		      // choose color based on threshold
+		      circle.style.stroke = (percent >= 85 ? '#27AE60' : '#E74C3C'); 
+		    });
 	</script>
+	
+	<script>
+	function downloadEvaluationReport() {
+	    const fileUrl = "/assets/example-excel.xlsx";  // correct file path
+
+	    const a = document.createElement("a");
+	    a.href = fileUrl;
+	    a.download = "evaluation-report.xlsx"; // file name
+	    document.body.appendChild(a);
+	    a.click();
+	    document.body.removeChild(a);
+	}
+	</script>
+
+	<script>
+	function printEvaluationReport() {
+	    const printWindow = window.open("evaluation.html", "_blank");
+
+	    printWindow.onload = function () {
+	        printWindow.focus();
+	        printWindow.print();
+	    };
+	}
+	</script>
+
+
 </body>
 
 </html>

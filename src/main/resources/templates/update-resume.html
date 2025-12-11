@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Internship Resume Builder — Blue Theme (Static)</title>
+    <meta name="description" content="Static, client-side internship resume builder. Add education, internships, projects, skills, and export or print a resume.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ---------- Color Theme & Layout ---------- */
+        :root{
+          --bg:#eaf4ff;
+          --card:#ffffff;
+          --accent-600:#1e6fb8;
+          --accent-700:#155a93;
+          --accent-500:#2b88d1;
+          --muted:#6b7280;
+          --glass: rgba(255,255,255,0.6);
+          --radius:12px;
+          --maxw:1200px;
+        }
+
+        *{box-sizing:border-box}
+        html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#042035;background:linear-gradient(180deg,var(--bg),#f5fbff);-webkit-font-smoothing:antialiased}
+        .container{max-width:var(--maxw);margin:28px auto;padding:20px}
+        header.site{display:flex;gap:18px;align-items:center;margin-bottom:18px}
+        .brand{width:70px;height:70px;border-radius:14px;background:linear-gradient(135deg,var(--accent-500),var(--accent-700));display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:20px;box-shadow:0 8px 30px rgba(15,45,80,0.08)}
+        h1{margin:0;font-size:1.4rem;color:var(--accent-700)}
+        p.lead{margin:6px 0 0;color:var(--muted)}
+
+        /* layout grid: left form, right preview */
+        .grid{display:grid;grid-template-columns:1fr 480px;gap:20px;align-items:start}
+        @media (max-width:1100px){.grid{grid-template-columns:1fr 380px}}
+        @media (max-width:880px){.grid{grid-template-columns:1fr;}}
+
+        .card{background:var(--card);border-radius:var(--radius);padding:16px;box-shadow:0 8px 30px rgba(13,42,79,0.06)}
+        .card.small{padding:12px}
+
+        /* form styles */
+        form .row{display:flex;gap:12px}
+        form .col{flex:1}
+        label{display:block;font-size:13px;margin-bottom:6px;color:var(--accent-700);font-weight:600}
+        input[type="text"], input[type="email"], input[type="tel"], input[type="url"], textarea, select, input[type="date"]{
+          width:100%;padding:10px;border-radius:10px;border:1px solid #e6f0fb;background:linear-gradient(180deg,#fff,#fbfdff);outline:none;font-size:14px
+        }
+        textarea{min-height:80px;resize:vertical}
+        .muted{color:var(--muted);font-size:13px}
+        .btn{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:10px;border:0;background:var(--accent-600);color:white;font-weight:700;cursor:pointer}
+        .btn.ghost{background:transparent;color:var(--accent-700);border:1px solid rgba(27,100,170,0.12)}
+        .btn.danger{background:#ef4444}
+        .actions{display:flex;gap:8px;flex-wrap:wrap}
+        .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+        .hint{font-size:13px;color:var(--muted);margin-top:6px}
+
+        /* dynamic list items */
+        .list{border:1px dashed #e7f2ff;padding:10px;border-radius:10px}
+        .list-item{border-radius:10px;padding:10px;background:linear-gradient(180deg,#ffffff,#fbfdff);margin-bottom:10px;box-shadow:0 4px 18px rgba(13,42,79,0.04);display:grid;grid-template-columns:1fr auto;gap:10px;align-items:start}
+        .row-controls{display:flex;gap:8px;align-items:center}
+        .small-btn{padding:6px 8px;border-radius:8px;border:0;background:#eef8ff;color:var(--accent-700);cursor:pointer;font-weight:600}
+
+        /* preview panel (resume) */
+        .preview{padding:18px;height:calc(100% - 36px);overflow:auto}
+        .resume{max-width:420px;margin:0 auto;background:linear-gradient(180deg,#ffffff,#fbfdff);padding:18px;border-radius:10px;border:1px solid #e6f7ff}
+        .resume .name{font-size:20px;font-weight:800;color:var(--accent-700)}
+        .resume .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;color:var(--muted);font-size:13px}
+        .section{margin-top:14px}
+        .section h3{margin:0;font-size:13px;color:var(--accent-600);font-weight:700}
+        .section .item{margin-top:8px}
+        .skill-pill{display:inline-block;padding:6px 8px;border-radius:999px;font-size:12px;background:linear-gradient(90deg,#eaf6ff,#e8f2ff);margin:4px 6px 4px 0;color:var(--accent-700);border:1px solid rgba(27,100,170,0.06)}
+
+        /* utility */
+        .divider{height:1px;background:linear-gradient(90deg,transparent,#e8f6ff,transparent);margin:12px 0}
+        .note{font-size:13px;color:var(--muted);}
+
+        /* footer */
+        footer.page{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+
+        /* subtle helpers */
+        .chip{display:inline-flex;padding:6px 8px;border-radius:999px;background:#f0f8ff;color:var(--accent-700);font-weight:600;font-size:12px}
+        input.invalid{box-shadow:0 0 0 3px rgba(255,0,0,0.06);border-color:#fca5a5}
+        .json-area{width:100%;min-height:120px;font-family:monospace;padding:10px;border-radius:10px;border:1px solid #eef7ff;background:#fbfdff;overflow:auto;font-size:13px}
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="site">
+        <a class="navbar-brand" href="/">
+            <div>
+                <img src="/images/home/sprites/logo_img.png" alt="logo" width="195" height="65">
+            </div>
+        </a>
+        <div>
+            <h1>Internship Resume Builder</h1>
+            <p class="lead">Build a professional internship resume. This is static — everything runs in your browser. Live preview, add/remove sections, export JSON, and print.</p>
+        </div>
+    </header>
+
+    <div class="grid">
+        <!-- LEFT: FORM -->
+        <div>
+            <form id="resumeForm" class="card" autocomplete="off" novalidate>
+                <!-- Personal -->
+                <div class="section-title">
+                    <h2 class="muted">Personal Details</h2>
+                    <div class="chip">Blue Theme</div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="fullName">Full Name</label>
+                        <input id="fullName" name="fullName" type="text" placeholder="e.g., Aisha Roy" required>
+                    </div>
+                    <div class="col">
+                        <label for="title">Professional Title</label>
+                        <input id="title" name="title" type="text" placeholder="e.g., Computer Science Student">
+                    </div>
+                </div>
+                <div class="row" style="margin-top:10px">
+                    <div class="col">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="col">
+                        <label for="phone">Phone</label>
+                        <input id="phone" name="phone" type="tel" placeholder="+91 98765 43210">
+                    </div>
+                </div>
+                <div style="margin-top:10px">
+                    <label for="summary">Professional Summary</label>
+                    <textarea id="summary" name="summary" placeholder="Two or three lines summarizing your objective and strengths..."></textarea>
+                    <div class="hint">Keep it concise and tailored to internships.</div>
+                </div>
+
+                <div class="divider" aria-hidden="true"></div>
+
+                <!-- Education -->
+                <div class="section-title">
+                    <h2 class="muted">Education</h2>
+                    <div class="actions">
+                        <button type="button" id="addEducation" class="small-btn" aria-label="Add education">+ Add</button>
+                    </div>
+                </div>
+                <div id="educationList" class="list" aria-live="polite">
+                    <!-- template injected here -->
+                </div>
+
+                <div class="divider" aria-hidden="true"></div>
+
+                <!-- Internships / Experience -->
+                <div class="section-title">
+                    <h2 class="muted">Internships / Experience</h2>
+                    <div class="actions">
+                        <button type="button" id="addExperience" class="small-btn">+ Add</button>
+                    </div>
+                </div>
+                <div id="experienceList" class="list" aria-live="polite"></div>
+
+                <div class="divider" aria-hidden="true"></div>
+
+                <!-- Projects -->
+                <div class="section-title">
+                    <h2 class="muted">Projects</h2>
+                    <div class="actions">
+                        <button type="button" id="addProject" class="small-btn">+ Add</button>
+                    </div>
+                </div>
+                <div id="projectList" class="list" aria-live="polite"></div>
+
+                <div class="divider" aria-hidden="true"></div>
+
+                <!-- Skills & Tools -->
+                <div class="section-title">
+                    <h2 class="muted">Skills & Tools</h2>
+                    <div class="actions">
+                        <button type="button" id="addSkill" class="small-btn">+ Add</button>
+                    </div>
+                </div>
+                <div id="skillList" class="list"></div>
+
+                <div class="divider" aria-hidden="true"></div>
+
+                <!-- Certifications & Awards -->
+                <div class="section-title">
+                    <h2 class="muted">Certifications & Awards</h2>
+                    <div class="actions">
+                        <button type="button" id="addCert" class="small-btn">+ Add</button>
+                    </div>
+                </div>
+                <div id="certList" class="list"></div>
+
+                <div class="divider" aria-hidden="true"></div>
+
+                <!-- Extras -->
+                <div class="section-title">
+                    <h2 class="muted">Extras</h2>
+                    <div class="hint">Add links, languages, hobbies (optional)</div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="linkedin">LinkedIn / Portfolio</label>
+                        <input id="linkedin" name="linkedin" type="url" placeholder="https://">
+                    </div>
+                    <div class="col">
+                        <label for="github">GitHub</label>
+                        <input id="github" name="github" type="url" placeholder="https://">
+                    </div>
+                </div>
+
+                <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+                    <button type="button" id="previewBtn" class="btn">Update Preview</button>
+                    <button type="button" id="saveJsonBtn" class="btn ghost">Save JSON (Local)</button>
+                    <button type="button" id="loadJsonBtn" class="btn ghost">Load JSON (Local)</button>
+                    <button type="button" id="exportJsonBtn" class="btn ghost">Export JSON</button>
+                    <button type="button" id="printBtn" class="btn">Print Resume</button>
+                    <button type="button" id="clearBtn" class="btn ghost" title="Reset all fields">Reset</button>
+                </div>
+
+                <div style="margin-top:12px">
+                    <label class="muted">JSON Output</label>
+                    <pre id="jsonOut" class="json-area" aria-live="polite"></pre>
+                </div>
+            </form>
+        </div>
+
+        <!-- RIGHT: PREVIEW -->
+        <aside>
+            <div class="card small">
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                    <div><strong>Live Preview</strong><div class="muted">What employers will see</div></div>
+                    <div class="chip">Printable</div>
+                </div>
+            </div>
+
+            <div class="card preview" style="margin-top:12px">
+                <div id="previewResume" class="resume" role="region" aria-label="Resume preview">
+                    <!-- Rendered by JS -->
+                    <div style="text-align:center">
+                        <div class="name" id="pvName">Your Name</div>
+                        <div id="pvTitle" class="muted">Professional Title</div>
+                        <div class="meta" id="pvMeta">email • phone • links</div>
+                    </div>
+
+                    <div id="pvSummary" class="section" style="display:none">
+                        <h3>Summary</h3>
+                        <div class="item" id="pvSummaryText"></div>
+                    </div>
+
+                    <div id="pvEducationSection" class="section" style="display:none">
+                        <h3>Education</h3>
+                        <div id="pvEducation"></div>
+                    </div>
+
+                    <div id="pvExperienceSection" class="section" style="display:none">
+                        <h3>Internships & Experience</h3>
+                        <div id="pvExperience"></div>
+                    </div>
+
+                    <div id="pvProjectSection" class="section" style="display:none">
+                        <h3>Projects</h3>
+                        <div id="pvProjects"></div>
+                    </div>
+
+                    <div id="pvSkillsSection" class="section" style="display:none">
+                        <h3>Skills</h3>
+                        <div id="pvSkills"></div>
+                    </div>
+
+                    <div id="pvCertSection" class="section" style="display:none">
+                        <h3>Certifications</h3>
+                        <div id="pvCerts"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card small" style="margin-top:12px">
+                <strong>Tips</strong>
+                <ul class="muted" style="margin:8px 0 0 16px">
+                    <li>Use action verbs (built, implemented, improved).</li>
+                    <li>Quantify achievements where possible.</li>
+                    <li>Keep summary short and targeted to internships.</li>
+                    <li>Use the <em>Export JSON</em> to save or share a structured resume.</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="page">Built with ❤️ for Higher Education Department — Static & Client-side</footer>
+</div>
+
+<script>
+    /*************************************************************************
+     * Internship Resume Builder (Static)
+     * - Dynamic add/remove for Education, Experience, Projects, Skills, Certs
+     * - Live preview rendering
+     * - Save/load JSON to localStorage & export file
+     * - Print resume via window.print()
+     *
+     * Accessibility: uses aria-live for lists, labels, and roles for preview.
+     *************************************************************************/
+
+    (function(){
+      // Basic utilities
+      const $ = sel => document.querySelector(sel);
+      const $$ = sel => Array.from(document.querySelectorAll(sel));
+
+      // Root elements
+      const educationList = $('#educationList');
+      const experienceList = $('#experienceList');
+      const projectList = $('#projectList');
+      const skillList = $('#skillList');
+      const certList = $('#certList');
+      const previewBtn = $('#previewBtn');
+      const exportJsonBtn = $('#exportJsonBtn');
+      const saveJsonBtn = $('#saveJsonBtn');
+      const loadJsonBtn = $('#loadJsonBtn');
+      const printBtn = $('#printBtn');
+      const clearBtn = $('#clearBtn');
+      const jsonOut = $('#jsonOut');
+
+      // Template generators
+      function makeEducationItem(data = {}) {
+        const id = 'edu-' + Date.now() + '-' + Math.floor(Math.random()*9999);
+        const el = document.createElement('div');
+        el.className = 'list-item';
+        el.innerHTML = `
+          <div>
+            <div class="row">
+              <div class="col"><label>Degree</label><input name="degree" type="text" value="${escapeHtml(data.degree||'')}" placeholder="B.Tech / M.Sc"></div>
+              <div class="col"><label>Institution</label><input name="institution" type="text" value="${escapeHtml(data.institution||'')}" placeholder="College / University"></div>
+            </div>
+            <div class="row" style="margin-top:8px">
+              <div class="col"><label>Field</label><input name="field" type="text" value="${escapeHtml(data.field||'')}" placeholder="Computer Science"></div>
+              <div class="col"><label>Duration</label><input name="duration" type="text" value="${escapeHtml(data.duration||'2019 - Present')}" placeholder="e.g., 2021 - 2024"></div>
+            </div>
+            <div style="margin-top:8px"><label>Notes / Achievements</label><textarea name="eduNotes" placeholder="Thesis title, GPA, awards...">${escapeHtml(data.notes||'')}</textarea></div>
+          </div>
+          <div class="row-controls">
+            <button type="button" class="small-btn btn-edit" title="Duplicate">⧉</button>
+            <button type="button" class="small-btn btn-remove" title="Remove" aria-label="Remove education">✕</button>
+          </div>`;
+        addListControls(el, { duplicate: true });
+        return el;
+      }
+
+      function makeExperienceItem(data = {}) {
+        const el = document.createElement('div');
+        el.className = 'list-item';
+        el.innerHTML = `
+          <div>
+            <div class="row">
+              <div class="col"><label>Role / Internship Title</label><input name="role" type="text" value="${escapeHtml(data.role||'')}" placeholder="e.g., Software Intern"></div>
+              <div class="col"><label>Organization</label><input name="org" type="text" value="${escapeHtml(data.org||'')}" placeholder="Company / Lab"></div>
+            </div>
+            <div class="row" style="margin-top:8px">
+              <div class="col"><label>Start Date</label><input name="start" type="date" value="${escapeHtml(data.start||'')}"></div>
+              <div class="col"><label>End Date</label><input name="end" type="date" value="${escapeHtml(data.end||'')}"></div>
+            </div>
+            <div style="margin-top:8px"><label>Responsibilities & Achievements</label><textarea name="expNotes" placeholder="What did you do?">${escapeHtml(data.notes||'')}</textarea></div>
+          </div>
+          <div class="row-controls">
+            <button type="button" class="small-btn btn-edit" title="Duplicate">⧉</button>
+            <button type="button" class="small-btn btn-remove" title="Remove" aria-label="Remove experience">✕</button>
+          </div>`;
+        addListControls(el, { duplicate: true });
+        return el;
+      }
+
+      function makeProjectItem(data = {}) {
+        const el = document.createElement('div');
+        el.className = 'list-item';
+        el.innerHTML = `
+          <div>
+            <div class="row">
+              <div class="col"><label>Project Title</label><input name="title" type="text" value="${escapeHtml(data.title||'')}" placeholder="Project name"></div>
+              <div class="col"><label>Link (optional)</label><input name="link" type="url" value="${escapeHtml(data.link||'')}" placeholder="https://github.com/..."></div>
+            </div>
+            <div style="margin-top:8px"><label>Description</label><textarea name="projNotes" placeholder="Short description, tech stack, your role...">${escapeHtml(data.notes||'')}</textarea></div>
+          </div>
+          <div class="row-controls">
+            <button type="button" class="small-btn btn-edit" title="Duplicate">⧉</button>
+            <button type="button" class="small-btn btn-remove" title="Remove" aria-label="Remove project">✕</button>
+          </div>`;
+        addListControls(el, { duplicate: true });
+        return el;
+      }
+
+      function makeSkillItem(data = {}) {
+        const el = document.createElement('div');
+        el.className = 'list-item';
+        el.innerHTML = `
+          <div style="display:flex;gap:8px;align-items:center">
+            <div style="flex:1">
+              <label>Skill / Tool</label>
+              <input name="skill" type="text" value="${escapeHtml(data.skill||'')}" placeholder="e.g., React, Python">
+              <div class="hint">Optionally add proficiency (Beginner / Intermediate / Advanced)</div>
+              <input name="level" type="text" style="margin-top:6px" placeholder="Advanced" value="${escapeHtml(data.level||'')}">
+            </div>
+          </div>
+          <div class="row-controls">
+            <button type="button" class="small-btn btn-remove" title="Remove" aria-label="Remove skill">✕</button>
+          </div>`;
+        addListControls(el, { duplicate: false });
+        return el;
+      }
+
+      function makeCertItem(data = {}) {
+        const el = document.createElement('div');
+        el.className = 'list-item';
+        el.innerHTML = `
+          <div>
+            <div class="row">
+              <div class="col"><label>Certification / Award</label><input name="cert" type="text" value="${escapeHtml(data.cert||'')}" placeholder="Course name / Award"></div>
+              <div class="col"><label>Issuer</label><input name="issuer" type="text" value="${escapeHtml(data.issuer||'')}" placeholder="Organization"></div>
+            </div>
+            <div style="margin-top:8px"><label>Date</label><input name="certDate" type="date" value="${escapeHtml(data.date||'')}"></div>
+          </div>
+          <div class="row-controls">
+            <button type="button" class="small-btn btn-remove" title="Remove" aria-label="Remove certification">✕</button>
+          </div>`;
+        addListControls(el, { duplicate: false });
+        return el;
+      }
+
+      // Attach duplicate/remove handlers to a list-item
+      function addListControls(itemEl, options = { duplicate: false }) {
+        const dup = itemEl.querySelector('.btn-edit');
+        const rem = itemEl.querySelector('.btn-remove');
+
+        if (dup) {
+          dup.addEventListener('click', () => {
+            const clone = itemEl.cloneNode(true);
+            // remove existing event listeners by re-initializing controls on clone
+            addListControls(clone, options);
+            itemEl.parentNode.insertBefore(clone, itemEl.nextSibling);
+          });
+        }
+        if (rem) {
+          rem.addEventListener('click', () => {
+            const parent = itemEl.parentNode;
+            if (!parent) return;
+            parent.removeChild(itemEl);
+          });
+        }
+      }
+
+      // Add initial one item for each list to make UI friendlier
+      function ensureInitial() {
+        if (educationList.children.length === 0) educationList.appendChild(makeEducationItem({degree:'B.Tech',institution:'Your College',field:'Computer Science',duration:'2021 - 2025'}));
+        if (experienceList.children.length === 0) experienceList.appendChild(makeExperienceItem({role:'Software Intern',org:'Company',start:'2024-06-01',end:'2024-08-31',notes:'Worked on feature X.'}));
+        if (projectList.children.length === 0) projectList.appendChild(makeProjectItem({title:'Smart Campus',link:'',notes:'A project to manage...'}));
+        if (skillList.children.length === 0) skillList.appendChild(makeSkillItem({skill:'Python',level:'Advanced'}));
+        if (certList.children.length === 0) certList.appendChild(makeCertItem({cert:'Coursera: ML',issuer:'Coursera',date:''}));
+      }
+
+      // Hook add buttons
+      $('#addEducation').addEventListener('click', () => educationList.appendChild(makeEducationItem()));
+      $('#addExperience').addEventListener('click', () => experienceList.appendChild(makeExperienceItem()));
+      $('#addProject').addEventListener('click', () => projectList.appendChild(makeProjectItem()));
+      $('#addSkill').addEventListener('click', () => skillList.appendChild(makeSkillItem()));
+      $('#addCert').addEventListener('click', () => certList.appendChild(makeCertItem()));
+
+      // Build JSON representation
+      function buildJSON() {
+        const form = $('#resumeForm');
+        const data = {
+          fullName: form.fullName.value.trim(),
+          title: form.title.value.trim(),
+          email: form.email.value.trim(),
+          phone: form.phone.value.trim(),
+          summary: form.summary.value.trim(),
+          linkedin: form.linkedin.value.trim(),
+          github: form.github.value.trim(),
+          education: [],
+          experience: [],
+          projects: [],
+          skills: [],
+          certifications: []
+        };
+
+        // education
+        Array.from(educationList.children).forEach(node => {
+          const row = {
+            degree: node.querySelector('[name="degree"]').value.trim(),
+            institution: node.querySelector('[name="institution"]').value.trim(),
+            field: node.querySelector('[name="field"]').value.trim(),
+            duration: node.querySelector('[name="duration"]').value.trim(),
+            notes: node.querySelector('[name="eduNotes"]').value.trim()
+          };
+          // skip empty rows
+          if (row.institution || row.degree) data.education.push(row);
+        });
+
+        // experience
+        Array.from(experienceList.children).forEach(node => {
+          const row = {
+            role: node.querySelector('[name="role"]').value.trim(),
+            org: node.querySelector('[name="org"]').value.trim(),
+            start: node.querySelector('[name="start"]').value,
+            end: node.querySelector('[name="end"]').value,
+            notes: node.querySelector('[name="expNotes"]').value.trim()
+          };
+          if (row.role || row.org) data.experience.push(row);
+        });
+
+        // projects
+        Array.from(projectList.children).forEach(node => {
+          const row = {
+            title: node.querySelector('[name="title"]').value.trim(),
+            link: node.querySelector('[name="link"]').value.trim(),
+            notes: node.querySelector('[name="projNotes"]').value.trim()
+          };
+          if (row.title) data.projects.push(row);
+        });
+
+        // skills
+        Array.from(skillList.children).forEach(node => {
+          const row = {
+            skill: node.querySelector('[name="skill"]').value.trim(),
+            level: node.querySelector('[name="level"]').value.trim()
+          };
+          if (row.skill) data.skills.push(row);
+        });
+
+        // certs
+        Array.from(certList.children).forEach(node => {
+          const row = {
+            cert: node.querySelector('[name="cert"]').value.trim(),
+            issuer: node.querySelector('[name="issuer"]').value.trim(),
+            date: node.querySelector('[name="certDate"]').value
+          };
+          if (row.cert) data.certifications.push(row);
+        });
+
+        return data;
+      }
+
+      // Render preview from JSON
+      function renderPreview(data) {
+        $('#pvName').textContent = data.fullName || 'Your Name';
+        $('#pvTitle').textContent = data.title || '';
+        const metaParts = [];
+        if (data.email) metaParts.push(data.email);
+        if (data.phone) metaParts.push(data.phone);
+        if (data.linkedin) metaParts.push('LinkedIn');
+        if (data.github) metaParts.push('GitHub');
+        $('#pvMeta').textContent = metaParts.join(' • ');
+
+        // summary
+        if (data.summary) {
+          $('#pvSummary').style.display = 'block';
+          $('#pvSummaryText').textContent = data.summary;
+        } else {
+          $('#pvSummary').style.display = 'none';
+        }
+
+        // education
+        const edCont = $('#pvEducation');
+        edCont.innerHTML = '';
+        if (data.education && data.education.length) {
+          $('#pvEducationSection').style.display = 'block';
+          data.education.forEach(ed => {
+            const div = document.createElement('div');
+            div.className = 'item';
+            div.innerHTML = `<strong>${escapeHtml(ed.degree)} — ${escapeHtml(ed.field)}</strong>
+              <div class="muted">${escapeHtml(ed.institution)} • ${escapeHtml(ed.duration)}</div>
+              <div style="margin-top:6px">${escapeHtml(ed.notes)}</div>`;
+            edCont.appendChild(div);
+          });
+        } else {
+          $('#pvEducationSection').style.display = 'none';
+        }
+
+        // experience
+        const exCont = $('#pvExperience');
+        exCont.innerHTML = '';
+        if (data.experience && data.experience.length) {
+          $('#pvExperienceSection').style.display = 'block';
+          data.experience.forEach(ex => {
+            const div = document.createElement('div');
+            div.className = 'item';
+            const dateText = (ex.start || ex.end) ? `${ex.start || ''} - ${ex.end || 'Present'}` : '';
+            div.innerHTML = `<strong>${escapeHtml(ex.role)}</strong>
+              <div class="muted">${escapeHtml(ex.org)} ${dateText ? ' • ' + dateText : ''}</div>
+              <div style="margin-top:6px">${escapeHtml(ex.notes)}</div>`;
+            exCont.appendChild(div);
+          });
+        } else {
+          $('#pvExperienceSection').style.display = 'none';
+        }
+
+        // projects
+        const prCont = $('#pvProjects');
+        prCont.innerHTML = '';
+        if (data.projects && data.projects.length) {
+          $('#pvProjectSection').style.display = 'block';
+          data.projects.forEach(pr => {
+            const div = document.createElement('div');
+            div.className = 'item';
+            const linkHtml = pr.link ? ` • <a href="${escapeHtml(pr.link)}" target="_blank" rel="noopener" style="color:var(--accent-700)">${escapeHtml(pr.link)}</a>` : '';
+            div.innerHTML = `<strong>${escapeHtml(pr.title)}</strong>
+              <div class="muted">${linkHtml}</div>
+              <div style="margin-top:6px">${escapeHtml(pr.notes)}</div>`;
+            prCont.appendChild(div);
+          });
+        } else {
+          $('#pvProjectSection').style.display = 'none';
+        }
+
+        // skills
+        const skCont = $('#pvSkills');
+        skCont.innerHTML = '';
+        if (data.skills && data.skills.length) {
+          $('#pvSkillsSection').style.display = 'block';
+          data.skills.forEach(sk => {
+            const span = document.createElement('span');
+            span.className = 'skill-pill';
+            span.textContent = sk.skill + (sk.level ? ' — ' + sk.level : '');
+            skCont.appendChild(span);
+          });
+        } else {
+          $('#pvSkillsSection').style.display = 'none';
+        }
+
+        // certs
+        const ctCont = $('#pvCerts');
+        ctCont.innerHTML = '';
+        if (data.certifications && data.certifications.length) {
+          $('#pvCertSection').style.display = 'block';
+          data.certifications.forEach(c => {
+            const div = document.createElement('div');
+            div.className = 'item';
+            div.innerHTML = `<strong>${escapeHtml(c.cert)}</strong>
+              <div class="muted">${escapeHtml(c.issuer)} ${c.date ? ' • ' + c.date : ''}</div>`;
+            ctCont.appendChild(div);
+          });
+        } else {
+          $('#pvCertSection').style.display = 'none';
+        }
+
+        // update JSON output
+        jsonOut.textContent = JSON.stringify(data, null, 2);
+      }
+
+      // Export JSON file
+      function exportJson(data) {
+        const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        const safeName = (data.fullName || 'resume').replace(/\s+/g,'_').toLowerCase();
+        a.download = safeName + '_resume.json';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      }
+
+      // Local storage helpers
+      const STORAGE_KEY = 'hed_intern_resume_v1';
+      function saveToLocal(data) {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+          alert('Saved to browser local storage.');
+        } catch(e){ alert('Unable to save to local storage: ' + e); }
+      }
+      function loadFromLocal() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (!raw) { alert('No saved resume in local storage.'); return null; }
+          return JSON.parse(raw);
+        } catch(e){ alert('Unable to load from local storage: ' + e); return null; }
+      }
+
+      // Reset form
+      function resetAll() {
+        if (!confirm('Reset all fields? This will clear current content.')) return;
+        // clear inputs
+        $('#resumeForm').reset();
+        // clear lists
+        [educationList, experienceList, projectList, skillList, certList].forEach(el => el.innerHTML = '');
+        ensureInitial();
+        const data = buildJSON();
+        renderPreview(data);
+      }
+
+      // Print resume: open small print-only window or print current page's preview
+      function printResume() {
+        // print the preview element only by opening a new window with minimal styles
+        const printContents = document.getElementById('previewResume').outerHTML;
+        const popup = window.open('', '_blank', 'width=800,height=900,scrollbars=yes');
+        if (!popup) { alert('Popup blocked. Please allow popups to print.'); return; }
+        const style = `
+          <style>
+            body{font-family:Inter,Arial,Helvetica,sans-serif;padding:20px;background:#f7fbff}
+            .resume{max-width:720px;margin:0 auto}
+            .name{font-size:28px;color:${getComputedStyle(document.documentElement).getPropertyValue('--accent-700')}}
+            a{color:${getComputedStyle(document.documentElement).getPropertyValue('--accent-700')};text-decoration:none}
+          </style>`;
+        popup.document.open();
+        popup.document.write('<!doctype html><html><head><meta charset="utf-8"><title>Print Resume</title>' + style + '</head><body>' + printContents + '</body></html>');
+        popup.document.close();
+        // Give the new window a moment to render
+        setTimeout(()=>popup.print(), 500);
+      }
+
+      // Escape HTML for safety in attributes/text
+      function escapeHtml(str) {
+        if (!str) return '';
+        return String(str)
+          .replace(/&/g, '&amp;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;');
+      }
+
+      // Bind actions
+      previewBtn.addEventListener('click', () => {
+        const data = buildJSON();
+        renderPreview(data);
+      });
+
+      saveJsonBtn.addEventListener('click', () => {
+        const data = buildJSON();
+        saveToLocal(data);
+      });
+
+      loadJsonBtn.addEventListener('click', () => {
+        const data = loadFromLocal();
+        if (!data) return;
+        populateFromJSON(data);
+        renderPreview(data);
+      });
+
+      exportJsonBtn.addEventListener('click', () => {
+        const data = buildJSON();
+        exportJson(data);
+      });
+
+      printBtn.addEventListener('click', () => {
+        const data = buildJSON();
+        renderPreview(data);
+        printResume();
+      });
+
+      clearBtn.addEventListener('click', resetAll);
+
+      // Populate form from JSON (load)
+      function populateFromJSON(data) {
+        const form = $('#resumeForm');
+        form.fullName.value = data.fullName || '';
+        form.title.value = data.title || '';
+        form.email.value = data.email || '';
+        form.phone.value = data.phone || '';
+        form.summary.value = data.summary || '';
+        form.linkedin.value = data.linkedin || '';
+        form.github.value = data.github || '';
+
+        // Clear lists and rebuild
+        educationList.innerHTML = '';
+        (data.education || []).forEach(ed => educationList.appendChild(makeEducationItem(ed)));
+        experienceList.innerHTML = '';
+        (data.experience || []).forEach(ex => experienceList.appendChild(makeExperienceItem(ex)));
+        projectList.innerHTML = '';
+        (data.projects || []).forEach(pr => projectList.appendChild(makeProjectItem(pr)));
+        skillList.innerHTML = '';
+        (data.skills || []).forEach(sk => skillList.appendChild(makeSkillItem(sk)));
+        certList.innerHTML = '';
+        (data.certifications || []).forEach(ct => certList.appendChild(makeCertItem(ct)));
+      }
+
+      // Initialize
+      ensureInitial();
+      renderPreview(buildJSON());
+
+      // Small client-side validation on required fields before export/print
+      function validateRequired() {
+        const requiredFields = [$('#fullName'), $('#email')];
+        let ok = true;
+        requiredFields.forEach(f => {
+          if (!f.value.trim()) { f.classList.add('invalid'); ok = false; } else { f.classList.remove('invalid'); }
+        });
+        if (!ok) alert('Please fill required fields: Full Name and Email.');
+        return ok;
+      }
+
+      // Intercept export/print to validate minimally
+      exportJsonBtn.addEventListener('click', (e) => { if(!validateRequired()) e.stopImmediatePropagation(); });
+      printBtn.addEventListener('click', (e) => { if(!validateRequired()) e.stopImmediatePropagation(); });
+
+      // Keyboard shortcuts (optional)
+      document.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+          e.preventDefault();
+          const data = buildJSON();
+          saveToLocal(data);
+        }
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'p') {
+          e.preventDefault();
+          printResume();
+        }
+      });
+
+    })();
+</script>
+</body>
+</html>

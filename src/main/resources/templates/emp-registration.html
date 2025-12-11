@@ -3,6 +3,78 @@
         lang="en-US">
 
 <head>
+    <style>
+        .actively-hiring-label {
+   background-color: #83eb97;
+}
+       .hidden {
+   display: none !important;
+}
+
+.user-menu-item {
+   padding: 4px 28px 8px !important;
+}
+
+/* --- Brand Strip Container --- */
+.company_logos_container-custom {
+   width: 100%;
+   overflow: hidden;
+   padding: 20px 0;
+}
+
+.company-logos-custom {
+   display: flex;
+   align-items: center;
+}
+
+.scroll-custom {
+   display: flex;
+   white-space: nowrap;
+   overflow: hidden;
+   position: relative;
+}
+
+/* --- Image Strip (contains one full loop) --- */
+.image-strip-custom {
+   display: flex;
+   animation: scroll-custom-left 20s linear infinite;
+}
+
+/* --- Uniform Logo Sizing + Spacing --- */
+.image-strip-custom img {
+   width: 200px;          /* same width for all logos */
+   height: 100px;          /* same height for all logos */
+   object-fit: contain;   /* keeps aspect ratio */
+   padding: 10px 20px;    /* consistent spacing between logos */
+   box-sizing: border-box;
+   opacity: 1;
+   transition: 0.3s ease;
+}
+
+/* Optional hover effect */
+.image-strip-custom img:hover {
+   transform: scale(1.08);
+}
+
+/* Pause scroll on hover */
+.scroll-custom:hover .image-strip-custom {
+   animation-play-state: paused;
+}
+
+/* --- Infinite Scroll Animation --- */
+@keyframes scroll-custom-left {
+   0% {
+       transform: translateX(0);
+   }
+   100% {
+       transform: translateX(-50%); /* must be half since you duplicated strip */
+   }
+}
+
+        .marquee {
+            height: 100px !important;
+        }
+    </style>
     <meta http-equiv="X-UA-Compatible" content="IE=9" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0" />
@@ -10,12 +82,12 @@
     <meta property="og:type" content="website" />
             <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <link rel="preload" href="https://internshala.com//static/images/home/sprites/img-assets.png" as="image"/>
+        <link rel="preload" href="/images/home/sprites/img-assets.png" as="image"/>
     <meta name="twitter:site" content="@Internshala" />
             <meta name="twitter:card" content="summary_large_image" />
     
     <meta name="twitter:creator" content="@internshala" />
-            <meta name="twitter:image:src" content="https://internshala.com//static/images/internshala_og_image.jpg" />
+            <meta name="twitter:image:src" content="/images/internshala_og_image.jpg" />
             <meta name="theme-color" content="#ffffff" />
     <meta name="msapplication-navbutton-color" content="#ffffff" />
     <meta name="format-detection" content="telephone=no" />
@@ -23,10 +95,10 @@
             <link as="font" href="/fonts/Inter.woff2?v=3.11" type="font/woff2" crossorigin />
             <link as="font" href="/fonts/internshala-icons.woff2?vw3rgh" type="font/woff2"  crossorigin />    <script src="/js/web_vitals/web-vitals.umd.js"></script>
             <script src="/js/includes/common/libraries.2583691470.js" defer></script>
-                <link rel="stylesheet" href="https://internshala.com//static/cdn/4.4.1/css/bootstrap.min.css" />
+                <link rel="stylesheet" href="/cdn/4.4.1/css/bootstrap.min.css" />
 				<link rel="stylesheet" href="/css/icons.css" />
         
-    <link rel="icon" href="https://internshala.com//favicon.ico?v=5" />
+    <link rel="icon" href="/favicon.ico?v=5" />
     <script nonce="Ea7gKaquv6aiM/zLLf9d/Q==">
         var os_type = "";
         var browser_name = 'wget';
@@ -42,23 +114,22 @@
         var fresherJobsMinCtc = 2;
         var show_maintenance_ribbon = false;
         var maintenance_ribbon_message = "";
-        var base_url = 'https://internshala.com/';
-        var bulk_request_url_with_trailing_slash = 'https://internshala.com/';
+        var base_url = '';
+        var bulk_request_url_with_trailing_slash = '';
         var is_g_recaptcha = "6LdwW1ckAAAAAKcsi3VSrXg49B7GXfisCJDmI9kf";
         var error_ribbon_support_email = "support@internshala.com";
 </script>
     <link rel="stylesheet" href="/css/icons.css" />
-    <title >Hire Interns &amp; Freshers | Post Internships &amp; Jobs | Internshala</title>
-        <meta name="description" content="Post internships &amp; jobs online for free at Internshala to hire interns &amp; freshers across 200+ profiles &amp; locations in India. Post your internship requirements today!" />
-        <meta property="og:description" content="Post internships &amp; jobs online for free at Internshala to hire interns &amp; freshers across 200+ profiles &amp; locations in India. Post your internship requirements today!" />
-        <meta property="og:image" content="https://internshala.com//static/images/internshala_og_image.jpg" />
+        <meta name="description" content="Post internships &amp; jobs online for free at Internshala to hire interns &amp; freshers across 200+ profiles &amp; locations in Odisha. Post your internship requirements today!" />
+        <meta property="og:description" content="Post internships &amp; jobs online for free at Internshala to hire interns &amp; freshers across 200+ profiles &amp; locations in Odisha. Post your internship requirements today!" />
+        <meta property="og:image" content="/images/internshala_og_image.jpg" />
         <link href="/css/registration/employer/registration_new/registration.1764753392.css" rel="stylesheet" type="text/css" />
         <script src="/js/combined/common_form.1764565072.js" defer="" type="text/javascript" ></script>
         <script src="/js/combined/employer-registration-v2.1761022939.js" defer="" type="text/javascript" ></script>
         <script src="/js/student/app_download.1732685003.js" defer="" type="text/javascript" ></script>
         <script src="/js/footer.1760584489.js" defer="" type="text/javascript" ></script>
         <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdwW1ckAAAAAKcsi3VSrXg49B7GXfisCJDmI9kf" defer="" type="text/javascript" ></script>
-    <link rel='canonical' href='https://internshala.com/hire-talent/'/>
+    <link rel='canonical' href='hire-talent/'/>
     <script nonce="Ea7gKaquv6aiM/zLLf9d/Q==">
     function sendToGTM(name, delta, id) {
         if (typeof dataLayer == 'undefined') {
@@ -422,7 +493,7 @@
                     What happened?
                 </div>
                 <div>
-                    We have determined that this account is violation of IAPS's <span class="primary_color"><a href="https://internshala.com/terms">rules</a></span>.
+                    We have determined that this account is violation of IAPS's <span class="primary_color"><a href="terms">rules</a></span>.
                 </div>
                 <div class="content_specially_for">
                     Specifically for,
@@ -467,18 +538,18 @@
                             <span>Web Developers</span>
                         </div>
                         <div class="ham_emp_link_container">
-                            <a href="https://internshala.com/hire-web-developers?utm_source=employer_header" class="ham_emp_link">Web Developers</a>
-                            <a href="https://internshala.com/hire-reactjs-developers?utm_source=employer_header" class="ham_emp_link">ReactJS Developers</a>
-                            <a href="https://internshala.com/hire-react-native-developers?utm_source=employer_header" class="ham_emp_link">ReactNative Developers</a>
-                            <a href="https://internshala.com/hire-laravel-developers?utm_source=employer_header" class="ham_emp_link">Laravel Developers</a>
-                            <a href="https://internshala.com/hire-nodejs-developers?utm_source=employer_header" class="ham_emp_link">NodeJS Developers</a>
-                            <a href="https://internshala.com/hire-angularjs-developers?utm_source=employer_header" class="ham_emp_link">AngularJS Developers</a>
-                            <a href="https://internshala.com/hire-php-developers?utm_source=employer_header" class="ham_emp_link">PHP Developers</a>
-                            <a href="https://internshala.com/hire-wordpress-developers?utm_source=employer_header" class="ham_emp_link">WordPress Developers</a>
-                            <a href="https://internshala.com/hire-woocommerce-developers?utm_source=employer_header" class="ham_emp_link">WooCommerce Developers</a>
-                            <a href="https://internshala.com/hire-front-end-developers?utm_source=employer_header" class="ham_emp_link">FrontEnd Developers</a>
-                            <a href="https://internshala.com/hire-magento-developers?utm_source=employer_header" class="ham_emp_link">Magento Developers</a>
-                            <a href="https://internshala.com/hire-shopify-developers?utm_source=employer_header" class="ham_emp_link">Shopify Developers</a>
+                            <a href="hire-web-developers?utm_source=employer_header" class="ham_emp_link">Web Developers</a>
+                            <a href="hire-reactjs-developers?utm_source=employer_header" class="ham_emp_link">ReactJS Developers</a>
+                            <a href="hire-react-native-developers?utm_source=employer_header" class="ham_emp_link">ReactNative Developers</a>
+                            <a href="hire-laravel-developers?utm_source=employer_header" class="ham_emp_link">Laravel Developers</a>
+                            <a href="hire-nodejs-developers?utm_source=employer_header" class="ham_emp_link">NodeJS Developers</a>
+                            <a href="hire-angularjs-developers?utm_source=employer_header" class="ham_emp_link">AngularJS Developers</a>
+                            <a href="hire-php-developers?utm_source=employer_header" class="ham_emp_link">PHP Developers</a>
+                            <a href="hire-wordpress-developers?utm_source=employer_header" class="ham_emp_link">WordPress Developers</a>
+                            <a href="hire-woocommerce-developers?utm_source=employer_header" class="ham_emp_link">WooCommerce Developers</a>
+                            <a href="hire-front-end-developers?utm_source=employer_header" class="ham_emp_link">FrontEnd Developers</a>
+                            <a href="hire-magento-developers?utm_source=employer_header" class="ham_emp_link">Magento Developers</a>
+                            <a href="hire-shopify-developers?utm_source=employer_header" class="ham_emp_link">Shopify Developers</a>
                         </div>
                     </div>
                 </div>
@@ -491,11 +562,11 @@
                             <span>Software Developers</span>
                         </div>
                         <div class="ham_emp_link_container">
-                            <a href="https://internshala.com/hire-software-developers?utm_source=employer_header" class="ham_emp_link">Software Developers</a>
-                            <a href="https://internshala.com/hire-dot-net-developers?utm_source=employer_header" class="ham_emp_link">NET Developers</a>
-                            <a href="https://internshala.com/hire-full-stack-developers?utm_source=employer_header" class="ham_emp_link">Full Stack Developers</a>
-                            <a href="https://internshala.com/hire-java-developers?utm_source=employer_header" class="ham_emp_link">Java Developers</a>
-                            <a href="https://internshala.com/hire-python-developers?utm_source=employer_header" class="ham_emp_link">Python Developers</a>
+                            <a href="hire-software-developers?utm_source=employer_header" class="ham_emp_link">Software Developers</a>
+                            <a href="hire-dot-net-developers?utm_source=employer_header" class="ham_emp_link">NET Developers</a>
+                            <a href="hire-full-stack-developers?utm_source=employer_header" class="ham_emp_link">Full Stack Developers</a>
+                            <a href="hire-java-developers?utm_source=employer_header" class="ham_emp_link">Java Developers</a>
+                            <a href="hire-python-developers?utm_source=employer_header" class="ham_emp_link">Python Developers</a>
                         </div>
                     </div>
                 </div>
@@ -508,10 +579,10 @@
                             <span>Mobile App Developers</span>
                         </div>
                         <div class="ham_emp_link_container">
-                        <a href="https://internshala.com/hire-mobile-app-developers?utm_source=employer_header" class="ham_emp_link">Mobile App Developers</a>
-                        <a href="https://internshala.com/hire-ios-app-developers?utm_source=employer_header" class="ham_emp_link">iOS Developers</a>
-                        <a href="https://internshala.com/hire-android-app-developers?utm_source=employer_header" class="ham_emp_link">Android Developers</a>
-                        <a href="https://internshala.com/hire-flutter-app-developers?utm_source=employer_header" class="ham_emp_link">Flutter Developers</a>
+                        <a href="hire-mobile-app-developers?utm_source=employer_header" class="ham_emp_link">Mobile App Developers</a>
+                        <a href="hire-ios-app-developers?utm_source=employer_header" class="ham_emp_link">iOS Developers</a>
+                        <a href="hire-android-app-developers?utm_source=employer_header" class="ham_emp_link">Android Developers</a>
+                        <a href="hire-flutter-app-developers?utm_source=employer_header" class="ham_emp_link">Flutter Developers</a>
                         </div>
                     </div>
                 </div>
@@ -524,9 +595,9 @@
                             <span>Designers</span>
                         </div>
                         <div class="ham_emp_link_container">
-                        <a href="https://internshala.com/hire-web-designers?utm_source=employer_header" class="ham_emp_link" >Web Designer</a>
-                        <a href="https://internshala.com/hire-graphic-designers?utm_source=employer_header" class="ham_emp_link">Graphic Designer</a>
-                        <a href="https://internshala.com/hire-ui-ux-designers?utm_source=employer_header" class="ham_emp_link">UI/UX Designer</a>
+                        <a href="hire-web-designers?utm_source=employer_header" class="ham_emp_link" >Web Designer</a>
+                        <a href="hire-graphic-designers?utm_source=employer_header" class="ham_emp_link">Graphic Designer</a>
+                        <a href="hire-ui-ux-designers?utm_source=employer_header" class="ham_emp_link">UI/UX Designer</a>
                         </div>
                     </div>
                 </div>
@@ -540,10 +611,10 @@
                             <span>Digital Marketers</span>
                         </div>
                         <div class="ham_emp_link_container">
-                        <a href="https://internshala.com/hire-digital-marketers?utm_source=employer_header" class="ham_emp_link">Digital Marketers</a>
-                        <a href="https://internshala.com/hire-social-media-managers?utm_source=employer_header" class="ham_emp_link" >Social Media Expert</a>
-                        <a href="https://internshala.com/hire-seo-experts?utm_source=employer_header" class="ham_emp_link">SEO Expert</a>
-                        <a href="https://internshala.com/hire-ppc-expert?utm_source=employer_header" class="ham_emp_link">PPC Extperts</a>
+                        <a href="hire-digital-marketers?utm_source=employer_header" class="ham_emp_link">Digital Marketers</a>
+                        <a href="hire-social-media-managers?utm_source=employer_header" class="ham_emp_link" >Social Media Expert</a>
+                        <a href="hire-seo-experts?utm_source=employer_header" class="ham_emp_link">SEO Expert</a>
+                        <a href="hire-ppc-expert?utm_source=employer_header" class="ham_emp_link">PPC Extperts</a>
                         </div>
                     </div>
                 </div>
@@ -557,9 +628,9 @@
                             <span>Data & Analytics</span>
                         </div>
                         <div class="ham_emp_link_container">
-                        <a href="https://internshala.com/hire-data-scientists?utm_source=employer_header" class="ham_emp_link" >Data Scientist</a>
-                        <a href="https://internshala.com/hire-data-analysts?utm_source=employer_header" class="ham_emp_link">Data Analysts</a>
-                        <a href="https://internshala.com/hire-power-bi-developers?utm_source=employer_header" class="ham_emp_link">Power BI Developers</a>
+                        <a href="hire-data-scientists?utm_source=employer_header" class="ham_emp_link" >Data Scientist</a>
+                        <a href="hire-data-analysts?utm_source=employer_header" class="ham_emp_link">Data Analysts</a>
+                        <a href="hire-power-bi-developers?utm_source=employer_header" class="ham_emp_link">Power BI Developers</a>
                         </div>
                     </div>
                 </div>
@@ -575,8 +646,8 @@
                         </div>
 
                         <div class="ham_emp_link_container">
-                            <a href="https://internshala.com/hire-telecallers/?utm_source=employer_header" class="ham_emp_link">Telecallers</a>
-                            <a href="https://internshala.com/hire-customer-support/?utm_source=employer_header" class="ham_emp_link">Customer Support</a>
+                            <a href="hire-telecallers/?utm_source=employer_header" class="ham_emp_link">Telecallers</a>
+                            <a href="hire-customer-support/?utm_source=employer_header" class="ham_emp_link">Customer Support</a>
                         </div>
                     </div>
                 </div>
@@ -592,8 +663,8 @@
                         </div>
 
                         <div class="ham_emp_link_container">
-                            <a href="https://internshala.com/hire-content-writers/?utm_source=employer_header" class="ham_emp_link">Content Writers</a>
-                            <a href="https://internshala.com/hire-video-editors/?utm_source=employer_header" class="ham_emp_link">Video Editors</a>
+                            <a href="hire-content-writers/?utm_source=employer_header" class="ham_emp_link">Content Writers</a>
+                            <a href="hire-video-editors/?utm_source=employer_header" class="ham_emp_link">Video Editors</a>
                         </div>
                     </div>
                 </div>
@@ -608,8 +679,8 @@
                         </div>
 
                         <div class="ham_emp_link_container">
-                            <a href="https://internshala.com/hire-marketing-executive/?utm_source=employer_header" class="ham_emp_link">Marketing Executive</a>
-                            <a href="https://internshala.com/hire-sales-executive/?utm_source=employer_header" class="ham_emp_link">Sales Executives</a>
+                            <a href="hire-marketing-executive/?utm_source=employer_header" class="ham_emp_link">Marketing Executive</a>
+                            <a href="hire-sales-executive/?utm_source=employer_header" class="ham_emp_link">Sales Executives</a>
                         </div>
                     </div>
                 </div>
@@ -623,12 +694,12 @@
                         </div>
 
                         <div class="ham_emp_link_container">
-                            <a href="https://internshala.com/hire-data-entry-operator/?utm_source=employer_header" class="ham_emp_link">Data Entry Operators</a>
-                            <a href="https://internshala.com/hire-recruiters/?utm_source=employer_header" class="ham_emp_link">Recruiters</a>
+                            <a href="hire-data-entry-operator/?utm_source=employer_header" class="ham_emp_link">Data Entry Operators</a>
+                            <a href="hire-recruiters/?utm_source=employer_header" class="ham_emp_link">Recruiters</a>
                         </div>
                     </div>
                 </div>
-                <a href="https://internshala.com/hire-product-managers/?utm_source=employer_header">
+                <a href="hire-product-managers/?utm_source=employer_header">
                     <div class="profile_links_heading">Product Managers</div>
                 </a>
            </div>
@@ -643,16 +714,11 @@
                         <span>Hire for Top Locations</span>
                     </div>
                     <div class="ham_emp_link_container">
-                        <a href="https://internshala.com/free-job-posting-site-in-bangalore?utm_source=employer_header" class="ham_emp_link">Bangalore</a>
-                        <a href="https://internshala.com/free-job-posting-site-in-delhi-ncr?utm_source=employer_header" class="ham_emp_link">Delhi NCR</a>
-                        <a href="https://internshala.com/free-job-posting-site-in-mumbai?utm_source=employer_header" class="ham_emp_link">Mumbai</a>
-                        <a href="https://internshala.com/free-job-posting-site-in-gurgaon?utm_source=employer_header" class="ham_emp_link">Gurgaon</a>
-                        <a href="https://internshala.com/free-job-posting-site-in-hyderabad?utm_source=employer_header" class="ham_emp_link">Hyderabad</a>
-                        <a href="https://internshala.com/free-job-posting-site-in-chennai?utm_source=employer_header" class="ham_emp_link">Chennai</a>
-                        <a href="https://internshala.com/free-job-posting-site-in-kolkata?utm_source=employer_header" class="ham_emp_link">Kolkata</a>
-                        <a href="https://internshala.com/free-job-posting-site-in-pune?utm_source=employer_header" class="ham_emp_link">Pune</a>
-                        <a href="https://internshala.com/free-job-posting-site-in-ahmedabad?utm_source=employer_header" class="ham_emp_link">Ahmedabad</a>
-                        <a href="https://internshala.com/free-job-posting-site-in-coimbatore?utm_source=employer_header" class="ham_emp_link">Coimbatore</a>
+                        <a href="free-job-posting-site-in-bangalore?utm_source=employer_header" class="ham_emp_link">Bhubaneswar</a>
+                        <a href="free-job-posting-site-in-delhi-ncr?utm_source=employer_header" class="ham_emp_link">Cuttack</a>
+                        <a href="free-job-posting-site-in-mumbai?utm_source=employer_header" class="ham_emp_link">Puri</a>
+                        <a href="free-job-posting-site-in-gurgaon?utm_source=employer_header" class="ham_emp_link">Rourkela</a>
+                        <a href="free-job-posting-site-in-hyderabad?utm_source=employer_header" class="ham_emp_link">Ganjam</a>
                     </div>
                 </div>
             </div>
@@ -691,149 +757,16 @@
             <div class="collapse navbar-collapse navbar_desktop">
                 <ul class="navbar-nav nav_menu_container">
                     <div class="employer_landing_pages_links">
-    <div class="employer_landing_profiles_links">
-        <span>Hire for Top Profiles</span>
-        <i class="header-dropdown-arrow-custom"></i>
-        <div class="profiles_links">
-            <div class="profiles_link">
-                <div class="link_title">
-                    <div>Web Developers</div>
-                    <div><i class="ic-chevron-right-custom "></i></div>
-                </div>
-                <div class="links_list">
-                    <a href="https://internshala.com/hire-web-developers?utm_source=employer_header" class="links_list_title">Web Developers</a>
-                    <a href="https://internshala.com/hire-reactjs-developers?utm_source=employer_header">ReactJS Developers</a>
-                    <a href="https://internshala.com/hire-react-native-developers?utm_source=employer_header">ReactNative Developers</a>
-                    <a href="https://internshala.com/hire-laravel-developers?utm_source=employer_header">Laravel Developers</a>
-                    <a href="https://internshala.com/hire-nodejs-developers?utm_source=employer_header">NodeJS Developers</a>
-                    <a href="https://internshala.com/hire-angularjs-developers?utm_source=employer_header">AngularJS Developers</a>
-                    <a href="https://internshala.com/hire-php-developers?utm_source=employer_header">PHP Developers</a>
-                    <a href="https://internshala.com/hire-wordpress-developers?utm_source=employer_header">WordPress Developers</a>
-                    <a href="https://internshala.com/hire-woocommerce-developers?utm_source=employer_header">WooCommerce Developers</a>
-                    <a href="https://internshala.com/hire-front-end-developers?utm_source=employer_header">FrontEnd Developers</a>
-                    <a href="https://internshala.com/hire-magento-developers?utm_source=employer_header">Magento Developers</a>
-                    <a href="https://internshala.com/hire-shopify-developers?utm_source=employer_header">Shopify Developers</a>
-                </div>
-            </div>
-            <div class="profiles_link">
-                <div class="link_title">
-                    <div>Software Developers</div>
-                    <div><i class="ic-chevron-right-custom "></i></div>
-                </div>
-                <div class="links_list">
-                    <a href="https://internshala.com/hire-software-developers?utm_source=employer_header" class="links_list_title">Software Developers</a>
-                    <a href="https://internshala.com/hire-dot-net-developers?utm_source=employer_header">NET Developers</a>
-                    <a href="https://internshala.com/hire-full-stack-developers?utm_source=employer_header">Full Stack Developers</a>
-                    <a href="https://internshala.com/hire-java-developers?utm_source=employer_header">Java Developers</a>
-                    <a href="https://internshala.com/hire-python-developers?utm_source=employer_header">Python Developers</a>
-                </div>
-            </div>
-            <div class="profiles_link">
-                <div class="link_title">
-                    <div>Mobile App Developers</div>
-                    <div><i class="ic-chevron-right-custom "></i></div>
-                </div>
-                <div class="links_list">
-                    <a href="https://internshala.com/hire-mobile-app-developers?utm_source=employer_header" class="links_list_title">Mobile App Developers</a>
-                    <a href="https://internshala.com/hire-ios-app-developers?utm_source=employer_header">iOS Developers</a>
-                    <a href="https://internshala.com/hire-android-app-developers?utm_source=employer_header">Android Developers</a>
-                    <a href="https://internshala.com/hire-flutter-app-developers?utm_source=employer_header">Flutter Developers</a>
-                </div>
-            </div>
-            <div class="profiles_link">
-                <div class="link_title">
-                    <div>Designers</div>
-                    <div><i class="ic-chevron-right-custom "></i></div>
-                </div>
-                <div class="links_list">
-                    <a href="https://internshala.com/hire-web-designers?utm_source=employer_header">Web Designer</a>
-                    <a href="https://internshala.com/hire-graphic-designers?utm_source=employer_header">Graphic Designer</a>
-                    <a href="https://internshala.com/hire-ui-ux-designers?utm_source=employer_header">UI/UX Designer</a>
-                </div>
-            </div>
-            <div class="profiles_link">
-                <div class="link_title">
-                    <div>Digital Marketers</div>
-                    <div><i class="ic-chevron-right-custom "></i></div>
-                </div>
-                <div class="links_list">
-                    <a href="https://internshala.com/hire-digital-marketers?utm_source=employer_header" class="links_list_title">Digital Marketers</a>
-                    <a href="https://internshala.com/hire-social-media-managers?utm_source=employer_header">Social Media Expert</a>
-                    <a href="https://internshala.com/hire-seo-experts?utm_source=employer_header">SEO Expert</a>
-                    <a href="https://internshala.com/hire-ppc-expert/?utm_source=employer_header">PPC Experts</a>
-                </div>
-            </div>
-             <div class="profiles_link">
-                <div class="link_title">
-                    <div>Data & Analytics</div>
-                    <div><i class="ic-chevron-right-custom "></i></div>
-                </div>
-                <div class="links_list">
-                    <a href="https://internshala.com/hire-data-scientists/?utm_source=employer_header">Data Scientists</a>
-                    <a href="https://internshala.com/hire-data-analysts/?utm_source=employer_header">Data Analysts</a>
-                    <a href="https://internshala.com/hire-power-bi-developers/?utm_source=employer_header">Power BI Developers</a>
-                </div>
-            </div>
-             <div class="profiles_link">
-                <div class="link_title">
-                    <div>Customer Service & Support</div>
-                    <div><i class="ic-chevron-right-custom "></i></div>
-                </div>
-                <div class="links_list">
-                    <a href="https://internshala.com/hire-telecallers/?utm_source=employer_header">Telecallers</a>
-                    <a href="https://internshala.com/hire-customer-support/?utm_source=employer_header">Customer Support</a>
-                </div>
-            </div>
-              <div class="profiles_link">
-                <div class="link_title">
-                    <div>Content & Media</div>
-                    <div><i class="ic-chevron-right-custom "></i></div>
-                </div>
-                <div class="links_list">
-                    <a href="https://internshala.com/hire-content-writers/?utm_source=employer_header">Content Writers</a>
-                    <a href="https://internshala.com/hire-video-editors/?utm_source=employer_header">Video Editors</a>
-                </div>
-            </div>
-            <div class="profiles_link">
-                <div class="link_title">
-                    <div>Sales & Marketing</div>
-                    <div><i class="ic-chevron-right-custom "></i></div>
-                </div>
-                <div class="links_list">
-                    <a href="https://internshala.com/hire-marketing-executive/?utm_source=employer_header">Marketing Executive</a>
-                    <a href="https://internshala.com/hire-sales-executive/?utm_source=employer_header">Sales Executives</a>
-                </div>
-            </div>
-            <div class="profiles_link">
-                <div class="link_title">
-                    <div>Operations & HR</div>
-                    <div><i class="ic-chevron-right-custom "></i></div>
-                </div>
-                <div class="links_list">
-                    <a href="https://internshala.com/hire-data-entry-operator/?utm_source=employer_header">Data Entry Operators</a>
-                    <a href="https://internshala.com/hire-recruiters/?utm_source=employer_header">Recruiters</a>
-                </div>
-            </div>
-            <div class="profiles_link">
-                    <a href="https://internshala.com/hire-product-managers/?utm_source=employer_header" class="link_title">Product Managers</a>
-            </div>
-        </div>
-    </div>
-    
+
     <div class="employer_landing_locations_links">
-        <span>Hire for Top Locations</span>
+        <span>Hire interns for Top Locations</span>
         <i class="header-dropdown-arrow-custom"></i>
         <div class="locations_links">
-            <a href="https://internshala.com/free-job-posting-site-in-bangalore?utm_source=employer_header">Bangalore</a>
-            <a href="https://internshala.com/free-job-posting-site-in-delhi-ncr?utm_source=employer_header">Delhi NCR</a>
-            <a href="https://internshala.com/free-job-posting-site-in-mumbai?utm_source=employer_header">Mumbai</a>
-            <a href="https://internshala.com/free-job-posting-site-in-gurgaon?utm_source=employer_header">Gurgaon</a>
-            <a href="https://internshala.com/free-job-posting-site-in-hyderabad?utm_source=employer_header">Hyderabad</a>
-            <a href="https://internshala.com/free-job-posting-site-in-chennai?utm_source=employer_header">Chennai</a>
-            <a href="https://internshala.com/free-job-posting-site-in-kolkata?utm_source=employer_header">Kolkata</a>
-            <a href="https://internshala.com/free-job-posting-site-in-pune?utm_source=employer_header">Pune</a>
-            <a href="https://internshala.com/free-job-posting-site-in-ahmedabad?utm_source=employer_header">Ahmedabad</a>
-            <a href="https://internshala.com/free-job-posting-site-in-coimbatore?utm_source=employer_header">Coimbatore</a>
+            <a href="free-job-posting-site-in-bangalore?utm_source=employer_header" class="ham_emp_link">Bhubaneswar</a>
+            <a href="free-job-posting-site-in-delhi-ncr?utm_source=employer_header" class="ham_emp_link">Cuttack</a>
+            <a href="free-job-posting-site-in-mumbai?utm_source=employer_header" class="ham_emp_link">Puri</a>
+            <a href="free-job-posting-site-in-gurgaon?utm_source=employer_header" class="ham_emp_link">Rourkela</a>
+            <a href="free-job-posting-site-in-hyderabad?utm_source=employer_header" class="ham_emp_link">Ganjam</a>
         </div>
     </div>
 </div>
@@ -875,10 +808,10 @@
                         <div id="internship-registration-container-left">
             <div class="hire-talent-ai-revamp">
             <div class="hire-talent-ai-revamp-heading">
-                India's <span>#1 AI-Powered</span> <img src="/images/registration/employer/registration_new/hire_talent_page/sparkle.png" alt="sparkle icon" /> early talent hiring platform
+                Odisha's <span>#1 </span> <img src="/images/registration/employer/registration_new/hire_talent_page/sparkle.png" alt="sparkle icon" /> early talent hiring platform
             </div>
             <h1 class="hire-talent-ai-revamp-sub-heading">
-                Hire Interns and Freshers <span class="faster">for Free</span>
+                Hire Interns <span class="faster">for Free</span>
             </h1>
             <ul class="hire-talent-ai-revamp-benefits-container">
                 <li>
@@ -887,22 +820,22 @@
                 </li>
                 <li>
                     <i class="tick-circle-custom"></i> 
-                    <h2>Get applicants from <span class="bold">top colleges</span> across India</h2>
+                    <h2>Get applicants from <span class="bold">top colleges</span> across Odisha</h2>
                 </li>
             </ul>
             <ul class="hire-talent-ai-revamp-stats-container">
                 <li>
-                    <span class="bold">32 Mn+</span>
+                    <span class="bold">32K+</span>
                     <span>Candidates</span>
                 </li>
                 <li class="line"></li>
                  <li>
-                    <span class="bold">100 K+</span>
+                    <span class="bold">100+</span>
                     <span>Companies</span>
                 </li>
                 <li class="line"></li>
                  <li>
-                    <span class="bold">900+</span>
+                    <span class="bold">30+</span>
                     <span>Cities</span>
                 </li>
             </ul>
@@ -931,7 +864,7 @@
                 <li class="rating-text">Rated by 2,448 users as on 6th October 2025</li>
             </ul>
         </div>
-        <!-- <h2 class="ai-tag-sub-heading">India's #1 <img class="ai-stars-yellow" src="/images/registration/employer/registration_new/hire_talent_page/icons/ai_stars_yellow.svg" /> AI-powered early talent hiring platform</h2> -->
+        <!-- <h2 class="ai-tag-sub-heading">Odisha's #1 <img class="ai-stars-yellow" src="/images/registration/employer/registration_new/hire_talent_page/icons/ai_stars_yellow.svg" /> AI-powered early talent hiring platform</h2> -->
 
     </div>
                     </div>
@@ -948,7 +881,7 @@
     <div class="form-group" >
         <label for="email" class="control-label">Official Email Id </label>
         <div data-toggle="popover"
-             data-content="<div class='email_popover_close'><i class='ic-24-cross'></i></div><div>An official id (example: <span style='color:#1295c9' class='email_example'>name@company_name.com</span>) is strongly recommended as it helps us verify that you represent the company and enables us to provide you a quick service. If you're a student, please register <a href='https://internshala.com/registration/student' tabindex='20000'>here</a>.</div>"
+             data-content="<div class='email_popover_close'><i class='ic-24-cross'></i></div><div>An official id (example: <span style='color:#1295c9' class='email_example'>name@company_name.com</span>) is strongly recommended as it helps us verify that you represent the company and enables us to provide you a quick service. If you're a student, please register <a href='registration/student' tabindex='20000'>here</a>.</div>"
              id="email_desktop">
             <input type="email" class="form-control email-field-employer-registration" id="email" name="email" placeholder="name@company.com" value="">
         </div>
@@ -991,7 +924,7 @@
     <div id="job_registration_form_extras" style="margin-top: 16px">
         <div class="label_toc">
             <span style='color: #333333; line-height: 1.57; font-weight: 400'>
-                By clicking on <b>Post for Free</b>, you agree to our <a href="/terms#employer" target="_blank">T&C</a>.
+                By clicking on <b>Post for Free</b>, you agree to our <a href="/terms-and-condition" target="_blank">T&C</a>.
             </span>
         </div>
 
@@ -1029,7 +962,7 @@
     </div>
     <div class="why-hire-card c-2">
         <div class="heading-txt">1.5 Mn+</div>
-        <div class="sub-heading-txt">Candidates hired <br class="line-break"/>PAN India</div>
+        <div class="sub-heading-txt">Candidates hired <br class="line-break"/>PAN Odisha</div>
     </div>
     <div class="why-hire-card c-3">
         <div class="heading-txt">200+</div>
@@ -1045,88 +978,25 @@
             <div class="trusted_section" id="trusted_section">
     <h2 class="trusted_section_text">Trusted by 100,000+ brands</h2>
     <div class="marquee">
-        <div class="scroll">
-            <div class="image-strip"></div>
-        </div>
-    </div>
-</div><div class="features-div">
-    <div class="feature-heading-main">
-        <h2 class="h-06-bold">A One-Stop Solution for Fast & Hassle-Free Hiring</h2>
-    </div>
-    <div class="features features-large-screen">
-            <div class="sidebar-div">
-            <div id="shortlisting" class="feature-card">
-                    <div class="feature-icon">
-                        <img class="icon-active" src="/images/registration/employer/registration_new/hire_talent_page/icons/ai_active.svg" alt="">
-                        <img class="icon-inactive" src="/images/registration/employer/registration_new/hire_talent_page/icons/ai_inactive.svg" alt="">
-                    </div>
-                    <div class="feature-card-body">
-                        <div class="text">
-                            <div class="heading1">
-                                <h3 class="h-09-semi-bold">AI-powered Smart Shortlisting</h3>
-                            </div>
-                            <div class="sub-heading1 hire-talent">Quickly filter relevant profiles with AI Interviews and AI Screener</div>
-                        </div>
-                    </div>
-                </div>
-                <div id="communication" class="feature-card">
-                    <div class="feature-icon">
-                        <img class="icon-active" src="/images/registration/employer/registration_new/hire_talent_page/icons/database_active.svg" alt="">
-                        <img class="icon-inactive" src="/images/registration/employer/registration_new/hire_talent_page/icons/database_inactive.svg" alt="">
-                    </div>
-                    <div class="feature-card-body">
-                        <div class="text">
-                            <div class="heading1">
-                                <h3 class="h-09-semi-bold">Intelligent Candidate Database</h3>
-                            </div>
-                            <div class="sub-heading1 hire-talent">Access to 32 Mn+ candidates and get the best matches</div>
-                        </div>
-                    </div>
-                </div>
-                <div id="hiring-tools" class="feature-card ">
-                    <div class="feature-icon">
-                        <img class="icon-active" src="/images/registration/employer/registration_new/hire_talent_page/icons/advanced_hiring_active.svg" alt="">
-                        <img class="icon-inactive" src="/images/registration/employer/registration_new/hire_talent_page/icons/advanced_hiring_inactive.svg" alt="">
-                    </div>
-                    <div class="feature-card-body">
-                        <div class="text">
-                            <div class="heading1">
-                                <h3 class="h-09-semi-bold">Advanced Hiring Tools</h3>
-                            </div>
-                            <div class="sub-heading1 hire-talent">Instantly chat with candidates, send assignments, schedule Interviews and much more.</div>
-                        </div>
-                    </div>
-                </div>
-
+        <div class="scroll-custom strip-1">
+            <div class="image-strip-custom">
+                <img src="/images/brand-logos/og-logo.png" alt="Odisha Government Logo">
+                <img src="/images/brand-logos/otv-logo.png" alt="OTV Logo">
+                <img src="/images/brand-logos/mayfair-logo.png" alt="Mayfair Logo">
+                <img src="/images/brand-logos/icici-logo.png" alt="ICICI Logo">
+                <img src="/images/brand-logos/prameya-logo.png" alt="Prameya Logo">
+                <img src="/images/brand-logos/op-logo.png" alt="Odisha Police Logo">
+                <img src="/images/brand-logos/nalco-logo.png" alt="NALCO Logo">
             </div>
-            <!-- <div class="main-feature"></div> -->
-            <div class="main-feature-animated hire-talent-main-feature-animated">
-                <div class="img-1 hire-talent"></div>
-                <div class="img-2 hire-talent"></div>
-                <div class="img-3 hire-talent"></div>
+            <div class="image-strip-custom">
+                <img src="/images/brand-logos/og-logo.png" alt="Odisha Government Logo">
+                <img src="/images/brand-logos/otv-logo.png" alt="OTV Logo">
+                <img src="/images/brand-logos/mayfair-logo.png" alt="Mayfair Logo">
+                <img src="/images/brand-logos/icici-logo.png" alt="ICICI Logo">
+                <img src="/images/brand-logos/prameya-logo.png" alt="Prameya Logo">
+                <img src="/images/brand-logos/op-logo.png" alt="Odisha Police Logo">
+                <img src="/images/brand-logos/nalco-logo.png" alt="NALCO Logo">
             </div>
-    </div>
-    <div class="features features-small-screen">
-    <div class="feature-card-2">
-            <div class="feature-heading">
-                <div class="feature-heading">AI-powered Smart Shortlisting</div>
-            </div>
-            <div class="feature-sub-heading">Quickly filter relevant profiles with AI interviews and AI powered shortlisting</div>
-            <div class="feature-img-div faster-shortlisting-2 hire-talent"></div>
-        </div>
-        <div class="feature-card-2">
-            <div class="feature-heading">
-                <div class="feature-heading">Intelligent Candidate Database</div>
-                </div>
-            <div class="feature-sub-heading">Access to 30 Mn+ candidates and see the best matches in seconds.</div>
-            <div class="feature-img-div seamless-communication-2 hire-talent"></div>
-        </div>
-        <div class="feature-card-2">
-            <div class="feature-heading">
-                <div class="feature-heading">Advanced hiring tools</div>
-            </div>
-            <div class="feature-sub-heading">Instantly chat with candidates, send assignments, schedule Interviews and much more.</div>
-            <div class="feature-img-div hiring-tools-2 hire-talent"></div>
         </div>
     </div>
 </div>
@@ -1247,453 +1117,7 @@
             <div class="dots"></div>
             <div class="ic-chevron-right-custom"></div>
         </div>
-    </div><div class="pj_revamp_hire_section ">
-    <h2 class="pj_revamp_hire_section_heading">Hire for 100+ Profiles on IAPS</h2>
-    <div class="pj_hire_candidates pj_hire_profiles_candidates">
-                   <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/developers" class="pj_hire_candidate_link">
-                        <span>Developers</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            41,79,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/hire-flutter-app-developers" class="pj_hire_candidate_link">
-                            <span>Flutter App Developers</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                35,11,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>             <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/hire-content-writers" class="pj_hire_candidate_link">
-                        <span>Content Writers</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            30,33,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/hire-web-developers" class="pj_hire_candidate_link">
-                            <span>Web Developers</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                27,88,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>             <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/hire-social-media-managers" class="pj_hire_candidate_link">
-                        <span>Social Media Managers</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            26,65,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/hire-python-developers" class="pj_hire_candidate_link">
-                            <span>Python Developers</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                24,78,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>             <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/hire-java-developers" class="pj_hire_candidate_link">
-                        <span>Java Developers</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            24,52,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/hire-software-developers" class="pj_hire_candidate_link">
-                            <span>Software Developers</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                23,95,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>             <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/hire-graphic-designers" class="pj_hire_candidate_link">
-                        <span>Graphic Designers</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            15,14,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/hire-data-scientists" class="pj_hire_candidate_link">
-                            <span>Data Scientists</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                11,99,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>             <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/hire-mobile-app-developers" class="pj_hire_candidate_link">
-                        <span>Mobile App Developers</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            11,55,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/hire-video-editors" class="pj_hire_candidate_link">
-                            <span>Video Editors</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                6,70,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>             <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/hire-android-app-developers" class="pj_hire_candidate_link">
-                        <span>Android App Developers</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            5,34,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/hire-ui-ux-designers" class="pj_hire_candidate_link">
-                            <span>UI/UX Designers</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                5,07,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>             <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/hire-web-designers" class="pj_hire_candidate_link">
-                        <span>Web Designers</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            5,07,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/hire-react-native-developers" class="pj_hire_candidate_link">
-                            <span>React Native Developers</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                5,07,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>             <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/hire-front-end-developers" class="pj_hire_candidate_link">
-                        <span>Front-End Developers</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            4,57,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/hire-full-stack-developers" class="pj_hire_candidate_link">
-                            <span>Full-Stack Developers</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                4,00,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>             <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/hire-seo-experts" class="pj_hire_candidate_link">
-                        <span>SEO Experts</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            3,53,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/hire-wordpress-developers" class="pj_hire_candidate_link">
-                            <span>WordPress Developers</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                2,09,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>             <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/hire-php-developers" class="pj_hire_candidate_link">
-                        <span>PHP Developers</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            1,73,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/hire-reactjs-developers" class="pj_hire_candidate_link">
-                            <span>ReactJS Developers</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                1,47,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>             <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/hire-nodejs-developers" class="pj_hire_candidate_link">
-                        <span>NodeJS Developers</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            1,26,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/hire-dot-net-developers" class="pj_hire_candidate_link">
-                            <span>.NET Developers</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                65,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>             <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/hire-ios-app-developers" class="pj_hire_candidate_link">
-                        <span>iOS App Developers</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            62,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/hire-angularjs-developers" class="pj_hire_candidate_link">
-                            <span>AngularJS Developers</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                44,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>     </div>
-
-    <div class="cards-arrow-section">
-        <div class="ic-chevron-left-custom"></div>
-        <div class="pj-hire-profile-dots"></div>
-        <div class="ic-chevron-right-custom"></div>
     </div>
-
-</div>
-<div class="pj_revamp_hire_section pj_bg">
-    <h2 class="pj_revamp_hire_section_heading">Hire PAN Odisha on IAPS</h2>
-    <div class="pj_hire_candidates pj_hire_pan_candidates">
-                   <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/free-job-posting-site-in-delhi-ncr" class="pj_hire_candidate_link">
-                        <span>Delhi-NCR</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            38,83,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/free-job-posting-site-in-bangalore" class="pj_hire_candidate_link">
-                            <span>Bangalore</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                34,87,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>             <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/free-job-posting-site-in-mumbai" class="pj_hire_candidate_link">
-                        <span>Mumbai</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            30,20,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/free-job-posting-site-in-pune" class="pj_hire_candidate_link">
-                            <span>Pune</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                22,69,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>             <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/free-job-posting-site-in-hyderabad" class="pj_hire_candidate_link">
-                        <span>Hyderabad</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            22,33,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/free-job-posting-site-in-gurgaon" class="pj_hire_candidate_link">
-                            <span>Gurgaon</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                21,41,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>             <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/free-job-posting-site-in-tamil-nadu" class="pj_hire_candidate_link">
-                        <span>Tamil Nadu</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            20,71,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/free-job-posting-site-in-chennai" class="pj_hire_candidate_link">
-                            <span>Chennai</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                19,12,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>             <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/free-job-posting-site-in-noida" class="pj_hire_candidate_link">
-                        <span>Noida</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            18,45,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/free-job-posting-site-in-gujarat" class="pj_hire_candidate_link">
-                            <span>Gujarat</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                12,62,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>             <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/free-job-posting-site-in-kolkata" class="pj_hire_candidate_link">
-                        <span>Kolkata</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            11,61,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/free-job-posting-site-in-ahmedabad" class="pj_hire_candidate_link">
-                            <span>Ahmedabad</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                9,84,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>             <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/free-job-posting-site-in-lucknow" class="pj_hire_candidate_link">
-                        <span>Lucknow</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            6,55,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/free-job-posting-site-in-kerala" class="pj_hire_candidate_link">
-                            <span>Kerala</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                5,88,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>             <div class="pj_hire_candidate_box">
-                <div class="pj_hire_candidate">
-                    <a href="https://internshala.com/free-job-posting-site-in-coimbatore" class="pj_hire_candidate_link">
-                        <span>Coimbatore</span>
-                        <i class="ic-chevron-right-custom"></i>
-                    </a>
-                    <div class="pj_hire_candidate_stat">
-            5,83,000+ Candidates
-                    </div>
-                </div>
-                                <div class="pj_hire_candidate">
-                        <a href="https://internshala.com/free-job-posting-site-in-vadodara" class="pj_hire_candidate_link">
-                            <span>Vadodara</span>
-                            <i class="ic-chevron-right-custom"></i>
-                        </a>
-                        <div class="pj_hire_candidate_stat">
-                3,13,000+ Candidates
-                        </div>
-                    </div>
-            
-         </div>     </div>
-
-    <div class="cards-arrow-section">
-        <div class="ic-chevron-left-custom"></div>
-        <div class="pj-hire-pan-dots"></div>
-        <div class="ic-chevron-right-custom"></div>
-    </div>
-
-</div>
-
-             
-
         </div>
                 <div class="registration-content">
 
@@ -1883,7 +1307,7 @@
                                     
             
             
-            <span id="docs-internal-guid-bd897ae5-7fff-2d7a-4f87-c610d23bf76d"><p dir="ltr" xss=removed><span xss=removed>Yes, you can post 1 free internship or job listing in a month. If you want to post unlimited job/internship listings to accelerate your hiring process you can opt for our premium plan. </span></p><p dir="ltr" xss="removed"><span id="docs-internal-guid-c4de63fd-7fff-3ba2-f9d4-cacc7efbd25c"><br><span xss=removed>If you are an </span><span xss=removed>international employer</span><span xss=removed> (i.e. employers whose companies are based outside India) you can sign up for our free trial which will allow you to post 1 free internship/job listing in the lifetime. You will also get access to all our premium features, our world-class ATS, a dedicated relationship manager, and more with the free trial which is valid for 30 days. You can purchase the premium plan to post unlimited jobs/internships to hire quality candidates with ease.</span></span><br></p></span>                                                        </div>
+            <span id="docs-internal-guid-bd897ae5-7fff-2d7a-4f87-c610d23bf76d"><p dir="ltr" xss=removed><span xss=removed>Yes, you can post 1 free internship or job listing in a month. If you want to post unlimited job/internship listings to accelerate your hiring process you can opt for our premium plan. </span></p><p dir="ltr" xss="removed"><span id="docs-internal-guid-c4de63fd-7fff-3ba2-f9d4-cacc7efbd25c"><br><span xss=removed>If you are an </span><span xss=removed>international employer</span><span xss=removed> (i.e. employers whose companies are based outside Odisha) you can sign up for our free trial which will allow you to post 1 free internship/job listing in the lifetime. You will also get access to all our premium features, our world-class ATS, a dedicated relationship manager, and more with the free trial which is valid for 30 days. You can purchase the premium plan to post unlimited jobs/internships to hire quality candidates with ease.</span></span><br></p></span>                                                        </div>
                             </div>
                         </div>
                                             <div class="card ">
@@ -1921,7 +1345,7 @@
                                         faq_id="4"
                                         aria-expanded="false"
                                         aria-controls="collapseOne">
-                                    <div class="content">Can I hire candidates from any city in India? </div>
+                                    <div class="content">Can I hire candidates from any city in Odisha? </div>
                                     <div class="icons">
                                         <img src="/images/help_center/new/expand-icon.svg" class="expand_icon">
                                         <img src="/images/help_center/new/collapse-icon.svg" class="collapse_icon">
@@ -1938,7 +1362,7 @@
                                     
             
             
-            <p><span id="docs-internal-guid-13a8a461-7fff-a5c0-5681-8445585652c9"></span></p><p dir="ltr" xss="removed"><span xss="removed">Yes, you can <a href="https://internshala.com/post-job" target="_blank">post jobs</a> for free and hire candidates from any location in India on IAPS.</span></p>                                                        </div>
+            <p><span id="docs-internal-guid-13a8a461-7fff-a5c0-5681-8445585652c9"></span></p><p dir="ltr" xss="removed"><span xss="removed">Yes, you can <a href="post-job" target="_blank">post jobs</a> for free and hire candidates from any location in Odisha on IAPS.</span></p>                                                        </div>
                             </div>
                         </div>
                                             <div class="card ">
@@ -2190,9 +1614,9 @@
 </div>
 
     <script type="application/ld+json">
-    {"@context":"https:\/\/schema.org\/","@type":"Product","name":"Hire Interns & Freshers","image":"https:\/\/internshala-uploads.internshala.com\/common\/image\/4qh2ey6cixg.png","description":"Post internships & jobs online for free at Internshala to hire interns & freshers across 200+ profiles & locations in India. Post your internship requirements today!","brand":{"@type":"Brand","name":"Internshala"},"aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"bestRating":"5","worstRating":"1","ratingCount":2338}}    </script>
+    {"@context":"https:\/\/schema.org\/","@type":"Product","name":"Hire Interns & Freshers","image":"https:\/\/internshala-uploads.internshala.com\/common\/image\/4qh2ey6cixg.png","description":"Post internships & jobs online for free at Internshala to hire interns & freshers across 200+ profiles & locations in Odisha. Post your internship requirements today!","brand":{"@type":"Brand","name":"Internshala"},"aggregateRating":{"@type":"AggregateRating","ratingValue":4.5,"bestRating":"5","worstRating":"1","ratingCount":2338}}    </script>
 <script type="application/ld+json">
-    {"@context":"http:\/\/schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the process of hiring from Internshala?","acceptedAnswer":{"@type":"Answer","text":"\r\n            <span data-sheets-value=\"{\" data-sheets-userformat=\"{\" xss=\"removed\">Hiring quality candidates for your company from Internshala is easy and free. Simply post your job requirement on Internshala. Your listing will be live on our platform shortly after it is reviewed by our team of experts. You will start receiving applications within a few hours. Post that you can shortlist, interview, and extend offer letters to the candidates you like.<\/span>        "}},{"@type":"Question","name":"Can I post jobs for free on Internshala? ","acceptedAnswer":{"@type":"Answer","text":"\r\n            \r\n            \r\n            <span id=\"docs-internal-guid-bd897ae5-7fff-2d7a-4f87-c610d23bf76d\"><p dir=\"ltr\" xss=removed><span xss=removed>Yes, you can post 1 free internship or job listing in a month. If you want to post unlimited job\/internship listings to accelerate your hiring process you can opt for our premium plan.\u00a0<\/span><\/p><p dir=\"ltr\" xss=\"removed\"><span id=\"docs-internal-guid-c4de63fd-7fff-3ba2-f9d4-cacc7efbd25c\"><br><span xss=removed>If you are an <\/span><span xss=removed>international employer<\/span><span xss=removed> (i.e. employers whose companies are based outside India) you can sign up for our free trial which will allow you to post 1 free internship\/job listing in the lifetime. You will also get access to all our premium features, our world-class ATS, a dedicated relationship manager, and more with the free trial which is valid for 30 days. You can purchase the premium plan to post unlimited jobs\/internships to hire quality candidates with ease.<\/span><\/span><br><\/p><\/span>                        "}},{"@type":"Question","name":"For how many days is a job listing visible on the portal, after I post a job?","acceptedAnswer":{"@type":"Answer","text":"\r\n            \r\n            <span id=\"docs-internal-guid-d82cd247-7fff-07a3-c05e-5753956a4598\"><p dir=\"ltr\" xss=\"removed\"><span xss=\"removed\">Any job listing is visible for 30 days. The visibility of a job listing can further be extended for 15 days based on the requirement.<\/span><br><\/p><\/span>                "}},{"@type":"Question","name":"Can I hire candidates from any city in India? ","acceptedAnswer":{"@type":"Answer","text":"\r\n            \r\n            \r\n            <p><span id=\"docs-internal-guid-13a8a461-7fff-a5c0-5681-8445585652c9\"><\/span><\/p><p dir=\"ltr\" xss=\"removed\"><span xss=\"removed\">Yes, you can <a href=\"https:\/\/internshala.com\/post-job\" target=\"_blank\">post jobs<\/a> for free and hire candidates from any location in India on Internshala.<\/span><\/p>                        "}},{"@type":"Question","name":"Can I hire candidates for any profile on Internshala? ","acceptedAnswer":{"@type":"Answer","text":"\r\n            \r\n            <span id=\"docs-internal-guid-74cb19a2-7fff-e874-5a12-859687f5e556\"><p dir=\"ltr\" xss=\"removed\">Yes, you can hire candidates for 200+ profiles on our platform. Internshala is trusted by job seekers from every domain, residing across the nation, to find internships as well as fresher jobs. So, when you post job requirements on our platform, you can gain access to a pool of interns and freshers from diverse fields.<br><\/p><\/span>                "}},{"@type":"Question","name":"Do all job listings follow a character word limit? ","acceptedAnswer":{"@type":"Answer","text":"\r\n            <p>Yes, all the job listings follow a character limit. Always remember that when you post jobs, the job description can not be more than 2500 characters.<br><\/p>        "}},{"@type":"Question","name":"How can I remove a job that I have posted? ","acceptedAnswer":{"@type":"Answer","text":"\r\n            Once you post jobs online through Internshala, the listing can be closed but it can not be removed. When a listing is closed, it won't be visible to anyone but the employer, on their Internshala account.        "}},{"@type":"Question","name":"How do you ensure responses for job listings?","acceptedAnswer":{"@type":"Answer","text":"\r\n            After you post a job, we add relevant categories to your job listings so that they can be visible to the maximum number of students available on the platform.        "}},{"@type":"Question","name":"How can I hire a lot of employees quickly?","acceptedAnswer":{"@type":"Answer","text":"To hire interns or to hire freshers quickly, you can post a premium job. A premium job post will grant you access to a relationship manager who will assist you with the hiring process.&nbsp;"}},{"@type":"Question","name":"How is Internshala better than other free job listing sites?","acceptedAnswer":{"@type":"Answer","text":"\r\n            \r\n            \r\n            Internshala has a pool of more than 6 million students registered on the platform who are seeking job opportunities. Further, Internshala provides you with a hassle-free process of hiring, along with many advanced filters that can help you hire freshers or hire interns quickly and efficiently. For more information, you may reach out to us at <a href=\"mailto:employer@internshala.com\" target=\"_blank\">employer@internshala.com<\/a> or call us at <a href=\"tel:+918448444852\" target=\"_blank\">+91 8448444852<\/a> between 10 AM to 6 PM from Monday to Saturday.                        "}},{"@type":"Question","name":"How does Internshala benefit from a free job listing?","acceptedAnswer":{"@type":"Answer","text":"\r\n            At Internshala, we believe in the idea of \u2018Users at the heart of everything we do\u2019 which means we value our users above profit. We pride ourselves in the trust of the employers who fulfill their hiring requirements using the free hiring process. The hassle-free and smooth hiring process persuades the employer to invest in a long-term relationship with Internshala.        "}},{"@type":"Question","name":"What is the limit on the number of applications I can see for a free listing?","acceptedAnswer":{"@type":"Answer","text":"\r\n            \r\n            <p>For any free listing, you can see the first 20 applications that are received for your listing. If you want to see more applications, you will need to upgrade your free listing to a premium listing or purchase a premium plan.<br><\/p>                "}},{"@type":"Question","name":"How can I contact Internshala.com?","acceptedAnswer":{"@type":"Answer","text":"\r\n            You can contact us by writing a mail at <a href=\"mailto:employer@internshala.com\" target=\"_blank\">employer@internshala.com<\/a> or call us at <a href=\"tel:+918448444852\" target=\"_blank\">+91 8448444852<\/a>, in case you wish to hire freshers or hire employees for your company. If you are a student, you can write to us at <a href=\"mailto:helpdesk@internshala.com\" target=\"_blank\">helpdesk@internshala.com<\/a>. We are always happy to help!<br>        "}}]}</script>
+    {"@context":"http:\/\/schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the process of hiring from Internshala?","acceptedAnswer":{"@type":"Answer","text":"\r\n            <span data-sheets-value=\"{\" data-sheets-userformat=\"{\" xss=\"removed\">Hiring quality candidates for your company from Internshala is easy and free. Simply post your job requirement on Internshala. Your listing will be live on our platform shortly after it is reviewed by our team of experts. You will start receiving applications within a few hours. Post that you can shortlist, interview, and extend offer letters to the candidates you like.<\/span>        "}},{"@type":"Question","name":"Can I post jobs for free on Internshala? ","acceptedAnswer":{"@type":"Answer","text":"\r\n            \r\n            \r\n            <span id=\"docs-internal-guid-bd897ae5-7fff-2d7a-4f87-c610d23bf76d\"><p dir=\"ltr\" xss=removed><span xss=removed>Yes, you can post 1 free internship or job listing in a month. If you want to post unlimited job\/internship listings to accelerate your hiring process you can opt for our premium plan.\u00a0<\/span><\/p><p dir=\"ltr\" xss=\"removed\"><span id=\"docs-internal-guid-c4de63fd-7fff-3ba2-f9d4-cacc7efbd25c\"><br><span xss=removed>If you are an <\/span><span xss=removed>international employer<\/span><span xss=removed> (i.e. employers whose companies are based outside Odisha) you can sign up for our free trial which will allow you to post 1 free internship\/job listing in the lifetime. You will also get access to all our premium features, our world-class ATS, a dedicated relationship manager, and more with the free trial which is valid for 30 days. You can purchase the premium plan to post unlimited jobs\/internships to hire quality candidates with ease.<\/span><\/span><br><\/p><\/span>                        "}},{"@type":"Question","name":"For how many days is a job listing visible on the portal, after I post a job?","acceptedAnswer":{"@type":"Answer","text":"\r\n            \r\n            <span id=\"docs-internal-guid-d82cd247-7fff-07a3-c05e-5753956a4598\"><p dir=\"ltr\" xss=\"removed\"><span xss=\"removed\">Any job listing is visible for 30 days. The visibility of a job listing can further be extended for 15 days based on the requirement.<\/span><br><\/p><\/span>                "}},{"@type":"Question","name":"Can I hire candidates from any city in Odisha? ","acceptedAnswer":{"@type":"Answer","text":"\r\n            \r\n            \r\n            <p><span id=\"docs-internal-guid-13a8a461-7fff-a5c0-5681-8445585652c9\"><\/span><\/p><p dir=\"ltr\" xss=\"removed\"><span xss=\"removed\">Yes, you can <a href=\"https:\/\/internshala.com\/post-job\" target=\"_blank\">post jobs<\/a> for free and hire candidates from any location in Odisha on Internshala.<\/span><\/p>                        "}},{"@type":"Question","name":"Can I hire candidates for any profile on Internshala? ","acceptedAnswer":{"@type":"Answer","text":"\r\n            \r\n            <span id=\"docs-internal-guid-74cb19a2-7fff-e874-5a12-859687f5e556\"><p dir=\"ltr\" xss=\"removed\">Yes, you can hire candidates for 200+ profiles on our platform. Internshala is trusted by job seekers from every domain, residing across the nation, to find internships as well as fresher jobs. So, when you post job requirements on our platform, you can gain access to a pool of interns and freshers from diverse fields.<br><\/p><\/span>                "}},{"@type":"Question","name":"Do all job listings follow a character word limit? ","acceptedAnswer":{"@type":"Answer","text":"\r\n            <p>Yes, all the job listings follow a character limit. Always remember that when you post jobs, the job description can not be more than 2500 characters.<br><\/p>        "}},{"@type":"Question","name":"How can I remove a job that I have posted? ","acceptedAnswer":{"@type":"Answer","text":"\r\n            Once you post jobs online through Internshala, the listing can be closed but it can not be removed. When a listing is closed, it won't be visible to anyone but the employer, on their Internshala account.        "}},{"@type":"Question","name":"How do you ensure responses for job listings?","acceptedAnswer":{"@type":"Answer","text":"\r\n            After you post a job, we add relevant categories to your job listings so that they can be visible to the maximum number of students available on the platform.        "}},{"@type":"Question","name":"How can I hire a lot of employees quickly?","acceptedAnswer":{"@type":"Answer","text":"To hire interns or to hire freshers quickly, you can post a premium job. A premium job post will grant you access to a relationship manager who will assist you with the hiring process.&nbsp;"}},{"@type":"Question","name":"How is Internshala better than other free job listing sites?","acceptedAnswer":{"@type":"Answer","text":"\r\n            \r\n            \r\n            Internshala has a pool of more than 6 million students registered on the platform who are seeking job opportunities. Further, Internshala provides you with a hassle-free process of hiring, along with many advanced filters that can help you hire freshers or hire interns quickly and efficiently. For more information, you may reach out to us at <a href=\"mailto:employer@internshala.com\" target=\"_blank\">employer@internshala.com<\/a> or call us at <a href=\"tel:+918448444852\" target=\"_blank\">+91 8448444852<\/a> between 10 AM to 6 PM from Monday to Saturday.                        "}},{"@type":"Question","name":"How does Internshala benefit from a free job listing?","acceptedAnswer":{"@type":"Answer","text":"\r\n            At Internshala, we believe in the idea of \u2018Users at the heart of everything we do\u2019 which means we value our users above profit. We pride ourselves in the trust of the employers who fulfill their hiring requirements using the free hiring process. The hassle-free and smooth hiring process persuades the employer to invest in a long-term relationship with Internshala.        "}},{"@type":"Question","name":"What is the limit on the number of applications I can see for a free listing?","acceptedAnswer":{"@type":"Answer","text":"\r\n            \r\n            <p>For any free listing, you can see the first 20 applications that are received for your listing. If you want to see more applications, you will need to upgrade your free listing to a premium listing or purchase a premium plan.<br><\/p>                "}},{"@type":"Question","name":"How can I contact Internshala.com?","acceptedAnswer":{"@type":"Answer","text":"\r\n            You can contact us by writing a mail at <a href=\"mailto:employer@internshala.com\" target=\"_blank\">employer@internshala.com<\/a> or call us at <a href=\"tel:+918448444852\" target=\"_blank\">+91 8448444852<\/a>, in case you wish to hire freshers or hire employees for your company. If you are a student, you can write to us at <a href=\"mailto:helpdesk@internshala.com\" target=\"_blank\">helpdesk@internshala.com<\/a>. We are always happy to help!<br>        "}}]}</script>
 <script type="application/ld+json">
     {"@context":"https:\/\/schema.org\/","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/internshala.com\/"},{"@type":"ListItem","position":2,"name":"Hire Talent","item":"https:\/\/internshala.com\/hire-talent"}]}</script>
 <script nonce="Ea7gKaquv6aiM/zLLf9d/Q==">
@@ -2242,11 +1666,11 @@ chosen link or button. -->
     <div class="breadcrumb_footer_section_container">
             <span class="breadcrumb-footer-item">
             <i class="ic-chevron-right-custom "></i>
-            <a class="breadcrumb-footer-link" href="https://internshala.com/">Home</a>
+            <a class="breadcrumb-footer-link" href="">Home</a>
         </span>
             <span class="breadcrumb-footer-item">
             <i class="ic-chevron-right-custom "></i>
-            <a class="breadcrumb-footer-link" href="https://internshala.com/hire-talent">Hire Talent</a>
+            <a class="breadcrumb-footer-link" href="hire-talent">Hire Talent</a>
         </span>
         </div>
 </div>
@@ -2281,22 +1705,13 @@ chosen link or button. -->
                     <a href="/contact">Contact us</a>
                 </div>
                 <div class="element">
-                    <a href="https://internshala.com/sitemap?utm_source=is_footer">Sitemap</a>
+                    <a href="sitemap?utm_source=is_footer">Sitemap</a>
                 </div>
                 <div class="element">
-                    <a href="https://internshala.com/resume-database?utm_source=is_footer">Resume Database</a>
+                    <a href="resume-database?utm_source=is_footer">Resume Database</a>
                 </div>
                     <div class="element">
-                    <a href="https://internshala.com/hire-talent/?utm_source=is_footer">Hire Interns and Freshers</a>
-                </div>
-                    <div class="element">
-                    <a href="https://internshala.com/hire-employees/?utm_source=is_footer">Hire Employees</a>
-                </div>
-                    <div class="element">
-                    <a href="https://internshala.com/hire-freshers/?utm_source=is_footer">Hire Freshers</a>
-                </div>
-                    <div class="element">
-                    <a href="https://internshala.com/post-job/?utm_source=is_footer">Post Job</a>
+                    <a href="hire-talent/?utm_source=is_footer">Hire Interns and Freshers</a>
                 </div>
             </div>
         </div>
@@ -2306,16 +1721,16 @@ chosen link or button. -->
         <div class="max-width-container">
             <div id="social_links">
                 <a href="https://www.instagram.com/internshala/?utm_source=is_footer">
-                    <img src="https://internshala.com//static/images/employer/social_icons/instagram.svg" alt="" >
+                    <img src="/images/employer/social_icons/instagram.svg" alt="" >
                 </a>
                 <a href="https://twitter.com/Internshala?utm_source=is_footer">
-                    <img src="https://internshala.com//static/images/employer/social_icons/twitter.svg" alt="">
+                    <img src="/images/employer/social_icons/twitter.svg" alt="">
                 </a>
                 <a href="https://www.youtube.com/c/internshalaofficial?utm_source=is_footer">
-                    <img src="https://internshala.com//static/images/employer/social_icons/youtube.svg" alt="" >
+                    <img src="/images/employer/social_icons/youtube.svg" alt="" >
                 </a>
                 <a href="https://www.linkedin.com/company/internshala/?utm_source=is_footer">
-                    <img src="https://internshala.com//static/images/employer/social_icons/linkedin.svg" alt="">
+                    <img src="/images/employer/social_icons/linkedin.svg" alt="">
                 </a>
             </div>
             <div id='copyright'>

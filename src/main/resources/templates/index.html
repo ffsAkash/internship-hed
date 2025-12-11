@@ -3,68 +3,72 @@
       lang="en-US">
 
 <head>
-    <style>.hidden {
-    display: none !important;
+    <style>
+        .actively-hiring-label {
+   background-color: #83eb97;
+}
+       .hidden {
+   display: none !important;
 }
 
 .user-menu-item {
-    padding: 4px 28px 8px !important;
+   padding: 4px 28px 8px !important;
 }
 
 /* --- Brand Strip Container --- */
 .company_logos_container-custom {
-    width: 100%;
-    overflow: hidden;
-    padding: 20px 0;
+   width: 100%;
+   overflow: hidden;
+   padding: 20px 0;
 }
 
 .company-logos-custom {
-    display: flex;
-    align-items: center;
+   display: flex;
+   align-items: center;
 }
 
 .scroll-custom {
-    display: flex;
-    white-space: nowrap;
-    overflow: hidden;
-    position: relative;
+   display: flex;
+   white-space: nowrap;
+   overflow: hidden;
+   position: relative;
 }
 
 /* --- Image Strip (contains one full loop) --- */
 .image-strip-custom {
-    display: flex;
-    animation: scroll-custom-left 20s linear infinite;
+   display: flex;
+   animation: scroll-custom-left 20s linear infinite;
 }
 
 /* --- Uniform Logo Sizing + Spacing --- */
 .image-strip-custom img {
-    width: 200px;          /* same width for all logos */
-    height: 100px;          /* same height for all logos */
-    object-fit: contain;   /* keeps aspect ratio */
-    padding: 10px 20px;    /* consistent spacing between logos */
-    box-sizing: border-box;
-    opacity: 1;
-    transition: 0.3s ease;
+   width: 200px;          /* same width for all logos */
+   height: 100px;          /* same height for all logos */
+   object-fit: contain;   /* keeps aspect ratio */
+   padding: 10px 20px;    /* consistent spacing between logos */
+   box-sizing: border-box;
+   opacity: 1;
+   transition: 0.3s ease;
 }
 
 /* Optional hover effect */
 .image-strip-custom img:hover {
-    transform: scale(1.08);
+   transform: scale(1.08);
 }
 
 /* Pause scroll on hover */
 .scroll-custom:hover .image-strip-custom {
-    animation-play-state: paused;
+   animation-play-state: paused;
 }
 
 /* --- Infinite Scroll Animation --- */
 @keyframes scroll-custom-left {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%); /* must be half since you duplicated strip */
-    }
+   0% {
+       transform: translateX(0);
+   }
+   100% {
+       transform: translateX(-50%); /* must be half since you duplicated strip */
+   }
 }
     </style>
 
@@ -1281,7 +1285,7 @@
                             </div>
                             <div class="tnc">
                                 By continuing as a candidate, you agree to our <a
-                                    href="https://internshala.com/terms" target="_blank">T&C.</a>
+                                    href="/terms-and-condition" target="_blank">T&C.</a>
                             </div>
                             <div class="employer_signup">
 									<span>Looking to hire? <a href="/employer/registration">Register as an
@@ -1291,7 +1295,7 @@
                     </div>
                     <div class="banner_image"></div>
                     <img src="/images/homepage/banner/banner_image_student.png" alt="Banner Right Image"
-                         class="student-image-banner" style="position:relative; width:100%;">
+                         class="student-image-banner" style="position:relative; width:1050px;">
                 </div>
                 <div class="banner_mobile">
                     <div class="banner_heading">
@@ -1323,7 +1327,7 @@
                             </a>
                         </div>
                         <div class="tnc">
-                            By continuing as a candidate, you agree to our <a href="https://internshala.com/terms"
+                            By continuing as a candidate, you agree to our <a href="/terms-and-condition"
                                                                               target="_blank">T&C.</a>
                         </div>
                         <div class="employer_signup">
@@ -1721,30 +1725,6 @@
                                     </a>
                                 </div>
 
-                                <div class="card" data-category="psu">
-                                    <a href="/student/internship-example">
-                                        <div class="actively-hiring-label">
-                                            <i class="ic-down-icon-custom"></i>
-                                            <span>Actively hiring</span>
-                                        </div>
-                                        <div class="heading">
-                                            <div class="content">
-                                                <h4>Electrical Engineering Intern</h4>
-                                                <span>OPTCL (Odisha Power Transmission Corporation Limited)</span>
-                                            </div>
-                                        </div>
-                                        <ul>
-                                            <li><i class="ic-location-map-icon-custom"></i>Bhubaneswar, Odisha</li>
-                                            <li><i class="ic-calender-icon-custom"></i>2 Months</li>
-                                        </ul>
-                                        <div class="footer">
-                                            <span class="job-label">Internship</span>
-                                            <span class="view-details-cta"
-                                                  href="/internship/detail/electrical-engineering-internship-in-bhubaneswar-at-optcl">View
-                details <i class="ic-chevron-right-blue-custom"></i></span>
-                                        </div>
-                                    </a>
-                                </div>
                                 <div class="card" data-category="engineering">
                                     <a href="/student/internship-example">
                                         <div class="actively-hiring-label">
@@ -3326,8 +3306,8 @@
                     <div class="tagline-container">
                         <div class="tagline-wrapper">
                             <div class="tagline">
-                                <h2>Empower your career with IAPS today</h2>
-                                <div class="tnc">By continuing, you agree to our <a href="https://internshala.com/terms"
+                                <h2>Empower your career with IAPS Today</h2>
+                                <div class="tnc">By continuing, you agree to our <a href="/terms-and-condition"
                                                                                     target="_blank">T&C.</a></div>
                             </div>
                             <div class="register-cta-container">
@@ -3335,7 +3315,7 @@
                                     <i class="ic-mail-icon-custom"></i>
                                     <span> Continue with Email</span>
                                 </a>
-                                <div class="tnc">By continuing, you agree to our <a href="https://internshala.com/terms"
+                                <div class="tnc">By continuing, you agree to our <a href="/terms-and-condition"
                                                                                     target="_blank">T&C.</a></div>
                             </div>
                         </div>

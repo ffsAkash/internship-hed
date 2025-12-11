@@ -54,4 +54,9 @@ public class EmployerController {
     public String postInternship() {
         return "post-internship";
     }
+
+    @GetMapping("/internship-details")
+    public String internshipDetails() {
+        return "emp-internship-details";
+    }
 }

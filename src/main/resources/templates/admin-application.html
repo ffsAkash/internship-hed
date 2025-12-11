@@ -586,7 +586,120 @@
 				margin: 20px auto;
 			}
 		}
+		
+		/* Review/View Modal Content Styles */
+		.application-details {
+		    display: flex;
+		    flex-direction: column;
+		    gap: 20px;
+		}
+
+		.application-section {
+		    background-color: #f8f9fa;
+		    border-radius: 8px;
+		    padding: 20px;
+		    border-left: 4px solid #3498db;
+		}
+
+		.application-section h6 {
+		    color: #2c3e50;
+		    margin-bottom: 15px;
+		    font-weight: 600;
+		}
+
+		.detail-row {
+		    display: flex;
+		    margin-bottom: 10px;
+		    padding-bottom: 10px;
+		    border-bottom: 1px solid #eaeaea;
+		}
+
+		.detail-label {
+		    font-weight: 600;
+		    color: #2c3e50;
+		    min-width: 150px;
+		}
+
+		.detail-value {
+		    color: #34495e;
+		    flex: 1;
+		}
+
+		.status-badge {
+		    padding: 6px 12px;
+		    border-radius: 20px;
+		    font-size: 12px;
+		    font-weight: 500;
+		    display: inline-block;
+		}
+
+		.badge-pending {
+		    background-color: #f8f9fa;
+		    color: #6c757d;
+		}
+
+		.badge-approved {
+		    background-color: #d4edda;
+		    color: #155724;
+		}
+
+		.badge-rejected {
+		    background-color: #f8d7da;
+		    color: #721c24;
+		}
+
+		/* Animations */
+		@keyframes fadeIn {
+		    from { opacity: 0; }
+		    to { opacity: 1; }
+		}
+
+		@keyframes slideIn {
+		    from { 
+		        opacity: 0;
+		        transform: translateY(-50px);
+		    }
+		    to { 
+		        opacity: 1;
+		        transform: translateY(0);
+		    }
+		}
+
+		/* Responsive */
+		@media (max-width: 768px) {
+		    .custom-tab-nav {
+		        flex-direction: column;
+		    }
+		    
+		    .custom-tab-item {
+		        width: 100%;
+		    }
+		    
+		    .custom-tab-link {
+		        border-bottom: 1px solid #dee2e6;
+		        border-right: none;
+		    }
+		    
+		    .custom-tab-item.active .custom-tab-link {
+		        border-bottom-color: #0d6efd;
+		    }
+		    
+		    .custom-modal-lg {
+		        max-width: 95%;
+		        margin: 20px auto;
+		    }
+		    
+		    .detail-row {
+		        flex-direction: column;
+		    }
+		    
+		    .detail-label {
+		        min-width: auto;
+		        margin-bottom: 5px;
+		    }
+		}
 	</style>
+	
 </head>
 
 <body>
@@ -901,7 +1014,7 @@
 						<div class="ham_menu_items without_link">
 							<div class="ham_title ham_main_heading ham_title_more">
 								More
-								<i class="ic-24-chevron-down"></i>
+								<i class="header-dropdown-arrow-custom"></i>
 							</div>
 							<div class="ham_submenu_items">
 								<div class="ham_inner_menu_items">
@@ -915,7 +1028,7 @@
 								<div class="ham_inner_menu_items">
 									<div class="ham_inner_title">
 										Manage Account
-										<i class="ic-24-chevron-down"></i>
+										<i class="header-dropdown-arrow-custom"></i>
 									</div>
 									<div class="ham_inner_submenu_items">
 										<a href="https://internshala.com/login/update_password">Change Password</a>
@@ -1709,13 +1822,13 @@
 														</li>
 														<li>
 															<a class="dropdown-click">
-																More <i class=" ic-24-chevron-down"></i>
+																More <i class=" header-dropdown-arrow-custom"></i>
 															</a>
 															<ul class="dropdown-submenu dropdown-submenu_1">
 																<li class="manage_account">
 																	<a class="dropdown-click">
 																		Manage Account
-																		<i class=" ic-24-chevron-down"></i>
+																		<i class=" header-dropdown-arrow-custom"></i>
 																	</a>
 																	<ul class="dropdown-submenu dropdown-submenu_2">
 																		<li>
@@ -1899,8 +2012,7 @@
 								<h4>All Applications</h4>
 								<div class="My_Students_div">
 									<div class="btnDiv">
-										<button class="btn-primary-cover mentor"><i class="bx bx-download"></i>
-											Export</button>
+										
 										<button class="btn-warning-cover mentor" id="addStudentBtn"><i
 												class="fa fa-plus"></i> Add Student</button>
 									</div>
@@ -1984,426 +2096,508 @@
 							</div>
 
 							<!-- Tab Content -->
-							<div class="custom-tab-content">
-								<!-- All Applications Tab -->
-								<div class="custom-tab-pane active" id="all-applications">
-									<div class="row">
-										<div class="col-md-12">
-											<table class="table table-bordered dt-responsive"
-												style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-												<thead>
-													<tr>
-														<th>Students</th>
-														<th>Department</th>
-														<th style="width: 200px !important;">Internship Details</th>
-														<th>Applied Date</th>
-														<th>Status</th>
-														<th>Action</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>
-															<div class="img_section">
-																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
-																		<p class="text-start">STU2025001</p>
-																	</div>
-																	<div>
-																		<button class="edit-student-btn"><img
-																				src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
-																</div>
+							<!-- All Applications Tab -->
+							<div class="custom-tab-pane active" id="all-applications">
+								<div class="row">
+									<div class="col-md-12">
+										<table class="table table-bordered dt-responsive"
+											style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+											<thead>
+												<tr>
+													<th>Students</th>
+													<th>Department</th>
+													<th style="width: 200px !important;">Internship Details</th>
+													<th>Applied Date</th>
+													<th>Status</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
 															</div>
-														</td>
-														<td>Computer Science</td>
-														<td>
 															<div class="name_section">
 																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Web Innovations,
-																		Mumbai</h4>
-																	<p class="text-start mt-1">Private</p>
+																	<h4 class="text-dark">Prisha Bansal</h4>
+																	<p class="text-start">STU2025001</p>
 																</div>
-															</div>
-														</td>
-														<td>June 20, 2024</td>
-														<td>
-															<span
-																class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
-														</td>
-														<td>
-															<button type="button"
-																class="btn-primary-outline review-btn">
-																<i class="bx bx-show"></i>Review
-															</button>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="img_section">
 																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Rajesh Kumar</h4>
-																		<p class="text-start">STU2025002</p>
-																	</div>
-																	<div>
-																		<button class="edit-student-btn"><img
-																				src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
 																</div>
 															</div>
-														</td>
-														<td>Electronics</td>
-														<td>
+														</div>
+													</td>
+													<td>Computer Science</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Web Innovations,
+																	Mumbai</h4>
+																<p class="text-start mt-1">Private</p>
+															</div>
+														</div>
+													</td>
+													<td>June 20, 2024</td>
+													<td>
+														<span
+															class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
+													</td>
+													<td>
+														<button type="button" class="btn-primary-outline review-btn">
+															<i class="bx bx-show"></i>Review
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
+															</div>
 															<div class="name_section">
 																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Tech Solutions,
-																		Delhi</h4>
-																	<p class="text-start mt-1">Private</p>
+																	<h4 class="text-dark">Rajesh Kumar</h4>
+																	<p class="text-start">STU2025002</p>
 																</div>
-															</div>
-														</td>
-														<td>June 21, 2024</td>
-														<td>
-															<span
-																class="badge bg-danger-subtle text-danger badge_danger">Rejected</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline view-btn">
-																<i class="bx bx-show"></i>View
-															</button>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="img_section">
 																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Anita Verma</h4>
-																		<p class="text-start">STU2025003</p>
-																	</div>
-																	<div>
-																		<button class="edit-student-btn"><img
-																				src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
 																</div>
 															</div>
-														</td>
-														<td>Mechanical</td>
-														<td>
+														</div>
+													</td>
+													<td>Electronics</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Tech Solutions,
+																	Delhi</h4>
+																<p class="text-start mt-1">Private</p>
+															</div>
+														</div>
+													</td>
+													<td>June 21, 2024</td>
+													<td>
+														<span
+															class="badge bg-danger-subtle text-danger badge_danger">Rejected</span>
+													</td>
+													<td>
+														<button class="btn-primary-outline view-btn">
+															<i class="bx bx-show"></i>View
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
+															</div>
 															<div class="name_section">
 																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Auto Engineers,
-																		Chennai</h4>
-																	<p class="text-start mt-1">Private</p>
+																	<h4 class="text-dark">Anita Verma</h4>
+																	<p class="text-start">STU2025003</p>
 																</div>
-															</div>
-														</td>
-														<td>June 22, 2024</td>
-														<td>
-															<span
-																class="badge bg-success-subtle text-success badge_warning">Approved</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline view-btn">
-																<i class="bx bx-show"></i>View
-															</button>
-														</td>
-													</tr>
-													<tr>
-														<td>
-															<div class="img_section">
 																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Anita Verma</h4>
-																		<p class="text-start">STU2025003</p>
-																	</div>
-																	<div>
-																		<button class="edit-student-btn"><img
-																				src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
 																</div>
 															</div>
-														</td>
-														<td>Mechanical</td>
-														<td>
+														</div>
+													</td>
+													<td>Mechanical</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Auto Engineers,
+																	Chennai</h4>
+																<p class="text-start mt-1">Private</p>
+															</div>
+														</div>
+													</td>
+													<td>June 22, 2024</td>
+													<td>
+														<span
+															class="badge bg-success-subtle text-success badge_warning">Approved</span>
+													</td>
+													<td>
+														<button class="btn-primary-outline view-btn">
+															<i class="bx bx-show"></i>View
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
+															</div>
 															<div class="name_section">
 																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Auto Engineers,
-																		Chennai</h4>
-																	<p class="text-start mt-1">Private</p>
+																	<h4 class="text-dark">Akash Kumar</h4>
+																	<p class="text-start">STU2025003</p>
 																</div>
-															</div>
-														</td>
-														<td>June 22, 2024</td>
-														<td>
-															<span class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
-															</td>
-														<td>
-															<button class="btn-primary-outline view-btn">
-																<i class="bx bx-show"></i>View
-															</button>
-															</td>
-															</tr>
-															<tr>
-																<td>
-																	<div class="img_section">
-																		<div>
-																			<img src="/assets/images/prof_img.png" class="img-fluid prof_img" alt="">
-																		</div>
-																		<div class="name_section">
-																			<div class="d-flex flex-column align-items-start">
-																				<h4 class="text-dark">Anita Verma</h4>
-																				<p class="text-start">STU2025003</p>
-																			</div>
-																			<div>
-																				<button class="edit-student-btn"><img src="/assets/images/edit.png" class="edit_img"
-																						alt=""></button>
-																			</div>
-																		</div>
-																	</div>
-																</td>
-																<td>Mechanical</td>
-																<td>
-																	<div class="name_section">
-																		<div class="d-flex flex-column align-items-start">
-																			<h4 class="text-dark new_heading">Auto Engineers,
-																				Chennai</h4>
-																			<p class="text-start mt-1">Private</p>
-																		</div>
-																	</div>
-																</td>
-																<td>June 22, 2024</td>
-																<td>
-																	<span class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
-																</td>
-																<td>
-																	<button class="btn-primary-outline view-btn">
-																		<i class="bx bx-show"></i>View
-																	</button>
-																</td>
-															</tr>
-															</tbody>
-															</table>
-															</div>
-															</div>
-								</div>
-
-								<!-- Pending Review Tab -->
-								<div class="custom-tab-pane" id="pending-review">
-									<div class="row">
-										<div class="col-md-12">
-											<table class="table table-bordered dt-responsive"
-												style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-												<thead>
-													<tr>
-														<th>Students</th>
-														<th>Department</th>
-														<th style="width: 200px !important;">Internship Details</th>
-														<th>Applied Date</th>
-														<th>Status</th>
-														<th>Action</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>
-															<div class="img_section">
 																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Sanjay Patel</h4>
-																		<p class="text-start">STU2025004</p>
-																	</div>
-																	<div>
-																		<button class="edit-student-btn"><img
-																				src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
 																</div>
 															</div>
-														</td>
-														<td>Civil</td>
-														<td>
+														</div>
+													</td>
+													<td>Mechanical</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Auto Engineers,
+																	Chennai</h4>
+																<p class="text-start mt-1">Private</p>
+															</div>
+														</div>
+													</td>
+													<td>June 22, 2024</td>
+													<td>
+														<span
+															class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
+													</td>
+													<td>
+														<button class="btn-primary-outline view-btn">
+															<i class="bx bx-show"></i>View
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
+															</div>
 															<div class="name_section">
 																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Construction Corp,
-																		Bangalore</h4>
-																	<p class="text-start mt-1">Private</p>
+																	<h4 class="text-dark">Prasant Panda</h4>
+																	<p class="text-start">STU2025003</p>
 																</div>
-															</div>
-														</td>
-														<td>June 23, 2024</td>
-														<td>
-															<span
-																class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
-														</td>
-														<td>
-															<button type="button"
-																class="btn-primary-outline review-btn">
-																<i class="bx bx-show"></i>Review
-															</button>
-														</td>
-													</tr>
-													<!-- More pending rows -->
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-
-								<!-- Approved Tab -->
-								<div class="custom-tab-pane" id="approved">
-									<div class="row">
-										<div class="col-md-12">
-											<table class="table table-bordered dt-responsive"
-												style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-												<thead>
-													<tr>
-														<th>Students</th>
-														<th>Department</th>
-														<th style="width: 200px !important;">Internship Details</th>
-														<th>Applied Date</th>
-														<th>Status</th>
-														<th>Action</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>
-															<div class="img_section">
 																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Alok Sharma</h4>
-																		<p class="text-start">STU2025005</p>
-																	</div>
-																	<div>
-																		<button class="edit-student-btn"><img
-																				src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
 																</div>
 															</div>
-														</td>
-														<td>Chemistry</td>
-														<td>
-															<div class="name_section">
-																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Pharma Corp, Pune
-																	</h4>
-																	<p class="text-start mt-1">Private</p>
-																</div>
+														</div>
+													</td>
+													<td>Mechanical</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Auto Engineers,
+																	Chennai</h4>
+																<p class="text-start mt-1">Private</p>
 															</div>
-														</td>
-														<td>June 24, 2024</td>
-														<td>
-															<span
-																class="badge bg-success-subtle text-success badge_warning">Approved</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline view-btn">
-																<i class="bx bx-show"></i>View
-															</button>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-
-								<!-- Rejected Tab -->
-								<div class="custom-tab-pane" id="rejected">
-									<div class="row">
-										<div class="col-md-12">
-											<table class="table table-bordered dt-responsive"
-												style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-												<thead>
-													<tr>
-														<th>Students</th>
-														<th>Department</th>
-														<th style="width: 200px !important;">Internship Details</th>
-														<th>Applied Date</th>
-														<th>Status</th>
-														<th>Action</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>
-															<div class="img_section">
-																<div>
-																	<img src="/assets/images/prof_img.png"
-																		class="img-fluid prof_img" alt="">
-																</div>
-																<div class="name_section">
-																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Neha Gupta</h4>
-																		<p class="text-start">STU2025006</p>
-																	</div>
-																	<div>
-																		<button class="edit-student-btn"><img
-																				src="/assets/images/edit.png"
-																				class="edit_img" alt=""></button>
-																	</div>
-																</div>
-															</div>
-														</td>
-														<td>Mathematics</td>
-														<td>
-															<div class="name_section">
-																<div class="d-flex flex-column align-items-start">
-																	<h4 class="text-dark new_heading">Data Analytics,
-																		Kolkata</h4>
-																	<p class="text-start mt-1">Private</p>
-																</div>
-															</div>
-														</td>
-														<td>June 25, 2024</td>
-														<td>
-															<span
-																class="badge bg-danger-subtle text-danger badge_danger">Rejected</span>
-														</td>
-														<td>
-															<button class="btn-primary-outline view-btn">
-																<i class="bx bx-show"></i>View
-															</button>
-														</td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
+														</div>
+													</td>
+													<td>June 22, 2024</td>
+													<td>
+														<span
+															class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
+													</td>
+													<td>
+														<button class="btn-primary-outline view-btn">
+															<i class="bx bx-show"></i>View
+														</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
 									</div>
 								</div>
 							</div>
+
+							<!-- Pending Review Tab -->
+							<div class="custom-tab-pane" id="pending-review">
+								<div class="row">
+									<div class="col-md-12">
+										<table class="table table-bordered dt-responsive"
+											style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+											<thead>
+												<tr>
+													<th>Students</th>
+													<th>Department</th>
+													<th style="width: 200px !important;">Internship Details</th>
+													<th>Applied Date</th>
+													<th>Status</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
+															</div>
+															<div class="name_section">
+																<div class="d-flex flex-column align-items-start">
+																	<h4 class="text-dark">Sanjay Patel</h4>
+																	<p class="text-start">STU2025004</p>
+																</div>
+																<div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
+																</div>
+															</div>
+														</div>
+													</td>
+													<td>Civil</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Construction Corp,
+																	Bangalore</h4>
+																<p class="text-start mt-1">Private</p>
+															</div>
+														</div>
+													</td>
+													<td>June 23, 2024</td>
+													<td>
+														<span
+															class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
+													</td>
+													<td>
+														<button type="button" class="btn-primary-outline review-btn">
+															<i class="bx bx-show"></i>Review
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
+															</div>
+															<div class="name_section">
+																<div class="d-flex flex-column align-items-start">
+																	<h4 class="text-dark">Anita Verma</h4>
+																	<p class="text-start">STU2025003</p>
+																</div>
+																<div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
+																</div>
+															</div>
+														</div>
+													</td>
+													<td>Mechanical</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Auto Engineers,
+																	Chennai</h4>
+																<p class="text-start mt-1">Private</p>
+															</div>
+														</div>
+													</td>
+													<td>June 22, 2024</td>
+													<td>
+														<span
+															class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
+													</td>
+													<td>
+														<button class="btn-primary-outline view-btn">
+															<i class="bx bx-show"></i>View
+														</button>
+													</td>
+												</tr>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
+															</div>
+															<div class="name_section">
+																<div class="d-flex flex-column align-items-start">
+																	<h4 class="text-dark">Anita Verma</h4>
+																	<p class="text-start">STU2025003</p>
+																</div>
+																<div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
+																</div>
+															</div>
+														</div>
+													</td>
+													<td>Mechanical</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Auto Engineers,
+																	Chennai</h4>
+																<p class="text-start mt-1">Private</p>
+															</div>
+														</div>
+													</td>
+													<td>June 22, 2024</td>
+													<td>
+														<span
+															class="badge bg-secondary-subtle text-secondary custom_badge">Pending</span>
+													</td>
+													<td>
+														<button class="btn-primary-outline view-btn">
+															<i class="bx bx-show"></i>View
+														</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+
+							<!-- Approved Tab -->
+							<div class="custom-tab-pane" id="approved">
+								<div class="row">
+									<div class="col-md-12">
+										<table class="table table-bordered dt-responsive"
+											style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+											<thead>
+												<tr>
+													<th>Students</th>
+													<th>Department</th>
+													<th style="width: 200px !important;">Internship Details</th>
+													<th>Applied Date</th>
+													<th>Status</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
+															</div>
+															<div class="name_section">
+																<div class="d-flex flex-column align-items-start">
+																	<h4 class="text-dark">Alok Sharma</h4>
+																	<p class="text-start">STU2025005</p>
+																</div>
+																<div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
+																</div>
+															</div>
+														</div>
+													</td>
+													<td>Chemistry</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Pharma Corp, Pune
+																</h4>
+																<p class="text-start mt-1">Private</p>
+															</div>
+														</div>
+													</td>
+													<td>June 24, 2024</td>
+													<td>
+														<span
+															class="badge bg-success-subtle text-success badge_warning">Approved</span>
+													</td>
+													<td>
+														<button class="btn-primary-outline view-btn">
+															<i class="bx bx-show"></i>View
+														</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+
+							<!-- Rejected Tab -->
+							<div class="custom-tab-pane" id="rejected">
+								<div class="row">
+									<div class="col-md-12">
+										<table class="table table-bordered dt-responsive"
+											style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+											<thead>
+												<tr>
+													<th>Students</th>
+													<th>Department</th>
+													<th style="width: 200px !important;">Internship Details</th>
+													<th>Applied Date</th>
+													<th>Status</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<div class="img_section">
+															<div>
+																<img src="/assets/images/prof_img.png"
+																	class="img-fluid prof_img" alt="">
+															</div>
+															<div class="name_section">
+																<div class="d-flex flex-column align-items-start">
+																	<h4 class="text-dark">Neha Gupta</h4>
+																	<p class="text-start">STU2025006</p>
+																</div>
+																<div>
+																	<button class="edit-student-btn"><img
+																			src="/assets/images/edit.png"
+																			class="edit_img" alt=""></button>
+																</div>
+															</div>
+														</div>
+													</td>
+													<td>Mathematics</td>
+													<td>
+														<div class="name_section">
+															<div class="d-flex flex-column align-items-start">
+																<h4 class="text-dark new_heading">Data Analytics,
+																	Kolkata</h4>
+																<p class="text-start mt-1">Private</p>
+															</div>
+														</div>
+													</td>
+													<td>June 25, 2024</td>
+													<td>
+														<span
+															class="badge bg-danger-subtle text-danger badge_danger">Rejected</span>
+													</td>
+													<td>
+														<button class="btn-primary-outline view-btn">
+															<i class="bx bx-show"></i>View
+														</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div>
 				</div>
@@ -2417,6 +2611,7 @@
 						<h5 class="custom-modal-title">Add New Student</h5>
 						<button type="button" class="custom-modal-close" id="closeAddStudentModal">&times;</button>
 					</div>
+				
 					<div class="custom-modal-body">
 						<form id="addStudentForm" class="student-form">
 							<div class="row">
@@ -2472,11 +2667,10 @@
 											class="text-danger">*</span></label>
 									<select class="form-control form-select" id="studentCollege" required>
 										<option value="">Select College</option>
-										<option value="IIT Delhi">IIT Delhi</option>
+										<option value="IIT Delhi">IIT Bhubaneswar</option>
 										<option value="IIT Bombay">IIT Bombay</option>
 										<option value="IIT Madras">IIT Madras</option>
-										<option value="NIT Trichy">NIT Trichy</option>
-										<option value="NIT Warangal">NIT Warangal</option>
+										<option value="NIT Warangal">NIT Rourkela</option>
 										<option value="Other">Other</option>
 									</select>
 								</div>
@@ -2518,6 +2712,42 @@
 						<button type="button" class="btn btn-primary" id="submitStudentForm">Add Student</button>
 					</div>
 				</div>
+			</div>
+
+			<!-- Review Application Modal -->
+			<div id="reviewModal" class="custom-modal">
+			    <div class="custom-modal-content custom-modal-lg">
+			        <div class="custom-modal-header">
+			            <h5 class="custom-modal-title">Review Application</h5>
+			            <button type="button" class="custom-modal-close" id="closeReviewModal">&times;</button>
+			        </div>
+			        <div class="custom-modal-body">
+			            <div id="reviewContent">
+			                <!-- Content will be loaded dynamically -->
+			            </div>
+			        </div>
+			        <div class="custom-modal-footer">
+			            <button type="button" class="btn btn-secondary" id="rejectBtn">Reject</button>
+			            <button type="button" class="btn btn-primary" id="approveBtn">Approve</button>
+			        </div>
+			    </div>
+			</div>
+			<!-- View Application Modal -->
+			<div id="viewModal" class="custom-modal">
+			    <div class="custom-modal-content custom-modal-lg">
+			        <div class="custom-modal-header">
+			            <h5 class="custom-modal-title">View Application Details</h5>
+			            <button type="button" class="custom-modal-close" id="closeViewModal">&times;</button>
+			        </div>
+			        <div class="custom-modal-body">
+			            <div id="viewContent">
+			                <!-- Content will be loaded dynamically -->
+			            </div>
+			        </div>
+			        <div class="custom-modal-footer">
+			            <button type="button" class="btn btn-secondary" id="closeViewModalBtn">Close</button>
+			        </div>
+			    </div>
 			</div>
 
 		</div> <!-- end row -->
@@ -3198,7 +3428,673 @@ chosen link or button. -->
 	    `;
 			document.head.appendChild(style);
 		});
+		
+		
+		
 	</script>
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+	    // Initialize button handlers
+	    initializeButtonHandlers();
+	    
+	    // Initialize modal handlers
+	    initializeModalHandlers();
+	    
+	    // Function to get student data from table row
+	    function getStudentDataFromRow(row) {
+	        const name = row.querySelector('h4.text-dark')?.textContent || '';
+	        const studentId = row.querySelector('p.text-start')?.textContent || '';
+	        const department = row.cells[1]?.textContent || '';
+	        const company = row.querySelector('.new_heading')?.textContent || '';
+	        const type = row.querySelector('.text-start.mt-1')?.textContent || '';
+	        const appliedDate = row.cells[3]?.textContent || '';
+	        const status = row.cells[4]?.textContent || '';
+	        const statusBadge = row.cells[4]?.querySelector('.badge');
+	        const statusClass = statusBadge ? Array.from(statusBadge.classList).find(cls => cls.includes('bg-')) : '';
+	        
+	        return {
+	            name,
+	            studentId,
+	            department,
+	            company,
+	            type,
+	            appliedDate,
+	            status,
+	            statusClass
+	        };
+	    }
+	    
+	    // Initialize button handlers
+	    function initializeButtonHandlers() {
+	        // Review buttons
+	        const reviewButtons = document.querySelectorAll('.review-btn');
+	        reviewButtons.forEach(button => {
+	            button.addEventListener('click', function() {
+	                const row = this.closest('tr');
+	                const studentData = getStudentDataFromRow(row);
+	                openReviewModal(studentData);
+	            });
+	        });
+	        
+	        // View buttons
+	        const viewButtons = document.querySelectorAll('.view-btn');
+	        viewButtons.forEach(button => {
+	            button.addEventListener('click', function() {
+	                const row = this.closest('tr');
+	                const studentData = getStudentDataFromRow(row);
+	                openViewModal(studentData);
+	            });
+	        });
+	    }
+	    
+	    // Initialize modal handlers
+	    function initializeModalHandlers() {
+	        // Create modals if they don't exist
+	        createReviewModal();
+	        createViewModal();
+	        
+	        // Setup modal close handlers
+	        setupModalCloseHandlers();
+	    }
+	    
+	    // Create Review Modal HTML
+	    function createReviewModal() {
+	        if (document.getElementById('reviewModal')) return;
+	        
+	        const modalHTML = `
+	            <div id="reviewModal" class="custom-modal">
+	                <div class="custom-modal-content custom-modal-lg">
+	                    <div class="custom-modal-header">
+	                        <h5 class="custom-modal-title">Review Application</h5>
+	                        <button type="button" class="custom-modal-close" id="closeReviewModal">&times;</button>
+	                    </div>
+	                    <div class="custom-modal-body">
+	                        <div id="reviewContent">
+	                            <!-- Content will be loaded dynamically -->
+	                        </div>
+	                    </div>
+	                    <div class="custom-modal-footer">
+	                        <button type="button" class="btn btn-secondary" id="rejectBtn">Reject</button>
+	                        <button type="button" class="btn btn-primary" id="approveBtn">Approve</button>
+	                    </div>
+	                </div>
+	            </div>
+	        `;
+	        
+	        document.body.insertAdjacentHTML('beforeend', modalHTML);
+	    }
+	    
+	    // Create View Modal HTML
+	    function createViewModal() {
+	        if (document.getElementById('viewModal')) return;
+	        
+	        const modalHTML = `
+	            <div id="viewModal" class="custom-modal">
+	                <div class="custom-modal-content custom-modal-lg">
+	                    <div class="custom-modal-header">
+	                        <h5 class="custom-modal-title">View Application Details</h5>
+	                        <button type="button" class="custom-modal-close" id="closeViewModal">&times;</button>
+	                    </div>
+	                    <div class="custom-modal-body">
+	                        <div id="viewContent">
+	                            <!-- Content will be loaded dynamically -->
+	                        </div>
+	                    </div>
+	                    <div class="custom-modal-footer">
+	                        <button type="button" class="btn btn-secondary" id="closeViewModalBtn">Close</button>
+	                    </div>
+	                </div>
+	            </div>
+	        `;
+	        
+	        document.body.insertAdjacentHTML('beforeend', modalHTML);
+	    }
+	    
+	    // Setup modal close handlers
+	    function setupModalCloseHandlers() {
+	        // Review modal close handlers
+	        const reviewModal = document.getElementById('reviewModal');
+	        const closeReviewModal = document.getElementById('closeReviewModal');
+	        
+	        if (closeReviewModal) {
+	            closeReviewModal.addEventListener('click', function() {
+	                reviewModal.classList.remove('active');
+	                document.body.style.overflow = 'auto';
+	            });
+	        }
+	        
+	        // View modal close handlers
+	        const viewModal = document.getElementById('viewModal');
+	        const closeViewModal = document.getElementById('closeViewModal');
+	        const closeViewModalBtn = document.getElementById('closeViewModalBtn');
+	        
+	        if (closeViewModal) {
+	            closeViewModal.addEventListener('click', function() {
+	                viewModal.classList.remove('active');
+	                document.body.style.overflow = 'auto';
+	            });
+	        }
+	        
+	        if (closeViewModalBtn) {
+	            closeViewModalBtn.addEventListener('click', function() {
+	                viewModal.classList.remove('active');
+	                document.body.style.overflow = 'auto';
+	            });
+	        }
+	        
+	        // Close modals when clicking outside
+	        if (reviewModal) {
+	            reviewModal.addEventListener('click', function(event) {
+	                if (event.target === reviewModal) {
+	                    reviewModal.classList.remove('active');
+	                    document.body.style.overflow = 'auto';
+	                }
+	            });
+	        }
+	        
+	        if (viewModal) {
+	            viewModal.addEventListener('click', function(event) {
+	                if (event.target === viewModal) {
+	                    viewModal.classList.remove('active');
+	                    document.body.style.overflow = 'auto';
+	                }
+	            });
+	        }
+	        
+	        // Close modals with Escape key
+	        document.addEventListener('keydown', function(event) {
+	            if (event.key === 'Escape') {
+	                if (reviewModal && reviewModal.classList.contains('active')) {
+	                    reviewModal.classList.remove('active');
+	                    document.body.style.overflow = 'auto';
+	                }
+	                if (viewModal && viewModal.classList.contains('active')) {
+	                    viewModal.classList.remove('active');
+	                    document.body.style.overflow = 'auto';
+	                }
+	            }
+	        });
+	    }
+	    
+	    // Open Review Modal
+	    function openReviewModal(studentData) {
+	        const reviewModal = document.getElementById('reviewModal');
+	        const reviewContent = document.getElementById('reviewContent');
+	        
+	        // Create review content HTML
+	        reviewContent.innerHTML = `
+	            <div class="application-details">
+	                <div class="application-section">
+	                    <h6>Student Information</h6>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Name:</span>
+	                        <span class="detail-value">${studentData.name}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Student ID:</span>
+	                        <span class="detail-value">${studentData.studentId}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Department:</span>
+	                        <span class="detail-value">${studentData.department}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Email:</span>
+	                        <span class="detail-value">${studentData.name.toLowerCase().replace(/\s+/g, '.')}@college.edu</span>
+	                    </div>
+	                </div>
+	                
+	                <div class="application-section">
+	                    <h6>Internship Details</h6>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Company:</span>
+	                        <span class="detail-value">${studentData.company}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Type:</span>
+	                        <span class="detail-value">${studentData.type}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Applied Date:</span>
+	                        <span class="detail-value">${studentData.appliedDate}</span>
+	                    </div>
+	                </div>
+	                
+	                <div class="application-section">
+	                    <h6>Current Status</h6>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Status:</span>
+	                        <span class="detail-value">
+	                            <span class="status-badge badge-pending">${studentData.status}</span>
+	                        </span>
+	                    </div>
+	                </div>
+	                
+	                <div class="application-section">
+	                    <h6>Review Notes</h6>
+	                    <div class="mb-3">
+	                        <label for="reviewNotes" class="form-label">Add Comments</label>
+	                        <textarea class="form-control" id="reviewNotes" rows="4" placeholder="Enter your review comments..."></textarea>
+	                    </div>
+	                </div>
+	            </div>
+	        `;
+	        
+	        // Open modal
+	        reviewModal.classList.add('active');
+	        document.body.style.overflow = 'hidden';
+	        
+	        // Setup approve/reject button handlers
+	        setupReviewActionHandlers(studentData);
+	    }
+	    
+	    // Open View Modal
+	    function openViewModal(studentData) {
+	        const viewModal = document.getElementById('viewModal');
+	        const viewContent = document.getElementById('viewContent');
+	        
+	        // Determine status badge class
+	        let statusBadgeClass = 'badge-pending';
+	        if (studentData.statusClass.includes('bg-success')) statusBadgeClass = 'badge-approved';
+	        if (studentData.statusClass.includes('bg-danger')) statusBadgeClass = 'badge-rejected';
+	        
+	        // Create view content HTML
+	        viewContent.innerHTML = `
+	            <div class="application-details">
+	                <div class="application-section">
+	                    <h6>Student Information</h6>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Name:</span>
+	                        <span class="detail-value">${studentData.name}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Student ID:</span>
+	                        <span class="detail-value">${studentData.studentId}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Department:</span>
+	                        <span class="detail-value">${studentData.department}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Email:</span>
+	                        <span class="detail-value">${studentData.name.toLowerCase().replace(/\s+/g, '.')}@college.edu</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Phone:</span>
+	                        <span class="detail-value">+91 98XXXXXX21</span>
+	                    </div>
+	                </div>
+	                
+	                <div class="application-section">
+	                    <h6>Internship Details</h6>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Company:</span>
+	                        <span class="detail-value">${studentData.company}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Type:</span>
+	                        <span class="detail-value">${studentData.type}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Location:</span>
+	                        <span class="detail-value">${getLocationFromCompany(studentData.company)}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Applied Date:</span>
+	                        <span class="detail-value">${studentData.appliedDate}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Duration:</span>
+	                        <span class="detail-value">3 months</span>
+	                    </div>
+	                </div>
+	                
+	                <div class="application-section">
+	                    <h6>Application Status</h6>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Status:</span>
+	                        <span class="detail-value">
+	                            <span class="status-badge ${statusBadgeClass}">${studentData.status}</span>
+	                        </span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Last Updated:</span>
+	                        <span class="detail-value">${studentData.appliedDate}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Reviewer:</span>
+	                        <span class="detail-value">Admin User</span>
+	                    </div>
+	                </div>
+	                
+	                <div class="application-section">
+	                    <h6>Additional Information</h6>
+	                    <div class="detail-row">
+	                        <span class="detail-label">Skills:</span>
+	                        <span class="detail-value">${getSkillsForDepartment(studentData.department)}</span>
+	                    </div>
+	                    <div class="detail-row">
+	                        <span class="detail-label">CGPA:</span>
+	                        <span class="detail-value">8.5/10</span>
+	                    </div>
+	                </div>
+	            </div>
+	        `;
+	        
+	        // Open modal
+	        viewModal.classList.add('active');
+	        document.body.style.overflow = 'hidden';
+	    }
+	    
+	    // Setup review action handlers (Approve/Reject)
+	    function setupReviewActionHandlers(studentData) {
+	        const approveBtn = document.getElementById('approveBtn');
+	        const rejectBtn = document.getElementById('rejectBtn');
+	        
+	        if (approveBtn) {
+	            approveBtn.onclick = function() {
+	                updateApplicationStatus(studentData, 'Approved', 'bg-success-subtle text-success');
+	                showNotification(`Application for ${studentData.name} has been approved!`);
+	                document.getElementById('reviewModal').classList.remove('active');
+	                document.body.style.overflow = 'auto';
+	            };
+	        }
+	        
+	        if (rejectBtn) {
+	            rejectBtn.onclick = function() {
+	                updateApplicationStatus(studentData, 'Rejected', 'bg-danger-subtle text-danger');
+	                showNotification(`Application for ${studentData.name} has been rejected.`);
+	                document.getElementById('reviewModal').classList.remove('active');
+	                document.body.style.overflow = 'auto';
+	            };
+	        }
+	    }
+	    
+	    // Helper function to get location from company name
+	    function getLocationFromCompany(company) {
+	        if (company.includes('Mumbai')) return 'Mumbai';
+	        if (company.includes('Delhi')) return 'Delhi';
+	        if (company.includes('Chennai')) return 'Chennai';
+	        if (company.includes('Bangalore')) return 'Bangalore';
+	        if (company.includes('Pune')) return 'Pune';
+	        if (company.includes('Kolkata')) return 'Kolkata';
+	        return 'Multiple Locations';
+	    }
+	    
+	    // Helper function to get skills based on department
+	    function getSkillsForDepartment(department) {
+	        const skillsMap = {
+	            'Computer Science': 'Python, Java, Web Development, Databases',
+	            'Electronics': 'Circuit Design, Embedded Systems, MATLAB',
+	            'Mechanical': 'CAD, SolidWorks, Thermodynamics',
+	            'Civil': 'AutoCAD, Structural Analysis, Construction Management',
+	            'Physics': 'Research Methodology, Data Analysis, Lab Skills',
+	            'Chemistry': 'Analytical Chemistry, Lab Techniques, Research',
+	            'Mathematics': 'Statistics, Data Analysis, Algorithms'
+	        };
+	        return skillsMap[department] || 'Programming, Problem Solving, Teamwork';
+	    }
+	    
+	    // Update application status in table
+	    function updateApplicationStatus(studentData, newStatus, statusClass) {
+	        const allTables = document.querySelectorAll('table tbody');
+	        
+	        allTables.forEach(table => {
+	            const rows = table.querySelectorAll('tr');
+	            rows.forEach(row => {
+	                const studentIdCell = row.querySelector('p.text-start');
+	                if (studentIdCell && studentIdCell.textContent === studentData.studentId) {
+	                    // Update status cell
+	                    const statusCell = row.cells[4];
+	                    if (statusCell) {
+	                        statusCell.innerHTML = `<span class="badge ${statusClass}">${newStatus}</span>`;
+	                    }
+	                    
+	                    // Update action button
+	                    const actionCell = row.cells[5];
+	                    if (actionCell) {
+	                        if (newStatus === 'Pending') {
+	                            actionCell.innerHTML = `<button type="button" class="btn-primary-outline review-btn">
+	                                <i class="bx bx-show"></i>Review
+	                            </button>`;
+	                        } else {
+	                            actionCell.innerHTML = `<button class="btn-primary-outline view-btn">
+	                                <i class="bx bx-show"></i>View
+	                            </button>`;
+	                        }
+	                    }
+	                }
+	            });
+	        });
+	        
+	        // Reinitialize button handlers for updated buttons
+	        initializeButtonHandlers();
+	    }
+	    
+	    // Show notification
+	    function showNotification(message) {
+	        const notification = document.createElement('div');
+	        notification.className = 'custom-notification';
+	        notification.textContent = message;
+	        notification.style.cssText = `
+	            position: fixed;
+	            top: 20px;
+	            right: 20px;
+	            background-color: #2ecc71;
+	            color: white;
+	            padding: 12px 20px;
+	            border-radius: 6px;
+	            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+	            z-index: 10000;
+	            animation: slideInRight 0.3s ease;
+	        `;
+	        
+	        document.body.appendChild(notification);
+	        
+	        setTimeout(() => {
+	            notification.style.animation = 'slideOutRight 0.3s ease';
+	            setTimeout(() => {
+	                if (notification.parentNode) {
+	                    notification.parentNode.removeChild(notification);
+	                }
+	            }, 300);
+	        }, 3000);
+	    }
+	    
+	    // Add CSS styles
+	    const style = document.createElement('style');
+	    style.textContent = `
+	        /* Modal Styles */
+	        .custom-modal {
+	            display: none;
+	            position: fixed;
+	            top: 0;
+	            left: 0;
+	            width: 100%;
+	            height: 100%;
+	            background-color: rgba(0, 0, 0, 0.5);
+	            z-index: 9999;
+	            overflow-y: auto;
+	        }
+	        
+	        .custom-modal.active {
+	            display: flex;
+	            align-items: center;
+	            justify-content: center;
+	        }
+	        
+	        .custom-modal-content {
+	            background-color: white;
+	            border-radius: 8px;
+	            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	            max-width: 95%;
+	            width: 100%;
+	        }
+	        
+	        .custom-modal-lg {
+	            max-width: 700px;
+	        }
+	        
+	        .custom-modal-header {
+	            padding: 20px 30px;
+	            border-bottom: 1px solid #dee2e6;
+	            display: flex;
+	            justify-content: space-between;
+	            align-items: center;
+	            background-color: #f8f9fa;
+	            border-radius: 8px 8px 0 0;
+	        }
+	        
+	        .custom-modal-title {
+	            margin: 0;
+	            font-size: 1.5rem;
+	            font-weight: 600;
+	            color: #333;
+	        }
+	        
+	        .custom-modal-close {
+	            background: none;
+	            border: none;
+	            font-size: 28px;
+	            cursor: pointer;
+	            color: #6c757d;
+	            line-height: 1;
+	            padding: 0;
+	            width: 30px;
+	            height: 30px;
+	            display: flex;
+	            align-items: center;
+	            justify-content: center;
+	        }
+	        
+	        .custom-modal-close:hover {
+	            color: #333;
+	        }
+	        
+	        .custom-modal-body {
+	            padding: 30px;
+	            max-height: 70vh;
+	            overflow-y: auto;
+	        }
+	        
+	        .custom-modal-footer {
+	            padding: 20px 30px;
+	            border-top: 1px solid #dee2e6;
+	            display: flex;
+	            justify-content: flex-end;
+	            gap: 10px;
+	            background-color: #f8f9fa;
+	            border-radius: 0 0 8px 8px;
+	        }
+	        
+	        /* Application Details Styles */
+	        .application-details {
+	            display: flex;
+	            flex-direction: column;
+	            gap: 20px;
+	        }
+	        
+	        .application-section {
+	            background-color: #f8f9fa;
+	            border-radius: 8px;
+	            padding: 20px;
+	        }
+	        
+	        .application-section h6 {
+	            color: #2c3e50;
+	            margin-bottom: 15px;
+	            font-weight: 600;
+	        }
+	        
+	        .detail-row {
+	            display: flex;
+	            margin-bottom: 10px;
+	            padding-bottom: 10px;
+	            border-bottom: 1px solid #eaeaea;
+	        }
+	        
+	        .detail-label {
+	            font-weight: 600;
+	            color: #2c3e50;
+	            min-width: 150px;
+	        }
+	        
+	        .detail-value {
+	            color: #34495e;
+	            flex: 1;
+	        }
+	        
+	        .status-badge {
+	            padding: 6px 12px;
+	            border-radius: 20px;
+	            font-size: 12px;
+	            font-weight: 500;
+	            display: inline-block;
+	        }
+	        
+	        .badge-pending {
+	            background-color: #f8f9fa;
+	            color: #6c757d;
+	        }
+	        
+	        .badge-approved {
+	            background-color: #d4edda;
+	            color: #155724;
+	        }
+	        
+	        .badge-rejected {
+	            background-color: #f8d7da;
+	            color: #721c24;
+	        }
+	        
+	        /* Form Styles */
+	        .form-control {
+	            width: 100%;
+	            padding: 8px 12px;
+	            border: 1px solid #ddd;
+	            border-radius: 4px;
+	            font-size: 14px;
+	        }
+	        
+	        .form-label {
+	            font-weight: 500;
+	            margin-bottom: 5px;
+	            display: block;
+	            color: #34495e;
+	        }
+	        
+	        /* Animations */
+	        @keyframes slideInRight {
+	            from { transform: translateX(100%); opacity: 0; }
+	            to { transform: translateX(0); opacity: 1; }
+	        }
+	        
+	        @keyframes slideOutRight {
+	            from { transform: translateX(0); opacity: 1; }
+	            to { transform: translateX(100%); opacity: 0; }
+	        }
+	        
+	        /* Responsive */
+	        @media (max-width: 768px) {
+	            .custom-modal-lg {
+	                max-width: 95%;
+	                margin: 20px auto;
+	            }
+	            
+	            .detail-row {
+	                flex-direction: column;
+	            }
+	            
+	            .detail-label {
+	                min-width: auto;
+	                margin-bottom: 5px;
+	            }
+	        }
+	    `;
+	    document.head.appendChild(style);
+	});
+	</script>
+	
 </body>
 
 </html>

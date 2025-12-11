@@ -1465,7 +1465,64 @@
 					</div>
 				</div>
 			</div>
+			
+			
+			<div class="modal fade" id="lowAttendanceModal" tabindex="-1" aria-labelledby="lowAttendanceModalLabel" aria-hidden="true">
+			  <div class="modal-dialog modal-dialog-centered">
+			    <div class="modal-content">
+			      <div class="modal-header border-0 pb-0">
+			        <h5 class="modal-title" id="lowAttendanceModalLabel">
+			          <i class="bx bx-info-circle text-warning me-2"></i> Students with Low Attendance
+			        </h5>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body pt-3">
 
+			        <!-- Student 1 - 34% -->
+			        <div class="d-flex align-items-center mb-4 p-3 bg-light rounded shadow-sm">
+			          <img src="/assets/images/prof_img.png" class="rounded-circle me-3" width="60" height="60" alt="Student">
+			          <div class="flex-grow-1">
+			            <h6 class="mb-1 fw-bold text-dark">Aryan Patel</h6>
+			            <small class="text-muted">STU2025034</small>
+			          </div>
+			          <span class="badge bg-danger fs-5 px-4 py-2">34%</span>
+			        </div>
+
+			        <!-- Student 2 - 70% -->
+			        <div class="d-flex align-items-center p-3 bg-light rounded shadow-sm">
+			          <img src="/assets/images/prof_img.png" class="rounded-circle me-3" width="60" height="60" alt="Student">
+			          <div class="flex-grow-1">
+			            <h6 class="mb-1 fw-bold text-dark">Neha Sharma</h6>
+			            <small class="text-muted">STU2025071</small>
+			          </div>
+			          <span class="badge bg-warning text-dark fs-5 px-4 py-2">70%</span>
+			        </div>
+
+			      </div>
+			     <!-- <div class="modal-footer border-0">
+			        <button type="button" class="btn btn-warning-cover mentor" data-bs-dismiss="modal">Close</button>
+			      </div>-->
+			    </div>
+			  </div>
+			</div>
+			
+			<style>
+			  #lowAttendanceModal .modal-content {
+			    border-radius: 12px;
+			    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+			  }
+			  #lowAttendanceModal .modal-header .modal-title {
+			    font-weight: 600;
+			    font-size: 1.25rem;
+			  }
+			  #lowAttendanceModal .badge {
+			    font-size: 1.1rem;
+			    min-width: 70px;
+			    text-align: center;
+			  }
+			</style>
+			
+			
 
 			<div class="row">
 				<div class="col-lg-12">
@@ -2376,6 +2433,44 @@ chosen link or button. -->
 			}
 		}, 2000);
 	</script>
+	
+	<script>
+	// Pure JavaScript – Open Modal on "View" Click
+	document.addEventListener("DOMContentLoaded", function () {
+	  
+	  // Get elements
+	  const viewBtn = document.querySelector(".btn-warning-cover.mentor");
+	  const closeBtn = document.querySelector(".btn-warning-outline.mentor");
+	  const modal = document.getElementById("lowAttendanceModal");
+	  const modalClose = modal.querySelector(".btn-close, .modal-footer .btn");
+
+	  // Open modal when clicking "View"
+	  viewBtn.addEventListener("click", function () {
+	    modal.style.display = "block";
+	    modal.classList.add("show");
+	    document.body.classList.add("modal-open");
+	  });
+
+	  // Close modal when clicking "Close" button or X
+	  closeBtn.addEventListener("click", closeModal);
+	  modalClose.addEventListener("click", closeModal);
+
+	  // Close modal when clicking outside
+	  window.addEventListener("click", function (e) {
+	    if (e.target === modal) {
+	      closeModal();
+	    }
+	  });
+
+	  // Close function
+	  function closeModal() {
+	    modal.style.display = "none";
+	    modal.classList.remove("show");
+	    document.body.classList.remove("modal-open");
+	  }
+	});
+	</script>
+	
 </body>
 
 </html>

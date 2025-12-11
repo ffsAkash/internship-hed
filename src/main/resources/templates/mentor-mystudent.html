@@ -113,6 +113,9 @@
 	<script src="/other/js/student/app_download.1732685003.js" defer="" type="text/javascript"></script>
 	<script src="/other/js/footer.1760584489.js" defer="" type="text/javascript"></script>
 	<script src="/other/js/student/student_common.1727159863.js" defer="" type="text/javascript"></script>
+	<!-- Libraries for PDF generation -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 	<script nonce="IXghZjCSvOg+tO8HQlKuhg==">
 		function sendToGTM(name, delta, id) {
 			if (typeof dataLayer == 'undefined') {
@@ -1646,13 +1649,15 @@
 											</form>
 											<div class="btnDiv">
 												<button class=" btn-primary-cover mentor"><i class="bx bx-download"></i>
-													Export</button>
+																									Export</button>
 												<button class="btn-warning-cover mentor"><i class="fa fa-plus"></i> Add
 													Student</button>
 											</div>
 										</div>
 									</div>
 								</div>
+								
+								
 								<div class="card-body custom_card_body">
 									<div class="row align-items-center">
 										<div class="col-md-6">
@@ -2942,6 +2947,9 @@ chosen link or button. -->
 	    }
 	});
 	</script>
+	
+	
+	
 </body>
 
 </html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Help Center</title>
+    <!-- Include jsPDF and html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .help-container {
+            width: 100%;
+            max-width: 700px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        h1 { 
+            color: #333;
+            margin-bottom: 20px;
+        }
+        p { 
+            color: #555; 
+            line-height: 1.5; 
+            margin-bottom: 15px;
+        }
+        ul {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            color: #555;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #f39c12;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .download-btn:hover {
+            background: #e67e22;
+        }
+    </style>
+</head>
+<body>
+    <div class="help-container" id="helpContent">
+        <h1>Help Center</h1>
+        <p>Welcome to the Help Center. Here you can find answers to frequently asked questions and get support.</p>
+        <ul>
+            <li>How to use the application?</li>
+            <li>How to download the application?</li>
+            <li>How to share the application?</li>
+        </ul>
+        <p>For further support, contact <a href="mailto:support@example.com">support@example.com</a></p>
+
+        <!-- Download as PDF Button -->
+        <button class="download-btn" onclick="downloadPDF()">Download as PDF</button>
+    </div>
+
+    <script>
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('p', 'pt', 'a4'); // portrait, points, A4
+
+            const content = document.getElementById("helpContent");
+
+            html2canvas(content, { scale: 2, useCORS: true }).then(canvas => {
+                const imgData = canvas.toDataURL("image/png");
+                const imgProps = doc.getImageProperties(imgData);
+                const pdfWidth = doc.internal.pageSize.getWidth();
+                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+                doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                doc.save("HelpCenter.pdf");
+            }).catch(err => {
+                console.error("Error generating PDF:", err);
+                alert("Failed to generate PDF.");
+            });
+        }
+    </script>
+</body>
+</html>

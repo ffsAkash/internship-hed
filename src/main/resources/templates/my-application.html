@@ -1484,28 +1484,44 @@
 									<div class="">
 										<ul class="Application_History_div">
 											<li>
-												<button class="btn-warning-cover w-100 d-flex justify-content-start"><i
-														class="bx bx-printer font-size-16"></i>Print
-													Application</button>
+											    <button onclick="openPrintPage()" class="btn-warning-cover w-100 d-flex justify-content-start">
+											        <i class="bx bx-printer font-size-16"></i> Print Application
+											    </button>
 											</li>
 
 											<li>
-												<button
-													class="btn-warning-outline w-100 d-flex justify-content-start"><i
-														class="far fa-file-pdf font-size-16"></i>Download as
-													PDF</button>
+											    <button onclick="downloadHTML()" 
+											        class="btn-warning-outline w-100 d-flex justify-content-start">
+											        <i class="far fa-file font-size-16"></i> Download As PDF
+											    </button>
 											</li>
 
-											<li>
-												<button
-													class="btn-warning-outline w-100 d-flex justify-content-start"><i
-														class="fas fa-share-alt"></i>Share Application</button>
-											</li>
 
 											<li>
-												<button
-													class="btn-warning-outline w-100 d-flex justify-content-start"><i
-														class="far fa-question-circle"></i>Get Help</button>
+											    <button id="shareBtn" class="btn-warning-outline w-100 d-flex justify-content-start">
+											        <i class="fas fa-share-alt"></i> Share Application
+											    </button>
+											</li>
+											<!-- Share Modal -->
+											<div id="shareModal" class="modal">
+											    <div class="modal-content">
+											        <span class="close">&times;</span>
+											        <h3>Share Application</h3>
+											        <div class="share-buttons">
+											            <a class="linkedin" target="_blank" href="#">LinkedIn</a>
+											            <a class="whatsapp" target="_blank" href="#">WhatsApp</a>
+											            <a class="twitter" target="_blank" href="#">Twitter</a>
+											        </div>
+											    </div>
+											</div>
+
+
+
+											<li>
+											    <button onclick="openHelp()" 
+											            class="btn-warning-outline w-100 d-flex justify-content-start">
+											        <i class="far fa-question-circle"></i> Get Help
+											    </button>
 											</li>
 
 										</ul>
@@ -1526,6 +1542,8 @@
 			var to_show_internshala_max_toast = "n";
 		</script>
 	</div>
+	
+
 	<script nonce="IXghZjCSvOg+tO8HQlKuhg==">
 		/* <![CDATA[ */
 		goog_snippet_vars = function () {
@@ -1588,6 +1606,61 @@
 			}
 		}, 2000);
 	</script>
+	<script>
+	function openPrintPage() {
+	    window.open('/assets/application.html', '_blank');
+	}
+	</script>
+	
+	<script>
+	function downloadHTML() {
+	    const link = document.createElement("a");
+
+	    // Your file location inside static/assets/
+	    link.href = "/assets/application.html";
+
+	    // What name user will get after download
+	    link.download = "application.html";
+
+	    link.click();
+	}
+	</script>
+
+
+	<script>
+	const modal = document.getElementById("shareModal");
+	const btn = document.getElementById("shareBtn");
+	const span = document.querySelector(".close");
+
+	btn.onclick = function() {
+	    modal.style.display = "block";
+
+	    const pageUrl = encodeURIComponent(window.location.href);
+	    const pageTitle = encodeURIComponent("Check out this application!");
+
+	    document.querySelector(".linkedin").href = `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
+	    document.querySelector(".whatsapp").href = `https://api.whatsapp.com/send?text=${pageTitle}%20${pageUrl}`;
+	    document.querySelector(".twitter").href = `https://twitter.com/intent/tweet?text=${pageTitle}&url=${pageUrl}`;
+	}
+
+	span.onclick = function() {
+	    modal.style.display = "none";
+	}
+
+	window.onclick = function(event) {
+	    if (event.target == modal) {
+	        modal.style.display = "none";
+	    }
+	}
+	</script>
+
+	<script>
+	function openHelp() {
+	    // Opens help.html in a new tab
+	    window.open('/assets/help.html', '_blank');
+	}
+	</script>
+
 </body>
 
 </html>

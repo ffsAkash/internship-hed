@@ -85,4 +85,9 @@ public class StudentController {
     public String verifyEmailSubmit() {
         return "redirect:/student/dashboard";
     }
+
+    @GetMapping("/update-resume")
+    public String updateResume() {
+        return "update-resume";
+    }
 }

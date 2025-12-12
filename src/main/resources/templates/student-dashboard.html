@@ -1,206 +1,398 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"
 	lang="en-US">
 
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=9" />
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0" />
-	<meta property="fb:app_id" content="702141670710132" />
-	<meta property="og:type" content="website" />
-	<meta property="og:image:width" content="1200" />
-	<meta property="og:image:height" content="630" />
-	<link rel="preload" href="https://internshala.com//static/images/home/sprites/img-assets.png" as="image" />
+    <style>
+        /* === INTERNSHIPS SECTION - MODERN REDESIGN === */
+.internships-jobs-section {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    margin: 40px auto;
+    max-width: 1400px;
+    padding: 0 20px;
+}
 
-	<link rel="preload" as="image" href="https://internshala.com//static/images/homepage/banner/r767_v1.webp"
-		media="(max-width: 767px)" />
-	<link rel="preload" as="image" href="https://internshala.com//static/images/homepage/banner/r991.webp"
-		media="(max-width: 991) and (min-width: 767.1px)" />
-	<link rel="preload" as="image" href="https://internshala.com//static/images/homepage/banner/1255.webp"
-		media="(max-width: 1255px) and (min-width: 991.1px)" />
-	<link rel="preload" as="image" href="https://internshala.com//static/images/homepage/banner/r1920.webp"
-		media="(min-width: 1255.1px)" />
-	<link rel="preload" as="image" href="https://internshala.com//static/images/home/sprites/sprite_v1.png" />
-	<link rel="preload" as="image" href="https://internshala.com//static/images/homepage/companies_strip.webp" />
+.internships-jobs-section .title h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
 
-	<link rel="preload" as="image" href="/other/images/tgs/homepage_trending/stt_v1.png%3Fq=2" />
-	<link rel="preload" as="image"
-		href="https://internshala-uploads.internshala.com/banner-images/home_new/stt_branch_dec25-student.png.webp" />
-	<link rel="preload" as="image"
-		href="https://internshala-uploads.internshala.com/banner-images/home_new/hgs_walk_in_drive-student.png.webp" />
+/* Filter Tabs - Modern Pill Style */
+.filter-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+    list-style: none;
+    padding: 0;
+}
 
-	<meta property="og:title" content="Internshala" />
-	<meta property="og:image" content="https://internshala.com//static/images/internshala_og_image.jpg" />
-	<meta property="og:description"
-		content="Internshala is India's no.1 internship,Jobs and training platform with 40000+ paid internships in Engineering, MBA, media, law, arts, and other streams." />
-	<meta name="twitter:site" content="@Internshala" />
-	<meta name="twitter:card" content="summary_large_image" />
+.filter-btn {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: #f1f3f5;
+    color: #444;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
 
-	<meta name="twitter:creator" content="@internshala" />
-	<meta name="twitter:image:src" content="https://internshala.com//static/images/internshala_og_image.jpg" />
-	<meta name="theme-color" content="#ffffff" />
-	<meta name="msapplication-navbutton-color" content="#ffffff" />
-	<meta name="format-detection" content="telephone=no" />
+.filter-btn.active,
+.filter-btn:hover {
+    background: #0d6efd;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.25);
+}
 
-	<link as="font" href="/other/fonts/Inter.woff2%3Fv=3.11" type="font/woff2" crossorigin />
-	<link as="font" href="https://internshala.com/static/fonts/internshala-icons.woff2?vw3rgh" type="font/woff2"
-		crossorigin />
-	<script src="/other/js/web_vitals/web-vitals.umd.js"></script>
-	<script src="/other/js/includes/common/libraries.2583691470.js" defer></script>
-	<link rel="stylesheet" href="/other/cdn/4.4.1/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="/css/icons.css" />
+/* Scroll Container & Cards Grid */
+.scroll-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+}
 
-	<link rel="icon" href="../favicon.ico%3Fv=5" />
-	<script nonce="IXghZjCSvOg+tO8HQlKuhg==">
-		var os_type = "";
-		var browser_name = 'wget';
-		var is_android = 0;
-		var is_mobile = 1;
-		var l_cookie = "36868008";
-		var view = "student/dashboard/index";
-		var user_id_ga = 36868008;
-		var mainRole = "student";
-		var to_show_account_activated_message = false;
-		var to_show_subscription_activated_message = false;
-		var location_autocomplete_min_length = 3;
-		var fresherJobsMinCtc = 2;
-		var show_maintenance_ribbon = false;
-		var maintenance_ribbon_message = "";
-		var base_url = 'https://internshala.com/';
-		var bulk_request_url_with_trailing_slash = 'https://internshala.com/';
-		var is_g_recaptcha = "6LdwW1ckAAAAAKcsi3VSrXg49B7GXfisCJDmI9kf";
-		var error_ribbon_support_email = "support@internshala.com";
-	</script>
-	<title>Internships | Jobs | Trainings &amp; Placement Courses | Post a Job</title>
-	<meta name="description"
-		content="Internshala is India&#039;s no.1 career platform trusted by 400K+ companies. We offer 120K+ paid internships, jobs, online trainings, &amp; placement courses." />
-	<link href="/other/css/student/dashboard/index.1764565050.css" rel="stylesheet" type="text/css" />
-	<link href="/other/css/chat/notification.1740724876.css" rel="stylesheet" type="text/css" />
-	<script src="/other/js/combined/common_form.1764565072.js" defer="" type="text/javascript"></script>
-	<script src="/other/js/chat/websocket.1757399601.js" defer="" type="text/javascript"></script>
-	<script src="/other/js/includes/components/popover_tooltip.1727159863.js" defer="" type="text/javascript"></script>
-	<script src="/other/js/includes/components/ellipse_modals.1727159863.js" defer="" type="text/javascript"></script>
-	<script src="/other/js/combined/student-dashboard.1763980758.js" defer="" type="text/javascript"></script>
-	<script src="/other/js/student/app_download.1732685003.js" defer="" type="text/javascript"></script>
-	<script src="/other/js/footer.1760584489.js" defer="" type="text/javascript"></script>
-	<script src="/other/js/student/student_common.1727159863.js" defer="" type="text/javascript"></script>
-	<script nonce="IXghZjCSvOg+tO8HQlKuhg==">
-		function sendToGTM(name, delta, id) {
-			if (typeof dataLayer == 'undefined') {
-				return;
-			}
-			// Assumes the global `dataLayer` array exists, see:
-			// https://developers.google.com/tag-manager/devguide
-			dataLayer.push({
-				event: 'web-vitals',
-				event_category: 'Web Vitals',
-				event_action: name.name,
-				// Google Analytics metrics must be integers, so the value is rounded.
-				// For CLS the value is first multiplied by 1000 for greater precision
-				// (note: increase the multiplier for greater precision if needed).
-				event_value: Math.round(name.name === 'CLS' ? name.delta * 1000 : name.delta),
-				// The 'id' value will be unique to the current page load. When sending
-				// multiple values from the same page (e.g. for CLS), Google Analytics can
-				// compute a total by grouping on this ID (note: requires `eventLabel` to
-				// be a dimension in your report).
-				event_label: name.id,
-			});
-		}
-		webVitals.getCLS(sendToGTM);
-		webVitals.getFID(sendToGTM);
-		webVitals.getLCP(sendToGTM);
-		webVitals.getFCP(sendToGTM);
-		webVitals.getTTFB(sendToGTM);
-	</script>
-	<script nonce="IXghZjCSvOg+tO8HQlKuhg==">
-		//    window.addEventListener('load', function() {
-		//        store_session_data();
-		//    });
+.scroll {
+    display: flex;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px 0;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+}
 
-		//    window.addEventListener('DOMContentLoaded', function() {
-		//        store_session_data();
-		//    });
+.scroll::-webkit-scrollbar {
+    display: none;
+}
 
-		var pdcVersion = "2";
-		var toMakeInitialRequest = 1;
-		if (toMakeInitialRequest == 1) {
-			store_session_data();
-		}
+/* Individual Card Styling */
+.card {
+    min-width: 340px;
+    max-width: 340px;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #eee;
+    position: relative;
+}
 
-		function store_session_data() {
-			var message = "device=" + getDeviceType();
-			var xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function () {
-				if (this.readyState === 4 && this.status === 200) {
-					//Success
-					var responseText = this.responseText;
-					try {
-						data = JSON.parse(responseText);
-						if (data.success) {
-							if (data.toMakeUpdateRequest) {
-								update_session_data();
-							}
-						} else {
-							//TODO
-						}
-					} catch (e) {
-						throw_error(e);
-					}
-				}
-			};
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
 
-			xhttp.open("POST", "/info/storeData", true);
-			xhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send(message);
-		}
+.card > a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
 
-		function update_session_data() {
-			var message = "";
-			var xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function () {
-				if (this.readyState === 4 && this.status === 200) {
-					//Success
-				}
-			};
+/* Actively Hiring Badge */
+.actively-hiring-label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #d4edda;
+    color: #155724;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
 
-			xhttp.open("POST", "/info/updateDeviceCookieVersion", true);
-			xhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send(message);
-		}
+.actively-hiring-label i {
+    font-size: 10px;
+}
 
-		function getDeviceType() {
-			var device;
-			if (typeof isMobile !== 'undefined') {
-				if (isMobile === '1') {
-					device = "mobile";
-				} else {
-					device = "desktop";
-				}
-			} else {
-				device = "NA";
-			}
+/* Card Heading */
+.card .heading {
+    padding: 20px 20px 0;
+}
 
-			return device;
-		}
+.card h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 6px 0;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
 
-	</script>
-	<script nonce="IXghZjCSvOg+tO8HQlKuhg==">
-		if (typeof Moengage !== 'undefined') {
-			const page_type_for_moengage_view = '';
-			if (page_type_for_moengage_view) {
-				Moengage.track_event(`${page_type_for_moengage_view}_visits`);
-			}
-		}
-	</script>
-	<script nonce="IXghZjCSvOg+tO8HQlKuhg==">
-		var junk_domain_data = {};
+.card .heading span {
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+}
 
-		var websocketUri = "wss:\/\/internshala.com\/chat\/pushpin_endpoint";
-		var online_time_margin_in_seconds = 60;
-		var to_use_websocket_only_on_chat = false;
-	</script>
+/* Location & Duration */
+.card ul {
+    list-style: none;
+    padding: 12px 20px;
+    margin: 0;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    color: #666;
+    font-size: 13.5px;
+}
+
+.card ul li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.card ul i {
+    color: #0d6efd;
+    font-size: 15px;
+}
+
+/* Footer */
+.card .footer {
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f0f0f0;
+    background: #fafafa;
+}
+
+.job-label {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 12.5px;
+    font-weight: 600;
+}
+
+.view-details-cta {
+    color: #0d6efd;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s;
+}
+
+.view-details-cta:hover {
+    gap: 10px;
+    color: #0a58ca;
+}
+
+/* Scroll Controller (Arrows + Track) */
+.scroll-controller {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 16px;
+}
+
+.scroll-controller .arrow {
+    width: 44px;
+    height: 44px;
+    background: white;
+    border: 1.5px solid #ddd;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.scroll-controller .arrow:hover:not(.disabled) {
+    background: #0d6efd;
+    color: white;
+    border-color: #0d6efd;
+}
+
+.scroll-controller .arrow.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.track {
+    width: 200px;
+    height: 6px;
+    background: #e9ecef;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.thumb {
+    height: 100%;
+    width: 30%;
+    background: #0d6efd;
+    border-radius: 3px;
+    transition: width 0.4s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card {
+        min-width: 300px;
+    }
+
+    .filter-tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 10px;
+    }
+
+    .filter-tabs::-webkit-scrollbar {
+        height: 4px;
+    }
+}
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+
+    <title>Internships | Jobs | Trainings &amp; Placement Courses | Post a Job</title>
+    <meta name="description" content="Internshala is India's no.1 career platform trusted by 400K+ companies. We offer 120K+ paid internships, jobs, online trainings, &amp; placement courses." />
+
+    <!-- Open Graph / Social Meta -->
+    <meta property="fb:app_id" content="702141670710132" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Internships | Jobs | Trainings &amp; Placement Courses | Post a Job" />
+    <meta property="og:description" content="Internshala is India's no.1 career platform trusted by 400K+ companies. We offer 120K+ paid internships, jobs, online trainings, &amp; placement courses." />
+    <meta property="og:image" content="https://internshala.com/static/images/internshala_og_image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Internshala" />
+    <meta name="twitter:creator" content="@internshala" />
+    <meta name="twitter:title" content="Internships | Jobs | Trainings &amp; Placement Courses | Post a Job" />
+    <meta name="twitter:description" content="Internshala is India's no.1 career platform trusted by 400K+ companies. We offer 120K+ paid internships, jobs, online trainings, &amp; placement courses." />
+    <meta name="twitter:image:src" content="https://internshala.com/static/images/internshala_og_image.jpg" />
+
+    <!-- Theme & Mobile -->
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="msapplication-navbutton-color" content="#ffffff" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://internshala.com/favicon.ico?v=5" />
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://internshala.com/static/images/home/sprites/img-assets.png" as="image" />
+    <link rel="preload" as="image" href="https://internshala.com/static/images/homepage/banner/r767_v1.webp" media="(max-width: 767px)" />
+    <link rel="preload" as="image" href="https://internshala.com/static/images/homepage/banner/r991.webp" media="(max-width: 991px) and (min-width: 767.1px)" />
+    <link rel="preload" as="image" href="https://internshala.com/static/images/homepage/banner/1255.webp" media="(max-width: 1255px) and (min-width: 991.1px)" />
+    <link rel="preload" as="image" href="https://internshala.com/static/images/homepage/banner/r1920.webp" media="(min-width: 1255.1px)" />
+    <link rel="preload" as="image" href="https://internshala.com/static/images/home/sprites/sprite_v1.png" />
+    <link rel="preload" as="image" href="https://internshala.com/static/images/homepage/companies_strip.webp" />
+
+    <!-- Fonts -->
+    <link rel="preload" as="font" href="https://internshala.com/static/fonts/Inter.woff2?v=3.11" type="font/woff2" crossorigin />
+    <link rel="preload" as="font" href="https://internshala.com/static/fonts/internshala-icons.woff2?vw3rgh" type="font/woff2" crossorigin />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/other/cdn/4.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/icons.css" />
+    <link href="/other/css/student/dashboard/index.1764565050.css" rel="stylesheet" />
+    <link href="/other/css/chat/notification.1740724876.css" rel="stylesheet" />
+
+    <!-- Your Custom Scrolling Logos Style -->
+    <style>
+        .actively-hiring-label { background-color: #83eb97; }
+        .hidden { display: none !important; }
+        .user-menu-item { padding: 4px 28px 8px !important; }
+
+        /* Infinite Logo Scroll */
+        .company_logos_container-custom { width: 100%; overflow: hidden; padding: 20px 0; }
+        .company-logos-custom { display: flex; align-items: center; }
+        .scroll-custom { display: flex; white-space: nowrap; overflow: hidden; position: relative; }
+        .image-strip-custom { display: flex; animation: scroll-custom-left 20s linear infinite; }
+        .image-strip-custom img {
+            width: 200px; height: 100px; object-fit: contain;
+            padding: 10px 20px; box-sizing: border-box; opacity: 1;
+            transition: 0.3s ease;
+        }
+        .image-strip-custom img:hover { transform: scale(1.08); }
+        .scroll-custom:hover .image-strip-custom { animation-play-state: paused; }
+        @keyframes scroll-custom-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+    </style>
+
+    <!-- Scripts (deferred where possible) -->
+    <script src="/other/js/web_vitals/web-vitals.umd.js" defer></script>
+    <script src="/other/js/includes/common/libraries.2583691470.js" defer></script>
+    <script src="/other/js/combined/common_form.1764565072.js" defer></script>
+    <script src="/other/js/chat/websocket.1757399601.js" defer></script>
+    <script src="/other/js/includes/components/popover_tooltip.1727159863.js" defer></script>
+    <script src="/other/js/includes/components/ellipse_modals.1727159863.js" defer></script>
+    <script src="/other/js/combined/student-dashboard.1763980758.js" defer></script>
+    <script src="/other/js/student/app_download.1732685003.js" defer></script>
+    <script src="/other/js/footer.1760584489.js" defer></script>
+    <script src="/other/js/student/student_common.1727159863.js" defer></script>
+
+    <!-- Global Variables (keep latest values) -->
+    <script nonce="d3GIH8M0btV/gR9zMFfe7A==">
+        var os_type = "";
+        var browser_name = 'wget';
+        var is_android = 0;
+        var is_mobile = 1;
+        var l_cookie = "36868008";
+        var view = "student/dashboard/index";
+        var user_id_ga = 36868008;
+        var mainRole = "student";
+        var base_url = 'https://internshala.com/';
+        var is_g_recaptcha = "6LdwW1ckAAAAAKcsi3VSrXg49B7GXfisCJDmI9kf";
+    </script>
+
+    <!-- Web Vitals + Session Storage Script (kept once) -->
+    <script nonce="d3GIH8M0btV/gR9zMFfe7A==">
+        function sendToGTM(name, delta, id) {
+            if (typeof dataLayer == 'undefined') return;
+            dataLayer.push({
+                event: 'web-vitals',
+                event_category: 'Web Vitals',
+                event_action: name.name,
+                event_value: Math.round(name.name === 'CLS' ? name.delta * 1000 : name.delta),
+                event_label: name.id
+            });
+        }
+        if (typeof webVitals !== 'undefined') {
+            webVitals.getCLS(sendToGTM);
+            webVitals.getFID(sendToGTM);
+            webVitals.getLCP(sendToGTM);
+            webVitals.getFCP(sendToGTM);
+            webVitals.getTTFB(sendToGTM);
+        }
+
+        var pdcVersion = "2";
+        var toMakeInitialRequest = 1;
+        if (toMakeInitialRequest == 1) store_session_data();
+
+        function store_session_data() { /* your existing function */ }
+        function update_session_data() { /* your existing function */ }
+        function getDeviceType() { /* your existing function */ }
+    </script>
 </head>
 
 <body>
@@ -1057,7 +1249,7 @@
 						<h1>Hi, EY!</h1>
 						<img src="/other/images/student/dashboard/waving-hand.svg" alt="waving hand">
 					</div>
-					<h4><a href='https://internshala.com/user_preference/preferences'>Complete your profile</a> to start
+					<h4><a href='/student/update-resume'>Complete your profile</a> to start
 						applying for internships </h4>
 				</div>
 				<div class="inner-container">
@@ -1087,74 +1279,7 @@
 					</div>
 					<div class="right-container">
 
-						<div class="trending-section student-homepage-section">
-							<div class="title">
-								<h5>Trending on IAPS</h5>
-								<div class="fire-sprite"></div>
-							</div>
-							<div class="scroll-container">
-								<div class="scroll">
-									<div class="card trending_banners" id="trending_banner_stt"
-										desktop-img='https://internshala.com/static/images/tgs/homepage_trending/stt_v1.png?q=2'>
-										<a target="_blank"
-											href="https:///?utm_source=is_web_custom_homepage_banner#certification-courses-section">
-											<img src="/other/images/tgs/homepage_trending/stt_v1.png%3Fq=2"
-												alt="card" />
-										</a>
-									</div>
-									<div class="card trending_banners" id="trending_banner_1161"
-										desktop-img='https://internshala-uploads.internshala.com/banner-images/home_new/stt_branch_dec25-student.png.webp'>
-										<a target="_blank"
-											href="https:///?utm_source=is_web_custom_hp_banner_branch_dec25&payment_source=custom_hp_banner_banner_branch_dec25/#certification-courses-section">
-											<img src="https://internshala-uploads.internshala.com/banner-images/home_new/stt_branch_dec25-student.png.webp"
-												alt="card" />
-										</a>
-									</div>
-									<div class="card trending_banners" id="trending_banner_1160"
-										desktop-img='https://internshala-uploads.internshala.com/banner-images/home_new/hgs_walk_in_drive-student.png.webp'>
-										<a target="_blank"
-											href="/internship/detail/sales-associate-internship-in-multiple-locations-at-hgs-hinduja-global-solutions1764324276?utm_source=trendingbanner&utm_medium=ed_trendingbanner_hgs_031225">
-											<img src="https://internshala-uploads.internshala.com/banner-images/home_new/hgs_walk_in_drive-student.png.webp"
-												alt="card" />
-										</a>
-									</div>
-									<div class="card trending_banners" id="trending_banner_1159"
-										desktop-img='https://internshala-uploads.internshala.com/banner-images/home_new/zefj_dec25-student.png.webp'>
-										<a target="_blank"
-											href="/zero-experience-jobs-revolution-dec25/?utm_source=custom_banner&utm_medium=homepage">
-											<img src="https://internshala-uploads.internshala.com/banner-images/home_new/zefj_dec25-student.png.webp"
-												alt="card" />
-										</a>
-									</div>
-									<div class="card trending_banners" id="trending_banner_1142"
-										desktop-img='https://internshala-uploads.internshala.com/banner-images/home_new/godrej_agrovet_-student.png.webp'>
-										<a target="_blank" href="/i/godrej_hb">
-											<img src="https://internshala-uploads.internshala.com/banner-images/home_new/godrej_agrovet_-student.png.webp"
-												alt="card" />
-										</a>
-									</div>
-									<div class="card trending_banners" id="trending_banner_1156"
-										desktop-img='https://internshala-uploads.internshala.com/banner-images/home_new/ibrf_nov25-student.png.webp'>
-										<a target="_blank"
-											href="/biggest-recruitment-fair-nov25/?utm_source=custom_banner&utm_medium=homepage">
-											<img src="https://internshala-uploads.internshala.com/banner-images/home_new/ibrf_nov25-student.png.webp"
-												alt="card" />
-										</a>
-									</div>
-								</div>
-								<div class="scroll-controller">
-									<div class="arrow prev disabled">
-										<i class="ic-chevron-left-custom "></i>
-									</div>
-									<div class="track">
-										<div class="thumb"></div>
-									</div>
-									<div class="arrow next">
-										<i class="ic-chevron-right-custom"></i>
-									</div>
-								</div>
-							</div>
-						</div>
+					<!-- Paste Here -->
 						<div id="internships-jobs-section" class="student-homepage-section"></div>
 						<div id="certification-trainings-section" class="student-homepage-section">
 							<div class="certification-trainings-section">
@@ -2135,6 +2260,57 @@ chosen link or button. -->
 			}
 		}, 2000);
 	</script>
+    <script>
+        // FINAL VERSION – Stops ALL other scripts from interfering
+        (function () {
+            'use strict';
+
+            function ready(fn) {
+                if (document.readyState !== 'loading') fn();
+                else document.addEventListener('DOMContentLoaded', fn);
+            }
+
+            ready(function () {
+                // Super specific selector – only our buttons
+                const buttons = document.querySelectorAll('#internships-jobs-section .filter-btn');
+
+                if (buttons.length === 0) return;
+
+                buttons.forEach(button => {
+                    // Remove any old listeners first (in case script runs twice)
+                    button.replaceWith(button.cloneNode(true));
+                });
+
+                // Re-select after cloning (clears all previous click handlers)
+                const cleanButtons = document.querySelectorAll('#internships-jobs-section .filter-btn');
+                const cards = document.querySelectorAll('#internships-jobs-section .scroll > .card');
+
+                cleanButtons.forEach(btn => {
+                    btn.addEventListener('click', function (e) {
+                        // THIS IS THE KEY: Stop everything else
+                        e.preventDefault();
+                        e.stopImmediatePropagation();   // Stronger than stopPropagation()
+                        e.stopPropagation();
+
+                        // Remove active from all
+                        cleanButtons.forEach(b => b.classList.remove('active'));
+                        this.classList.add('active');
+
+                        const filter = this.getAttribute('data-filter') || 'all';
+
+                        cards.forEach(card => {
+                            const cat = card.getAttribute('data-category');
+                            if (filter === 'all' || cat === filter) {
+                                card.classList.remove('hidden');
+                            } else {
+                                card.classList.add('hidden');
+                            }
+                        });
+                    });
+                });
+            });
+        })();
+    </script>
 </body>
 
 </html>

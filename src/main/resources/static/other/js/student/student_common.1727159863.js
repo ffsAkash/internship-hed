@@ -104,10 +104,10 @@ function education_notification_first_popover_no_message() {
             trigger: 'manual',
             sanitize: false,
             template:
-                '<div class="popover popover-light"><div class="arrow"></div><div class="popover-inner"><h6 class="popover-title">Internshala chat</h6><div class="popover-body"><p></p></div></div></div>',
+                '<div class="popover popover-light"><div class="arrow"></div><div class="popover-inner"><h6 class="popover-title">IAPS chat</h6><div class="popover-body"><p></p></div></div></div>',
             content:
                 "<div class='notification_content'><ul type='disc'>" +
-                '<li>You can now view messages from different companies and reply to them using Internshala Chat.</li>' +
+                '<li>You can now view messages from different companies and reply to them using IAPS Chat.</li>' +
                 '<li>Chat can only be started by the companies that you apply to.</li>' +
                 '<li>Once you have received a new message through chat from any company, click on the chat icon to view the message.</li>' +
                 '</ul>' +
@@ -159,10 +159,10 @@ function education_notification_first_popover_atleast_message(source) {
             trigger: 'manual',
             sanitize: false,
             template:
-                '<div class="popover popover-light"><div class="arrow"></div><div class="popover-inner"><h6 class="popover-title">Internshala chat</h6><div class="popover-body"><p></p></div></div></div>',
+                '<div class="popover popover-light"><div class="arrow"></div><div class="popover-inner"><h6 class="popover-title">IAPS chat</h6><div class="popover-body"><p></p></div></div></div>',
             content:
                 `<div class='notification_content'><ul type='disc'>` +
-                `<li>You can now view messages from different companies and reply to them using Internshala Chat.</li>` +
+                `<li>You can now view messages from different companies and reply to them using IAPS Chat.</li>` +
                 `<li>Chat can only be started by the companies that you apply to.</li>${
                     typeof source != 'undefined' && source == 'chat'
                         ? '<li>Once you have received a new message from any company, click on the chat icon to view the message.</li>'

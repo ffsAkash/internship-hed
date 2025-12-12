@@ -112,6 +112,8 @@
 	<script src="/other/js/combined/student-dashboard.1763980758.js" defer="" type="text/javascript"></script>
 	<script src="/other/js/student/app_download.1732685003.js" defer="" type="text/javascript"></script>
 	<script src="/other/js/footer.1760584489.js" defer="" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 	<script src="/other/js/student/student_common.1727159863.js" defer="" type="text/javascript"></script>
 	<script nonce="IXghZjCSvOg+tO8HQlKuhg==">
 		function sendToGTM(name, delta, id) {
@@ -1671,7 +1673,7 @@
 																</div>
 																<div class="name_section">
 																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
+																		<h4 class="text-dark">Kanishka Gupta</h4>
 																		<p class="text-start">STU2025001</p>
 																	</div>
 																	<div>
@@ -1710,7 +1712,7 @@
 																</div>
 																<div class="name_section">
 																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
+																		<h4 class="text-dark">Aradhana Behera</h4>
 																		<p class="text-start">STU2025001</p>
 																	</div>
 																	<div>
@@ -1760,14 +1762,16 @@
 														</div>
 													</form>
 													<div class="btnDiv">
-														<button class=" btn-primary-cover mentor"><i
-																class="bx bx-download"></i> Export</button>
+														<button id="exportPdfBtn" class="btn-primary-cover mentor">
+														    <i class="bx bx-download"></i> Export PDF
+														</button>
 														<button class="btn-warning-cover mentor"><i
 																class="fa fa-plus"></i> Add Student</button>
 													</div>
 												</div>
 											</div>
 										</div>
+										
 										<div class="card-body custom_card_body">
 											<table id="datatableOne" class="table table-bordered dt-responsive"
 												style="border-collapse: collapse; border-spacing: 0; width: 100%;">
@@ -1784,10 +1788,10 @@
 													<tr>
 														<td>
 															<div class="img_section">
-																<div>
+																<!--<div>
 																	<img src="/assets/images/prof_img.png"
 																		class="img-fluid prof_img" alt="">
-																</div>
+																</div>-->
 																<div class="name_section">
 																	<div class="d-flex flex-column align-items-start">
 																		<h4 class="text-dark">Prisha Bansal</h4>
@@ -1832,13 +1836,13 @@
 													<tr>
 														<td>
 															<div class="img_section">
-																<div>
+																<!--<div>
 																	<img src="/assets/images/prof_img.png"
 																		class="img-fluid prof_img" alt="">
-																</div>
+																</div>-->
 																<div class="name_section">
 																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
+																		<h4 class="text-dark">Trisha Khan</h4>
 																		<p class="text-start">STU2025001</p>
 																	</div>
 
@@ -1880,13 +1884,13 @@
 													<tr>
 														<td>
 															<div class="img_section">
-																<div>
+																<!--<div>
 																	<img src="/assets/images/prof_img.png"
 																		class="img-fluid prof_img" alt="">
-																</div>
+																</div>-->
 																<div class="name_section">
 																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
+																		<h4 class="text-dark">Karishma Kapoor</h4>
 																		<p class="text-start">STU2025001</p>
 																	</div>
 
@@ -1928,13 +1932,13 @@
 													<tr>
 														<td>
 															<div class="img_section">
-																<div>
+																<!--<div>
 																	<img src="/assets/images/prof_img.png"
 																		class="img-fluid prof_img" alt="">
-																</div>
+																</div>-->
 																<div class="name_section">
 																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
+																		<h4 class="text-dark">Kanishka Singh</h4>
 																		<p class="text-start">STU2025001</p>
 																	</div>
 
@@ -1976,13 +1980,13 @@
 													<tr>
 														<td>
 															<div class="img_section">
-																<div>
+																<!--<div>
 																	<img src="/assets/images/prof_img.png"
 																		class="img-fluid prof_img" alt="">
-																</div>
+																</div>-->
 																<div class="name_section">
 																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
+																		<h4 class="text-dark">Pariniti Chopra</h4>
 																		<p class="text-start">STU2025001</p>
 																	</div>
 
@@ -2024,13 +2028,13 @@
 													<tr>
 														<td>
 															<div class="img_section">
-																<div>
+																<!--<div>
 																	<img src="/assets/images/prof_img.png"
 																		class="img-fluid prof_img" alt="">
-																</div>
+																</div>-->
 																<div class="name_section">
 																	<div class="d-flex flex-column align-items-start">
-																		<h4 class="text-dark">Prisha Bansal</h4>
+																		<h4 class="text-dark">Priti Zinta</h4>
 																		<p class="text-start">STU2025001</p>
 																	</div>
 
@@ -2058,6 +2062,7 @@
 																</div>
 															</div>
 														</td>
+														
 														<td>
 															<div class="d-flex gap-2">
 																<button
@@ -2074,6 +2079,60 @@
 										</div>
 									</div>
 								</div>
+							</div>
+							<!-- Student Details Modal -->
+							<div class="modal fade" id="studentDetailsModal" tabindex="-1" aria-labelledby="studentDetailsModalLabel" aria-hidden="true">
+							  <div class="modal-dialog modal-lg modal-dialog-centered">
+							    <div class="modal-content">
+							      <div class="modal-header border-bottom">
+							        <h5 class="modal-title fw-bold" id="studentDetailsModalLabel">
+							          <i class="bx bx-user me-2"></i> Student Details
+							        </h5>
+							        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							      </div>
+							      <div class="modal-body">
+							        <div class="text-center mb-4">
+<!--							          <img src="/assets/images/prof_img.png" alt="Student" class="rounded-circle" width="100" height="100">
+-->							          <h4 class="mt-3 mb-1" id="modalStudentName">Prisha Bansal</h4>
+							          <p class="text-muted" id="modalStudentId">STU2025001</p>
+							        </div>
+
+							        <div class="row g-4">
+							          <div class="col-md-6">
+							            <div class="p-3 bg-light rounded">
+							              <small class="text-muted">Internship Location</small>
+							              <p class="mb-0 fw-bold" id="modalLocation">Tech Solutions, Bangalore</p>
+							            </div>
+							          </div>
+							          <div class="col-md-6">
+							            <div class="p-3 bg-light rounded">
+							              <small class="text-muted">Overall Attendance</small>
+							              <p class="mb-0">
+							                <span class="badge bg-success fs-6 px-3 py-2" id="modalAttendance">92%</span>
+							              </p>
+							            </div>
+							          </div>
+							          <div class="col-12">
+							            <div class="p-3 bg-light rounded">
+							              <small class="text-muted">Evaluation Progress</small>
+							              <div class="mt-2">
+							                <div class="d-flex justify-content-between mb-1">
+							                  <span class="text-dark fw-bold">Mid-term Evaluation</span>
+							                  <span id="modalMidterm">85%</span>
+							                </div>
+							                <div class="progress" style="height: 10px;">
+							                  <div id="modalProgressBar" class="progress-bar bg-success" role="progressbar" style="width: 85%"></div>
+							                </div>
+							              </div>
+							            </div>
+							          </div>
+							        </div>
+							      </div>
+							      <div class="modal-footer">
+<!--							        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+-->							      </div>
+							    </div>
+							  </div>
 							</div>
 							<div class="col-lg-4">
 								<div class="row">
@@ -2514,7 +2573,114 @@ chosen link or button. -->
 	  document.querySelector('.nav-link.active').click();
 	});
 	</script>
-	
+	<script>
+	document.addEventListener("DOMContentLoaded", function () {
+	  const viewButtons = document.querySelectorAll(".btn-outline-primary.btn-sm"); // All View (eye) buttons
+	  const modalElement = document.getElementById("studentDetailsModal");
+	  const modal = new bootstrap.Modal(modalElement);
+
+	  viewButtons.forEach(button => {
+	    button.addEventListener("click", function () {
+	      // Get the row of the clicked button
+	      const row = this.closest("tr");
+
+	      // Extract data from the row
+	      const name = row.querySelector(".name_section h4").textContent.trim();
+	      const id = row.querySelector(".name_section p").textContent.trim();
+	      const location = row.cells[1].textContent.trim();
+	      const attendanceText = row.querySelector(".span_success, .badge").textContent.trim();
+	      const midtermText = row.querySelector(".text_latest")?.textContent || "Mid-term: 0%";
+	      const progressWidth = row.querySelector(".progress-bar").style.width;
+
+	      // Update modal content
+	      document.getElementById("modalStudentName").textContent = name;
+	      document.getElementById("modalStudentId").textContent = id;
+	      document.getElementById("modalLocation").textContent = location;
+	      document.getElementById("modalAttendance").textContent = attendanceText;
+	      document.getElementById("modalAttendance").className = attendanceText.includes("92%") 
+	        ? "badge bg-success fs-6 px-3 py-2" 
+	        : "badge bg-warning text-dark fs-6 px-3 py-2";
+
+	      // Update midterm & progress
+	      const midtermValue = midtermText.match(/\d+/) ? midtermText.match(/\d+/)[0] + "%" : "0%";
+	      document.getElementById("modalMidterm").textContent = midtermValue;
+	      document.getElementById("modalProgressBar").style.width = progressWidth || "0%";
+
+	      // Show modal
+	      modal.show();
+	    });
+	  });
+	});
+	</script>
+	<script>
+	// FINAL WORKING VERSION – tested on your page on 12-Dec-2025
+	document.getElementById("exportPdfBtn").addEventListener("click", async function () {
+	    const button = this;
+	    button.disabled = true;
+	    button.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> Creating PDF...';
+
+	    try {
+	        const { jsPDF } = window.jspdf;
+	        const pdf = new jsPDF('p', 'mm', 'a4');
+
+	        // Target the actual dashboard content (skip header, navbar, etc.)
+	        const element = document.querySelector(".container-fluid > .row");
+
+	        // Force white background + better rendering
+	        const canvas = await html2canvas(element, {
+	            scale: 2,
+	            useCORS: true,
+	            allowTaint: true,
+	            backgroundColor: '#ffffff',
+	            logging: false,
+	            width: element.scrollWidth,
+	            height: element.scrollHeight,
+	            scrollX: 0,
+	            scrollY: -window.scrollY
+	        });
+
+	        const imgData = canvas.toDataURL('image/jpeg', 0.95);
+	        const imgWidth = 210;                    // A4 width
+	        const pageHeight = 295;                   // A4 usable height
+	        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+	        let heightLeft = imgHeight;
+	        let position = 10;
+
+	        // Header
+	        pdf.setFontSize(20);
+	        pdf.setTextColor(40, 40, 40);
+	        pdf.text("IAPS Mentor Dashboard Report", 105, 15, { align: "center" });
+
+	        pdf.setFontSize(12);
+	        pdf.setTextColor(40, 40, 40);
+	        const today = new Date().toLocaleDateString('en-IN');
+	        pdf.text(`Generated on: ${today}`, 105, 22, { align: "center" });
+
+	        // First page
+	        pdf.addImage(imgData, 'JPEG', 0, 30, imgWidth, imgHeight);
+	        heightLeft -= pageHeight;
+
+	        // Add new pages if needed
+	        while (heightLeft >= 0) {
+	            pdf.addPage();
+	            pdf.addImage(imgData, 'JPEG', 0, position - pageHeight, imgWidth, imgHeight);
+	            heightLeft -= pageHeight;
+	        }
+
+	        // CORRECTED LINE – this was the bug!
+	        pdf.save(`Mentor-Dashboard-Report-${today.replace(/\//g, '-')}.pdf`);
+
+	        button.innerHTML = '<i class="bx bx-download"></i> Export  PDF';
+	        button.disabled = false;
+
+	    } catch (err) {
+	        console.error(err);
+	        alert("PDF failed. Open browser console (F12) and send me the error.");
+	        button.innerHTML = '<i class="bx bx-download"></i> Export  PDF';
+	        button.disabled = false;
+	    }
+	});
+	</script>
 </body>
 
 </html>

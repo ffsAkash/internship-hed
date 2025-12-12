@@ -113,6 +113,8 @@
 	<script src="/other/js/student/app_download.1732685003.js" defer="" type="text/javascript"></script>
 	<script src="/other/js/footer.1760584489.js" defer="" type="text/javascript"></script>
 	<script src="/other/js/student/student_common.1727159863.js" defer="" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 	<script nonce="IXghZjCSvOg+tO8HQlKuhg==">
 		function sendToGTM(name, delta, id) {
 			if (typeof dataLayer == 'undefined') {
@@ -1777,7 +1779,7 @@
 																	<div class="name_section">
 																		<div
 																			class="d-flex flex-column align-items-start">
-																			<h4 class="text-dark">Prisha Bansal</h4>
+																			<h4 class="text-dark">Trisha Sahu</h4>
 																			<p class="text-start">STU2025001</p>
 																		</div>
 																		<div>
@@ -1822,7 +1824,7 @@
 																	<div class="name_section">
 																		<div
 																			class="d-flex flex-column align-items-start">
-																			<h4 class="text-dark">Prisha Bansal</h4>
+																			<h4 class="text-dark">Crisha Dash</h4>
 																			<p class="text-start">STU2025001</p>
 																		</div>
 																		<div>
@@ -1868,7 +1870,7 @@
 																	<div class="name_section">
 																		<div
 																			class="d-flex flex-column align-items-start">
-																			<h4 class="text-dark">Prisha Bansal</h4>
+																			<h4 class="text-dark">Manisha Patra</h4>
 																			<p class="text-start">STU2025001</p>
 																		</div>
 																		<div>
@@ -1913,7 +1915,7 @@
 																	<div class="name_section">
 																		<div
 																			class="d-flex flex-column align-items-start">
-																			<h4 class="text-dark">Prisha Bansal</h4>
+																			<h4 class="text-dark">Aisha Behera</h4>
 																			<p class="text-start">STU2025001</p>
 																		</div>
 																		<div>
@@ -2752,7 +2754,104 @@ chosen link or button. -->
 	    modal.show();
 	  });
 	</script>
-	
+	<script>
+	document.addEventListener("DOMContentLoaded", function () {
+	    const exportBtn = document.querySelector('.btn-primary-cover.mentor'); // Export button
+
+	    if (exportBtn) {
+	        exportBtn.addEventListener('click', function () {
+	            // Show loading toast
+	            const loadingToast = document.getElementById("loading_toast");
+	            if (loadingToast) loadingToast.style.display = "block";
+
+	            // Determine active tab
+	            const activeTab = document.querySelector('.tab-pane.active');
+	            let captureElement;
+	            let title = "Attendance_Report";
+
+	            if (activeTab.id === "navpills2-home") {
+	                captureElement = document.querySelector('#navpills2-home');
+	                title = "Daily_Attendance_" + new Date().toISOString().slice(0,10);
+	            } else if (activeTab.id === "navpills2-profile") {
+	                captureElement = document.querySelector('#navpills2-profile');
+	                title = "Weekly_Attendance_Summary";
+	            } else if (activeTab.id === "navpills2-messages") {
+	                captureElement = document.querySelector('#navpills2-messages');
+	                title = "Monthly_Attendance_Report";
+	            }
+
+	            if (!captureElement) {
+	                alert("No data to export.");
+	                if (loadingToast) loadingToast.style.display = "none";
+	                return;
+	            }
+
+	            // Hide ALL action buttons in the active tab (more comprehensive selector)
+	            const actionButtons = captureElement.querySelectorAll('button.btn-outline-warning, button.btn-outline-primary, button.btn-danger, .d-flex.gap-2 button');
+	            actionButtons.forEach(btn => {
+	                btn.dataset.originalDisplay = btn.style.display || 'flex'; // Save original display
+	                btn.style.display = 'none'; // Hide reliably
+	            });
+
+	            // Add title header for PDF
+	            const header = document.createElement('div');
+	            header.innerHTML = `<h2 style="text-align:center; margin:20px 0; font-size:24px;">Attendance Report<br><small style="font-size:16px;">${document.querySelector('.att_text')?.textContent || 'Internshala Mentor Portal'} - ${new Date().toLocaleDateString()}</small></h2>`;
+	            captureElement.insertBefore(header, captureElement.firstChild);
+
+	            html2canvas(captureElement, {
+	                scale: 2,
+	                useCORS: true,
+	                backgroundColor: '#ffffff',
+	                logging: false
+	            }).then(canvas => {
+	                const imgData = canvas.toDataURL('image/png');
+	                const { jsPDF } = window.jspdf;
+	                const pdf = new jsPDF({
+	                    orientation: 'landscape',
+	                    unit: 'px',
+	                    format: 'a4'
+	                });
+
+	                const pdfWidth = pdf.internal.pageSize.getWidth();
+	                const pdfHeight = pdf.internal.pageSize.getHeight();
+	                const imgWidth = canvas.width;
+	                const imgHeight = canvas.height;
+	                const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+	                const imgX = (pdfWidth - imgWidth * ratio) / 2;
+	                const imgY = 30;
+
+	                pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
+	                pdf.save(title + '.pdf');
+
+	                // === CLEANUP: Always restore buttons and header ===
+	                if (header && header.parentNode) {
+	                    captureElement.removeChild(header);
+	                }
+	                actionButtons.forEach(btn => {
+	                    btn.style.display = btn.dataset.originalDisplay || 'flex';
+	                    delete btn.dataset.originalDisplay; // Clean up
+	                });
+
+	                if (loadingToast) loadingToast.style.display = "none";
+	            }).catch(err => {
+	                console.error('PDF generation failed:', err);
+	                alert('Failed to generate PDF. Please try again.');
+
+	                // === Force restore even on error ===
+	                if (header && header.parentNode) {
+	                    captureElement.removeChild(header);
+	                }
+	                actionButtons.forEach(btn => {
+	                    btn.style.display = btn.dataset.originalDisplay || 'flex';
+	                    delete btn.dataset.originalDisplay;
+	                });
+
+	                if (loadingToast) loadingToast.style.display = "none";
+	            });
+	        });
+	    }
+	});
+	</script>
 </body>
 
 </html>

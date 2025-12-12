@@ -1,1359 +1,2050 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"
-      lang="en-US">
+	lang="en-US">
 
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=9" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0" />
-    <meta property="fb:app_id" content="702141670710132" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <link rel="preload" href="/images/home/sprites/img-assets.png" as="image"/>
-    <meta property="og:title" content="" />
-    <meta property="og:image" content="/images/internshala_og_image.jpg" />
-    <meta property="og:description" content=" is India's no.1 internship,Jobs and training platform with 40000+ paid internships in Engineering, MBA, media, law, arts, and other streams." />
-    <meta name="twitter:site" content="@" />
-    <meta name="twitter:card" content="summary_large_image" />
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0" />
+	<meta property="fb:app_id" content="702141670710132" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<link rel="preload" href="/images/home/sprites/img-assets.png" as="image" />
+	<meta property="og:title" content="" />
+	<meta property="og:image" content="/images/internshala_og_image.jpg" />
+	<meta property="og:description"
+		content=" is India's no.1 internship,Jobs and training platform with 40000+ paid internships in Engineering, MBA, media, law, arts, and other streams." />
+	<meta name="twitter:site" content="@" />
+	<meta name="twitter:card" content="summary_large_image" />
 
-    <meta name="twitter:creator" content="@internshala" />
-    <meta name="twitter:image:src" content="/images/internshala_og_image.jpg" />
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="msapplication-navbutton-color" content="#ffffff" />
-    <meta name="format-detection" content="telephone=no" />
-    <link rel="stylesheet" href="/css/icons.css" />
+	<meta name="twitter:creator" content="@internshala" />
+	<meta name="twitter:image:src" content="/images/internshala_og_image.jpg" />
+	<meta name="theme-color" content="#ffffff" />
+	<meta name="msapplication-navbutton-color" content="#ffffff" />
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="stylesheet" href="/css/icons.css" />
 
-    <link as="font" href="/other/fonts/Inter.woff2%3Fv=3.11" type="font/woff2" crossorigin />
-    <link as="font" href="static/fonts/internshala-icons.woff2?vw3rgh" type="font/woff2" crossorigin /> <script src="/other/js/web_vitals/web-vitals.umd.js"></script>
-    <script src="/other/js/includes/common/libraries.2583691470.js" defer></script>
-    <link rel="stylesheet" href="/other/cdn/4.4.1/css/bootstrap.min.css" />
+	<link as="font" href="/other/fonts/Inter.woff2%3Fv=3.11" type="font/woff2" crossorigin />
+	<link as="font" href="static/fonts/internshala-icons.woff2?vw3rgh" type="font/woff2" crossorigin />
+	<script src="/other/js/web_vitals/web-vitals.umd.js"></script>
+	<script src="/other/js/includes/common/libraries.2583691470.js" defer></script>
+	<link rel="stylesheet" href="/other/cdn/4.4.1/css/bootstrap.min.css" />
 
-    <link rel="icon" href="../favicon.ico%3Fv=5" />
-    <script nonce="Fu58kZyrthH05UnpqGiw5g==">
-        var os_type = "";
-        var browser_name = 'wget';
-        var is_android = 0;
-        var is_mobile = 1;
-        var l_cookie = "";
-        var view = "employer/dashboard/dashboard";
-        var user_id_ga = 36883052;
-        var mainRole = "employer";
-        var to_show_account_activated_message = false;
-        var to_show_subscription_activated_message = false;
-        var location_autocomplete_min_length = 3;
-        var fresherJobsMinCtc = 2;
-        var show_maintenance_ribbon = false;
-        var maintenance_ribbon_message = "";
-        var base_url = '';
-        var bulk_request_url_with_trailing_slash = '';
-        var is_g_recaptcha = "6LdwW1ckAAAAAKcsi3VSrXg49B7GXfisCJDmI9kf";
-        var error_ribbon_support_email = "employer@internshala.com";
-    </script>
-    <title >Internships | Jobs | Trainings &amp; Placement Courses | Post a Job</title>
-    <meta name="description" content=" is India&#039;s no.1 career platform trusted by 400K+ companies. We offer 120K+ paid internships, jobs, online trainings, &amp; placement courses." />
-    <link href="/other/css/employer/dashboard.1764565050.css" rel="stylesheet" type="text/css" />
-    <link href="/other/css/chat/notification.1740724876.css" rel="stylesheet" type="text/css" />
-    <script src="/other/js/combined/common_form.1764565072.js" defer="" type="text/javascript" ></script>
-    <script src="/other/js/chat/websocket.1757399601.js" defer="" type="text/javascript" ></script>
-    <script src="/other/js/includes/chosenNew/chosen.jquery.1762930133.js" defer="" type="text/javascript" ></script>
-    <script src="/other/js/combined/employer-dashboard.1764565109.js" defer="" type="text/javascript" ></script>
-    <script src="/other/js/student/app_download.1732685003.js" defer="" type="text/javascript" ></script>
-    <script src="/other/js/footer.1760584489.js" defer="" type="text/javascript" ></script>
-    <script src="/other/js/combined/employer_common.1758711137.js" defer="" type="text/javascript" ></script>
-    <script nonce="Fu58kZyrthH05UnpqGiw5g==">
-        function sendToGTM(name, delta, id) {
-            if (typeof dataLayer == 'undefined') {
-                return;
-            }
-            // Assumes the global `dataLayer` array exists, see:
-            // https://developers.google.com/tag-manager/devguide
-            dataLayer.push({
-                event: 'web-vitals',
-                event_category: 'Web Vitals',
-                event_action: name.name,
-                // Google Analytics metrics must be integers, so the value is rounded.
-                // For CLS the value is first multiplied by 1000 for greater precision
-                // (note: increase the multiplier for greater precision if needed).
-                event_value: Math.round(name.name === 'CLS' ? name.delta * 1000 : name.delta),
-                // The 'id' value will be unique to the current page load. When sending
-                // multiple values from the same page (e.g. for CLS), Google Analytics can
-                // compute a total by grouping on this ID (note: requires `eventLabel` to
-                // be a dimension in your report).
-                event_label: name.id,
-            });
-        }
-        webVitals.getCLS(sendToGTM);
-        webVitals.getFID(sendToGTM);
-        webVitals.getLCP(sendToGTM);
-        webVitals.getFCP(sendToGTM);
-        webVitals.getTTFB(sendToGTM);
-    </script>
-    <script nonce="Fu58kZyrthH05UnpqGiw5g==">
-        // window.addEventListener('load', function() {
-        // store_session_data();
-        // });
+	<link rel="icon" href="../favicon.ico%3Fv=5" />
+	<script nonce="Fu58kZyrthH05UnpqGiw5g==">
+		var os_type = "";
+		var browser_name = 'wget';
+		var is_android = 0;
+		var is_mobile = 1;
+		var l_cookie = "";
+		var view = "employer/dashboard/dashboard";
+		var user_id_ga = 36883052;
+		var mainRole = "employer";
+		var to_show_account_activated_message = false;
+		var to_show_subscription_activated_message = false;
+		var location_autocomplete_min_length = 3;
+		var fresherJobsMinCtc = 2;
+		var show_maintenance_ribbon = false;
+		var maintenance_ribbon_message = "";
+		var base_url = '';
+		var bulk_request_url_with_trailing_slash = '';
+		var is_g_recaptcha = "6LdwW1ckAAAAAKcsi3VSrXg49B7GXfisCJDmI9kf";
+		var error_ribbon_support_email = "employer@internshala.com";
+	</script>
+	<title>Internships | Jobs | Trainings &amp; Placement Courses | Post a Job</title>
+	<meta name="description"
+		content=" is India&#039;s no.1 career platform trusted by 400K+ companies. We offer 120K+ paid internships, jobs, online trainings, &amp; placement courses." />
+	<link href="/other/css/employer/dashboard.1764565050.css" rel="stylesheet" type="text/css" />
+	<link href="/other/css/chat/notification.1740724876.css" rel="stylesheet" type="text/css" />
+	<script src="/other/js/combined/common_form.1764565072.js" defer="" type="text/javascript"></script>
+	<script src="/other/js/chat/websocket.1757399601.js" defer="" type="text/javascript"></script>
+	<script src="/other/js/includes/chosenNew/chosen.jquery.1762930133.js" defer="" type="text/javascript"></script>
+	<script src="/other/js/combined/employer-dashboard.1764565109.js" defer="" type="text/javascript"></script>
+	<script src="/other/js/student/app_download.1732685003.js" defer="" type="text/javascript"></script>
+	<script src="/other/js/footer.1760584489.js" defer="" type="text/javascript"></script>
+	<script src="/other/js/combined/employer_common.1758711137.js" defer="" type="text/javascript"></script>
+	<script nonce="Fu58kZyrthH05UnpqGiw5g==">
+		function sendToGTM(name, delta, id) {
+			if (typeof dataLayer == 'undefined') {
+				return;
+			}
+			// Assumes the global `dataLayer` array exists, see:
+			// https://developers.google.com/tag-manager/devguide
+			dataLayer.push({
+				event: 'web-vitals',
+				event_category: 'Web Vitals',
+				event_action: name.name,
+				// Google Analytics metrics must be integers, so the value is rounded.
+				// For CLS the value is first multiplied by 1000 for greater precision
+				// (note: increase the multiplier for greater precision if needed).
+				event_value: Math.round(name.name === 'CLS' ? name.delta * 1000 : name.delta),
+				// The 'id' value will be unique to the current page load. When sending
+				// multiple values from the same page (e.g. for CLS), Google Analytics can
+				// compute a total by grouping on this ID (note: requires `eventLabel` to
+				// be a dimension in your report).
+				event_label: name.id,
+			});
+		}
+		webVitals.getCLS(sendToGTM);
+		webVitals.getFID(sendToGTM);
+		webVitals.getLCP(sendToGTM);
+		webVitals.getFCP(sendToGTM);
+		webVitals.getTTFB(sendToGTM);
+	</script>
+	<script nonce="Fu58kZyrthH05UnpqGiw5g==">
+		// window.addEventListener('load', function() {
+		// store_session_data();
+		// });
 
-        // window.addEventListener('DOMContentLoaded', function() {
-        // store_session_data();
-        // });
+		// window.addEventListener('DOMContentLoaded', function() {
+		// store_session_data();
+		// });
 
-            var pdcVersion = "2";
-            var toMakeInitialRequest = 1;
-            if (toMakeInitialRequest == 1) {
-                store_session_data();
-            }
+		var pdcVersion = "2";
+		var toMakeInitialRequest = 1;
+		if (toMakeInitialRequest == 1) {
+			store_session_data();
+		}
 
-            function store_session_data() {
-                var message = "device=" + getDeviceType();
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState === 4 && this.status === 200) {
-                        //Success
-                        var responseText = this.responseText;
-                        try {
-                            data = JSON.parse(responseText);
-                            if (data.success) {
-                                if(data.toMakeUpdateRequest) {
-                                    update_session_data();
-                                }
-                            } else {
-                                //TODO
-                            }
-                        } catch (e) {
-                            throw_error(e);
-                        }
-                    }
-                };
+		function store_session_data() {
+			var message = "device=" + getDeviceType();
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function () {
+				if (this.readyState === 4 && this.status === 200) {
+					//Success
+					var responseText = this.responseText;
+					try {
+						data = JSON.parse(responseText);
+						if (data.success) {
+							if (data.toMakeUpdateRequest) {
+								update_session_data();
+							}
+						} else {
+							//TODO
+						}
+					} catch (e) {
+						throw_error(e);
+					}
+				}
+			};
 
-                xhttp.open("POST", "/info/storeData", true);
-                xhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                xhttp.send(message);
-            }
+			xhttp.open("POST", "/info/storeData", true);
+			xhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send(message);
+		}
 
-            function update_session_data() {
-                var message = "";
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState === 4 && this.status === 200) {
-                        //Success
-                    }
-                };
+		function update_session_data() {
+			var message = "";
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function () {
+				if (this.readyState === 4 && this.status === 200) {
+					//Success
+				}
+			};
 
-                xhttp.open("POST", "/info/updateDeviceCookieVersion", true);
-                xhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                xhttp.send(message);
-            }
+			xhttp.open("POST", "/info/updateDeviceCookieVersion", true);
+			xhttp.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xhttp.send(message);
+		}
 
-            function getDeviceType() {
-                var device;
-                if (typeof isMobile !== 'undefined') {
-                    if (isMobile === '1') {
-                        device = "mobile";
-                    } else {
-                        device = "desktop";
-                    }
-                } else {
-                    device = "NA";
-                }
+		function getDeviceType() {
+			var device;
+			if (typeof isMobile !== 'undefined') {
+				if (isMobile === '1') {
+					device = "mobile";
+				} else {
+					device = "desktop";
+				}
+			} else {
+				device = "NA";
+			}
 
-                return device;
-            }
+			return device;
+		}
 
-    </script>
-    <script nonce="Fu58kZyrthH05UnpqGiw5g==">
-        if (typeof Moengage !== 'undefined') {
-            const page_type_for_moengage_view = '';
-            if (page_type_for_moengage_view) {
-                Moengage.track_event(`${page_type_for_moengage_view}_visits`);
-            }
-        }
-    </script>
-    <script nonce="Fu58kZyrthH05UnpqGiw5g==">
-        var junk_domain_data = {};
+	</script>
+	<script nonce="Fu58kZyrthH05UnpqGiw5g==">
+		if (typeof Moengage !== 'undefined') {
+			const page_type_for_moengage_view = '';
+			if (page_type_for_moengage_view) {
+				Moengage.track_event(`${page_type_for_moengage_view}_visits`);
+			}
+		}
+	</script>
+	<script nonce="Fu58kZyrthH05UnpqGiw5g==">
+		var junk_domain_data = {};
 
-                    var websocketUri = "wss:\/\/internshala.com\/chat\/pushpin_endpoint";
-            var online_time_margin_in_seconds = 60;
-            var to_use_websocket_only_on_chat = false;
-    </script>
+		var websocketUri = "wss:\/\/internshala.com\/chat\/pushpin_endpoint";
+		var online_time_margin_in_seconds = 60;
+		var to_use_websocket_only_on_chat = false;
+	</script>
+
+	<style>
+		/* Modal styling */
+		#internReviewModal .modal-content {
+			border-radius: 12px;
+			overflow: hidden;
+		}
+
+		#internReviewModal .modal-header {
+			background: #f8f9fa;
+			border-bottom: 1px solid #dee2e6;
+			padding: 1.5rem 1.5rem 1rem;
+		}
+
+		#internReviewModal .modal-header .inner_div {
+			display: flex;
+			align-items: center;
+		}
+
+		#internReviewModal .modal-header h4 {
+			color: #2c3e50;
+			font-weight: 600;
+			font-size: 1.5rem;
+			margin: 0;
+		}
+
+		#internReviewModal .modal-body {
+			padding: 1.5rem;
+		}
+
+		/* Table styling */
+		#internReviewModal .table {
+			margin-bottom: 0;
+		}
+
+		#internReviewModal thead th {
+			background-color: #f8f9fa;
+			border-bottom: 2px solid #dee2e6;
+			color: #495057;
+			font-weight: 600;
+			padding: 1rem 0.75rem;
+			vertical-align: middle;
+		}
+
+		#internReviewModal tbody td {
+			padding: 1rem 0.75rem;
+			vertical-align: middle;
+			border-color: #eff2f7;
+		}
+
+		/* Student row styling */
+		.img_section {
+			display: flex;
+			align-items: center;
+			gap: 15px;
+		}
+
+		.prof_img {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			object-fit: cover;
+			border: 2px solid #e9ecef;
+		}
+
+		.name_section {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex: 1;
+		}
+
+		.name_section h4 {
+			color: #2c3e50;
+			font-size: 1.1rem;
+			font-weight: 600;
+			margin: 0;
+		}
+
+		.name_section p {
+			color: #6c757d;
+			font-size: 0.875rem;
+			margin: 2px 0 0 0;
+		}
+
+		.edit_img {
+			width: 20px;
+			height: 20px;
+			opacity: 0.7;
+			transition: opacity 0.2s;
+		}
+
+		.edit_img:hover {
+			opacity: 1;
+		}
+
+		/* Badge styling */
+		.custom_badge {
+			padding: 0.35em 0.65em;
+			font-size: 0.75em;
+			font-weight: 600;
+			border-radius: 50rem;
+			display: inline-block;
+			line-height: 1;
+			text-align: center;
+			white-space: nowrap;
+			vertical-align: baseline;
+		}
+
+		.bg-warning-subtle {
+			background-color: rgba(255, 193, 7, 0.15) !important;
+		}
+
+		.text-warning {
+			color: #ffc107 !important;
+		}
+
+		.bg-success-subtle {
+			background-color: rgba(40, 167, 69, 0.15) !important;
+		}
+
+		.text-success {
+			color: #28a745 !important;
+		}
+
+		.bg-info-subtle {
+			background-color: rgba(23, 162, 184, 0.15) !important;
+		}
+
+		.text-info {
+			color: #17a2b8 !important;
+		}
+
+		.bg-secondary-subtle {
+			background-color: rgba(108, 117, 125, 0.15) !important;
+		}
+
+		.text-secondary {
+			color: #6c757d !important;
+		}
+
+		/* Button styling */
+		.btn-primary-outline {
+			background-color: transparent;
+			border: 1px solid #007bff;
+			color: #007bff;
+			padding: 0.375rem 0.75rem;
+			border-radius: 0.375rem;
+			font-size: 0.875rem;
+			font-weight: 500;
+			transition: all 0.2s;
+			display: inline-flex;
+			align-items: center;
+			gap: 5px;
+		}
+
+		.btn-primary-outline:hover {
+			background-color: #007bff;
+			color: white;
+			text-decoration: none;
+		}
+
+		.btn-primary-outline i {
+			font-size: 1rem;
+		}
+
+		/* Skills column */
+		.new_heading {
+			color: #2c3e50;
+			font-size: 1rem;
+			font-weight: 600;
+			margin: 0;
+		}
+
+		#internReviewModal tbody td small {
+			color: #6c757d;
+			font-size: 0.875rem;
+		}
+
+		/* Hover effects */
+		#internReviewModal tbody tr:hover {
+			background-color: #f8f9fa;
+		}
+
+		/* Responsive adjustments */
+		@media (max-width: 768px) {
+			#internReviewModal .modal-dialog {
+				margin: 0.5rem;
+			}
+
+			#internReviewModal .modal-header {
+				padding: 1rem 1rem 0.5rem;
+			}
+
+			#internReviewModal .modal-header h4 {
+				font-size: 1.25rem;
+			}
+
+			#internReviewModal .modal-body {
+				padding: 1rem;
+			}
+
+			.img_section {
+				gap: 10px;
+			}
+
+			.prof_img {
+				width: 40px;
+				height: 40px;
+			}
+
+			.name_section h4 {
+				font-size: 1rem;
+			}
+		}
+	</style>
+
+	<style>
+		/* Stats Cards */
+		.stat-card {
+			border: none;
+			border-radius: 12px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+			transition: transform 0.2s;
+		}
+
+		.stat-card:hover {
+			transform: translateY(-2px);
+		}
+
+		.stat-icon {
+			width: 50px;
+			height: 50px;
+			border-radius: 10px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.stat-icon i {
+			font-size: 24px;
+			color: white;
+		}
+
+		.stat-icon.bg-primary {
+			background: linear-gradient(135deg, #667eea 0%, #bbb3c2 100%);
+		}
+
+		.stat-icon.bg-success {
+			background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+		}
+
+		.stat-icon.bg-warning {
+			background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+		}
+
+		.stat-icon.bg-info {
+			background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+		}
+
+		.stat-label {
+			font-size: 14px;
+			color: #6c757d;
+			font-weight: 500;
+		}
+
+		.stat-value {
+			font-size: 24px;
+			font-weight: 600;
+			color: #2c3e50;
+		}
+
+		/* Quick Actions Card */
+		.quick-actions-card {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			border: none;
+			border-radius: 12px;
+			color: white;
+		}
+
+		.quick-actions-card h4 {
+			color: white;
+		}
+
+		.quick-actions-card p {
+			color: rgba(255, 255, 255, 0.9);
+		}
+
+		/* Table Styles */
+		.table-responsive {
+			border-radius: 10px;
+			overflow: hidden;
+		}
+
+		.table th {
+			background-color: #f8f9fa;
+			border-bottom: 2px solid #dee2e6;
+			color: #495057;
+			font-weight: 600;
+			padding: 1rem;
+		}
+
+		.table td {
+			padding: 1rem;
+			vertical-align: middle;
+		}
+
+		.job-icon {
+			width: 40px;
+			height: 40px;
+			background: #f8f9fa;
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.job-icon i {
+			font-size: 20px;
+			color: #667eea;
+		}
+
+		/* Activity List */
+		.activity-item {
+			display: flex;
+			align-items: flex-start;
+			padding: 12px 0;
+			border-bottom: 1px solid #f1f3f4;
+		}
+
+		.activity-item:last-child {
+			border-bottom: none;
+		}
+
+		.activity-icon {
+			width: 40px;
+			height: 40px;
+			background: #f8f9fa;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-right: 12px;
+		}
+
+		.activity-icon i {
+			color: #667eea;
+		}
+
+		.activity-content h6 {
+			margin-bottom: 4px;
+			font-size: 14px;
+		}
+
+		/* Task List */
+		.task-item {
+			padding: 12px 0;
+			border-bottom: 1px solid #f1f3f4;
+		}
+
+		.task-item:last-child {
+			border-bottom: none;
+		}
+
+		.task-item .form-check-label {
+			font-weight: 500;
+		}
+
+		/* Badges */
+		.badge {
+			padding: 6px 12px;
+			border-radius: 20px;
+			font-size: 12px;
+			font-weight: 500;
+		}
+
+		/* Buttons */
+		.btn-primary {
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			border: none;
+			border-radius: 6px;
+			padding: 8px 16px;
+		}
+
+		.btn-primary:hover {
+			transform: translateY(-1px);
+			box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+		}
+
+		.btn-outline-primary {
+			border-radius: 6px;
+			padding: 8px 16px;
+		}
+
+
+
+
+		/* Responsive */
+		@media (max-width: 768px) {
+			.card-header .inner_div {
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 10px;
+			}
+
+			.header-actions {
+				width: 100%;
+				justify-content: flex-end;
+			}
+		}
+
+		.job-icon {
+			margin-right: 12px;
+			/* or 0.75rem */
+		}
+
+		.stat-icon {
+			margin-right: 1rem;
+			/* 16px */
+		}
+	</style>
+
 </head>
 
 <body>
-<div id="wrapper">
-    <!-- ribbon -->
+	<div id="wrapper">
+		<!-- ribbon -->
 
-    <div id='general_notification' class="notification notification_general" style="display: none">
-    </div>
+		<div id='general_notification' class="notification notification_general" style="display: none">
+		</div>
 
-    <div id="custom_notification_parent">
-        <div id='custom_notification' class="notification notification_general" style="display: none">
-        </div>
-    </div>
+		<div id="custom_notification_parent">
+			<div id='custom_notification' class="notification notification_general" style="display: none">
+			</div>
+		</div>
 
-    <!-- modal - error message -->
-    <div id="error_modal" class="modal fade in internshala-modal" style="display: none">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="image_container error_image">
-                        <div class="image"></div>
-                    </div>
-                    <div class="message_container">
-                        <div class="text-heading heading_4_5 small-device-text-center"></div>
-                        <div class="text-message body-main small-device-text-center"></div>
-                        <div class="button_container">
-                            <a class="btn btn-primary modal_primary_btn close_action" data-dismiss= "modal">Close</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+		<!-- modal - error message -->
+		<div id="error_modal" class="modal fade in internshala-modal" style="display: none">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="image_container error_image">
+							<div class="image"></div>
+						</div>
+						<div class="message_container">
+							<div class="text-heading heading_4_5 small-device-text-center"></div>
+							<div class="text-message body-main small-device-text-center"></div>
+							<div class="button_container">
+								<a class="btn btn-primary modal_primary_btn close_action" data-dismiss="modal">Close</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <!-- modal - success message -->
-    <div id="success_modal" class="modal fade in internshala-modal" style="display: none">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="image_container success_image">
-                        <div class="image"></div>
-                    </div>
-                    <div class="message_container">
-                        <div class="text-heading heading_4_5 small-device-text-center"></div>
-                        <div class="text-message body-main small-device-text-center"></div>
-                        <div class="button_container">
-                            <button class="btn btn-secondary modal_secondary_btn close_action" data-dismiss= "modal">Cancel</button>
-                            <a class="btn btn-primary modal_primary_btn close_action" data-dismiss= "modal">Close</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- modal - success message -->
-    <div id="success_modal_dual_button" class="modal fade in internshala-modal" style="display: none">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="image_container success_image">
-                        <div class="image"></div>
-                    </div>
-                    <div class="message_container">
-                        <div class="text-heading heading_4_5 small-device-text-center"></div>
-                        <div class="text-message body-main small-device-text-center"></div>
-                        <div class="button_container">
-                            <a class="btn btn-secondary modal_secondary_btn close_action" data-dismiss= "modal">Close</a>
-                            <a class="btn btn-primary modal_primary_btn close_action" data-dismiss= "modal">Close</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+		<!-- modal - success message -->
+		<div id="success_modal" class="modal fade in internshala-modal" style="display: none">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="image_container success_image">
+							<div class="image"></div>
+						</div>
+						<div class="message_container">
+							<div class="text-heading heading_4_5 small-device-text-center"></div>
+							<div class="text-message body-main small-device-text-center"></div>
+							<div class="button_container">
+								<button class="btn btn-secondary modal_secondary_btn close_action"
+									data-dismiss="modal">Cancel</button>
+								<a class="btn btn-primary modal_primary_btn close_action" data-dismiss="modal">Close</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- modal - success message -->
+		<div id="success_modal_dual_button" class="modal fade in internshala-modal" style="display: none">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="image_container success_image">
+							<div class="image"></div>
+						</div>
+						<div class="message_container">
+							<div class="text-heading heading_4_5 small-device-text-center"></div>
+							<div class="text-message body-main small-device-text-center"></div>
+							<div class="button_container">
+								<a class="btn btn-secondary modal_secondary_btn close_action"
+									data-dismiss="modal">Close</a>
+								<a class="btn btn-primary modal_primary_btn close_action" data-dismiss="modal">Close</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <!-- modal - alert message -->
-    <div id="alert_modal" class="modal fade in internshala-modal" style="display: none">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="image_container alert_image">
-                        <div class="image"></div>
-                    </div>
-                    <div class="message_container">
-                        <div class="text-heading heading_4_5 small-device-text-center"></div>
-                        <div class="text-message body-main small-device-text-center"></div>
-                        <div class="button_container">
-                            <a class="btn btn-primary modal_primary_btn close_action" data-dismiss= "modal">Close</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+		<!-- modal - alert message -->
+		<div id="alert_modal" class="modal fade in internshala-modal" style="display: none">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="image_container alert_image">
+							<div class="image"></div>
+						</div>
+						<div class="message_container">
+							<div class="text-heading heading_4_5 small-device-text-center"></div>
+							<div class="text-message body-main small-device-text-center"></div>
+							<div class="button_container">
+								<a class="btn btn-primary modal_primary_btn close_action" data-dismiss="modal">Close</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <!--- confirmation modal-->
-    <div id="confirmation_modal" class="modal fade in internshala-modal confirmation_modal" style="display: none">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="message_container">
-                        <div class="text-heading heading_4_5"></div>
-                        <div class="text-message body-main"></div>
-                        <div class="button_container">
-                            <button class="btn btn-secondary modal_secondary_btn close_action" data-dismiss= "modal">Cancel</button>
-                            <a class="btn btn-primary modal_primary_btn yes-button close_action" data-dismiss= "modal">Yes</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+		<!--- confirmation modal-->
+		<div id="confirmation_modal" class="modal fade in internshala-modal confirmation_modal" style="display: none">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="message_container">
+							<div class="text-heading heading_4_5"></div>
+							<div class="text-message body-main"></div>
+							<div class="button_container">
+								<button class="btn btn-secondary modal_secondary_btn close_action"
+									data-dismiss="modal">Cancel</button>
+								<a class="btn btn-primary modal_primary_btn yes-button close_action"
+									data-dismiss="modal">Yes</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <div class="loading_image">
-    </div>
+		<div class="loading_image">
+		</div>
 
-    <div class="nav_dropdown_backdrop">
-    </div>
+		<div class="nav_dropdown_backdrop">
+		</div>
 
-    <noscript>
-        <div class="notification notification_js_disabled" style="display: block;">
-            Oops, your browser does not support Javascript. Please use  in another browser.
-        </div>
-    </noscript>
+		<noscript>
+			<div class="notification notification_js_disabled" style="display: block;">
+				Oops, your browser does not support Javascript. Please use in another browser.
+			</div>
+		</noscript>
 
-    <div class="toast internshala-toast loading_toast" id="loading_toast" style="display: none;">
-        <div class="toast-body-container">
-            <div class="toast-body heading_6_6">
-                Loading, please wait...
-            </div>
-        </div>
-    </div>
+		<div class="toast internshala-toast loading_toast" id="loading_toast" style="display: none;">
+			<div class="toast-body-container">
+				<div class="toast-body heading_6_6">
+					Loading, please wait...
+				</div>
+			</div>
+		</div>
 
-    <div class="toast internshala-toast general_toast" style="display: none;">
-        <div class="toast-body-container">
-            <div class="toast-body heading_6_6">
-            </div>
-        </div>
-    </div>
+		<div class="toast internshala-toast general_toast" style="display: none;">
+			<div class="toast-body-container">
+				<div class="toast-body heading_6_6">
+				</div>
+			</div>
+		</div>
 
-    <div class="toast internshala-toast success_toast" style="display: none;">
-        <div class="toast-body-container">
-            <div class="toast-body heading_6_6">
-            </div>
-        </div>
-    </div>
+		<div class="toast internshala-toast success_toast" style="display: none;">
+			<div class="toast-body-container">
+				<div class="toast-body heading_6_6">
+				</div>
+			</div>
+		</div>
 
-    <div class="toast internshala-toast error_toast" style="display: none;">
-        <div class="toast-body-container">
-            <div class="toast-body heading_6_6">
-            </div>
-        </div>
-    </div>
+		<div class="toast internshala-toast error_toast" style="display: none;">
+			<div class="toast-body-container">
+				<div class="toast-body heading_6_6">
+				</div>
+			</div>
+		</div>
 
-    <div class="toast internshala-toast black_bottom_toast" style="display: none;">
-        <div class="toast-body-container">
-            <div class="toast-body body-main">
-            </div>
-        </div>
-    </div>
+		<div class="toast internshala-toast black_bottom_toast" style="display: none;">
+			<div class="toast-body-container">
+				<div class="toast-body body-main">
+				</div>
+			</div>
+		</div>
 
-    <div class="popover_overlay">
-    </div>
+		<div class="popover_overlay">
+		</div>
 
 
-    <div class="chat_notification_loading_image" style="display: none;">
-    </div>
-    <div id="header" class="header_container container-fluid ">
-        <div class="max-width-container">
-            <div class='layer'></div>
-            <div id="mySidenav" class="sidenav ">
-                <div class="ham_menu_items profile_container">
-                    <div class="profile_icon">S</div>
-                    <div class="profile_details">
-                        <div id="profile_name">Subhashree Panda</div>
-                        <div id="profile_email">subhashreepanda1310@gmail.com</div>
-                    </div>
-                </div>
-                <div class="ham_menu_items_container employer">
-                    <div class="ham_menu_items">
-                        <div class="ham_main_heading"><a href="employer-subscription">Plans and Pricing</a></div>
-                    </div>
-                    <div class="ham_menu_items">
-                        <div class="ham_main_heading"><a href="dashboard.html">Dashboard</a></div>
-                    </div>
-                    <div class="ham_menu_items">
-                        <div class="ham_main_heading">
-                            <a href="job/form">Post Internship/Job</a>
-                        </div>
-                    </div>
+		<div class="chat_notification_loading_image" style="display: none;">
+		</div>
+		<div id="header" class="header_container container-fluid ">
+			<div class="max-width-container">
+				<div class='layer'></div>
+				<div id="mySidenav" class="sidenav ">
+					<div class="ham_menu_items profile_container">
+						<div class="profile_icon">S</div>
+						<div class="profile_details">
+							<div id="profile_name">Subhashree Panda</div>
+							<div id="profile_email">subhashreepanda1310@gmail.com</div>
+						</div>
+					</div>
+					<div class="ham_menu_items_container employer">
+						<div class="ham_menu_items">
+							<div class="ham_main_heading"><a href="employer-subscription">Plans and Pricing</a></div>
+						</div>
+						<div class="ham_menu_items">
+							<div class="ham_main_heading"><a href="dashboard.html">Dashboard</a></div>
+						</div>
+						<div class="ham_menu_items">
+							<div class="ham_main_heading">
+								<a href="job/form">Post Internship/Job</a>
+							</div>
+						</div>
 
-                    <!-- <div class="ham_menu_items">
+						<!-- <div class="ham_menu_items">
                         <div class="ham_main_heading">
                             <a class="online-training-link" href="https://trainings.internshala.com/?utm_source=is_web_internshala_ham_employer">
                 Courses </a>
                         </div>
                     </div>-->
 
-                    <div class="ham_menu_items">
-                        <div class="ham_main_heading"><a href="help_center.html">Help Center</a></div>
-                    </div>
-                    <div class="ham_menu_items without_link">
-                        <div class="ham_title ham_main_heading ham_title_more">
-                            Manage Account <i class="header-dropdown-arrow-custom"></i>
-                        </div>
-                        <div class="ham_submenu_items">
-                            <div class="ham_inner_menu_items">
-                                <div class="ham_inner_title"><a href="profile.html">Edit Profile</a></div>
-                            </div>
-                            <div class="ham_inner_menu_items">
-                                <div class="ham_inner_title"><a href="login/update_password">Change Password</a></div>
-                            </div>
-                            <div class="ham_inner_menu_items">
-                                <div class="ham_inner_title"><a href="delete_account_employer" class="delete_employer_account">Delete my account</a></div>
-                            </div>
-                            <div class="ham_inner_menu_items">
-                                <div class="ham_inner_title"><a href="logout">Logout</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+						<div class="ham_menu_items">
+							<div class="ham_main_heading"><a href="help_center.html">Help Center</a></div>
+						</div>
+						<div class="ham_menu_items without_link">
+							<div class="ham_title ham_main_heading ham_title_more">
+								Manage Account <i class="header-dropdown-arrow-custom"></i>
+							</div>
+							<div class="ham_submenu_items">
+								<div class="ham_inner_menu_items">
+									<div class="ham_inner_title"><a href="profile.html">Edit Profile</a></div>
+								</div>
+								<div class="ham_inner_menu_items">
+									<div class="ham_inner_title"><a href="login/update_password">Change Password</a>
+									</div>
+								</div>
+								<div class="ham_inner_menu_items">
+									<div class="ham_inner_title"><a href="delete_account_employer"
+											class="delete_employer_account">Delete my account</a></div>
+								</div>
+								<div class="ham_inner_menu_items">
+									<div class="ham_inner_title"><a href="logout">Logout</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-            <nav class="navbar navbar-expand-md">
-                <div class="brand_container">
-                    <div class="hamburger_menu">
-                        <i id="hamburger_menu_key" class="ic-24-web-hamburger"></i>
-                    </div>
-                    <a class="navbar-brand" href="/">
-                        <div>
-                            <img src="/images/home/sprites/logo_img.png" alt="logo" width="195" height="65">
-                        </div>
-                    </a>
-                </div>
-                <div class="navbar_header_for_chat navbar_mobile" id="main-navbar-header">
-                    <a>
-                        <div class="header_chat_notification header_chat_notification_without_link">
-                                <span class="header_chat_notification_unread_count" style="display:none">
-                                    <span class="notification-label"></span>
-                                </span>
-                        </div>
-                    </a>
-                </div>
-                <div class="collapse navbar-collapse navbar_desktop">
-                    <ul class="navbar-nav nav_menu_container">
-                        <li class="nav-item active_page">
-                            <a class="nav-link" href="/employer/dashboard">Dashboard</a>
-                        </li>
-                        <li class="nav-item">
-                            <a id="post_fresher_job_form_link" class="nav-link" href="/employer/post-internship">Post Internship</a>
-                        </li>
-                        <!--<li class="nav-item">
+				<nav class="navbar navbar-expand-md">
+					<div class="brand_container">
+						<div class="hamburger_menu">
+							<i id="hamburger_menu_key" class="ic-24-web-hamburger"></i>
+						</div>
+						<a class="navbar-brand" href="/">
+							<div>
+								<img src="/images/home/sprites/logo_img.png" alt="logo" width="195" height="65">
+							</div>
+						</a>
+					</div>
+					<div class="navbar_header_for_chat navbar_mobile" id="main-navbar-header">
+						<a>
+							<div class="header_chat_notification header_chat_notification_without_link">
+								<span class="header_chat_notification_unread_count" style="display:none">
+									<span class="notification-label"></span>
+								</span>
+							</div>
+						</a>
+					</div>
+					<div class="collapse navbar-collapse navbar_desktop">
+						<ul class="navbar-nav nav_menu_container">
+							<li class="nav-item active_page">
+								<a class="nav-link" href="/employer/dashboard">Dashboard</a>
+							</li>
+							<li class="nav-item">
+								<a id="post_fresher_job_form_link" class="nav-link"
+									href="/employer/post-internship">Post Internship</a>
+							</li>
+							<!--<li class="nav-item">
                             <a id="post_fresher_internships" class="nav-link" href="/employer/internship-details">Internship Details</a>
                         </li>-->
-                        <li class="nav-item chat_icon_container">
-                            <a class = 'employer'>
-                                <div class="header_chat_notification header_chat_notification_without_link">
-                                    <span class="header_chat_notification_unread_count" style="display:none">
-                                        <span class="notification-label"></span>
-                                    </span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown dropdown-hover profile_container_hover employer_profile_container">
-                            <a class="nav-link dropdown-toggle profile_container">
-                                <div class="profile_icon_right">
-                                    S </div>
-                                <i class="header-dropdown-arrow-custom"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-center menu_dropdown" id="profile-dropdown">
-                                <div class="dropdown-inner">
-                                    <div class="dropdown-inner-container">
-                                        <div class="inner-dropdown">
-                                            <ul class="dropdown-menu-part profile-dropdown">
-                                                <li class="profile_container">
-                                                    <div class="profile_name">
-                                                        <span>Subhashree Panda</span>
-                                                    </div>
-                                                    <div class="profile_email">subhashreepanda1310@gmail.com</div>
-                                                </li>
-                                                <div class="profile_options">
-                                                    <li>
-                                                        <a href="help_center.html">Help Center</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="billing.html">Billing</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="dropdown-click">
-                                                            Manage Account <i class=" header-dropdown-arrow-custom"></i>
-                                                        </a>
-                                                        <ul class="dropdown-submenu dropdown-submenu_1">
-                                                            <li>
-                                                                <a href="profile.html">Edit Profile</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="login/update_password">Change Password</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="delete_account_employer" class="delete_employer_account">Delete my account</a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="logout">Logout</a>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                </div>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </div>
+							<li class="nav-item chat_icon_container">
+								<a class='employer'>
+									<div class="header_chat_notification header_chat_notification_without_link">
+										<span class="header_chat_notification_unread_count" style="display:none">
+											<span class="notification-label"></span>
+										</span>
+									</div>
+								</a>
+							</li>
+							<li
+								class="nav-item dropdown dropdown-hover profile_container_hover employer_profile_container">
+								<a class="nav-link dropdown-toggle profile_container">
+									<div class="profile_icon_right">
+										S </div>
+									<i class="header-dropdown-arrow-custom"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-center menu_dropdown" id="profile-dropdown">
+									<div class="dropdown-inner">
+										<div class="dropdown-inner-container">
+											<div class="inner-dropdown">
+												<ul class="dropdown-menu-part profile-dropdown">
+													<li class="profile_container">
+														<div class="profile_name">
+															<span>Subhashree Panda</span>
+														</div>
+														<div class="profile_email">subhashreepanda1310@gmail.com</div>
+													</li>
+													<div class="profile_options">
+														<li>
+															<a href="help_center.html">Help Center</a>
+														</li>
+
+														<li>
+															<a class="dropdown-click">
+																Manage Account <i
+																	class=" header-dropdown-arrow-custom"></i>
+															</a>
+															<ul class="dropdown-submenu dropdown-submenu_1">
+																<li>
+																	<a href="profile.html">Edit Profile</a>
+																</li>
+																<li>
+																	<a href="login/update_password">Change Password</a>
+																</li>
+																<li>
+																	<a href="delete_account_employer"
+																		class="delete_employer_account">Delete my
+																		account</a>
+																</li>
+																<li>
+																	<a href="/employer/registration">Logout</a>
+																</li>
+															</ul>
+														</li>
+													</div>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
 
 
 
 
 
 
-    <script nonce="Fu58kZyrthH05UnpqGiw5g==">
-        var employerChatEducationPopoverType = 0;
-        var hasEmployerSeenChatEducation1 = 0;
-        var hasEmployerSeenChatEducation2 = 0;
-        var isChatEducationSeen = 0;
-        var is_chat_conversation_exist = false;
-        var toShowEducation = true;
+		<script nonce="Fu58kZyrthH05UnpqGiw5g==">
+			var employerChatEducationPopoverType = 0;
+			var hasEmployerSeenChatEducation1 = 0;
+			var hasEmployerSeenChatEducation2 = 0;
+			var isChatEducationSeen = 0;
+			var is_chat_conversation_exist = false;
+			var toShowEducation = true;
 
-            hasEmployerSeenChatEducation1 = 0;
-            hasEmployerSeenChatEducation2 = 0;
-            isChatEducationSeen = 0;
-            toShowEducation = 1;
-                        employerChatEducationPopoverType = 1; //Full length popover
-    </script>
-    <div style="position: absolute; left:0px; top:0px; height: 0px; width: 0px;">
-        <img src="/other/images/chat/message_with_hover_blue.svg" height="0px" width="0px">
-    </div>
-
-    <div class="container-fluid" id="content">
-
-        <div class="max-width-container" id="dashboard_container">
-
-            <h3 id="dashboard_title">Dashboard</h3>
-            <div id="banner">
-            </div>
-
-            <div id="dashboard_notices_container">
-                <div class="notifications_container" id="internships_notifications_container">
-                    <i class=""></i>
-                    <div id="notifications_inner_container">
-                        <div id="internships_short_notification"></div>
-                        <div id="internships_notification"></div>
-                    </div>
-                </div>
-                <div class="notifications_container" id="jobs_notifications_container">
-                    <i class=""></i>
-                    <div id="notifications_inner_container">
-                        <div id="jobs_short_notification"></div>
-                        <div id="jobs_notification"></div>
-                    </div>
-                </div>
-            </div>
-
-            <ul class="nav nav-is-tabs">
-                <li class="nav-item">
-                    <a class="nav-link" id = 'internship_tab' href="dashboard.html#" data-toggle="tab" role="tab">Internships</a>
-                </li>
-
-            </ul>
-
-            <!-- Added table as per the attachment/screenshot -->
-            <div class="table-container">
-                <table class="table table-hover job align-middle">
-                    <thead class="table-light">
-                    <tr>
-                        <th>SL. NO.</th>
-                        <th>JOB TITLE</th>
-                        <th>STATUS</th>
-                        <th>TOTAL INTERNS</th>
-                        <th>ACTION</th>
-                        <th class="text-center">
-                            <span>SHARE ON</span><br>LINKEDIN
-                        </th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr class="align-middle">
-                        <td>1</td>
-                        <td>Junior Java Developer</td>
-                        <td><span class="status-badge needs-attention">In Progress</span></td>
-                        <td>12</td>
-                        <td>
-                            <button class="btn btn-primary btn-sm"
-                                    data-job-title="Junior Java Developer">
-                                Review job
-                            </button>
-                        </td>
-                        <td class="text-center">
-                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://your-site.com/job1" target="_blank" class="btn btn-link btn-sm">
-                                Share
-                            </a>
-                        </td>
-                        <td><i class="text-muted"><i class="bi bi-three-dots-vertical"></i></td>
-                    </tr>
-
-                    <tr class="align-middle">
-                        <td>2</td>
-                        <td>Frontend Developer (React)</td>
-                        <td><span class="status-badge active">Active</span></td>
-                        <td>15</td>
-                        <td>
-                            <button class="btn btn-primary btn-sm"
-                                    data-job-title="Frontend Developer (React)">
-                                Review job
-                            </button>
-                        </td>
-                        <td class="text-center">
-                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://your-site.com/job2" target="_blank" class="btn btn-link btn-sm">
-                                Share
-                            </a>
-                        </td>
-                        <td><i class="bi bi-three-dots-vertical"></i></td>
-                    </tr>
-
-                    <tr class="align-middle">
-                        <td>3</td>
-                        <td>UI/UX Design Intern</td>
-                        <td><span class="status-badge completed">Completed</span></td>
-                        <td>8</td>
-                        <td>
-                            <button class="btn btn-secondary btn-sm" disabled>Closed</button>
-                        </td>
-                        <td class="text-center">
-                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://your-site.com/job3" target="_blank" class="btn btn-link btn-sm">
-                                Share
-                            </a>
-                        </td>
-                        <td><i class="bi bi-three-dots-vertical"></i></td>
-                    </tr>
-
-                    <tr class="align-middle">
-                        <td>4</td>
-                        <td>Digital Marketing Intern</td>
-                        <td><span class="status-badge active">Active</span></td>
-                        <td>20</td>
-                        <td>
-                            <button class="btn btn-primary btn-sm"
-                                    data-job-title="Digital Marketing Intern">
-                                Review job
-                            </button>
-                        </td>
-                        <td class="text-center">
-                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://your-site.com/job4" target="_blank" class="btn btn-link btn-sm">
-                                Share
-                            </a>
-                        </td>
-                        <td><i class="bi bi-three-dots-vertical"></i></td>
-                    </tr>
-
-                    <tr class="align-middle">
-                        <td>5</td>
-                        <td>Data Science Intern (Python)</td>
-                        <td><span class="status-badge needs-attention">In Progress</span></td>
-                        <td>10</td>
-                        <td>
-                            <button class="btn btn-primary btn-sm"
-                                    data-job-title="Data Science Intern (Python)">
-                                Review job
-                            </button>
-                        </td>
-                        <td class="text-center">
-                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://your-site.com/job5" target="_blank" class="btn btn-link btn-sm">
-                                Share
-                            </a>
-                        </td>
-                        <td><i class="bi bi-three-dots-vertical"></i></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+			hasEmployerSeenChatEducation1 = 0;
+			hasEmployerSeenChatEducation2 = 0;
+			isChatEducationSeen = 0;
+			toShowEducation = 1;
+			employerChatEducationPopoverType = 1; //Full length popover
+		</script>
+		<div style="position: absolute; left:0px; top:0px; height: 0px; width: 0px;">
+			<img src="/other/images/chat/message_with_hover_blue.svg" height="0px" width="0px">
+		</div>
 
 
-            <div id="getting_started_container" style="display:none"></div>
-            <div class="table-container" id="job_data_table" style="display:none;">
-                <table class="table job" style="display: none">
-                    <thead>
-                    <tr>
-                        <th id="title_or_profile"></th>
-                        <th id="status_th">STATUS</th>
-                        <th id="total_views">TOTAL VIEWS</th>
-                        <th id="action_th">ACTION</th>
-                        <th id="upgrade_or_premium_th">
-                    <span class="heading_container">
-                        <span class="text">UPGRADE TO<br> PREMIUM</span>
-                        <i class="ic-16-filled-help-circle popover_desktop_upgrade_to_premium_icon"></i>
-                    </span>
-                        </th>
-                        <th id="shareLink" class="table-small">
-                            <span>SHARE ON</span>
-                            <br> LINKEDIN
-                        </th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody id="internships_tbody">
-                    <!-- Loaded by Ajax call: paginated_jobs()-->
-                    </tbody>
-                    <tbody id="jobs_loading_container" style="display:none;">
-                    <tr>
-                        <td colspan="6">
-                            <div class="dashboard_loading_image">
-                                <img class="loading_application_bar" id="loading_application_bar"
-                                     src='../static/images/progress_spinner.gif'
-                                     style="height: 40px; width: 40px;">
-                            </div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-                <nav id="jobs_pagination">
-                    <div id="pagination">
-                        <a id="prev" class="prev_page hideUndoOnClick">
-                            <i id="prevPage"></i>
-                        </a>
-                        <div class="page_number">
-                            <span id="current_page_number" ></span>&nbsp;/&nbsp;<span id="total_pages"></span>
-                        </div>
-                        <a id="next" class="next_page hideUndoOnClick">
-                            <i id="nextPage"></i>
-                        </a>
-                    </div>
-                </nav>
-            </div>
-            <div id="excel_download_container" style="display: none">
-                <div id="downloads">
-                    <span class="downloads_heading">DOWNLOAD REQUESTS</span>
-                    <span class="accordion_sign internshala_blue header-dropdown-arrow-custom" style="display: none;"></span>
-                    <span class="accordion_sign internshala_blue ic-24-chevron-up" ></span>
-                </div>
-                <div id="excel_downloads">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th style="width: 18px;"></th>
-                            <th>Date</th>
-                            <th>Title</th>
-                            <th>Link</th>
-                        </tr>
-                        </thead>
-                        <tbody id="download_excel_tbody">
-                        <!-- Loaded by Ajax call: load_excel_download_requests()-->
-                        </tbody>
-                    </table>
+		<div class="container-fluid" id="content">
+			<div class="max-width-container" id="dashboard_container">
+				<!-- Header Section -->
+				<div class="row mb-4">
+					<div class="col-12">
+						<div class="page-title-box d-flex align-items-center justify-content-between">
+							<h4 class="mb-0">Dashboard</h4>
+							<div class="page-title-right">
+								<br>
 
-                </div>
-            </div> </div>
+								<ol class="breadcrumb m-0">
+									<li class="breadcrumb-item"><a href="javascript: void(0);">IAPS Employer Portal</a>
+									</li>
+									<li class="breadcrumb-item active"><i class="uil-home-alt me-1"></i>Dashboard</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
 
-        <div id="footer_reference"></div>
-
-    </div>
-
-
-    <!-- popup notification modal-->
-    <div id="popup_notification" class="modal fade in internshala-modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="message_container">
-                        <div class="text-heading heading_4_5" id="myModalLabel">Important tips to help you hire better</div>
-                        <div class="text-message body-main">
-                            1. Always assess the candidate via a short assignment or interview. Don&#39;t hire on the basis of just the application.<br/>2. When you select a candidate, always extend a formal offer letter with key details (stipend, profile, duration etc.) & ask for a signed copy as acceptance.<br/>3. Post that, change the selected candidate&#39;s application status to &#39;Hired&#39;.<br/>4. If you still face any problem with any applicant, kindly report it to <a href='mailto:employer@internshala.com' >employer@internshala.com</a>. </div>
-                        <div class="button_container">
-                            <button type="button" data-dismiss="modal" class="btn btn-primary" id="popup_notification_ok">Got it</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+				<!-- Stats Cards -->
+				<div class="row mb-4">
+					<div class="col-lg-3 col-md-6">
+						<div class="card stat-card">
+							<div class="card-body">
+								<div class="d-flex align-items-center">
+									<div class="stat-icon bg-primary">
+										<img src="/assets/images/java-job-logo.png" alt="Java" width="30" height="28">
+									</div>
+									<div>
+										<p class="m-0 stat-label">Active Jobs</p>
+										<h4 class="m-0 stat-value">5</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="card stat-card">
+							<div class="card-body">
+								<div class="d-flex align-items-center gap-3">
+									<div class="stat-icon bg-success">
+									<img src="/assets/images/java-applicant-logo.png" alt="Java" width="30" height="28">
+									</div>
+									<div>
+										<p class="m-0 stat-label">Total Applicants</p>
+										<h4 class="m-0 stat-value">65</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="card stat-card">
+							<div class="card-body">
+								<div class="d-flex align-items-center gap-3">
+									<div class="stat-icon bg-warning">
+										<img src="/assets/images/java-pending-logo.png" alt="Java" width="30" height="28">
+									</div>
+									<div>
+										<p class="m-0 stat-label">Pending Review</p>
+										<h4 class="m-0 stat-value">23</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-6">
+						<div class="card stat-card">
+							<div class="card-body">
+								<div class="d-flex align-items-center gap-3">
+									<div class="stat-icon bg-info">
+										<img src="/assets/images/java-hiring-logo.png" alt="Java" width="30" height="28">
+									</div>
+									<div>
+										<p class="m-0 stat-label">Hired</p>
+										<h4 class="m-0 stat-value">15</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
 
+				<!-- Main Table -->
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="card">
+							<div class="card-header">
+								<div class="inner_div d-flex justify-content-center align-items-center">
+									<h3 class="mb-0">Job Listings</h3>
+								</div>
+							</div>
+							<div class="card-body">
+								<div class="table-responsive">
+									<table class="table table-hover align-middle">
+										<thead class="table-light">
+											<tr>
+												<th>JOB TITLE</th>
+												<th>POSTED DATE</th>
+												<th>STATUS</th>
+												<th>APPLICANTS</th>
+												<th>VIEWS</th>
+												<th>ACTIONS</th>
+												<th class="text-center">SHARE</th>
 
-    <!-- Job query modal -->
-    <div id="job_query_modal" class="modal fade in ds-modal-small" role="dialog" style="display:none">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form method="POST" id="job_query_submit_form" name="job_query_submit_form">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Hi Subhashree, we are here to help!</label>
-                            <textarea class="form-control" placeholder="Please type your query here" name="message" id="message"></textarea>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-flat dismiss_query_modal" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary" id="job_query_submit">Send message</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- Job 1 -->
+											<tr>
+												<td>
+													<div class="d-flex align-items-start">
+														<div class="job-icon">
+															<img src="/assets/images/java-seeklogo.png" alt="Java"
+																width="18" height="24">
+														</div>
 
-    <!-- job query submit success modal -->
-    <div id="job_query_submit_success" class="modal fade in internshala-modal-messages" role="dialog" style="display:none">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <i class="ic-24-checked-circle-outline"></i>
-                    <div id="query_submitted_msg">Your query has been submitted!</div>
-                    <div id="get_in_touch_msg">We have received your query. We will get in touch with you on your registered email id within 48 working hours.</div>
-                </div>
-            </div>
-        </div>
-    </div>
+														<div>
+															<h6 class="mb-0">Junior Java Developer</h6>
+															<small class="text-muted">Full-time • Remote</small>
+														</div>
+													</div>
+												</td>
+												<td>15 Mar 2024</td>
+												<td>
+													<span class="badge bg-warning-subtle text-warning">In
+														Progress</span>
+												</td>
+												<td>
+													<div class="d-flex align-items-center">
+														<span class="me-2">12</span>
+
+													</div>
+												</td>
+												<td>245</td>
+												<td>
+													<button class="btn btn-sm btn-primary"
+														data-job-title="Junior Java Developer">
+														<i class="bx bx-show"></i> Review
+													</button>
+												</td>
+												<td class="text-center">
+													<a href="https://linkedin.com" class="share-btn text-primary"
+														data-job-id="5">
+														<i class="ic-linkedin-custom"></i>
+													</a>
+												</td>
+											</tr>
+
+											<!-- Job 2 -->
+											<tr>
+												<td>
+													<div class="d-flex align-items-start gap-2">
+														<div class="job-icon">
+															<img src="/assets/images/java-react-logo.png" alt="Java"
+																width="20" height="24">
+														</div>
+														<div>
+															<h6 class="mb-0">Frontend Developer (React)</h6>
+															<small class="text-muted">Full-time • On-site</small>
+														</div>
+													</div>
+												</td>
+												<td>10 Mar 2024</td>
+												<td>
+													<span class="badge bg-success-subtle text-success">Active</span>
+												</td>
+												<td>
+													<div class="d-flex align-items-center">
+														<span class="me-2">15</span>
+
+													</div>
+												</td>
+												<td>312</td>
+												<td>
+													<button class="btn btn-sm btn-primary"
+														data-job-title="Frontend Developer (React)">
+														<i class="bx bx-show"></i> Review
+													</button>
+												</td>
+												<td class="text-center">
+													<a href="https://linkedin.com" class="share-btn text-primary"
+														data-job-id="5">
+														<i class="ic-linkedin-custom"></i>
+													</a>
+												</td>
+											</tr>
+
+											<!-- Job 3 -->
+											<tr>
+												<td>
+													<div class="d-flex align-items-start gap-2">
+														<div class="job-icon">
+															<img src="/assets/images/java-uiux-logo.png" alt="Java"
+																width="20" height="24">
+														</div>
+														<div>
+															<h6 class="mb-0">UI/UX Design Intern</h6>
+															<small class="text-muted">Internship • Hybrid</small>
+														</div>
+													</div>
+												</td>
+												<td>05 Mar 2024</td>
+												<td>
+													<span
+														class="badge bg-secondary-subtle text-secondary">Completed</span>
+												</td>
+												<td>
+													<div class="d-flex align-items-center">
+														<span class="me-2">8</span>
+
+													</div>
+												</td>
+												<td>189</td>
+												<td>
+													<button class="btn btn-sm btn-secondary" disabled>
+														<i class="bx bx-check"></i> Closed
+													</button>
+												</td>
+												<td class="text-center">
+													<a href="https://linkedin.com" class="share-btn text-primary"
+														data-job-id="5">
+														<i class="ic-linkedin-custom"></i>
+													</a>
+												</td>
+											</tr>
+
+											<!-- Job 4 -->
+											<tr>
+												<td>
+													<div class="d-flex align-items-start gap-2">
+														<div class="job-icon">
+															<img src="/assets/images/java-digitalintern-logo.png" alt="Java"
+																width="30" height="28">
+														</div>
+														<div>
+															<h6 class="mb-0">Digital Marketing Intern</h6>
+															<small class="text-muted">Internship • Remote</small>
+														</div>
+													</div>
+												</td>
+												<td>20 Mar 2024</td>
+												<td>
+													<span class="badge bg-success-subtle text-success">Active</span>
+												</td>
+												<td>
+													<div class="d-flex align-items-center">
+														<span class="me-2">20</span>
+
+													</div>
+												</td>
+												<td>421</td>
+												<td>
+													<button class="btn btn-sm btn-primary"
+														data-job-title="Digital Marketing Intern">
+														<i class="bx bx-show"></i> Review
+													</button>
+												</td>
+												<td class="text-center">
+													<a href="https://linkedin.com" class="share-btn text-primary"
+														data-job-id="5">
+														<i class="ic-linkedin-custom"></i>
+													</a>
+												</td>
+											</tr>
+
+											<!-- Job 5 -->
+											<tr>
+												<td>
+													<div class="d-flex align-items-start gap-2">
+														<div class="job-icon">
+															<img src="/assets/images/java-python-logo.png" alt="Java"
+																width="22" height="24">
+														</div>
+														<div>
+															<h6 class="mb-0">Data Science Intern (Python)</h6>
+															<small class="text-muted">Internship • On-site</small>
+														</div>
+													</div>
+												</td>
+												<td>18 Mar 2024</td>
+												<td>
+													<span class="badge bg-warning-subtle text-warning">In
+														Progress</span>
+												</td>
+												<td>
+													<div class="d-flex align-items-center">
+														<span class="me-2">10</span>
+
+													</div>
+												</td>
+												<td>278</td>
+												<td>
+													<button class="btn btn-sm btn-primary"
+														data-job-title="Data Science Intern (Python)">
+														<i class="bx bx-show"></i> Review
+													</button>
+												</td>
+												<td class="text-center">
+													<a href="https://linkedin.com" class="share-btn text-primary"
+														data-job-id="5">
+														<i class="ic-linkedin-custom"></i>
+													</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Recent Activity Section -->
+				<div class="row mt-4">
+					<div class="col-lg-6">
+						<div class="card">
+							<div class="card-header">
+								<h4>Recent Applications</h4>
+							</div>
+							<div class="card-body">
+								<div class="activity-list">
+									<div class="activity-item">
+										<div class="activity-icon">
+
+											<i class="ic-mail-icon-black-custom"></i>
+										</div>
+										<div class="activity-content">
+											<h6>Aarav Sharma applied for Java Developer</h6>
+											<small class="text-muted">10 minutes ago</small>
+										</div>
+									</div>
+									<div class="activity-item">
+										<div class="activity-icon">
+											<i class="ic-mail-icon-black-custom"></i>
+										</div>
+										<div class="activity-content">
+											<h6>Interview scheduled with Priya Patel</h6>
+											<small class="text-muted">1 hour ago</small>
+										</div>
+									</div>
+									<div class="activity-item">
+										<div class="activity-icon">
+											<i class="ic-mail-icon-black-custom"></i>
+										</div>
+										<div class="activity-content">
+											<h6>Rahul Verma accepted offer for React Developer</h6>
+											<small class="text-muted">2 hours ago</small>
+										</div>
+									</div>
+									<div class="activity-item">
+										<div class="activity-icon">
+											<i class="ic-mail-icon-black-custom"></i>
+										</div>
+										<div class="activity-content">
+											<h6>Offer sent to Sneha Reddy</h6>
+											<small class="text-muted">3 hours ago</small>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="card">
+							<div class="card-header">
+								<h4>Upcoming Tasks</h4>
+							</div>
+							<div class="card-body">
+								<div class="task-list">
+									<div class="task-item">
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" id="task1">
+											<label class="form-check-label" for="task1">
+												Review 5 pending applications
+											</label>
+											<small class="text-muted d-block">Due: Today</small>
+										</div>
+									</div>
+									<div class="task-item">
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" id="task2">
+											<label class="form-check-label" for="task2">
+												Schedule interviews for shortlisted candidates
+											</label>
+											<small class="text-muted d-block">Due: Tomorrow</small>
+										</div>
+									</div>
+									<div class="task-item">
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" id="task3">
+											<label class="form-check-label" for="task3">
+												Update job posting for UI/UX Designer
+											</label>
+											<small class="text-muted d-block">Due: 2 days</small>
+										</div>
+									</div>
+									<div class="task-item">
+										<div class="form-check">
+											<input class="form-check-input" type="checkbox" id="task4">
+											<label class="form-check-label" for="task4">
+												Send follow-up emails to applicants
+											</label>
+											<small class="text-muted d-block">Due: 3 days</small>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
 
-    <div id="premium_prompt" class="premium_upgrade_modal modal fade in job">
-        <input type="hidden" id="premium_post_upgrade_source">
-        <input type="hidden" id="premium_post_upgrade_job_id">
-        <input type="hidden" id="premium_internship_original_price" value="₹2,999">
-        <input type="hidden" id="premium_job_original_price" value="₹2,999">
-
-        <div class="modal-dialog ">
-            <div class="modal-content">
-                <div id="approval_content_wrapper">
-                    <img src="/other/images/modals/premium_prompt/modal_cross.svg" id="close-modal" class="close_premium_modal" data-dismiss="modal" aria-hidden="true">
-                    <div id="approval_promotion_container">
-                        <div class="image_container">
-                            <img src="/other/images/common/modal_success.svg">
-                        </div>
-                        <div class="access_extend_success_txt">
-                            Your <span class="employment_type">internship</span> has been submitted for review. <br> Due to high traffic, it may take 3-5 days for your post to go live. Our team is actively working on it. Thank you for your patience!
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-body">
-                    <div class="premium_nudge_container premium_nudge_modal_container">
-
-                        <div class="heading_container">
-                            <div class="top_heading1">
-                                <div class="premium_icon">
-                                    <img src="/other/images/modals/premium_prompt/crown_new.png" />
-                                </div>
-                                <div class="heading_text_container_ld">
-                                    <div class="heading_text_ld1">
-                                        Upgrade this listing to premium and hire faster and better.
-                                    </div>
-                                    <div class="heading_text_ld2">
-                                        Guaranteed hiring with 100% refund if you are not able to hire.*
-                                    </div>
-                                </div>
-                                <div class="close_premium_modal" data-dismiss="modal" aria-hidden="true">
-                                    <i class="ic-24-cross"></i>
-                                </div>
-                            </div>
-                            <div class="heading_text_container_sm">
-                                <div class="heading_text_ld1">
-                                    Upgrade this listing to premium and hire faster and better.
-                                </div>
-                                <div class="heading_text_ld2">
-                                    Guaranteed hiring with 100% refund if you are not able to hire.*
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- LEFT RIGHT CONTAINER STARTS -->
-                        <div class="left_right_container ">
-                            <div class="left_container ">
-                                <div class="regular_benefits">
-                                    <div class="premium_plan_benefits">
-                                        Hire faster with Premium
-                                        <img src="/other/images/modals/premium_prompt/crown_new.png" alt="crown" widht="24" height="24"/>
-                                    </div>
-                                    <div class="premium_plan_benefits_container">
-                                        <div class="benefits">
-                                            <div class="tick ic-24-s15-trend"></div>
-                                            <div class="body-main">Boosted visibility with
-                                                <span class="highlight-text">10x applications<span>
-                                            </div>
-                                        </div>
-                                        <div class="benefits">
-                                            <img src="/other/images/modals/premium_prompt/database-regular.svg" alt="database" width="20" height="20" class="database"/>
-                                            <div class="body-main">
-                                                Access Database: <span class="highlight-text">Find top candidates in seconds</span>
-                                                </span>
-                                                <div class="subsection_container">
-                                                    <div class="subsection">
-                                                        <span class="bullet">&#8226;</span>
-                                                        <span class="text">
-                                                Filter best-fit candidates using advanced search
-                                            </span>
-                                                    </div>
-                                                    <div class="subsection">
-                                                        <span class="bullet">&#8226;</span>
-                                                        <span class="text">
-                                                Connect directly via call or chat with 100 top candidates per listing
-                                            </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+		<!-- popup notification modal-->
+		<div id="popup_notification" class="modal fade in internshala-modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="message_container">
+							<div class="text-heading heading_4_5" id="myModalLabel">Important tips to help you hire
+								better</div>
+							<div class="text-message body-main">
+								1. Always assess the candidate via a short assignment or interview. Don&#39;t hire on
+								the basis of just the application.<br />2. When you select a candidate, always extend a
+								formal offer letter with key details (stipend, profile, duration etc.) & ask for a
+								signed copy as acceptance.<br />3. Post that, change the selected candidate&#39;s
+								application status to &#39;Hired&#39;.<br />4. If you still face any problem with any
+								applicant, kindly report it to <a
+									href='mailto:employer@internshala.com'>employer@internshala.com</a>. </div>
+							<div class="button_container">
+								<button type="button" data-dismiss="modal" class="btn btn-primary"
+									id="popup_notification_ok">Got it</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
-                                        <div class="benefits ">
-                                            <div class="ai_features_container">
-                                                <div class=" title">
-                                                    <img src="/other/images/modals/premium_prompt/sparkle-premium-prompt.svg" alt="database" width="20" height="20" class="database"/>
-                                                    <div class="ai_features body-main">Advanced AI Features
-                                                    </div>
-                                                </div>
-                                                <div class="ai_features_info">
-                                                    <div class="ai_features_points">
-                                                        <span class="bullet">&#8226;</span>
-                                                        <span class="point body-main">
-                                                        <span class="highlight-text body-main">
-                                                        AI screener </span> &nbsp;to shortlist best applications instantly
-                                                    </span>
-                                                    </div>
-                                                    <div class="ai_features_points">
-                                                        <span class="bullet">&#8226;</span>
-                                                        <span class="point body-main">
-                                                        <span class="highlight-text body-main">
-                                                            AI Interviewer
-                                                        </span>
-                                                        &nbsp;to evaluate candidates’ skills
-                                                    </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="benefits">
-                                            <img src="/other/images/modals/premium_prompt/file.png" class="tick" width="20" height="20"/>
-                                            <div class="body-main">Features like download resume, contact numbers, export to excel, and more</div>
-                                        </div>
-                                        <div class="benefits">
-                                            <i class="tick ic-24-headphone"></i>
-                                            <div class="body-main">Dedicated <span class="highlight-text">Relationship Manager</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="access_db_benefits_container">
-                                    <div class="benefits_1">
-                                        <div class="benefits_1_heading h-10-semi-bold">Find top candidates in seconds</div>
-                                        <div class="benefits_1_body">
-                                            <div class="d-flex benefit_item">
-                                                <i class="tick ic-24-tick"></i>
-                                                <div>Access thousands of <span class="highlight-text">
-                                                relevant profiles</span></div>
-                                            </div>
-                                            <div class="d-flex benefit_item">
-                                                <i class="tick ic-24-tick"></i>
-                                                <div>Filter best-fit candidates using
-                                                    <span class="highlight-text">
-                                            advanced search</span></div>
-                                            </div>
-                                            <div class="d-flex benefit_item">
-                                                <i class="tick ic-24-tick"></i>
-                                                <div> <span class="highlight-text">
-                                            Instantly connect</span> via call or chat with 100 top candidates per listing</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="benefits_2">
-                                        <div class="benefits_2_heading h-11-semi-bold">More Premium benefits</div>
-                                        <div class="benefits_2_body">
-                                            <div class="d-flex benefit_item">
-                                                <i class="tick ic-24-tick"></i>
-                                                <div>Boosted visibility with
-                                                    <span class="highlight-text">
-                                            10x applications</span></div>
-                                            </div>
-                                            <div class="d-flex benefit_item">
-                                                <i class="tick ic-24-tick"></i>
-                                                <div><span class="highlight-text">
-                                            AI Screener </span>to shortlist best applications instantly
-                                                </div>
-                                            </div>
-                                            <div class="d-flex benefit_item">
-                                                <i class="tick ic-24-tick"></i>
-                                                <div>
-                                            <span class="highlight-text">
-                                            AI Interviewer</span>
-                                                    to evaluate candidates’ skills <br/>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex benefit_item">
-                                                <i class="tick ic-24-tick"></i>
-                                                <div>Features like download resume, contact numbers, export to excel, and more</div>
-                                            </div>
-                                            <div class="d-flex benefit_item">
-                                                <i class="tick ic-24-tick"></i>
-                                                <div>Dedicated
-                                                    <span class="highlight-text">
-                                                Relationship Manager</span></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <span class="terms_and_conditions">*T&C Apply</span>
-                            </div>
 
-                            <div id="premium_modal_plans_container" class="right_container ">
-                                <div class="plan_heading ">
-                                    Choose your Premium Plan
-                                </div>
-                                <div class="pay_per_post_plan">
-                                    <div class="section_heading_container">
-                                        <div class="h-11-semi-bold heading">
-                                            Pay per listing
-                                        </div>
-                                        <div class="body-small subheading">
-                                            Upgrade this post or get a pack of Premium listings
-                                        </div>
-                                    </div>
-                                    <div class="radio pay_per_post_plan_radio">
-                                        <input name="premium_post_plan" id="per_post_option" type="radio" value="per_post" checked>
-                                        <label id="premium_plan_option_per_post" class="premium_plan_option active" for="per_post_option">
-                                            <div class="label_content d-flex justify-content-between">
-                                                Upgrade this listing to Premium <span class="price_container_without_discount">
-                                                    <span class="per_post_plan_price">₹2,999</span>
-                                                </span>
-                                                <span class="price_container_with_discount">
-                                                    <span class="per_post_plan_price">₹2,999</span>
-                                                    &nbsp;
-                                                    <span class="price"></span>
-                                                </span>
-                                            </div>
-                                            <div class="pi_discount_timer_container">
-                                                <div class="premium_modal_discount_timer"><span class="ic-16-clock icon"></span>Offer ends in <span class="pi_discount_timer"></span></div>
-                                            </div>
-                                        </label>
+		<!-- Job query modal -->
+		<div id="job_query_modal" class="modal fade in ds-modal-small" role="dialog" style="display:none">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<form method="POST" id="job_query_submit_form" name="job_query_submit_form">
+						<div class="modal-body">
+							<div class="form-group">
+								<label>Hi Subhashree, we are here to help!</label>
+								<textarea class="form-control" placeholder="Please type your query here" name="message"
+									id="message"></textarea>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-flat dismiss_query_modal"
+								data-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-primary" id="job_query_submit">Send message</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 
-                                        <div class="employer_card_preference employer_card_preference_pr active hide_card_preference" data-card="false">
-                                            <div class="employer_card_preference_content">
-                                                <div class="h-11-semi-bold card-select">Select your card</div>
-                                                <div class="body-small choose-card">Choose a card you will be using for payment</div>
+		<!-- job query submit success modal -->
+		<div id="job_query_submit_success" class="modal fade in internshala-modal-messages" role="dialog"
+			style="display:none">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<i class="ic-24-checked-circle-outline"></i>
+						<div id="query_submitted_msg">Your query has been submitted!</div>
+						<div id="get_in_touch_msg">We have received your query. We will get in touch with you on your
+							registered email id within 48 working hours.</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-                                                <div class="radio-box">
-                                                    <label for='ind_card_job' class="box" id="ind_card_job_wrapper">
-                                                        <div class="radio">
-                                                            <input name="card-type" id="ind_card_job" type="radio" value="indian">
-                                                            <label for="ind_card_job" class="body-main-medium">Indian card</label>
-                                                        </div>
-                                                    </label>
-                                                    <label class="box" for='int_card_job' id="int_card_job_wrapper">
-                                                        <div class="radio">
-                                                            <input name="card-type" id="int_card_job" type="radio" value="international">
-                                                            <label for="int_card_job" class="body-main-medium">International card</label>
-                                                        </div>
-                                                    </label>
-                                                </div>
 
-                                                <label class="ui-small card_alert"><i class="ic-16-alert-circle"></i>Please select your card to proceed</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="custom_plan">
-                                        <div class="radio">
-                                            <input name="premium_post_plan" id="custom_plan_option" type="radio" value="custom">
-                                            <label id="premium_plan_option_custom" class="premium_plan_option" for="custom_plan_option">
-                                                <div class="label_content">
-                                                    <div class="heading">
-                                                        <div class="heading_text">
-                                                            Pack of Premium listings
-                                                            <div class="custom_plan_content">
-                                                                Get discounted pricing as per your requirements </div>
-                                                        </div>
-                                                        <div class="pricing">
-                                                            Custom Pricing
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </label>
-                                            <div class="employer_card_preference employer_card_preference_pr hide_card_preference"></div>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="subscription_plan_container">
+		<div id="premium_prompt" class="premium_upgrade_modal modal fade in job">
+			<input type="hidden" id="premium_post_upgrade_source">
+			<input type="hidden" id="premium_post_upgrade_job_id">
+			<input type="hidden" id="premium_internship_original_price" value="₹2,999">
+			<input type="hidden" id="premium_job_original_price" value="₹2,999">
 
-                                    <div class="subscription_monthly_container">
-                                        <div class="subscription_plan_heading h-11-semi-bold">Unlimited plans</div>
-                                        <div class="sub_heading">
-                                            Post unlimited Premium internships & jobs*
-                                        </div>
-                                        <div class="subscription_plans">
-                                            <div class="radio ">
-                                                <input name="premium_post_plan" id="1_month_plan_option" type="radio" value="1_month">
-                                                <label id="premium_plan_option_1_month" class="premium_plan_option subscripton_plan_option first_time_discount_label" for="1_month_plan_option">
-                                                    <div class="label_content">
-                                                        <div class="heading_and_discount_container">
-                                                            <div class="heading">1 Month Plan</div>
-                                                            <div class="offer_and_first_time_discount_container_lg">
-                                                                <div class="offer ">Save 40%</div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price_details">
-                                                            <div class="original">
-                                                                <span class="original_price">₹14,999</span>
-                                                            </div>
-                                                            <div class="price">₹8,999</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="first_time_discount_upgrade_modal body-small">
-                                                        <span>First time user discount</span>
-                                                    </div>
-                                                </label>
-                                                <div class="employer_card_preference employer_card_preference_pr hide_card_preference"></div>
-                                            </div>
-                                            <div class="radio popular_subscription_plan_card">
-                                                <input name="premium_post_plan" id="12_months_plan_option" type="radio" value="12_months">
-                                                <label id="premium_plan_option_12_months" class="premium_plan_option subscripton_plan_option " for="12_months_plan_option">
-                                                    <div class="label_content">
-                                                        <div class="heading_and_discount_container">
-                                                            <div class="heading">1 Year Plan</div>
-                                                            <div class="offer_and_first_time_discount_container_lg">
-                                                                <div class="offer popular_offer">Save 50%</div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="price_details">
-                                                            <div class="original">
-                                                                <span class="original_price">₹119,999</span>
-                                                            </div>
-                                                            <div class="price">₹59,999</div>
-                                                        </div>
-                                                    </div>
-                                                </label>
-                                                <div class="employer_card_preference employer_card_preference_pr hide_card_preference"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="btn_container" >
-                                    <button id="premium_plan_submit_btn" class="btn" data-upgrade="payment" style="width: 100%;">Upgrade now</button>
-                                </div>
-                            </div>
+			<div class="modal-dialog ">
+				<div class="modal-content">
+					<div id="approval_content_wrapper">
+						<img src="/other/images/modals/premium_prompt/modal_cross.svg" id="close-modal"
+							class="close_premium_modal" data-dismiss="modal" aria-hidden="true">
+						<div id="approval_promotion_container">
+							<div class="image_container">
+								<img src="/other/images/common/modal_success.svg">
+							</div>
+							<div class="access_extend_success_txt">
+								Your <span class="employment_type">internship</span> has been submitted for review. <br>
+								Due to high traffic, it may take 3-5 days for your post to go live. Our team is actively
+								working on it. Thank you for your patience!
+							</div>
+						</div>
+					</div>
+					<div class="modal-body">
+						<div class="premium_nudge_container premium_nudge_modal_container">
 
-                            <div id="premium_modal_callback_content" class="right_container
+							<div class="heading_container">
+								<div class="top_heading1">
+									<div class="premium_icon">
+										<img src="/other/images/modals/premium_prompt/crown_new.png" />
+									</div>
+									<div class="heading_text_container_ld">
+										<div class="heading_text_ld1">
+											Upgrade this listing to premium and hire faster and better.
+										</div>
+										<div class="heading_text_ld2">
+											Guaranteed hiring with 100% refund if you are not able to hire.*
+										</div>
+									</div>
+									<div class="close_premium_modal" data-dismiss="modal" aria-hidden="true">
+										<i class="ic-24-cross"></i>
+									</div>
+								</div>
+								<div class="heading_text_container_sm">
+									<div class="heading_text_ld1">
+										Upgrade this listing to premium and hire faster and better.
+									</div>
+									<div class="heading_text_ld2">
+										Guaranteed hiring with 100% refund if you are not able to hire.*
+									</div>
+								</div>
+
+							</div>
+
+							<!-- LEFT RIGHT CONTAINER STARTS -->
+							<div class="left_right_container ">
+								<div class="left_container ">
+									<div class="regular_benefits">
+										<div class="premium_plan_benefits">
+											Hire faster with Premium
+											<img src="/other/images/modals/premium_prompt/crown_new.png" alt="crown"
+												widht="24" height="24" />
+										</div>
+										<div class="premium_plan_benefits_container">
+											<div class="benefits">
+												<div class="tick ic-24-s15-trend"></div>
+												<div class="body-main">Boosted visibility with
+													<span class="highlight-text">10x applications<span>
+												</div>
+											</div>
+											<div class="benefits">
+												<img src="/other/images/modals/premium_prompt/database-regular.svg"
+													alt="database" width="20" height="20" class="database" />
+												<div class="body-main">
+													Access Database: <span class="highlight-text">Find top candidates in
+														seconds</span>
+													</span>
+													<div class="subsection_container">
+														<div class="subsection">
+															<span class="bullet">&#8226;</span>
+															<span class="text">
+																Filter best-fit candidates using advanced search
+															</span>
+														</div>
+														<div class="subsection">
+															<span class="bullet">&#8226;</span>
+															<span class="text">
+																Connect directly via call or chat with 100 top
+																candidates per listing
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+
+
+											<div class="benefits ">
+												<div class="ai_features_container">
+													<div class=" title">
+														<img src="/other/images/modals/premium_prompt/sparkle-premium-prompt.svg"
+															alt="database" width="20" height="20" class="database" />
+														<div class="ai_features body-main">Advanced AI Features
+														</div>
+													</div>
+													<div class="ai_features_info">
+														<div class="ai_features_points">
+															<span class="bullet">&#8226;</span>
+															<span class="point body-main">
+																<span class="highlight-text body-main">
+																	AI screener </span> &nbsp;to shortlist best
+																applications instantly
+															</span>
+														</div>
+														<div class="ai_features_points">
+															<span class="bullet">&#8226;</span>
+															<span class="point body-main">
+																<span class="highlight-text body-main">
+																	AI Interviewer
+																</span>
+																&nbsp;to evaluate candidates’ skills
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="benefits">
+												<img src="/other/images/modals/premium_prompt/file.png" class="tick"
+													width="20" height="20" />
+												<div class="body-main">Features like download resume, contact numbers,
+													export to excel, and more</div>
+											</div>
+											<div class="benefits">
+												<i class="tick ic-24-headphone"></i>
+												<div class="body-main">Dedicated <span
+														class="highlight-text">Relationship Manager</span></div>
+											</div>
+										</div>
+									</div>
+									<div class="access_db_benefits_container">
+										<div class="benefits_1">
+											<div class="benefits_1_heading h-10-semi-bold">Find top candidates in
+												seconds</div>
+											<div class="benefits_1_body">
+												<div class="d-flex benefit_item">
+													<i class="tick ic-24-tick"></i>
+													<div>Access thousands of <span class="highlight-text">
+															relevant profiles</span></div>
+												</div>
+												<div class="d-flex benefit_item">
+													<i class="tick ic-24-tick"></i>
+													<div>Filter best-fit candidates using
+														<span class="highlight-text">
+															advanced search</span>
+													</div>
+												</div>
+												<div class="d-flex benefit_item">
+													<i class="tick ic-24-tick"></i>
+													<div> <span class="highlight-text">
+															Instantly connect</span> via call or chat with 100 top
+														candidates per listing</div>
+												</div>
+											</div>
+										</div>
+										<div class="benefits_2">
+											<div class="benefits_2_heading h-11-semi-bold">More Premium benefits</div>
+											<div class="benefits_2_body">
+												<div class="d-flex benefit_item">
+													<i class="tick ic-24-tick"></i>
+													<div>Boosted visibility with
+														<span class="highlight-text">
+															10x applications</span>
+													</div>
+												</div>
+												<div class="d-flex benefit_item">
+													<i class="tick ic-24-tick"></i>
+													<div><span class="highlight-text">
+															AI Screener </span>to shortlist best applications instantly
+													</div>
+												</div>
+												<div class="d-flex benefit_item">
+													<i class="tick ic-24-tick"></i>
+													<div>
+														<span class="highlight-text">
+															AI Interviewer</span>
+														to evaluate candidates’ skills <br />
+													</div>
+												</div>
+												<div class="d-flex benefit_item">
+													<i class="tick ic-24-tick"></i>
+													<div>Features like download resume, contact numbers, export to
+														excel, and more</div>
+												</div>
+												<div class="d-flex benefit_item">
+													<i class="tick ic-24-tick"></i>
+													<div>Dedicated
+														<span class="highlight-text">
+															Relationship Manager</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<span class="terms_and_conditions">*T&C Apply</span>
+								</div>
+
+								<div id="premium_modal_plans_container" class="right_container ">
+									<div class="plan_heading ">
+										Choose your Premium Plan
+									</div>
+									<div class="pay_per_post_plan">
+										<div class="section_heading_container">
+											<div class="h-11-semi-bold heading">
+												Pay per listing
+											</div>
+											<div class="body-small subheading">
+												Upgrade this post or get a pack of Premium listings
+											</div>
+										</div>
+										<div class="radio pay_per_post_plan_radio">
+											<input name="premium_post_plan" id="per_post_option" type="radio"
+												value="per_post" checked>
+											<label id="premium_plan_option_per_post" class="premium_plan_option active"
+												for="per_post_option">
+												<div class="label_content d-flex justify-content-between">
+													Upgrade this listing to Premium <span
+														class="price_container_without_discount">
+														<span class="per_post_plan_price">₹2,999</span>
+													</span>
+													<span class="price_container_with_discount">
+														<span class="per_post_plan_price">₹2,999</span>
+														&nbsp;
+														<span class="price"></span>
+													</span>
+												</div>
+												<div class="pi_discount_timer_container">
+													<div class="premium_modal_discount_timer"><span
+															class="ic-16-clock icon"></span>Offer ends in <span
+															class="pi_discount_timer"></span></div>
+												</div>
+											</label>
+
+											<div class="employer_card_preference employer_card_preference_pr active hide_card_preference"
+												data-card="false">
+												<div class="employer_card_preference_content">
+													<div class="h-11-semi-bold card-select">Select your card</div>
+													<div class="body-small choose-card">Choose a card you will be using
+														for payment</div>
+
+													<div class="radio-box">
+														<label for='ind_card_job' class="box" id="ind_card_job_wrapper">
+															<div class="radio">
+																<input name="card-type" id="ind_card_job" type="radio"
+																	value="indian">
+																<label for="ind_card_job"
+																	class="body-main-medium">Indian card</label>
+															</div>
+														</label>
+														<label class="box" for='int_card_job' id="int_card_job_wrapper">
+															<div class="radio">
+																<input name="card-type" id="int_card_job" type="radio"
+																	value="international">
+																<label for="int_card_job"
+																	class="body-main-medium">International card</label>
+															</div>
+														</label>
+													</div>
+
+													<label class="ui-small card_alert"><i
+															class="ic-16-alert-circle"></i>Please select your card to
+														proceed</label>
+												</div>
+											</div>
+										</div>
+										<div class="custom_plan">
+											<div class="radio">
+												<input name="premium_post_plan" id="custom_plan_option" type="radio"
+													value="custom">
+												<label id="premium_plan_option_custom" class="premium_plan_option"
+													for="custom_plan_option">
+													<div class="label_content">
+														<div class="heading">
+															<div class="heading_text">
+																Pack of Premium listings
+																<div class="custom_plan_content">
+																	Get discounted pricing as per your requirements
+																</div>
+															</div>
+															<div class="pricing">
+																Custom Pricing
+															</div>
+														</div>
+													</div>
+												</label>
+												<div
+													class="employer_card_preference employer_card_preference_pr hide_card_preference">
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="subscription_plan_container">
+
+										<div class="subscription_monthly_container">
+											<div class="subscription_plan_heading h-11-semi-bold">Unlimited plans</div>
+											<div class="sub_heading">
+												Post unlimited Premium internships & jobs*
+											</div>
+											<div class="subscription_plans">
+												<div class="radio ">
+													<input name="premium_post_plan" id="1_month_plan_option"
+														type="radio" value="1_month">
+													<label id="premium_plan_option_1_month"
+														class="premium_plan_option subscripton_plan_option first_time_discount_label"
+														for="1_month_plan_option">
+														<div class="label_content">
+															<div class="heading_and_discount_container">
+																<div class="heading">1 Month Plan</div>
+																<div class="offer_and_first_time_discount_container_lg">
+																	<div class="offer ">Save 40%</div>
+																</div>
+															</div>
+															<div class="price_details">
+																<div class="original">
+																	<span class="original_price">₹14,999</span>
+																</div>
+																<div class="price">₹8,999</div>
+															</div>
+														</div>
+														<div class="first_time_discount_upgrade_modal body-small">
+															<span>First time user discount</span>
+														</div>
+													</label>
+													<div
+														class="employer_card_preference employer_card_preference_pr hide_card_preference">
+													</div>
+												</div>
+												<div class="radio popular_subscription_plan_card">
+													<input name="premium_post_plan" id="12_months_plan_option"
+														type="radio" value="12_months">
+													<label id="premium_plan_option_12_months"
+														class="premium_plan_option subscripton_plan_option "
+														for="12_months_plan_option">
+														<div class="label_content">
+															<div class="heading_and_discount_container">
+																<div class="heading">1 Year Plan</div>
+																<div class="offer_and_first_time_discount_container_lg">
+																	<div class="offer popular_offer">Save 50%</div>
+																</div>
+															</div>
+															<div class="price_details">
+																<div class="original">
+																	<span class="original_price">₹119,999</span>
+																</div>
+																<div class="price">₹59,999</div>
+															</div>
+														</div>
+													</label>
+													<div
+														class="employer_card_preference employer_card_preference_pr hide_card_preference">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="btn_container">
+										<button id="premium_plan_submit_btn" class="btn" data-upgrade="payment"
+											style="width: 100%;">Upgrade now</button>
+									</div>
+								</div>
+
+								<div id="premium_modal_callback_content" class="right_container
                         ">
-                                <div class="content_container">
-                                    <img src="/other/images/modals/premium_prompt/success-tick.svg">
-                                    <div class="content_heading">Thank you!</div>
-                                    <div class="content">Our representative will get back to you shortly.</div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- LEFT RIGHT CONTAINER ENDS HERE -->
+									<div class="content_container">
+										<img src="/other/images/modals/premium_prompt/success-tick.svg">
+										<div class="content_heading">Thank you!</div>
+										<div class="content">Our representative will get back to you shortly.</div>
+									</div>
+								</div>
+							</div>
+							<!-- LEFT RIGHT CONTAINER ENDS HERE -->
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script nonce="Fu58kZyrthH05UnpqGiw5g==">
-        var is_active_poj = false;
-    </script>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script nonce="Fu58kZyrthH05UnpqGiw5g==">
+			var is_active_poj = false;
+		</script>
 
-    <script nonce="Fu58kZyrthH05UnpqGiw5g==">
-        var to_show_applications_of_internship = false;
-        var digest_internship_id = 0;
-        var application_id = 0;
-        var page_number = 1;
-        var is_application_from_digest_shown = false;
-        var digest_action;
-        var popup_notification = "1. Always assess the candidate via a short assignment or interview. Don&#39;t hire on the basis of just the application.<br/>2. When you select a candidate, always extend a formal offer letter with key details (stipend, profile, duration etc.) & ask for a signed copy as acceptance.<br/>3. Post that, change the selected candidate&#39;s application status to &#39;Hired&#39;.<br/>4. If you still face any problem with any applicant, kindly report it to <a href='mailto:employer@internshala.com' >employer@internshala.com</a>.";
-        var employer_notification_id = '';
-        var internship_notification_short_message = "Post unlimited listings and get access to features like boosted visibility, applicant contact numbers, etc., with  Premium. \u003Ca style='font-weight: 500;font-size: 14px;line-height: 16px;' href='\/employer-subscription'\u003EView Premium Plans now\u003C\/a\u003E";
-        var internship_notification_message = "";
-        var job_notification_short_message = "Post unlimited listings and get access to features like boosted visibility, applicant contact numbers, etc., with  Premium. \u003Ca style='font-weight: 500;font-size: 14px;line-height: 16px;' href='\/employer-subscription'\u003EView Premium Plans now\u003C\/a\u003E";
-        var job_notification_message = "";
-        var change_to_action = '';
-        var internship_id = '';
-        var to_show_tnc_notification = false;
-        var employment_type = "job";
-        var is_employer_subscribed = false;
-        var show_mobile_number_confirmation_modal = false;
-        var to_show_free_premium_post_trial_modal = false;
-        var is_international_user = "";
-        var internship_original_price = 2999;
-        var job_original_price = 2999;
-        var to_show_feedback_modal = false;
-        var to_show_renewal_modal = false;
+		<script nonce="Fu58kZyrthH05UnpqGiw5g==">
+			var to_show_applications_of_internship = false;
+			var digest_internship_id = 0;
+			var application_id = 0;
+			var page_number = 1;
+			var is_application_from_digest_shown = false;
+			var digest_action;
+			var popup_notification = "1. Always assess the candidate via a short assignment or interview. Don&#39;t hire on the basis of just the application.<br/>2. When you select a candidate, always extend a formal offer letter with key details (stipend, profile, duration etc.) & ask for a signed copy as acceptance.<br/>3. Post that, change the selected candidate&#39;s application status to &#39;Hired&#39;.<br/>4. If you still face any problem with any applicant, kindly report it to <a href='mailto:employer@internshala.com' >employer@internshala.com</a>.";
+			var employer_notification_id = '';
+			var internship_notification_short_message = "Post unlimited listings and get access to features like boosted visibility, applicant contact numbers, etc., with  Premium. \u003Ca style='font-weight: 500;font-size: 14px;line-height: 16px;' href='\/employer-subscription'\u003EView Premium Plans now\u003C\/a\u003E";
+			var internship_notification_message = "";
+			var job_notification_short_message = "Post unlimited listings and get access to features like boosted visibility, applicant contact numbers, etc., with  Premium. \u003Ca style='font-weight: 500;font-size: 14px;line-height: 16px;' href='\/employer-subscription'\u003EView Premium Plans now\u003C\/a\u003E";
+			var job_notification_message = "";
+			var change_to_action = '';
+			var internship_id = '';
+			var to_show_tnc_notification = false;
+			var employment_type = "job";
+			var is_employer_subscribed = false;
+			var show_mobile_number_confirmation_modal = false;
+			var to_show_free_premium_post_trial_modal = false;
+			var is_international_user = "";
+			var internship_original_price = 2999;
+			var job_original_price = 2999;
+			var to_show_feedback_modal = false;
+			var to_show_renewal_modal = false;
 
-    </script>
+		</script>
 
-    <div id="footer" class="employer_footer">
-        <div id="employer_footer" class="container-fluid">
-            <div class="max-width-container">
-                <div class="elements">
-                    <div class="element">
-                        <a href="about_us">About us</a>
-                    </div>
-                    <div class="element">
-                        <a href="https://blog.internshala.com/?utm_source=is_footer">Blog</a>
-                    </div>
-                    <div class="element">
-                        <a href="privacy">Privacy</a>
-                    </div>
-                    <div class="element">
-                        <a href="https://blog.internshala.com/employer-resources/">Employer resources</a>
-                    </div>
-                    <div class="element">
-                        <a href="products_services">Our services</a>
-                    </div>
-                    <div class="element">
-                        <a href="terms">Terms & conditions</a>
-                    </div>
-                    <div class="element">
-                        <a href="careers">We’re hiring</a>
-                    </div>
-                    <div class="element">
-                        <a href="refund_cancellation_policy">Refund policy</a>
-                    </div>
-                    <div class="element">
-                        <a href="contact">Contact us</a>
-                    </div>
-                    <div class="element">
-                        <a href="sitemap?utm_source=is_footer">Sitemap</a>
-                    </div>
-                    <div class="element">
-                        <a href="resume-database?utm_source=is_footer">Resume Database</a>
-                    </div>
-                    <div class="element">
-                        <a href="hire-talent/?utm_source=is_footer">Hire Interns and Freshers</a>
-                    </div>
-                    <div class="element">
-                        <a href="hire-employees/?utm_source=is_footer">Hire Employees</a>
-                    </div>
-                    <div class="element">
-                        <a href="hire-freshers/?utm_source=is_footer">Hire Freshers</a>
-                    </div>
-                    <div class="element">
-                        <a href="post-job/?utm_source=is_footer">Post Job</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id='footer-bottom' class="container-fluid ">
+		<br>
 
-            <div class="max-width-container">
+		<div id="footer" class="employer_footer">
+			<div id="employer_footer" class="container-fluid">
+				<div class="max-width-container">
+					<div class="elements">
+						<div class="element">
+							<a href="about_us">About us</a>
+						</div>
+						<div class="element">
+							<a href="https://blog.internshala.com/?utm_source=is_footer">Blog</a>
+						</div>
+						<div class="element">
+							<a href="privacy">Privacy</a>
+						</div>
+						<div class="element">
+							<a href="https://blog.internshala.com/employer-resources/">Employer resources</a>
+						</div>
+						<div class="element">
+							<a href="products_services">Our services</a>
+						</div>
+						<div class="element">
+							<a href="terms">Terms & conditions</a>
+						</div>
+						<div class="element">
+							<a href="careers">We’re hiring</a>
+						</div>
+						<div class="element">
+							<a href="refund_cancellation_policy">Refund policy</a>
+						</div>
+						<div class="element">
+							<a href="contact">Contact us</a>
+						</div>
+						<div class="element">
+							<a href="sitemap?utm_source=is_footer">Sitemap</a>
+						</div>
+						<div class="element">
+							<a href="resume-database?utm_source=is_footer">Resume Database</a>
+						</div>
+						<div class="element">
+							<a href="hire-talent/?utm_source=is_footer">Hire Interns and Freshers</a>
+						</div>
+						<div class="element">
+							<a href="hire-employees/?utm_source=is_footer">Hire Employees</a>
+						</div>
+						<div class="element">
+							<a href="hire-freshers/?utm_source=is_footer">Hire Freshers</a>
+						</div>
+						<div class="element">
+							<a href="post-job/?utm_source=is_footer">Post Job</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id='footer-bottom' class="container-fluid ">
 
-                <div id='copyright'>
-                    &copy; Copyright 2025 IAPS
-                </div>
-            </div>
-        </div>
-        <div id="line"></div>
-    </div>
-</div>
+				<div class="max-width-container">
 
-<!-- ==================== FIXED MODAL ==================== -->
-<div class="modal fade" id="internReviewModal" tabindex="-1" aria-labelledby="internReviewModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
-                <h5 class="modal-title" id="internReviewModalLabel">
-                    Intern Applications – <span id="modalJobTitle">Loading...</span>
-                </h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="table-responsive">
-                    <table class="table table-hover align-middle">
-                        <thead class="table-light">
-                        <tr>
-                            <th>#</th>
-                            <th>Photo</th>
-                            <th>Name</th>
-                            <th>College</th>
-                            <th>Skills</th>
-                            <th>Status</th>
-                            <th>Contact</th>
-                        </tr>
-                        </thead>
-                        <tbody id="internList">
-                        <!-- Filled by JavaScript -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
+					<div id='copyright'>
+						&copy; Copyright 2025 IAPS
+					</div>
+				</div>
+			</div>
+			<div id="line"></div>
+		</div>
+	</div>
 
-<!-- SEPARATE CONTACT MODAL -->
-<!-- Contact Modal (place anywhere in body) -->
-<div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-sm modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header bg-primary text-white">
-                <h6 class="modal-title mb-0">Contact Details</h6>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body text-center py-4">
-                <p class="h5 mb-3" id="contactName">Name</p>
-                <p class="mb-2"><i class="bi bi-telephone-fill text-success"></i> <span id="contactPhone" class="ms-2"></span></p>
-                <p class="mb-0"><i class="bi bi-envelope-fill text-danger"></i> <a id="contactEmail" href="#" class="ms-2 text-decoration-none"></a></p>
-            </div>
-        </div>
-    </div>
-</div>
+	<!-- Replace the existing #internReviewModal with this corrected code -->
+	<div class="modal fade" id="internReviewModal" tabindex="-1" role="dialog" aria-labelledby="internReviewModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-xl" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="inner_div">
+						<h4 class="modal-title">Intern Applications – <span id="modalJobTitle">Loading...</span></h4>
+					</div>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="table-responsive">
+						<table class="table table-bordered dt-responsive"
+							style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+							<thead>
+								<tr>
+									<th>Students</th>
+									<th>College</th>
+									<th style="width: 200px !important;">Skills</th>
+									<th>Status</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody id="internList">
+								<!-- Will be populated by JavaScript -->
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Contact Modal -->
+	<div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-sm modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h6 class="modal-title mb-0">Contact Details</h6>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body text-center py-4">
+					<p class="h5 mb-3" id="contactName">Name</p>
+					<p class="mb-2"><i class="bi bi-telephone-fill text-success"></i> <span id="contactPhone"
+							class="ms-2"></span></p>
+					<p class="mb-0"><i class="bi bi-envelope-fill text-danger"></i> <a id="contactEmail" href="#"
+							class="ms-2 text-decoration-none"></a></p>
+				</div>
+			</div>
+		</div>
+	</div>
 
-<script>
-    /*
-      Fix summary:
-      - Removed reliance on Bootstrap Popovers to deliver contact details.
-      - Buttons now carry data attributes (data-contact, data-name, data-phone, data-email).
-      - Single contact modal instance is created and used.
-      - Event delegation handles both "open intern modal" (data-job-title) and contact clicks (data-contact).
-      - This avoids popover conflicts inside a modal and makes contact modal reliable.
-    */
 
-    document.addEventListener('DOMContentLoaded', function () {
-      // Single contact modal instance
-      const contactModalEl = document.getElementById('contactModal');
-      const contactModal = new bootstrap.Modal(contactModalEl);
+	<script>
+		/*
+		  Fix summary:
+		  - Removed reliance on Bootstrap Popovers to deliver contact details.
+		  - Buttons now carry data attributes (data-contact, data-name, data-phone, data-email).
+		  - Single contact modal instance is created and used.
+		  - Event delegation handles both "open intern modal" (data-job-title) and contact clicks (data-contact).
+		  - This avoids popover conflicts inside a modal and makes contact modal reliable.
+		*/
 
-      // Helper to fill & show contact modal
-      function showContact(name, phone, email) {
-        document.getElementById('contactName').textContent = name || 'Not available';
-        document.getElementById('contactPhone').textContent = phone || 'Not available';
-        if (email) {
-          document.getElementById('contactEmail').href = 'mailto:' + email;
-          document.getElementById('contactEmail').textContent = email;
-        } else {
-          document.getElementById('contactEmail').href = '#';
-          document.getElementById('contactEmail').textContent = 'Not available';
-        }
-        contactModal.show();
-      }
+		document.addEventListener('DOMContentLoaded', function () {
+			// Single contact modal instance
+			const contactModalEl = document.getElementById('contactModal');
+			const contactModal = new bootstrap.Modal(contactModalEl);
 
-      // Sample interns (can be replaced with real data)
-      const sampleInterns = [
-        { name: "Aarav Sharma",      college: "IIT Bombay",        skills: "Java, Spring Boot",          status: "Shortlisted", phone: "+91 98765 43210", email: "aarav@example.com" },
-        { name: "Priya Patel",       college: "NIT Surathkal",     skills: "React, Node.js",             status: "Interviewed", phone: "+91 87654 32109", email: "priya@example.com" },
-        { name: "Rahul Verma",       college: "BITS Pilani",       skills: "Python, Django",             status: "Selected",    phone: "+91 76543 21098", email: "rahul@example.com" },
-        { name: "Sneha Reddy",       college: "VIT Vellore",       skills: "Angular, TypeScript",        status: "Shortlisted", phone: "+91 65432 10987", email: "sneha@example.com" },
-        { name: "Vikram Singh",      college: "Delhi University",  skills: "Java, Hibernate",            status: "In Review",   phone: "+91 54321 09876", email: "vikram@example.com" },
-        { name: "Ananya Gupta",      college: "IIIT Hyderabad",    skills: "Flutter, Firebase",          status: "Selected",    phone: "+91 43210 98765", email: "ananya@example.com" },
-        { name: "Rohan Mehta",       college: "Manipal University",skills: "Data Science, Python",        status: "Interviewed", phone: "+91 32109 87654", email: "rohan@example.com" },
-        { name: "Isha Kapoor",       college: "SRM Chennai",       skills: "UI/UX, Figma",               status: "Shortlisted", phone: "+91 21098 76543", email: "isha@example.com" },
-        { name: "Arjun Nair",        college: "Amity University",  skills: "DevOps, Docker",             status: "In Review",   phone: "+91 10987 65432", email: "arjun@example.com" },
-        { name: "Tanvi Joshi",       college: "Pune University",   skills: "MERN Stack",                 status: "Selected",    phone: "+91 99887 76655", email: "tanvi@example.com" }
-      ];
+			// Helper to fill & show contact modal
+			function showContact(name, phone, email) {
+				document.getElementById('contactName').textContent = name || 'Not available';
+				document.getElementById('contactPhone').textContent = phone || 'Not available';
+				if (email) {
+					document.getElementById('contactEmail').href = 'mailto:' + email;
+					document.getElementById('contactEmail').textContent = email;
+				} else {
+					document.getElementById('contactEmail').href = '#';
+					document.getElementById('contactEmail').textContent = 'Not available';
+				}
+				contactModal.show();
+			}
 
-      // Function to open intern modal and populate table
-      function openInternModal(jobTitle) {
-        // Set title
-        const titleSpan = document.getElementById('modalJobTitle');
-        if (titleSpan) titleSpan.textContent = jobTitle || '—';
+			// Sample interns (can be replaced with real data)
+			const sampleInterns = [
+				{name: "Aarav Sharma", college: "IIT Bombay", skills: "Java, Spring Boot", status: "Shortlisted", phone: "+91 98765 43210", email: "aarav@example.com"},
+				{name: "Priya Patel", college: "NIT Surathkal", skills: "React, Node.js", status: "Interviewed", phone: "+91 87654 32109", email: "priya@example.com"},
+				{name: "Rahul Verma", college: "BITS Pilani", skills: "Python, Django", status: "Selected", phone: "+91 76543 21098", email: "rahul@example.com"},
+				{name: "Sneha Reddy", college: "VIT Vellore", skills: "Angular, TypeScript", status: "Shortlisted", phone: "+91 65432 10987", email: "sneha@example.com"},
+				{name: "Vikram Singh", college: "Delhi University", skills: "Java, Hibernate", status: "In Review", phone: "+91 54321 09876", email: "vikram@example.com"},
+				{name: "Ananya Gupta", college: "IIIT Hyderabad", skills: "Flutter, Firebase", status: "Selected", phone: "+91 43210 98765", email: "ananya@example.com"},
+				{name: "Rohan Mehta", college: "Manipal University", skills: "Data Science, Python", status: "Interviewed", phone: "+91 32109 87654", email: "rohan@example.com"},
+				{name: "Isha Kapoor", college: "SRM Chennai", skills: "UI/UX, Figma", status: "Shortlisted", phone: "+91 21098 76543", email: "isha@example.com"},
+				{name: "Arjun Nair", college: "Amity University", skills: "DevOps, Docker", status: "In Review", phone: "+91 10987 65432", email: "arjun@example.com"},
+				{name: "Tanvi Joshi", college: "Pune University", skills: "MERN Stack", status: "Selected", phone: "+91 99887 76655", email: "tanvi@example.com"}
+			];
 
-        const tbody = document.getElementById('internList');
-        tbody.innerHTML = ''; // clear rows
+			// Function to open intern modal and populate table
+			function openInternModal(jobTitle) {
+				// Set title
+				const titleSpan = document.getElementById('modalJobTitle');
+				if (titleSpan) titleSpan.textContent = jobTitle || '—';
 
-        sampleInterns.forEach((intern, i) => {
-          let badgeClass = '';
-          if (intern.status === 'Selected')    badgeClass = 'bg-success text-white';
-          if (intern.status === 'Shortlisted') badgeClass = 'bg-warning text-dark';
-          if (intern.status === 'Interviewed') badgeClass = 'bg-info text-white';
-          if (intern.status === 'In Review')   badgeClass = 'bg-secondary text-white';
+				const tbody = document.getElementById('internList');
+				tbody.innerHTML = ''; // clear rows
 
-          // Use data attributes for contact info instead of popovers
-          const row = `
+				sampleInterns.forEach((intern, i) => {
+					let badgeClass = '';
+					if (intern.status === 'Selected') badgeClass = 'bg-success text-white';
+					if (intern.status === 'Shortlisted') badgeClass = 'bg-warning text-dark';
+					if (intern.status === 'Interviewed') badgeClass = 'bg-info text-white';
+					if (intern.status === 'In Review') badgeClass = 'bg-secondary text-white';
+
+					// Use data attributes for contact info instead of popovers
+					const row = `
             <tr>
               <td>${i + 1}</td>
               <td><img src="https://i.pravatar.cc/80?img=${i + 10}" class="rounded-circle" width="50" height="50" alt="${intern.name}"></td>
@@ -1371,82 +2062,258 @@
                 </button>
               </td>
             </tr>`;
-          tbody.insertAdjacentHTML('beforeend', row);
-        });
+					tbody.insertAdjacentHTML('beforeend', row);
+				});
 
-        // Show modal
-        const modal = new bootstrap.Modal(document.getElementById('internReviewModal'));
-        modal.show();
-      }
+				// Show modal
+				const modal = new bootstrap.Modal(document.getElementById('internReviewModal'));
+				modal.show();
+			}
 
-      // Event delegation:
-      // - buttons with data-job-title open the intern modal
-      // - buttons with data-contact show the contact modal
-      document.addEventListener('click', function (e) {
-        // data-contact handler
-        const contactBtn = e.target.closest('button[data-contact]');
-        if (contactBtn) {
-          const name = contactBtn.getAttribute('data-name') || '';
-          const phone = contactBtn.getAttribute('data-phone') || '';
-          const email = contactBtn.getAttribute('data-email') || '';
-          showContact(name, phone, email);
-          return;
-        }
+			// Event delegation:
+			// - buttons with data-job-title open the intern modal
+			// - buttons with data-contact show the contact modal
+			document.addEventListener('click', function (e) {
+				// data-contact handler
+				const contactBtn = e.target.closest('button[data-contact]');
+				if (contactBtn) {
+					const name = contactBtn.getAttribute('data-name') || '';
+					const phone = contactBtn.getAttribute('data-phone') || '';
+					const email = contactBtn.getAttribute('data-email') || '';
+					showContact(name, phone, email);
+					return;
+				}
 
-        // data-job-title handler
-        const jobBtn = e.target.closest('button[data-job-title]');
-        if (jobBtn) {
-          const jobTitle = jobBtn.getAttribute('data-job-title') || 'Internship';
-          openInternModal(jobTitle);
-        }
-      });
+				// data-job-title handler
+				const jobBtn = e.target.closest('button[data-job-title]');
+				if (jobBtn) {
+					const jobTitle = jobBtn.getAttribute('data-job-title') || 'Internship';
+					openInternModal(jobTitle);
+				}
+			});
 
-      // Simple HTML-escape helper to avoid breaking attributes (basic)
-      function escapeHtml(str) {
-        if (!str) return '';
-        return String(str)
-          .replace(/&/g, '&amp;')
-          .replace(/"/g, '&quot;')
-          .replace(/'/g, '&#39;')
-          .replace(/</g, '&lt;')
-          .replace(/>/g, '&gt;');
-      }
-    });
-</script>
+			// Simple HTML-escape helper to avoid breaking attributes (basic)
+			function escapeHtml(str) {
+				if (!str) return '';
+				return String(str)
+					.replace(/&/g, '&amp;')
+					.replace(/"/g, '&quot;')
+					.replace(/'/g, '&#39;')
+					.replace(/</g, '&lt;')
+					.replace(/>/g, '&gt;');
+			}
+		});
+	</script>
 
-<script nonce="Fu58kZyrthH05UnpqGiw5g==">
-    /* <![CDATA[ */
-    var google_conversion_id = 981478532;
-    var google_custom_params = window.google_tag_params;
-    var google_remarketing_only = true;
-    /* ]]> */
-</script>
-<script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
-<script type="text/javascript" src="https://www.googleadservices.com/pagead/conversion.js">
-</script>
+	<script nonce="Fu58kZyrthH05UnpqGiw5g==">
+		/* <![CDATA[ */
+		var google_conversion_id = 981478532;
+		var google_custom_params = window.google_tag_params;
+		var google_remarketing_only = true;
+		/* ]]> */
+	</script>
+	<script src="assets/libs/jquery-knob/jquery.knob.min.js"></script>
+	<script type="text/javascript" src="https://www.googleadservices.com/pagead/conversion.js">
+	</script>
 
-<noscript>
-    <div style="display:inline;">
-        <img height="1" width="1" style="border-style:none;" alt="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/981478532/?value=0&amp;guid=ON&amp;script=0"/>
-    </div>
-</noscript>
+	<noscript>
+		<div style="display:inline;">
+			<img height="1" width="1" style="border-style:none;" alt=""
+				src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/981478532/?value=0&amp;guid=ON&amp;script=0" />
+		</div>
+	</noscript>
 
-<script nonce="Fu58kZyrthH05UnpqGiw5g==">
-    var is_embedded_app = 'no';
-    var is_android_user = 'no';
-    var is_guest = 0;
-    var isInfiniteScroll = 'no' == 'yes';
-    var is_company_page = 0;
-    var to_show_pgc_campaign_ribbon = false;
-    var ai_pgc_ribbon_message = "";
-    var stt_pgc_ribbon_content = null;
-    setTimeout(function() {
-        var loading_toast = document.getElementById("loading_toast");
-        if (typeof loading_toast !== 'undefined' && loading_toast) {
-            loading_toast.style.display = "block";
-        }
-    }, 2000);
-</script>
+	<script nonce="Fu58kZyrthH05UnpqGiw5g==">
+		var is_embedded_app = 'no';
+		var is_android_user = 'no';
+		var is_guest = 0;
+		var isInfiniteScroll = 'no' == 'yes';
+		var is_company_page = 0;
+		var to_show_pgc_campaign_ribbon = false;
+		var ai_pgc_ribbon_message = "";
+		var stt_pgc_ribbon_content = null;
+		setTimeout(function () {
+			var loading_toast = document.getElementById("loading_toast");
+			if (typeof loading_toast !== 'undefined' && loading_toast) {
+				loading_toast.style.display = "block";
+			}
+		}, 2000);
+	</script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			// Contact modal instance
+			const contactModalEl = document.getElementById('contactModal');
+			const contactModal = new bootstrap.Modal(contactModalEl);
+
+			// Helper to fill & show contact modal
+			function showContact(name, phone, email) {
+				document.getElementById('contactName').textContent = name || 'Not available';
+				document.getElementById('contactPhone').textContent = phone || 'Not available';
+				if (email) {
+					document.getElementById('contactEmail').href = 'mailto:' + email;
+					document.getElementById('contactEmail').textContent = email;
+				} else {
+					document.getElementById('contactEmail').href = '#';
+					document.getElementById('contactEmail').textContent = 'Not available';
+				}
+				contactModal.show();
+			}
+
+			// Sample interns data
+			const sampleInterns = [
+				{
+					name: "Aarav Sharma",
+					college: "IIT Bombay",
+					skills: "Java, Spring Boot, Microservices",
+					status: "Shortlisted",
+					phone: "+91 98765 43210",
+					email: "aarav@example.com"
+				},
+				{
+					name: "Priya Patel",
+					college: "NIT Surathkal",
+					skills: "React, Node.js, MongoDB",
+					status: "Interviewed",
+					phone: "+91 87654 32109",
+					email: "priya@example.com"
+				},
+				{
+					name: "Rahul Verma",
+					college: "BITS Pilani",
+					skills: "Python, Django, PostgreSQL",
+					status: "Selected",
+					phone: "+91 76543 21098",
+					email: "rahul@example.com"
+				},
+				{
+					name: "Sneha Reddy",
+					college: "VIT Vellore",
+					skills: "Angular, TypeScript, RxJS",
+					status: "Shortlisted",
+					phone: "+91 65432 10987",
+					email: "sneha@example.com"
+				},
+				{
+					name: "Vikram Singh",
+					college: "Delhi University",
+					skills: "Java, Hibernate, REST APIs",
+					status: "In Review",
+					phone: "+91 54321 09876",
+					email: "vikram@example.com"
+				}
+			];
+
+			// Function to open intern modal and populate table
+			function openInternModal(jobTitle) {
+				// Set title
+				const titleSpan = document.getElementById('modalJobTitle');
+				if (titleSpan) titleSpan.textContent = jobTitle || '—';
+
+				const tbody = document.getElementById('internList');
+				tbody.innerHTML = ''; // clear rows
+
+				sampleInterns.forEach((intern, i) => {
+					// Determine badge class based on status
+					let badgeClass = '';
+					let statusText = intern.status;
+
+					if (intern.status === 'Selected') {
+						badgeClass = 'bg-success-subtle text-success';
+					} else if (intern.status === 'Shortlisted') {
+						badgeClass = 'bg-warning-subtle text-warning';
+					} else if (intern.status === 'Interviewed') {
+						badgeClass = 'bg-info-subtle text-info';
+					} else if (intern.status === 'In Review') {
+						badgeClass = 'bg-secondary-subtle text-secondary';
+					}
+
+					// Create table row with new design
+					const row = `
+                <tr>
+                    <td>
+                        <div class="img_section">
+                            <div>
+                                <img src="https://i.pravatar.cc/80?img=${i + 10}" class="img-fluid prof_img" alt="${intern.name}">
+                            </div>
+                            <div class="name_section">
+                                <div class="d-flex flex-column align-items-start">
+                                    <h4 class="text-dark">${intern.name}</h4>
+                                    <p class="text-start">${intern.college}</p>
+                                </div>
+                                <div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>${intern.college}</td>
+                    <td>
+                        <div class="name_section">
+                            <div class="d-flex flex-column align-items-start">
+                                <h4 class="text-dark new_heading">${intern.skills}</h4>
+                                <p class="text-start mt-1">${intern.college}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span class="badge ${badgeClass} custom_badge">${statusText}</span>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-sm btn-primary-outline"
+                                data-contact
+                                data-name="${escapeHtml(intern.name)}"
+                                data-phone="${escapeHtml(intern.phone)}"
+                                data-email="${escapeHtml(intern.email)}">
+                            <i class="bi bi-telephone"></i> Contact
+                        </button>
+                    </td>
+                   
+                </tr>`;
+					tbody.insertAdjacentHTML('beforeend', row);
+				});
+
+				// Show modal
+				const modal = new bootstrap.Modal(document.getElementById('internReviewModal'));
+				modal.show();
+			}
+
+			// Event delegation for click events
+			document.addEventListener('click', function (e) {
+				// Contact button handler
+				const contactBtn = e.target.closest('button[data-contact]');
+				if (contactBtn) {
+					const name = contactBtn.getAttribute('data-name') || '';
+					const phone = contactBtn.getAttribute('data-phone') || '';
+					const email = contactBtn.getAttribute('data-email') || '';
+					showContact(name, phone, email);
+					return;
+				}
+
+				// Review job button handler
+				const jobBtn = e.target.closest('button[data-job-title]');
+				if (jobBtn) {
+					const jobTitle = jobBtn.getAttribute('data-job-title') || 'Internship';
+					openInternModal(jobTitle);
+				}
+
+				// Review button inside modal handler
+				const reviewBtn = e.target.closest('.review-btn');
+				if (reviewBtn) {
+					const row = reviewBtn.closest('tr');
+					const studentName = row.querySelector('.name_section h4').textContent;
+					alert(`Reviewing application for: ${studentName}`);
+				}
+			});
+
+			// HTML escape helper
+			function escapeHtml(str) {
+				if (!str) return '';
+				const div = document.createElement('div');
+				div.textContent = str;
+				return div.innerHTML;
+			}
+		});
+	</script>
 </body>
 
 </html>

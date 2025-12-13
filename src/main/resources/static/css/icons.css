@@ -426,3 +426,18 @@
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
+
+/* help-block form-error */
+.ic-form-error-custom {
+	width: 20px;
+	height: 20px;
+	background-image: url("../icons/alert-error.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	filter: invert(17%) sepia(96%) saturate(7475%) hue-rotate(0deg) brightness(97%) contrast(119%);
+}
